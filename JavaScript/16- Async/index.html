@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 16</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../15- Maps_e_Sets/index.html">Voltar Para Mapas e Sets</a>
+    <a id="linkpos" href="../17- Erros_Debugs_Praticas/index.html">Ir Para Erro e Debug</a>
+
+    <h1>Async:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>Callbacks:</h2>
+    <h3>Sequência de funções:</h3>
+    <p>As funções JavaScript são executadas na sequência em que são chamadas. Não na sequência em que são definidos.</p>
+    <pre>
+        <code>
+            EX: function myFirst() {
+                    console.log("Hello");
+                }
+              
+                function mySecond() {
+                    console.log("Goodbye");
+                }
+                myFirst();
+                mySecond(); 
+                >>Resultado:    Hello
+                                Goodbye
+
+            EX: function myFirst() {
+                    console.log("Hello");
+                }
+          
+                function mySecond() {
+                    console.log("Goodbye");
+                }
+                mySecond(); 
+                myFirst();
+                >>Resultado:    Goodbye
+                                Hello
+        </code>
+    </pre>
+
+    <h3>Callbacks:</h3>
+    <p>Uma Callback é uma função passada como um argumento para outra função.</p>
+    <p>Onde os callbacks realmente brilham são em funções assíncronas, onde uma função tem que esperar por outra função (como esperar o carregamento de um arquivo).</p>
+    <pre>
+        <code>
+            EX: function meuDisplay(algum) {
+                    console.log(algum)
+                }
+                function minhaCalculadora(num1, num2, myCallback) {
+                    let soma = num1 + num2;
+                    myCallback(soma);
+                }
+                minhaCalculadora(5, 5, meuDisplay); >>Resultado: 10
+        </code>
+    </pre>
+
+    <h2>Assíncrono:</h2>
+    <p>As funções executadas em paralelo com outras funções são chamadas assíncronas</p>
+
+    <h3>setTimeout():</h3>
+    <p>Ao usar a função JavaScript setTimeout(), você pode especificar uma função de retorno de chamada para ser executada no tempo limite:</p>
+    <pre>
+        <code>
+            EX: function myFunction() {
+                    console.log("Passou 3 segundos")
+                }
+                setTimeout(myFunction, 3000);
+                >>Resultado: Após 3 segundos ele executa a função.
+        </code>
+    </pre>
+
+    <h3>clearTimeout()</h3>
+    <p>O método clearTimeout() interrompe a execução da função especificada em setTimeout().</p>
+    <pre>
+        <code>
+            EX: function myFunction() {
+                    console.log("Passou 3 segundos")
+                }
+                myVar2 = setTimeout(myFunction, 3000);
+                <button onclick="clearTimeout(myVar2)">Pare</button>
+        </code>
+    </pre>
+
+    <h3>setInterval():</h3>
+    <p>Ao usar a função JavaScript setInterval(), você pode especificar uma função de callback a ser executada para cada intervalo de tempo</p>
+    <pre>
+        <code>
+            EX: function minhaFunction() {
+                    console.log("Passou muitos segundos")
+                }
+                setInterval(minhaFunction, 4000);
+                >>Resultado: A cada 4 segundos ele executa a função.
+        </code>
+    </pre>
+    
+    <h3>clearInterval():</h3>
+    <p>O método clearInterval() interrompe as execuções da função especificada no método setInterval().</p>
+    <pre>
+        <code>
+            EX: function minhaFunction() {
+                    console.log("Passou muitos segundos")
+                }
+                myVar = setInterval(minhaFunction, 4000);
+                <button onclick="clearInterval(myVar)">Pare</button>
+        </code>
+    </pre>
+
+    <h2>Promises:</h2>
+    <p>Uma promessa é um objeto JavaScript que vincula o código de produção e o código de consumo</p>
+    <pre>
+        <code>
+            EX: const promessa = new Promise((resolve, reject) => {
+                    const condicao = true;
+            
+                    if (condicao) {
+                        resolve("A condição é verdadeira!");
+                    } else {
+                        reject("A condição é falsa!");
+                    }
+                });
+            
+                promessa
+                    .then((mensagem) => {
+                        console.log(mensagem);
+                    })
+                    .catch((erro) => {
+                        console.log(erro);
+                    }); >>Resultado: A condição é verdadeira!
+        </code>
+    </pre>
+
+    <h2>Async:</h2>
+    <p>async faz uma função retornar uma promessa</p>
+    <pre>
+        <code>
+            EX: async function minhaFuncao() {
+                    return "Hello";
+                }
+                minhaFuncao().then(
+                    function(value) {
+                        console.log(value)
+                    },
+                    function (error) {
+                        console.log(error)
+                    }
+                ); >>Resultado: Hello
+        </code>
+    </pre>
+
+    <h2>await:</h2>
+    <p>A palavra-chave await faz a função pausar a execução e aguardar uma promessa resolvida antes de continuar</p>
+    <pre>
+        <code>
+            EX: async function myDisplay() {
+                    let myPromise = new Promise(function(resolve, reject) {
+                        resolve("Te amo!");
+                    });
+                    console.log(await myPromise);
+                }
+              
+                myDisplay(); >>Resultado: Te amo!
+        </code>
+    </pre>
+
+    <script src="script.js"></script>
+</body>
+</html>

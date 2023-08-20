@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 17</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../16- Async/index.html">Voltar Para Async</a>
+    <a id="linkpos" href="../18- Browser_BOM/index.html">Ir Para Browser BOM</a>
+
+    <h1>Erro, Debug e Práticas:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>Erros:</h2>
+    <p>Ao executar o código JavaScript, diferentes erros podem ocorrer. Os erros podem ser erros de codificação cometidos pelo programador, erros devidos a entrada incorreta e outras coisas imprevisíveis.</p>
+    
+    <h3>try, catch:</h3>
+    <p>A instrução try permite definir um bloco de código a ser testado quanto a erros enquanto está sendo executado.</p>
+    <p> A instrução catch permite definir um bloco de código a ser executado, caso ocorra um erro no bloco try.</p>
+    <p>Sintaxe: try { Bloco de código para try } catch(err) { Bloco de código para lidar com erros }</p>
+    <pre>
+        <code>
+            try {
+                adddlert("Welcome guest!"); //O JavaScript detecta addledrt como um erro e executa o código catch para tratá-lo.
+            }
+            catch(err) {
+               console.log(err.message);
+            }
+            >>Resultado: adddlert is not defined
+        </code>
+    </pre>
+
+    <h3>throw:</h3>
+    <p>A instrução throw permite que você crie um erro personalizado.</p>
+
+    <h3>finally:</h3>
+    <p>A instrução finally permite que você execute o código, após try e catch, independentemente do resultado.</p>
+    <p>Sintaxe: try { Bloco de código para try } catch(err) { Bloco de código para lidar com erros } finally { Bloco de código a ser executado independentemente do resultado try/catch }</p>
+
+    <h2>Objeto de Erro:</h2>
+    <h3>EvalError:</h3>
+    <p>Um EvalError(erro de avaliação) indica um erro na função eval().</p>
+
+    <h3>RangeError:</h3>
+    <p>Um RangeError é lançado se você usar um número que está fora do intervalo de valores legais.</p>
+    <pre>
+        <code>
+            EX: let num = 1;
+                try {
+                    num.toPrecision(500);
+                }
+                catch(err) {
+                    console.log(err.name); >>Resultado RangeError
+                }
+        </code>
+    </pre>
+
+    <h3>ReferenceErro:</h3>
+    <p>Um ReferenceError é lançado se você usar (referenciar) uma variável que não foi declarada.</p>
+    <pre>
+        <code>
+            EX: let x = 5;
+                try {
+                    x = y + 1;
+                }
+                catch(err) {
+                    console.log(err.name); >>Resultado: ReferenceError
+                }
+        </code>
+    </pre>
+
+    <h3>SyntaxError:</h3>
+    <p>Um SyntaxError é lançado se você tentar avaliar o código com um erro de sintaxe.</p>
+    <pre>
+        <code>
+            EX: try {
+                    eval("alert('Hello)");
+                }
+                catch(err) {
+                    console.log(err.name); >>Resultado: SyntaxError
+                }
+        </code>
+    </pre>
+
+    <h3>TypeError:</h3>
+    <p>Um TypeError é lançado se você usar um valor que está fora do intervalo de tipos esperados.</p>
+    <pre>
+        <code>
+            EX: let num1 = 1;
+                try {
+                    num.toUpperCase();
+                }
+                catch(err) {
+                    console.log(err.name);
+                }
+        </code>
+    </pre>
+
+    <h3>URIError:</h3>
+    <p>Um URIError é lançado se você usar caracteres ilegais em uma função URI.</p>
+    <pre>
+        <code>
+            EX: try {
+                    decodeURI("%%%");
+                }
+                catch(err) {
+                    console.log(err.name);
+                }
+        </code>
+    </pre>
+
+    <h2>Depuração:</h2>
+    <p>Procurar (e corrigir) erros no código de programação é chamado de depuração de código.</p>
+    <p>Normalmente você ativa a depuração em seu navegador com a tecla F12 e seleciona "Console" no menu do depurador.</p>
+    <p>Se o seu navegador suportar depuração, você pode usar console.log() para exibir valores JavaScript na janela do depurador.</p>
+
+    <h2>Guia de Estilos:</h2>
+    <h3>Nomes de variáveis:</h3>
+    <p>No W3schools usamos camelCase para nomes de identificadores (variáveis e funções)</p>
+    <pre>
+        <code>
+            EX: primeirotNome = "João";
+                segundoNome = "Gomes";
+            
+                preco = 19.90;
+                taxa = 0.20;
+            
+                precoCompleto = preco + (preco * taxa);
+        </code>
+    </pre>
+
+    <h3>Operadores:</h3>
+    <p>Sempre coloque espaços ao redor dos operadores ( = + - * / ) e depois de vírgulas.</p>
+    <pre>
+        <code>
+            EX: let x = y + z;
+                const meuArray = ["Volvo", "Saab", "Fiat"];
+        </code>
+    </pre>
+
+    <h3>Recuo de código:</h3>
+    <p>Sempre use 2 espaços para indentação de blocos de código</p>
+    <pre>
+        <code>
+            EX: function toCelsius(fahrenheit) {
+                    return (5 / 9) * (fahrenheit - 32);
+                }
+        </code>
+    </pre>
+
+    <h3>Regras de Declaração:</h3>
+    <p>Regras gerais para declarações simples: Sempre termine uma declaração simples com um ponto e vírgula.</p>
+    <pre>
+        <code>
+            EX: const cars = ["Volvo", "Saab", "Fiat"];
+        </code>
+    </pre>
+    
+    <p>Regras gerais para declarações complexas (compostas): Coloque o colchete de abertura no final da primeira linha; Use um espaço antes do colchete de abertura; Coloque o colchete de fechamento em uma nova linha, sem espaços iniciais; Não termine uma instrução complexa com um ponto e vírgula.</p>
+    <pre>
+        <code>
+            EX: function toCelsius(fahrenheit) {
+                    return (5 / 9) * (fahrenheit - 32);
+                }
+        </code>
+    </pre>
+
+    <h3>Comprimento da linha < 80:</h3>
+    <p>Para facilitar a leitura, evite linhas com mais de 80 caracteres. Se uma instrução JavaScript não couber em uma linha, o melhor lugar para quebrá-la é após um operador ou uma vírgula.</p>
+
+    <script src="script.js"></script>
+</body>
+</html>

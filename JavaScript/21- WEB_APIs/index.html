@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 21</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../20 - AJAX/index.html">Voltar Para AJAX</a>
+    <a id="linkpos" href="../22- JS_vs_jQuery/index.html">Ir Para JS vs Jquery</a>
+
+    <h1>Web APIs:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>O que é WebAPI?</h2>
+    <p>API significa Application Programming Interface(Interface de Programação de Aplicativos).</p>
+    <p>Uma API da Web é uma interface de programação de aplicativos para a Web.</p>
+
+    <h2>API de validação:</h2>
+    <h3>Método checkVadilidty():</h3>
+    <p>Se um campo de entrada contiver dados inválidos, exiba uma mensagem. OBS: Os valores devem estar no input</p>
+    <pre>
+        <code>
+            EX: <input id="id1" type="number" min="100" max="300" required>
+                <button onclick="myFunction()">OK</button>
+
+                function myFunction() {
+                    const inpObj = document.getElementById("id1");
+                    if (!inpObj.checkValidity()) {
+                      console.log(inpObj.validationMessage);
+                    } else {
+                      console.log("Input OK");
+                    } 
+                } 
+        </code>
+    </pre>
+
+    <h2>API de armazenamento na WEB:</h2>
+    <p>A API Web Storage é uma sintaxe simples para armazenar e recuperar dados no navegador. É muito fácil de usar.</p>
+
+    <h3>O objeto localStorage:</h3>
+    <p>O objeto localStorage fornece acesso a um armazenamento local para um Web site específico. Ele permite que você armazene, leia, adicione, modifique e exclua itens de dados para esse domínio. Os dados são armazenados sem prazo de validade e não serão excluídos quando o navegador for fechado. Os dados estarão disponíveis por dias, semanas e anos.</p>
+    <pre>
+        <code>
+            EX: localStorage.setItem("nome","João Gomes");
+                document.getElementById("demo").innerHTML = localStorage.getItem("nome"); >>Resultado: João Gomes
+        </code>
+    </pre>
+
+    <h3>O método setItem():</h3>
+    <p>O método localStorage.setItem() armazena um item de dados em um armazenamento.</p>
+    <pre>
+        <code>
+            EX: localStorage.setItem("nome", "João Gomes");
+        </code>
+    </pre>
+    <h3>O método getItem():</h3>
+    <p>O método localStorage.getItem() recupera um item de dados do armazenamento.</p>
+    <pre>
+        <code>
+            EX: localStorage.getItem("nome");
+        </code>
+    </pre>
+
+    <h3>O objeto sessionStorage:</h3>
+    <p>O objeto sessionStorage é idêntico ao objeto localStorage. A diferença é que o objeto sessionStorage armazena dados para uma sessão. Os dados são excluídos quando o navegador é fechado.</p>
+    <pre>
+        <code>
+            EX: sessionStorage.setItem("nome","João Silva");
+                document.getElementById("demo").innerHTML = sessionStorage.getItem("nome"); >>Resultado: João Silva
+        </code>
+    </pre>
+
+    <h3>O método setItem():</h3>
+    <p>O método sessionStorage.setItem() armazena um item de dados em um armazenamento.</p>
+    <pre>
+        <code>
+            EX: sessionStorage.setItem("nome", "João Silva");
+        </code>
+    </pre>
+    <h3>O método getItem():</h3>
+    <p>O método sessionStorage.getItem() recupera um item de dados do armazenamento.</p>
+    <pre>
+        <code>
+            EX: sessionStorage.getItem("nome");
+        </code>
+    </pre>
+
+    <h2>API fetch(de busca):</h2>
+    <p>A interface Fetch API permite que o navegador da web faça solicitações HTTP para servidores da web.</p>
+    <pre>
+        <code>
+            EX: let file = "fetch_info.txt"
+
+                fetch (file)
+                .then(x => x.text())
+                .then(y => document.getElementById("demo").innerHTML = y);
+            
+        </code>
+    </pre>
+
+    <h2>API de geolocalização:</h2>
+    <p>A API de geolocalização HTML é usada para obter a posição geográfica de um usuário.</p>
+    <p>A API de geolocalização funcionará apenas em contextos seguros, como HTTPS.</p>
+
+    <h3>Método getCurrentPosition():</h3>
+    <p>O método getCurrentPosition() é usado para retornar a posição do usuário.</p>
+    <pre>
+        <code>
+            EX: <button onclick="getLocation()">Localização aqui</button>
+
+                function getLocation() {
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    } else {
+                        console.log( "Geolocation não é suportado por seu navegador.");
+                    }
+                }
+              
+                function showPosition(position) {
+                    console.log( "Latitude: " + position.coords.latitude +
+                " br>Longitude: " + position.coords.longitude);
+                }
+                showPosition(); >>Resultado: Latitude: -22.8293366 br>Longitude: -43.3827676
+        </code>
+    </pre>
+
+    <h3>Exibindo o resultado em um mapa:</h3>
+    <p>Para exibir o resultado em um mapa, você precisa acessar um serviço de mapas, como o Google Maps.</p>
+    
+    <script src="script.js"></script>
+</body>
+</html>

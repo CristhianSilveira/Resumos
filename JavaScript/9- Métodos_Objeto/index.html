@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 9</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../8- Metodos_Array/index.html">Voltar Para Metodos Array</a>
+    <a id="linkpos" href="../10- Datas/index.html">Ir Para Datas</a>
+
+    <h1>Metódos Objeto:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+    
+    <h2>Propriedades do Objeto:</h2>
+    <p>As propriedades são os valores associados a um objeto JavaScript.</p>
+
+    <h2>Acessando Propriedades do Objeto:</h2>
+    <p>Você pode acessar as propriedades do objeto de duas maneiras:  objectName.propertyName OU objectName["propertyName"]</p>
+    <pre>
+        <code>
+            EX: const pessoa = { Nome: "João", Sobrenome: "Gomes", Idade: 30, olhoCor: "Azul" };
+                console.log(pessoa.Nome); >>Resultado: João
+                console.log(pessoa["Idade"]); >>Resultado: 30
+        </code>
+    </pre>
+
+    <h2>Adicionando Novas Propriedades:</h2>
+    <p>Você pode adicionar novas propriedades a um objeto existente simplesmente atribuindo-lhe um valor.</p>
+    <pre>
+        <code>
+            EX: const pessoa = { Nome: "João", Sobrenome: "Gomes", Idade: 30, olhoCor: "Azul" };
+                pessoa.Nacionalidade = "Brasileiro"; >>Resultado: {Nome: 'João', Sobrenome: 'Gomes', Idade: 30, olhoCor: 'Azul', Nacionalidade: 'Brasileiro'}
+        </code>
+    </pre>
+
+    <h2>Excluindo propriedades:</h2>
+    <p>A palavra-chave delete exclui uma propriedade de um objeto:</p>
+    <pre>
+        <code>
+            EX: const pessoa = { Nome: "João", Sobrenome: "Gomes", Idade: 30, olhoCor: "Azul" };
+                delete pessoa.Nacionalidade; >>Resultado: {Nome: 'João', Sobrenome: 'Gomes', Idade: 30, olhoCor: 'Azul'}
+            
+        </code>
+    </pre>
+
+    <h2>Loop em Objetos:</h2>
+    <p>A instrução JavaScript for...in percorre as propriedades de um objeto.</p>
+    <pre>
+        <code>
+            EX: const pessoa = { Nome: "João", Sobrenome: "Gomes", Idade: 30, olhoCor: "Azul" };
+                for (let x in pessoa) {
+                    console.log(pessoa[x]); 
+                }                   
+                >>Resultado:    Jõao
+                                Gomes
+                                30
+                                Azul
+        </code>
+    </pre>
+
+    <h2>Métodos de objeto</h2>
+    <p>Métodos são ações que podem ser executadas em objetos.</p>
+    <pre>
+        <code>
+            EX: const pessoa2 = {
+                    Nome: "Marcelo",
+                    Sobrenome: "Silva",
+                    id: 5566,
+                    nomeCompleto: function() {
+                        return this.Nome + " " + this.Sobrenome;
+                    }
+                };
+                console.log(pessoa2.nomeCompleto()); >>Resultado: Marcelo Silva
+        </code>
+    </pre>
+    <h3>ToUpperCase():</h3>
+    <pre>
+        <code>
+            EX: const pessoa2 = {
+                    Nome: "Marcelo",
+                    Sobrenome: "Silva",
+                    id: 5566,
+                    nomeCompleto: function() {
+                        return this.Nome + " " + this.Sobrenome;
+                    }
+                };
+                pessoa2.letraGrande = function() {
+                    return (this.Nome+ " " + this.Sobrenome).toUpperCase();
+                };
+                console.log(pessoa2.letraGrande()) >>Resultado: MARCELO SILVA
+        </code>
+    </pre>
+
+    <h3>Object.values():</h3>
+    <p>Qualquer objeto JavaScript pode ser convertido em um array usando Object.values()</p>:
+    <pre>
+        <code>
+            EX: const pessoa = { Nome: "João", Sobrenome: "Gomes", Idade: 30, olhoCor: "Azul" }
+                const meuArray = Object.values(pessoa);
+                console.log(meuArray); >>Resultado: ['João', 'Gomes', 30, 'Azul']
+        </code>
+    </pre>
+
+    <h3>JSON.stringify():</h3>
+    <p>Qualquer objeto JavaScript pode ser stringificado (convertido em uma string) com a função JavaScript JSON.stringify()</p>
+    <pre>
+        <code>
+            EX: const pessoa = { Nome: "João", Sobrenome: "Gomes", Idade: 30, olhoCor: "Azul" }
+                const minhaString = JSON.stringify(pessoa);
+                console.log(minhaString); >>Resultado: {"Nome":"João","Sobrenome":"Gomes","Idade":30,"olhoCor":"Azul"}
+        </code>
+    </pre>
+
+    <h2>Como criar um conjunto:</h2>
+    <p>Um Conjunto JavaScript é uma coleção de valores únicos.</p>
+    <p>Você pode criar um Conjunto de JavaScript por: Passando um Array para new Set(). Crie um novo conjunto e use add() para adicionar valores</p>
+
+    <h3>new Set():</h3>
+    <pre>
+        <code>
+            EX: const letters = new Set(["a","b","c"]);
+                console.log(letters.size); >>Resultado: 3
+        </code>
+    </pre>
+
+    <h3>O método add():</h3>
+    <p>Adiciona novos valores.</p>
+    <pre>
+        <code>
+            EX: const letters = new Set(["a","b","c"]);
+                letters.add("d");
+                letters.add("e");
+                console.log(letters); >>Resultado: {'a', 'b', 'c', 'd', 'e'}
+        </code>
+    </pre>
+
+    <h3>método forEach():</h3>
+    <p>O método forEach() invoca uma função para cada elemento Set:</p>
+    <pre>
+        <code>
+            EX: const letters = new Set(["a","b","c"]);
+                let texto = "";
+                letters.forEach(function (value) {
+                    texto += value;
+                });
+                console.log(texto); >>Resultado:  abc
+        </code>
+    </pre>
+
+    <h3>O método entries():</h3>
+    <p>entries() retorna pares [valor, valor] em vez de pares [chave, valor].</p>
+    <pre>
+        <code>
+            EX: const myIterator = letters.entries();
+                const letters = new Set(["a","b","c"]);
+                let texto = "";
+                for (const entry of myIterator) {
+                    console.log(texto2 += entry);
+                }
+                >>Resultado:    a,ab,bc,c
+        </code>
+    </pre>
+    
+    <script src="script.js"></script>
+</body>
+</html>

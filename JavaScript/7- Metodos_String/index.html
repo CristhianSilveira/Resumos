@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 7</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../6- Metodos_Numericos/index.html">Voltar Para Metodos Númericos</a>
+    <a id="linkpos" href="../8- Metodos_Array/index.html">Ir Para Métodos Array</a>
+
+    <h1>Metódos String:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>Concatenação (+)</h2>
+    <h3>Com o sinal de (+)</h3>
+    <pre>
+        <code>
+            const minhaString = "Olá,"
+            const concatena = minhaString + " Como você está?";
+            console.log(concatena); >>Resultado: Olá, Como você está?
+        </code>
+    </pre>
+
+    <h3>Concat():</h3>
+    <p>concat()junta duas ou mais strings:</p>
+    <pre>
+        <code>
+        EX: let text1 = "Olá";
+            let text2 = "Mundo!";
+            let text3 = text1.concat(" ", text2); >>Resultado: Olá Mundo!
+        </code>
+    </pre>
+
+    <h2>Interpolação ( `${}` )</h2>
+    <pre>
+        <code>
+            const minhaString2 = "Olá João,"
+            const interpola = `${minhaString2} Como você está?`;
+            console.log(interpola); >>Resultado: Olá João, Como você está?
+        </code>
+    </pre>
+
+    <h2>Comprimento de String</h2>
+    <h3>Length:</h3>
+    <pre>
+        <code>
+            let texto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            console.log(texto.length); >>Resultado: 26
+        </code>
+    </pre>
+
+    <h2>Extraindo Partes de Strings</h2>
+    <p>Existem 3 métodos para extrair uma parte de uma string.</p>
+
+    <h3>Slice():</h3>
+    <p>slice() extrai uma parte de uma string e retorna a parte extraída em uma nova string. O método leva 2 parâmetros: posição inicial e posição final.</p>
+    <pre>
+        <code>
+        EX: let text = "Apple, Banana, Kiwi"; 
+            let part = text.slice(7, 13);  >>Resultado: Banana
+        </code>
+    </pre>
+
+    <h3>Substring():</h3>
+    <p>substring() é semelhante a slice(). A diferença é que os valores inicial e final menores que 0 são tratados como 0 em substring</p>
+    <pre>
+        <code>
+            EX: let str = "Apple, Banana, Kiwi"; 
+            let part = str.substring(7, 13);  >>Resultado: Banana
+        </code>
+    </pre>
+
+    <h3>Substr():</h3>
+    <p>substr() é semelhante a slice(). A diferença é que o segundo parâmetro especifica o comprimento da parte extraída.</p>
+    <pre>
+        <code>
+            EX: let str = "Apple, Banana, Kiwi"; 
+            let part = str.substr(7, 6);  >>Resultado: Banana
+        </code>
+    </pre>
+
+    <h2>Substituindo o conteúdo da string:</h2>
+    <h3>Replace():</h3>
+    <p>O método replace() substitui um valor especificado por outro valor em uma string. Por padrão, substitui apenas a primeira correspondência e diferencia maiúsculas de minúsculas.</p>
+    <pre>
+        <code>
+        EX: let text = "Visite a Microsoft!"; 
+            let newText = text.replace("Microsoft", "W3Schools");  >>Resultado: Visite a W3Schools
+        </code>
+    </pre>
+
+    <h3>ReplaceAll():</h3>
+    <p>O método replaceAll() permite que você especifique uma expressão regular em vez de uma string a ser substituída.</p>
+    <pre>
+        <code>
+        EX: let text = "Eu amo gatos. Os Gatos são muitos fáceis de amar. Os Gatos são muitos populares." 
+        text = text.replaceAll("Gatos","Cães"); 
+        text = text.replaceAll("gatos","cachorros");  >>Resultado: Eu amo cachorros. Os Cães são muito fáceis de amar. Os Cães são muito populares.
+        </code>
+    </pre>
+
+    <h2>Convertendo para Maiúsculas e Minúsculas:</h2>
+    <h3>toUpperCase():</h3>
+    <p>Uma string é convertida para letras maiúsculas com toUpperCase().</p>
+    <pre>
+        <code>
+        EX: const texto = "Olá, Mundo!";
+            console.log(texto.toUpperCase()); >>Resultado: OLÁ, MUNDO!
+        </code>
+    </pre>
+
+    <h3>toLowerCase():</h3>
+    <p>Uma string é convertida em letras minúsculas com toLowerCase().</p>
+    <pre>
+        <code>
+        EX: const texto = "Tudo, Bem?";
+            console.log(texto.toLowerCase()); >>Resultado: tudo, bem?
+        </code>
+    </pre>
+
+    <h2>Remover espaços na String</h2>
+    <h3>trim():</h3>
+    <pre>
+        <code>
+        EX: let texto4 = "      Hello World!      ";
+            console.log(texto4.trim()); >>Resultado: Hello World!
+        </code>
+    </pre>
+    
+    <h3>trimStart():</h3>
+    <p>Remove espaços no ínicio da string</p>
+    <pre>
+        <code>
+        EX: let texto4 = "      Hello World!      ";
+            console.log(texto4.trim()); >>Resultado: Hello World!      
+        </code>
+    </pre>
+
+    <h3>trimEnd():</h3>
+    <p>Remove espaços no fim da string</p>
+    <pre>
+        <code>
+        EX: let texto4 = "      Hello World!      ";
+            console.log(texto4.trim()); >>Resultado:       Hello World!
+        </code>
+    </pre>
+
+    <h2>Extraindo caractere:</h2>
+    <h3>charAt ():</h3>
+    <p>O método charAt() retorna o caractere em um índice especificado (posição) em uma string.</p>
+    <pre>
+        <code>
+        EX: let texto = "Olá, Mundo"; 
+            let char = text.charAt(2);  >>Resultado: l
+        </code>
+    </pre>
+
+    <h3>charCodeAt ():</h3>
+    <p>O método charCodeAt() retorna o unicode do caractere em um índice especificado (posição) em uma string.</p>
+    <pre>
+        <code>
+        EX: let texto = "Olá, Mundo"; 
+            let char = text.charCodeAt(2);  >>Resultado: l08
+        </code>
+    </pre>
+
+    <h2>Métodos de Pesquisa de String:</h2>
+    <h3>indexOF():</h3>
+    <p>O método indexOf() retorna o índice (posição) da primeira ocorrência de uma string em uma string, não pode obter valores de pesquisa poderosos (expressões regulares).</p>
+    <pre>
+        <code>
+        EX: let text = "O rato roeu a roupa do rei de roma";
+            let index = text.indexOf("rato");  >>Resultado: 2
+        </code>
+    </pre>
+    
+    <h3>lastIndexOf():</h3>
+    <p>O método lastIndexOf() retorna o índice da última ocorrência de um texto especificado em uma string:</p>
+    <pre>
+        <code>
+        EX: let text = "O rato roeu a roupa do rei de roma, logo o rato morreu";
+            let index = text.indexOf("rato");  >>Resultado: 43
+        </code>
+    </pre>
+
+    <h3>search():</h3>
+    <p>O método search() procura uma string por uma string (ou uma expressão regular) e retorna a posição da correspondência, não pode receber um segundo argumento de posição inicial.</p>
+    <pre>
+        <code>
+        EX: let text = "O rato roeu a roupa do rei de roma, logo o rato morreu";
+            let search = text.search("rato");  >>Resultado: 2
+        </code>
+    </pre>
+    
+    <h3>includes():</h3>
+    <p>O método includes() retorna true se uma string contiver um valor especificado. Caso contrário, ele retorna false.</p>
+    <pre>
+        <code>
+        EX: let text = "O rato roeu a roupa do rei de roma, logo o rato morreu";
+            let include = text.includes("roeu");  >>Resultado: true
+        </code>
+    </pre>
+
+    <h3>startsWith():</h3>
+    <p>O método startsWith() retorna true se uma string começa com um valor especificado. Caso contrário retorna false:</p>
+    <pre>
+        <code>
+        EX: let text = "O rato roeu a roupa do rei de roma, logo o rato morreu";
+            let include = text.startsWith("O");  >>Resultado: true
+        </code>
+    </pre>
+
+    <h3>endsWith():</h3>
+    <p>O método endsWith() retorna true se uma string começa com um valor especificado. Caso contrário retorna false:</p>
+    <pre>
+        <code>
+        EX: let text = "O rato roeu a roupa do rei de roma, logo o rato morreu";
+            let include = text.endsWith("eu");  >>Resultado: true
+        </code>
+    </pre>
+
+    <h2>Modelos de String:</h2>
+    <h3>Sintaxe de Back-Tics:</h3>
+    <p>Literais template usam acentos graves (``) em vez de aspas ("") para definir uma string:</p>
+    <pre>
+        <code>
+        EX: let text = `Hello World!`;
+        </code>
+    </pre>
+
+    <h3>Aspas Dentro de Strings:</h3>
+    <p> Com template literals, você pode usar aspas simples e duplas dentro de uma string.</p>
+    <pre>
+        <code>
+        EX: let texto = `Ele costuma ser chamado de "Johnny"`;  >>Resultado: Ele costuma ser chamado de "Johnny"
+        </code>
+    </pre>
+
+    <h3>Substituições de variáveis:</h3>
+    <p>s literais de modelo permitem variáveis em strings.</p>
+    <pre>
+        <code>
+        EX: let Nome = "João"; 
+            let Sobrenome = "Gomes"; 
+            let texto = `Bem-Vindo ${Nome} ${Sobrenome}!`;  >>Resultado: Bem-vindo João Gomes!
+        </code>
+    </pre>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 15</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../14- Classes/index.html">Voltar Para Classes</a>
+    <a id="linkpos" href="../16- Async/index.html">Ir Para Async</a>
+
+    <h1>Maps e Set:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+    <p>Um mapa contém pares chave-valor onde as chaves podem ser qualquer tipo de dados. Um mapa lembra a ordem de inserção original das chaves.</p>
+
+    <h2>Como criar um mapa:</h2>
+    <p>Você pode criar um Mapa JavaScript por: Passando um Array para new Map() ou  Crie um mapa e use Map.set()</p>
+
+    <h3>Map():</h3>
+    <p>Você pode criar um Map passando um Array para o construtor new Map():</p>
+    <pre>
+        <code>
+            EX: const frutas = new Map([
+                    ["Maçãs", 500],
+                    ["Bananas", 300],
+                    ["Laranjas", 200]
+                ]);
+                console.log(frutas); >>Resultado: {'Maçãs' => 500, 'Bananas' => 300, 'Laranjas' => 200}
+        </code>
+    </pre>
+
+    <h3>set():</h3>
+    <p>Você pode adicionar elementos a um mapa com o método set():</p>
+    <pre>
+        <code>
+            EX: const frutas = new Map([
+                    ["Maçãs", 500],
+                    ["Bananas", 300],
+                    ["Laranjas", 200]
+                ]);
+                frutas.set("Uva", 100)
+                frutas.set("Melancia", 900)
+                console.log(frutas); >>Resultado: {'Maçãs' => 500, 'Bananas' => 300, 'Laranjas' => 200, 'Uva' => 100, 'Melancia' => 900}
+        </code>
+    </pre>
+
+    <h3>get():</h3>
+    <p>O método get() obtém o valor de uma chave em um Map:</p>
+    <pre>
+        <code>
+            EX: const frutas = new Map([
+                    ["Maçãs", 500],
+                    ["Bananas", 300],
+                    ["Laranjas", 200]
+                ]);
+                frutas.get(Bananas); >>Resultado: 300
+        </code>
+    </pre>
+
+    <h3>Tamanho do mapa:</h3>
+    <p>A propriedade size retorna o número de elementos em um Mapa:</p>
+    <pre>
+        <code>
+            EX: const frutas = new Map([
+                    ["Maçãs", 500],
+                    ["Bananas", 300],
+                    ["Laranjas", 200]
+                ]);
+                frutas.size; >>Resultado: 3
+        </code>
+    </pre>
+
+    <h3>Remover um elemento do mapa:</h3>
+    <p>O método delete() remove um elemento Map:</p>
+    <pre>
+        <code>
+            EX: const frutas = new Map([
+                    ["Maçãs", 500],
+                    ["Bananas", 300],
+                    ["Laranjas", 200]
+                ]);
+                frutas.remove(Bananas); >>Resultado: {'Maçãs' => 500, 'Laranjas' => 200}
+        </code>
+    </pre>
+
+    <h3>has():</h3>
+    <p>O método has() retorna verdadeiro se uma chave existir em um mapa:</p>
+    <pre>
+        <code>
+            EX: const frutas = new Map([
+                    ["Maçãs", 500],
+                    ["Bananas", 300],
+                    ["Laranjas", 200]
+                ]);
+                frutas.has(Laranjas); >>Resultado: true
+        </code>
+    </pre>
+
+    <h3>forEach():</h3>
+    <p>O método forEach() chama uma função para cada par chave/valor em um Mapa:</p>
+    <pre>
+        <code>
+            EX: const frutas = new Map([
+                    ["Maçãs", 500],
+                    ["Bananas", 300],
+                    ["Laranjas", 200]
+                ]);
+                let texto = "";
+                frutas.forEach (function(value, key) {
+                    texto += key + ' = ' + value + "; "
+                })
+                console.log(texto); >>Resultado: Maçãs = 500; Bananas = 300; Laranjas = 200;
+        </code>
+    </pre>
+
+    <h3>entries():</h3>
+    <p>O método entries() retorna um objeto iterador com a [chave, valores] em um Mapa:</p>
+    <pre>
+        <code>
+            EX: const frutas = new Map([
+                    ["Maçãs", 500],
+                    ["Bananas", 300],
+                    ["Laranjas", 200]
+                ]);
+                let texto = "";
+                for (const x of frutas.entries()) {
+                    text += x + " ";
+                }
+                console.log(text); >>Resultado: Maçãs,500 Bananas,300 Laranjas,200 
+        </code>
+    </pre>
+
+    <h2>Sets:</h2>
+    <p>Um sets JavaScript é uma coleção de valores únicos. Cada valor só pode ocorrer uma vez em um conjunto(sets).</p>
+    <p>Você pode criar um Conjunto de JavaScript por: Passando um Array para new Set() ou Crie um novo conjunto e use add() para adicionar valores</p>
+
+    <h3>new Set():</h3>
+    <p>Você pode criar um set passando um Array para o construtor new Set():</p>
+    <pre>
+        <code>
+            EX: const letras = new Set(["a", "b", "c"]);
+                console.log(letras); >>Resultado: {'a', 'b', 'c'} 
+        </code>
+    </pre>
+
+    <h3>add()</h3>
+    <p>O método add() adiciona elementos no conjunto</p>
+    <pre>
+        <code>
+            EX: const letras = new Set(["a", "b", "c"]);
+                letras.add("d")
+                letras.add("e")
+                console.log(letras); >>Resultado: {'a', 'b', 'c', 'd', 'e'} 
+        </code>
+    </pre>
+
+    <h3>forEach():</h3>
+    <p>O método forEach() invoca (chama) uma função para cada elemento Set:</p>
+    <pre>
+        <code>
+            EX: const letras = new Set(["a", "b", "c"]);
+                let texto = "";
+                letras.forEach(function (valor) {
+                    texto += valor + ",";
+                })
+                console.log(texto); >>Resultado: a,b,c,
+        </code>
+    </pre>
+
+    <h3>values():</h3>
+    <p>O método values() retorna um novo objeto iterador contendo todos os valores em um Set:</p>
+    <pre>
+        <code>
+            EX: const letras = new Set(["a", "b", "c"]);
+                let texto = "";
+                for (const x of letras.values()) {
+                    texto += x;
+                  }
+                  console.log(texto); >>Resultado: abc
+        </code>
+    </pre>
+
+    <script src="script.js"></script>
+</body>
+</html>

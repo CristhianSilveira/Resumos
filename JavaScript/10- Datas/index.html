@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 10</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../9- Métodos_Objeto/index.html">Voltar Para Metodos Objetos</a>
+    <a id="linkpos" href="../11- Funções/index.html">Ir Para Funções</a>
+
+    <h1>Datas:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2> Criando Objetos de Data:</h2>
+    <p>Os objetos de data são criados com o construtor new Date(). Existem 9 maneiras de criar um novo objeto de data:</p>
+    <p><strong>OBS: JavaScript conta meses de 0 a 11 (Janeiro = 0 e Dezembro = 11)</strong></p>
+
+    <h3>new date():</h3>
+    <p>new Date() cria um objeto de data com a data e hora atuais.  </p>
+    <pre>
+        <code>
+            EX: const d = new Date();
+        </code>
+    </pre>
+
+    <h3>New date (date string):</h3>
+    <p> new Date(date string) cria um objeto de data fixo a partir de uma string de data.</p>
+    <pre>
+        <code>
+            EX: const d = new Date("October 13, 2023 11:13:00");  
+                >>Resultado: Fri Oct 13 2023 11:13:00 GMT-0300 (Horário Padrão de Brasília)
+        </code>
+    </pre>
+
+    <h3>New date (ano, mês, ...):</h3>
+    <p>new Date(year, month, ...) cria um objeto de data com data e hora com 7 números especificando ano, mês, dia, hora, minuto, segundo e milissegundo (nessa ordem).</p>
+    <pre>
+        <code>
+            EX: const d = new Date(2022, 11, 24, 10, 35, 30, 0); 
+                >>Resultado: Seg, 24 de dezembro de 2022 10:35:30 GMT-0200 (Horário de Verão de Brasília)   
+                OBS: JavaScript conta meses de 0 a 11 (Janeiro = 0 e Dezembro = 11)
+        </code>
+    </pre>
+
+    <h3>Formato legível de Data:</h3>
+    <p> O método toDateString() converte uma data em um formato mais legível.</p>
+    <pre>
+        <code>
+            EX: const d = new Date(); 
+                d.toDateString(); >>Resultado: Fri Aug 11 2023
+        </code>
+    </pre>
+
+    <h2>Formatos de Data:</h2>
+    <p>Existem geralmente 3 tipos de formatos de entrada de data JavaScript: Data ISO, data curta e data longa</p>
+    <h3> Datas ISO:</h3>
+    <p>ISO 8601 é o padrão internacional para a representação de datas e horas. A sintaxe ISO 8601 (AAAA-MM-DD) também é o formato de data JavaScript preferido.</p>
+    <pre>
+        <code>
+            EX: const d = new Date("2015-03-24");  
+                >>Resultado: Terça-feira, 24 de março de 2015 21:00:00 GMT-0300 (Horário Padrão de Brasília)
+        </code>
+    </pre>
+
+    <h3>Datas curtas:</h3>
+    <p>Datas curtas são escritas com uma sintaxe "MM/DD/AAAA".</p>
+    <pre>
+        <code>
+            EX: const d = new Date("03/25/2015"); 
+                >>Resultado: Quarta-feira, 25 de março de 2015 00:00:00 GMT-0300 (Horário Padrão de Brasília)
+        </code>
+    </pre>
+
+    <h3>Datas longas:</h3>
+    <p>Datas longas geralmente são escritas com uma sintaxe "MMM/DD/YYYY".</p>
+    <pre>
+        <code>
+            EX: const d = new Date("Mar 25 2015");  
+                >>Resultado: Quarta-feira, 25 de março de 2015 00:00:00 GMT-0300 (Horário Padrão de Brasília)  
+        </code>
+    </pre>
+
+    <h3>Datas de análise:</h3>
+    <p>Se você tiver uma string de data válida, poderá usar o Date.parse()método para convertê-la em milissegundos.</p>
+    <pre>
+        <code>
+        EX: const dat = Date.parse("August 11, 2023");
+            console.log(dat); >>Resultado: 1691722800000
+        </code>
+    </pre>
+
+    <h2>Métodos de obtenção de data:</h2>
+    <p>Os métodos get abaixo retornam a hora local .
+    </p>
+    <h3>getFullYear():</h3>
+    <p>O método getFullYear() retorna o ano atual do sistema.</p>
+    <pre>
+        <code>
+            EX: const d = new Date(); 
+                d.getFullYear();  >>Resultado: 2023(no meu caso)
+        </code>
+    </pre>
+    
+    <h3>getMonth():</h3>
+    <p>O método getMonth() retorna o mês atual do sistema com um número entre (0-11).</p>
+    <pre>
+        <code>
+            EX: const d = new Date(); 
+                d.getMonth() + 1;  >>Resultado: 05 (no meu caso)
+                OBS: Em JavaScript, janeiro é o mês número 0, fevereiro é o número 1 e  dezembro é o mês número 11.   
+        </code>
+    </pre>
+
+    <h3>getDate():</h3>
+    <p> O método getDate() retorna o dia atual do sistema com um número (1-31).</p>
+    <pre>
+        <code>
+            EX: const d = new Date(); 
+                d.getDate();  >>Resultado: 14 (no meu caso)
+        </code>
+    </pre>
+
+    <h3>getDay():</h3>
+    <p>O método getDay() retorna o dia da semana atual do sistema com um número (0-6).</p>
+    <pre>
+        <code>
+            EX: const d = new Date(); 
+                d.getDay(); >>Resultado 1 (segunda no meu caso)
+                OBS: Em JavaScript, o primeiro dia da semana (dia 0) é domingo e dia 6 é sábado.
+        </code>
+    </pre>
+
+    <h3>getHours():</h3>
+    <p> O método getHours() retorna a hora atual do sistema com um número (0-23).</p>
+    <pre>
+        <code>
+            EX: const d = new Date(); 
+                d.getHours(); >>Resultado: 12 (no meu caso)
+        </code>
+    </pre>
+
+    <h3>getMinutes():</h3>
+    <p>O método getMinutes() retorna os minutos atual do sistema com um número (0-59).</p>
+    <pre>
+        <code>
+            EX: const d = new Date(); 
+                d.getMinutes();  >>Resultado: 35 (no meu caso)
+        </code>
+    </pre>
+
+    <h3>getSeconds():</h3>
+    <p>O método getSeconds() retorna os segundos atual do sistema com um número (0-59).</p>
+    <pre>
+        <code>
+            EX: const d = new Date(); 
+                d.getSeconds(); >>Resultado: 14 (no meu caso)
+        </code>
+    </pre>
+
+    <h3>getMilliseconds():</h3>
+    <p> O método getMilliseconds() retorna os milissegundos de uma data como um número</p>
+    <pre>
+        <code>
+            EX: const d = new Date(); 
+                d.getMilliseconds(); >>Resultado: 981 (no meu caso)
+        </code>
+    </pre>
+
+    <h2>Métodos de definição de data:</h2>
+    <h3>setFullYear():</h3>
+    <p>O método setFullYear() define o ano de um objeto de data.</p>
+    <pre>
+        <code>
+            EX: const completo = new Date();
+                completo.setFullYear(2023, 6, 14);
+                console.log(completo); >>Resultado: Mon Mai 14 2023 13:32:22 GMT-0300 (Horário Padrão de Brasília)
+        </code>
+    </pre>
+
+    <h3>setMonth():</h3>
+    <p>O método setMonth() define o mês de um objeto de data (0-11)</p>
+    <pre>
+        <code>
+            EX: const mes = new Date();
+                mes.setMonth(7);
+                console.log(mes); >>Resultado: Mon Jun 14 2023 13:33:02 GMT-0300 (Horário Padrão de Brasília)
+        </code>
+    </pre>
+
+    <h3>setDate():</h3>
+    <p>O método setDate() define o dia de um objeto de data (1-31)</p>
+    <pre>
+        <code>
+            EX: const date = new Date();
+                date.setDate(15);
+                console.log(date); >>Resultado: Mon Mai 15 2023 13:34:43 GMT-0300 (Horário Padrão de Brasília)
+        </code>
+    </pre>
+
+    <h3>setHours():</h3>
+    <p>O método setHours() define as horas de um objeto de data (0-23)</p>
+    <pre>
+        <code>
+            EX: const hora = new Date();
+                hora.setHours(13);
+                console.log(hora); >>Resultado: Mon Mai 14 2023 13:35:20 GMT-0300 (Horário Padrão de Brasília)
+        </code>
+    </pre>
+
+    <h3>setMinutes():</h3>
+    <p>O método setMinutes() define os minutos de um objeto de data (0-59)</p>
+    <pre>
+        <code>
+            EX: const minuto = new Date();
+                minuto.setMinutes(36);
+                console.log(minuto);  >>Resultado: Mon Mai 14 2023 12:36:54 GMT-0300 (Horário Padrão de Brasília)
+        </code>
+    </pre>
+
+    <h3>setSeconds():</h3>
+    <p>O método setSeconds() define os segundos de um objeto de data (0-59)</p>
+    <pre>
+        <code>
+            EX: const segundos = new Date();
+                segundos.setSeconds(30);
+                console.log(segundos); >>Resultado: Mon Mai 14 2023 12:37:30 GMT-0300 (Horário Padrão de Brasília)
+        </code>
+    </pre>
+ 
+    
+    <script src="script.js"></script>
+</body>
+</html>

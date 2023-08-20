@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 2</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../1- Introdução/index.html">Voltar Para Introdução</a>
+    <a id="linkpos" href="../3- Tipos_De_Dados/index.html">Ir Para Tipo De Dados</a>
+
+    <h1>Variáveis JavaScript:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>Identificadores JavaScript:</h2>
+    <p>Todas as variáveis JavaScript devem ser identificadas com nomes exclusivos. Esses nomes exclusivos são chamados de identificadores. Os identificadores podem ser nomes curtos (como x e y) ou nomes mais descritivos (idade, valor, totalVolume). As regras gerais para a construção de nomes para variáveis (identificadores exclusivos) são: Os nomes podem conter letras, dígitos, sublinhados e cifrões. Os nomes devem começar com uma letra. Os nomes também podem começar com $ e _ . Os nomes diferenciam maiúsculas de minúsculas (y e Y são variáveis diferentes). Palavras reservadas (como palavras-chave JavaScript) não podem ser usadas como nomes.</p>
+
+    <h2>Let:</h2>
+    <p>Variáveis definidas com let não podem ser redeclaradas. As variáveis definidas com let devem ser declaradas antes do uso. Variáveis definidas com let têm escopo de bloco .</p>
+    <pre>
+    <code>
+        let nomeCompleto = "João Gomes";
+    X   let nomeCompleto = "Matheus Santos"; -> Não pode ser redeclarada
+        {
+            let nomeCompleto = "Matheus Santos"; -> Variáveis definidas com let têm escopo de bloco
+            console.log(nomeCompleto); >>Resultado: Matheus Santos
+        }
+        console.log(nomeCompleto); >>Resultado: João Gomes
+        
+        nomeCompleto = "Carlos Alberto"; ->  É um valor que pode ser alterado ao longo do programa
+        console.log(nomeCompleto); >>Resultado: Carlos Alberto
+    </code>
+    </pre>
+    
+    <h2>Const:</h2>
+    <p>Variáveis definidas com const não podem ser Redeclaradas. As variáveis definidas com const não podem ser reatribuídas. Variáveis definidas com const têm escopo de bloco. Sempre declare uma variável com const quando souber que o valor não deve ser alterado.</p>
+    <pre>
+    <code>
+        const numero = 10;
+    X   const numero = 15; -> Não pode ser redeclarada
+        {
+        const numero = 15 ; -> Variáveis definidas com const têm escopo de bloco
+        console.log(numero); >>Resultado: 15
+        }
+        console.log(numero); >>Resultado: 10
+
+    X   numero = 30 -> O valor não muda ao longo do programa
+    </code>
+    </pre>
+
+    <script src="script.js"></script>
+</body>
+</html>

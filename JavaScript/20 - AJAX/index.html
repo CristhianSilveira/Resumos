@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 20</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../19 - JSON/index.html">Voltar Para JSON</a>
+    <a id="linkpos" href="../21- WEB_APIs/index.html">Ir Para WEB APIs</a>
+
+    <h1>AJAX:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>AJAX:</h2>
+    <p>AJAX Significa = Asynchronous JavaScript And XML (JavaScript assincrono e XML).</p>
+    <p>AJAX não é uma linguagem de programação.</p>
+    <p>AJAX usa apenas uma combinação de: Um objeto embutido no navegador XMLHttpRequest(para solicitar dados de um servidor web); JavaScript e HTML DOM (para exibir ou usar os dados)</p>
+    <p>O AJAX permite que as páginas da Web sejam atualizadas de forma assíncrona, trocando dados com um servidor da Web nos bastidores. Isso significa que é possível atualizar partes de uma página da Web sem recarregar a página inteira.</p>
+
+    <h2>O objeto XMLHttpRequest:</h2>
+    <p>O objeto XMLHttpRequest pode ser usado para trocar dados com um servidor web nos bastidores. Isso significa que é possível atualizar partes de uma página da Web sem recarregar a página inteira.</p>
+    <p>Para enviar uma solicitação a um servidor, você pode usar os métodos open() e send() do objeto XMLHttpRequest:</p>
+
+    <h3>onload():</h3>
+    <p>Com o objeto XMLHttpRequest você pode definir uma função de callback a ser executada quando a requisição receber uma resposta. A função é definida na propriedade onload do objeto XMLHttpRequest:</p>
+    <pre>
+        <code>
+            EX: xhttp.onload = function() {
+                    console.log(this.responseText);
+                }
+                xhttp.open("GET", "ajax_info.txt");
+                .send();
+                >>Resultado: Retorna o arquivo ajax_info.txt
+        </code>
+    </pre>
+
+    <h3>onreadystatechange:</h3>
+    <p>A propriedade readyState contém o status do XMLHttpRequest. A propriedade onreadystatechange define uma função de retorno de chamada a ser executada quando o readyState for alterado. A propriedade status e as propriedades statusText contêm o status do objeto XMLHttpRequest.</p>
+    <pre>
+        <code>
+            EX: function loadDoc() {
+                    const xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            console.log(this.responseText);
+                        }
+                    };
+                    xhttp.open("GET", "ajax_info.txt");
+                    xhttp.send();
+                }
+                >>Resultado: Retorna o arquivo ajax_info.txt
+        </code>
+    </pre>
+
+    <h2>Enviar solicitação para um servidor:</h2>
+    <p>Para enviar uma solicitação a um servidor, usamos os métodos open() e send() do objeto XMLHttpRequest:</p>
+    <p>Sintaxe: open(method, url, async) method: o tipo de requisição: GET ou POSt; url: a localização do servidor (arquivo); async: true (asynchronous) ou false (synchronous)</p>
+    <pre>
+        <code>
+            EX: xhttp.open("GET", "ajax_info.txt", true);
+                xhttp.send();
+        </code>
+    </pre>
+
+    <h3>A URL:</h3>
+    <p>O arquivo pode ser qualquer tipo de arquivo, como .txt e .xml, ou arquivos de script de servidor como .asp e .php (que podem executar ações no servidor antes de enviar a resposta de volta).</p>
+    
+    <h3>Assíncrono - true ou false?:</h3>
+    <p>As solicitações do servidor devem ser enviadas de forma assíncrona. XMLHttpRequest síncrono (async = false) não é recomendado porque o JavaScript interromperá a execução até que a resposta do servidor esteja pronta. Se o servidor estiver ocupado ou lento, o aplicativo irá travar ou parar.</p>
+
+    <h3>GET ou POST?:</h3>
+    <p>GET é mais simples e rápido que POST, e pode ser usado na maioria dos casos.</p>
+    <p>No entanto, sempre use solicitações POST quando: Um arquivo em cache não é uma opção (atualize um arquivo ou banco de dados no servidor); Enviando uma grande quantidade de dados para o servidor (POST não tem limitações de tamanho); Enviando a entrada do usuário (que pode conter caracteres desconhecidos), o POST é mais robusto e seguro do que o GET.</p>
+
+    <h2>Resposta do servidor:</h2>
+    <h3>A propriedade responseText:</h3>
+    <p>A propriedade responseText retorna a resposta do servidor como uma string JavaScript e você pode usá-la adequadamente:</p>
+    <pre>
+        <code>
+            EX: document.getElementById("demo").innerHTML = xhttp.responseText;
+            >>Resultado: Retorna o arquivo ajax_info.txt
+        </code>
+    </pre>
+
+    <h3>A propriedade responseXML:</h3>
+    <p>A propriedade responseXML retorna a resposta do servidor como um objeto XML DOM.</p>
+    <pre>
+        <code>
+            EX: const xmlDoc = xhttp.responseXML;
+                const x = xmlDoc.getElementsByTagName("ARTIST");
+
+                let txt = "";
+                for (let i = 0; i < x.length; i++) {
+                    txt += x[i].childNodes[0].nodeValue + " br>";
+                }
+                document.getElementById("demo").innerHTML = txt;
+                xhttp.open("GET", "cd_catalog.xml");
+                xhttp.send();
+                >>Resultado: Faz um loop na tag "ARTIST" do arquivo cd_catalog.xml e retorna na página HTML.
+        </code>
+    </pre>
+
+    <h3>O método getAllResponseHeaders():</h3>
+    <p>O método getAllResponseHeaders() retorna todas as informações de cabeçalho da resposta do servidor.</p>
+    <pre>
+        <code>
+            EX: const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    document.getElementById("demo").innerHTML =
+                    this.getAllResponseHeaders();
+                }
+                xhttp.open("GET", "ajax_info.txt");
+                xhttp.send();
+        </code>
+    </pre>
+
+    <h3>O método getResponseHeader():</h3>
+    <p>O método getResponseHeader() retorna informações de cabeçalho específicas da resposta do servidor.</p>
+    <pre>
+        <code>
+            EX: const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    document.getElementById("demo").innerHTML =
+                    this.getResponseHeader("Last-Modified");
+                }
+                xhttp.open("GET", "ajax_info.txt");
+                xhttp.send();
+        </code>
+    </pre>
+
+    <h2>Arquivo XML AJAX:</h2>
+    <p>AJAX pode ser usado para comunicação interativa com um arquivo XML.</p>
+
+    <h2>Arquivo PHP AJAX:</h2>
+    <p>AJAX é usado para criar aplicativos mais interativos.</p>
+
+    <h2>Arquivo de Banco de Dados AJAX:</h2>
+    <p>AJAX pode ser usado para comunicação interativa com um banco de dados.</p>
+
+    <script src="script.js"></script>
+</body>
+</html>

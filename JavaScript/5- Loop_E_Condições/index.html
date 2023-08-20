@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 5</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../4- Operadores/index.html">Voltar Para Operadores</a>
+    <a id="linkpos" href="../6- Metodos_Numericos/index.html">Ir Para Métodos Númericos </a>
+
+    <h1>Estrutura Condicional e de Repetição:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>Estrutura Condicional:</h2>
+    <h2>If:</h2>  
+    <p>Use a instrução if para especificar um bloco de código JavaScript a ser executado se uma condição for verdadeira. Sintaxe: if(condição)  {  bloco de instrução  }</p>
+    <pre>
+    <code>
+    EX: if (hora < 18) {
+            "Bom Dia";
+        } 
+        >>Resultado: Bom Dia
+    </code>
+    </pre>
+
+    <h2>Else:</h2>
+    <p>Use a instrução else para especificar um bloco de código a ser executado se a condição for falsa. Sintaxe: if (condição)  { bloco de instrução  }else  { bloco de instrução  }</p>
+    <pre>
+    <code>
+    EX: if (hora < 18) {
+            "Bom Dia";
+        } else {
+            "Boa Noite";
+        } 
+        >>Resultado: Boa Noite
+    </code>
+    </pre>
+
+    <h2>Else if:</h2>
+    <p>Use a instrução else if para especificar uma nova condição se a primeira condição for falsa. Sintaxe: if (condição1)  {executa, se a condição 1 for verdadeira  }else if (condição2)  {executa, se a condição1 for falsa e a condição2 for verdadeira  }else {executa, se a condição1 e condição2 forem falsas }</p>
+    <pre>
+    <code>
+    EX: if (hora < 12) {
+            "Bom dia";
+        } else if (hora < 18) {
+            "Boa Tarde";
+        } else {
+            "Boa noite";
+        }
+        >>Resultado: Boa Tarde
+    </code>
+    </pre>
+
+    <h2>Estrutura De Repetição:</h2>
+    <h2>O Loop For:</h2>
+    <p>A instrução for(para) cria um loop com 3 expressões opcionais. Sintaxe: for (contador; condição; incremento) {  Bloco de execução  }</p>
+    <pre>
+    <code> 
+    EX: for (let i = 0; i < 5; i++) {
+            console.log("O número é: " + i)
+        } 
+        >>Resultado: O número é: 0
+        >>Resultado: O número é: 1
+        >>Resultado: O número é: 2
+        >>Resultado: O número é: 3
+        >>Resultado: O número é: 4
+    </code>
+    </pre>
+
+    <h2>O Loop For In:</h2>
+    <p>A instrução for in percorre as propriedades de um objeto. Sintaxe: for (chave in objeto) {  Bloco de execução  }</p>
+    <pre>
+    <code>
+    EX: const pessoa = {
+            Nome:"João", 
+            Sobrenome:"Gomes", 
+            idade:25
+        }
+        let texto = ""; 
+        for (let x in pessoa) { 
+            texto = texto + pessoa[x];
+        }
+        >>Resultado: João
+        >>Resultado: JoãoGomes
+        >>Resultado: JoãoGomes25
+    </code>
+    </pre>
+  
+    <h2>O Loop For Of:</h2>
+    <p>A instrução JavaScript for of percorre os valores de um objeto iterável. Sintaxe: for (variável of iterable) {  Bloco de execução  }</p>
+    <pre>
+    <code>
+    EX: const carros = ["BMW", "Volvo", "Mini"]; 
+        let texto = ""; 
+        for (let x of carros) {
+            texto = texto + x;
+        }
+        >>Resultado: BMW
+        >>Resultado: BMWVolvo
+        >>Resultado: BMWVolvoMini
+    </code>
+    </pre>
+
+    <h2>O Loop While:</h2>
+    <p> O loop while(enquanto) percorre um bloco de código, desde que uma condição especificada seja verdadeira. Sintaxe: while (condição) {  Bloco de execução  }</p>
+    <pre>
+    <code>
+    EX: let k = 0;
+        while (k <= 5) {
+            console.log("O número é: " + k); 
+            i++; 
+        }
+        >>Resultado: O número é: 0
+        >>Resultado: O número é: 1
+        >>Resultado: O número é: 2
+        >>Resultado: O número é: 3
+        >>Resultado: O número é: 4
+        >>Resultado: O número é: 5
+    </code>
+    </pre>
+
+    <h2>O Loop do while:</h2>
+    <p>Este loop executará o bloco de código uma vez, antes de verificar se a condição é verdadeira, então repetirá o loop enquanto a condição for verdadeira. Sintaxe: do {  Bloco de execução  }  while (condição);</p>
+    <pre>
+    <code>
+    EX: let j = 5;
+        do { 
+            console.log("O número é: " + j); 
+            j--; 
+        } while (j > 0);
+        >>Resultado: O número é: 5
+        >>Resultado: O número é: 4
+        >>Resultado: O número é: 3
+        >>Resultado: O número é: 2
+        >>Resultado: O número é: 1
+    </code>
+    </pre>
+
+    <h2>Switch Case:</h2>
+    <p>A instrução switch é usada para executar diferentes ações com base em diferentes condições. Sintaxe: switch(expressão) {   case x:  bloco de instrução  break;  case y:  bloco de instrução  break;  default: bloco de instrução  }  </p>
+    <pre>
+    <code>
+    EX: switch (new Date().getDay()) {
+        case 0:
+            dia = "Domingo";
+            break;
+        case 1:
+            dia = "Segunda-Feira";
+            break;
+        case 2:
+            dia = "Terça-Feira";
+            break;
+        case 3:
+            dia = "Quarta-Feira";
+            break;
+        case 4:
+            dia = "Quinta-Feira";
+            break;
+        case 5:
+            dia = "Sexta-Feira";
+            break;
+        case 6:
+            dia = "Sábado";
+        default:
+            dia = "Ansioso para o fim de semana";
+        }
+    </code>
+    </pre>
+    <script src="script.js"></script>
+</body>
+</html>

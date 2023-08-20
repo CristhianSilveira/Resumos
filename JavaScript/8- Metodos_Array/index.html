@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 8</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../7- Metodos_String/index.html">Voltar Para Metodos String</a>
+    <a id="linkpos" href="../9- Métodos_Objeto/index.html">Ir Para Métodos Objeto</a>
+
+    <h1>Metódos Array:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>Acessando elementos da matriz:</h2>
+    <h3>Índice:</h3>
+    <p>Você acessa um elemento de array referindo-se ao número do índice. OBS: os índices de matriz começam com 0. [0] é o primeiro elemento. [1] é o segundo elemento.</p>
+    <pre>
+        <code>
+        EX: const carros = ["Onix", "Renault", "BMW"]; 
+            let car = carros[1];  >>Resultado: Renault
+        </code>
+    </pre>
+
+    <h3>Acessando o primeiro elemento da matriz:</h3>
+    <p>Basta colocar o nome da variável na posição [0]</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Banana", "Laranja", "Maçã", "Manga"]; 
+            let frutas = frutas[0];  >>Resultado: Banana
+        </code>
+    </pre>
+
+
+    <h3>Acessando o último elemento da matriz: </h3>
+    <p>Basta colocar o nome da variável + [nome da variável.length -1]</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Banana", "Laranja", "Maçã", "Manga"]; 
+        let frutas = frutas[frutas.length - 1];  >>Resultado: Manga
+        </code>
+    </pre>
+
+    <h2>Métodos de Array:</h2>
+    <h3>toString():</h3>
+    <p>O método toString() converte uma matriz em uma string de valores de matriz (separados por vírgula).</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Banana", "Laranja", "Maçã", "Manga"]; 
+            console.log(frutas.toString());  >>Resultado: Banana,Laranja,Maçã,Manga
+        </code>
+    </pre>
+
+    <h3>join():</h3>
+    <p>O método join() também une todos os elementos do array em uma string.</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Banana", "Laranja", "Maçã", "Manga"]; 
+            console.log(frutas.join("- "));  >>Resultado: Banana- Laranja- Maçã- Manga
+        </code>
+    </pre>
+
+    <h3>length():</h3>
+    <p>A propriedade length de uma matriz retorna o comprimento de uma matriz (o número de elementos da matriz).</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Banana", "Laranja", "Maçã", "Manga"]; 
+            let comp = frutas.length;  >>Resultado: 4
+        </code>
+    </pre>
+
+    <h3>pop():</h3>
+    <p>O método pop() remove o último elemento de uma matriz.</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Banana", "Laranja", "Maçã", "Manga"]; 
+            fruits.pop()  >>Resultado: Banana,Laranja,Maçã
+        </code>
+    </pre>
+
+    <h3>push():</h3>
+    <p>O método push() adiciona um novo elemento a um array (no final).</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Banana", "Laranja", "Maçã", "Manga"]; 
+        frutas.push("Kiwi");  >>Resultado: Banana, Laranja, Maçã, Manga, Kiwi
+        </code>
+    </pre>
+
+    <h3>shift():</h3>
+    <p>O método shift() remove o primeiro elemento de um array.</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Banana", "Laranja", "Maçã", "Manga"]; 
+        frutas.shift();  >>Resultado: Laranja, Maçã, Manga
+        </code>
+    </pre>
+
+    <h3>unshift():</h3>
+    <p>O método unshift() adiciona um novo elemento no array (no inicio)</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Banana", "Laranja", "Maçã", "Manga"]; 
+        frutas.unshift("Limão");  >>Resultado: Limão, Banana, Laranja, Maçã, Manga
+        </code>
+    </pre>
+
+    <h3>concat():</h3>
+    <p>O método concat() cria um novo array mesclando (concatenando) arrays existentes:</p>
+    <pre>
+        <code>
+        EX: const Meninas = ["Carolina", "Leticia"];
+            const Meninos = ["Eduardo", "Tomas", "Luan"];
+            const Criancas = Meninas.concat(Meninos) >>Resultado: Carolina, Leticia, Eduardo, Tomas, Luan;
+        </code>
+    </pre>
+    
+    <h3>splice():</h3>
+    <p>O método splice() pode ser usado para adicionar novos itens a um array. OBS <strong>(O primeiro parâmetro define a posição onde novos elementos devem ser adicionados. O segundo parâmetro define quantos elementos devem ser removidos)</strong>    </p>
+    <pre>
+        <code>
+        EX: const frutas = ["Banana", "Laranja", "Maçã", "Manga"];
+            frutas.splice(2, 0, "Limão", "Kiwi");   >>Resultado: Banana, Laranja, Limão, Kiwi, Maçã, Manga
+        </code>
+    </pre>
+
+    <h3>slice():</h3>
+    <p>O método slice() divide um pedaço de uma matriz em uma nova matriz.</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Banana", "Laranja", "Maçã", "Manga"];
+            frutas.slice(2);  >>Resultado: Maçã, Manga
+        </code>
+    </pre>
+
+    <h2>Ordenação de Matriz:</h2>
+    <h3>sort():</h3>
+    <p>O método sort() classifica uma matriz em ordem alfabética.</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Banana", "Laranja", "Maçã", "Manga"]; 
+            frutas.sort();  >>Resultado: Banana, Laranja, Manga, Maçã
+        </code>
+    </pre>
+
+    <h3>reverse():</h3>
+    <p>O método reverse() inverte os elementos em uma matriz.</p>
+    <pre>
+        <code>
+        EX: let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        console.log(numeros.reverse()); >>Resultado: 9, 8, 7, 6, 5, 4, 3, 2, 1
+
+        </code>
+    </pre>
+
+    <h3>Math.max():</h3>
+    <p>Usando Math.max() em uma matriz: Você pode usar Math.max.apply para encontrar o número mais alto em uma matriz.</p>
+    <pre>
+        <code>
+        EX: let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            function maiorNumero(num) {
+                return Math.max.apply(null, num);
+            };
+            console.log(maiorNumero(numeros)); >>Resultado: 9
+        </code>
+    </pre>
+
+    <h3>Math.min():</h3>
+    <p>Usando Math.min() em uma matriz: Você pode usar Math.min.apply para encontrar o menor número em uma matriz.</p>
+    <pre>
+        <code>
+        EX: let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            function menorNumero(num) {
+                return Math.min.apply(null, num);
+            };
+            console.log(menorNumero(numeros)); >>Resultado: 1
+        </code>
+    </pre>
+
+    <h3>random()</h3>
+    <p>O método random() classifica uma matriz em ordem aleatória.</p>
+    <pre>
+        <code>
+        EX: let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        aleatorioNumero = numeros.sort(function () { return 0.5 - Math.random() });
+        console.log(aleatorioNumero); >>Resultado: ...
+        </code>
+    </pre>
+
+    <h2>Métodos de iteração do array:</h2>
+
+    <h3>forEach():</h3>
+    <p>O método forEach() chama uma função (uma função de retorno de chamada) uma vez para cada elemento da matriz.</p>
+    <pre>
+        <code>
+        EX: let animais = ["Cachorro", "Gato", "Porco", "Elefante", "Sapo"];
+            iteraArray = animais.forEach(function (animal) {
+            console.log(animal);
+            });
+            >>Resultado:    Cachorro
+                            Gato
+                            Porco
+                            Elefante
+                            Sapo
+        
+        </code>
+    </pre>
+
+    <h3>map():</h3>
+    <p>O método map() cria uma nova matriz executando uma função em cada elemento da matriz.</p>
+    <pre>
+        <code>
+        EX: const numeros = [45, 4, 9, 16, 25];
+            const numeros2 = numeros.map(minhaFuncao);
+            function minhaFuncao(valor) {
+                return valor * 2;
+            };
+            console.log(numeros2); >>Resultado: 90, 8, 18, 32, 50
+        </code>
+    </pre>
+
+    <h3>filter():</h3>
+    <p>O método filter() cria uma nova matriz com elementos de matriz que passam em um teste.</p>
+    <pre>
+        <code>
+        EX: const numeros = [45, 4, 9, 16, 25];
+            const maior18 = numeros.filter(minhaFuncao);
+            function minhaFuncao(value) {
+              return value > 18;
+            }
+            console.log(maior18); >>Resultado: 45, 25
+        </code>
+    </pre>
+
+    <h3>reduce():</h3>
+    <p>O método reduce() executa uma função em cada elemento da matriz para produzir (reduzi-lo a) um único valor.</p>
+    <pre>
+        <code>
+        EX: const numeros = [45, 4, 9, 16, 25];
+            const soma = numeros.reduce(minhaFuncao);
+            function minhaFuncao(total, valor) {
+              return total + valor;
+            }
+            console.log(soma); >>Resultado: 99
+        </code>
+    </pre>
+
+    <h3>every():</h3>
+    <p>O método every() verifica se todos os valores do array passam em um teste.</p>
+    <pre>
+        <code>
+        EX: const numeros = [45, 4, 9, 16, 25];
+            const maior18 = numeros.every(minhaFuncao);
+            function minhaFuncao(valor) {
+              return valor > 18;
+            }
+            console.log(maior18); >>Resultado: false
+        </code>
+    </pre>
+
+    <h3>some()</h3>
+    <p>O método some() verifica se alguns valores de matriz passam em um teste.</p>
+    <pre>
+        <code>
+        EX: const numeros = [45, 4, 9, 16, 25];
+            const maior18 = numeros.some(minhaFuncao);
+            function minhaFuncao(valor) {
+              return valor > 18;
+            }
+            console.log(maior18); >>Resultado: true
+        </code>
+    </pre>
+
+
+    <h3>indexOf():</h3>
+    <p>O método indexOf() procura um array por um valor de elemento e retorna sua posição.</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Maçã", "Laranja", "Banana", "Manga"]; 
+            let posição = frutas.indexOf("Laranja") + 1; >>Resultado: 2
+        </code>
+    </pre>
+
+    <h3>lastIndexOf():</h3>
+    <p>lastIndexOf() é o mesmo que indexOf(), mas retorna a posição da última ocorrência do elemento especificado.</p>
+    <pre>
+        <code>
+        EX: const frutas = ["Maçã", "Laranja", "Banana", "Manga", "Maçã"]; 
+            let posição = frutas.indexOf("Maçã") + 1; >>Resultado: 5
+        </code>
+    </pre>
+
+    <h3>find():</h3>
+    <p>O método find() retorna o valor do primeiro elemento da matriz que passa em uma função de teste.</p>
+    <pre>
+        <code>
+        EX: const numeros = [45, 4, 9, 16, 25];
+            const menor18 = numeros.find(minhaFuncao);
+            function minhaFuncao(valor) {
+              return valor < 18;
+            }
+            console.log(menor18); >>Resultado: 4
+        </code>
+    </pre>
+
+    <h3>keys()</h3>
+    <p>O método Array.keys() retorna um objeto Array Iterator com as chaves de um array.</p>
+    <pre>
+        <code>
+        EX: const numeros = [45, 4, 9, 16, 25];
+            const keys = numeros.keys();
+            for (let x of keys) {
+                console.log(x); >>Resultado:    0
+            }                                   1
+                                                2
+                                                3
+                                                4
+        </code>
+    </pre>
+
+    <h3>entries()</h3>
+    <p>O método entries() retorna um Array Iterator com pares chave/valor:</p>
+    <pre>
+        <code>
+        EX: const numeros = [45, 4, 9, 16, 25];
+            const teste = numeros1.entries();
+
+            for (let x of teste) {
+                console.log(x); >>Resultado:    0, 45
+                                                1, 4
+                                                2, 9
+                                                3, 16
+                                                4, 25
+            }
+        </code>
+    </pre>
+
+    <h3>includes()</h3>
+    <p> Isso nos permite verificar se um elemento está presente em uma matriz (incluindo NaN, ao contrário de indexOf).</p>
+    <pre>
+        <code>
+            EX: const numeros = [45, 4, 9, 16, 25];
+            const teste = numeros1.includes(9);
+            console.log(teste); >>Resultado: true
+        </code>
+    </pre>
+
+    <h3>Spread(...)</h3>
+    <p>O operador ... expande um iterável (como uma matriz) em mais elementos:</p>
+    <pre>
+        <code>
+        EX: const mesUm = ["Janeiro", "Fevereiro", "Março"];
+            const mesDois = ["Abril", "Maio", "Junho"];
+            const mesTres = ["Julho", "Agosto", "Setembro"]
+            const mesQuatro = ["Outubro", "Novembro", "Dezembro"]
+            const ano = [...mesUm, ...mesDois, ...mesTres, ...mesQuatro];
+            console.log(ano); >>Resultado: [Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+        </code>
+    </pre>
+ 
+                
+    <script src="script.js"></script>
+</body>
+</html>

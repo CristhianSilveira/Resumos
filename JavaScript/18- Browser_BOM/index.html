@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 18</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../17- Erros_Debugs_Praticas/">Voltar Para Erros e Debug</a>
+    <a id="linkpos" href="../19 - JSON/index.html">Ir Para JSON</a>
+
+    <h1>Browser BOM:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>BOM:</h2>
+    <p>O Browser Object Model (BOM) permite que o JavaScript "fale com" o navegador.:</p>
+
+    <h2>Janela do Navegador:</h2>
+    <p>O objeto window é suportado por todos os navegadores. Representa a janela do navegador.</p>
+
+    <h3>Tamanho da janela:</h3>
+    <p>Duas propriedades podem ser usadas para determinar o tamanho da janela do navegador.</p>
+    <p>window.innerHeight- a altura interna da janela do navegador (em pixels)</p>
+    <p>window.innerWidth- a largura interna da janela do navegador (em pixels)</p>
+
+    <h3>Outras propriedades:</h3>
+    <p>window.open()- Abrir uma nova janela</p>
+    <p>window.close()- Fechar a janela atual</p>
+    <p>window.moveTo()- Mover a janela atual</p>
+    <p> window.resizeTo()- Redimensionar a janela atual</p>
+
+    <h2>Tela do usuário:</h2>
+    <p>O objeto window.screen contém informações sobre a tela do usuário.</p>
+
+    <h3>Largura da tela:</h3>
+    <p>A propriedade screen.width retorna a largura da tela do visitante em pixels.</p>
+    <pre>
+        <code>
+            EX: console.log("A largura da sua tela é:" + screen.width)
+        </code>
+    </pre>
+
+    <h3>Altura da Tela:</h3>
+    <p>A propriedade screen.height retorna a altura da tela do visitante em pixels.</p>
+    <pre>
+        <code>
+            EX: console.log("A Altura da sua tela é:" + screen.height)
+        </code>
+    </pre>
+
+    <h3>Largura disponível da tela:</h3>
+    <p>A propriedade screen.availWidth retorna a largura da tela do visitante, em pixels, menos recursos de interface como a barra de tarefas do Windows.</p>
+    <pre>
+        <code>
+            EX: console.log("A Largura disponível da sua tela é:" + screen.availWidth)
+        </code>
+    </pre>
+    
+    <h3>Altura disponível da tela:</h3>
+    <p>A propriedade screen.availHeight retorna a altura da tela do visitante, em pixels, menos recursos de interface como a barra de tarefas do Windows.</p>
+    <pre>
+        <code>
+            EX: console.log("A Largura disponível da sua tela é:" + screen.availWidth)
+        </code>
+    </pre>
+
+    <h2>Histórico da janela:</h2>
+    <h3>Voltar no  histórico:</h3>
+    <p>O método history.back() carrega a URL anterior na lista de histórico. Isso é o mesmo que clicar no botão Voltar no navegador.  </p>
+    <pre>
+        <code>
+            EX: function goBack() {
+                    window.history.back()
+                }
+
+            <input type="button" value="Back" onclick="goBack()">
+        </code>
+    </pre>
+
+    <h3>Avançar no  histórico:</h3>
+    <p>O método history.forward() carrega a próxima URL na lista de histórico. Isso é o mesmo que clicar no botão Avançar no navegador.  </p>
+    <pre>
+        <code>
+            EX: function goForward() {
+                    window.history.forward()
+                }
+
+            <input type="button" value="Avançar" onclick="goForward()">
+        </code>
+    </pre>
+
+    <h2>Caixas pop-up:</h2>
+    <h3>Caixa de alerta:</h3>
+    <p>Uma caixa de alerta é frequentemente usada se você quiser garantir que as informações cheguem ao usuário.</p>
+    <pre>
+        <code>
+            EX: alert("Eu sou uma caixa de alerta!");
+        </code>
+    </pre>
+
+    <h3>Caixa de confirmação:</h3>
+    <p>Uma caixa de confirmação geralmente é usada se você deseja que o usuário verifique ou aceite algo.  Quando uma caixa de confirmação aparecer, o usuário terá que clicar em "OK" ou "Cancelar" para prosseguir. Se o usuário clicar em "OK", a caixa retornará true . Se o usuário clicar em "Cancelar", a caixa retornará false .</p>
+    <pre>
+        <code>
+            EX: function myFunction() {
+                    if (confirm("Pressione um botão!")) {
+                        console.log("Você apertou OK!");
+                    } else {
+                        console.log("Você apertou Cancelar!");
+                    }
+                }
+                myFunction();
+        </code>
+    </pre>
+
+    <h3>Caixa de aviso:</h3>
+    <p>Uma caixa de prompt geralmente é usada se você deseja que o usuário insira um valor antes de entrar em uma página. Quando uma caixa de prompt aparecer, o usuário terá que clicar em "OK" ou "Cancelar" para continuar depois de inserir um valor de entrada. Se o usuário clicar em "OK", a caixa retornará o valor de entrada. Se o usuário clicar em "Cancelar" a caixa retornará null.</p>
+    <pre>
+        <code>
+            EX: let pessoa = prompt("Por favor entre com seu nome", "Harry Potter");
+                if (pessoa == null || pessoa == "") {
+                    console.log("O Usuário cancelou o aviso.");
+                } else {
+                    console.log("Olá " + pessoa + "! Como você está hoje?");
+                }
+        </code>
+    </pre>
+
+    <script src="script.js"></script>
+</body>
+</html>

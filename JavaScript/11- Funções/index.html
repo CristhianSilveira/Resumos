@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 11</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../10- Datas/index.html">Voltar Para Datas</a>
+    <a id="linkpos" href="../12- DOM/index.html">Ir Para DOM</a>
+
+    <h1>Funções:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+    <p>Uma função JavaScript é um bloco de código projetado para executar uma tarefa específica.</p>
+    <p>Uma função JavaScript é executada quando "algo" a invoca (a chama).</p>
+
+    <h2>Sintaxe da Função JavaScript:</h2>
+    <p>Uma função JavaScript é definida com a palavra-chave function, seguida por um nome, seguido por parênteses ().</p>
+    <p>Os nomes das funções podem conter letras, dígitos, sublinhados e cifrões (mesmas regras das variáveis).</p>
+    <p>Os parênteses podem incluir nomes de parâmetros separados por vírgulas:( parâmetro1, parâmetro2, ... )</p>
+    <p>Os argumentos da função são os valores recebidos pela função quando ela é invocada.</p>
+    <p>O código a ser executado, pela função, é colocado entre chaves: {}</p>
+    <pre>
+        <code>
+            Ex: function nome(parametro1, parametro2, parametro3) {
+                    // código a ser executado
+                }
+        </code>
+    </pre>
+
+    <h2>Função Return:</h2>
+    <p>Quando o JavaScript atinge uma instrução return, a função para de ser executada.</p>
+    <p>As funções geralmente calculam um valor de retorno. O valor de retorno é "retornado" de volta ao "chamador":</p>
+    <pre>
+        <code>
+            EX: let x = myFunction(4, 3);
+
+                function myFunction(a, b) {
+                    // Função retorna o produto de a com b
+                    return a * b; >>Resultado: 12
+                }
+
+            EX: const testeReturn = 10
+                function myReturn2() {
+                    return testeReturn;
+                }
+                console.log(myReturn2()); >>Resultado: 10
+        </code>
+    </pre>
+
+    <h2>Invocando uma Função JavaScript:</h2>
+    <p>O código dentro de uma função é executado quando a função é invocada. É comum usar o termo “ chamar uma função ” ao invés de “ invocar uma função ”.</p>
+    <pre>
+        <code>
+            EX: function toCelsius(fahrenheit) {
+                    return (5/9) * (fahrenheit-32);
+                }
+                console.log(toCelsius(77)); >>Resultado: 25
+
+            EX: function invoca() {
+                    return 6 + 2
+                }
+                console.log(invoca()); >>Resultado: 8
+            
+        </code>
+    </pre>
+
+    <h2>Variáveis locais:</h2>
+    <p>As variáveis declaradas dentro de uma função JavaScript tornam-se LOCAL para a função. As variáveis locais só podem ser acessadas de dentro da função.</p>
+    <pre>
+        <code>
+                // Aqui não pode usar nomeCarro
+
+            EX: function myFunction() {
+                    let nomeCarro = "Fiat";
+                    // // Aqui pode usar nomeCarro
+                }
+                // // Aqui não pode usar nomeCarro
+        </code>
+    </pre>
+
+    <h2>Function Hoisting:</h2>
+    <p>Hoisting é o comportamento padrão do JavaScript de mover as declarações para o topo do escopo atual. Por causa disso, as funções JavaScript podem ser chamadas antes de serem declaradas.</p>
+    <pre>
+        <code>
+            EX: myFunction(5); >>Resultado: 25
+
+                function myFunction(y) {
+                    return y * y;
+                }
+        </code>
+    </pre>
+
+    <h2>Arrow Functions</h2>
+    <p>As Arrow Functions (funções de seta) permitem uma sintaxe curta para escrever expressões de função. Você não precisa da palavra-chave function, da palavra-chave return e das chaves.</p>
+    <p>As funções de seta não são suspensas. Eles devem ser definidos antes de serem usados. Usar const é mais seguro do que usar var, porque uma expressão de função é sempre um valor constante.</p>
+    <p>Você só pode omitir a palavra-chave return e as chaves se a função for uma única instrução. Por isso, pode ser um bom hábito mantê-los sempre:</p>
+    <pre>
+        <code>
+            EX: const multiplica = (x, y) => x * y;
+                console.log(multiplica(2, 4)); >>Resultado: 8
+
+            EX: const arrowFunc = () => {
+                    var num1 = 5;
+                    var num2 = 10;
+                    return num1 + num2;
+                }
+                console.log(arrowFunc()); >>Resultado: 15
+        </code>
+    </pre>
+
+    <h2>Parâmetros e argumentos da função:</h2>
+    <p>Parâmetros de função são os nomes listados na definição da função.</p>
+    <p>Os argumentos da função são os valores reais passados para (e recebidos por) a função.</p>
+    <pre>
+        <code>
+            EX: function myFunction3(x, y) {
+                    if (y === undefined) {
+                    y = 2;
+                    }
+                    return x * y;
+                }
+                // Apenas x vale 3
+                console.log(myFunction3(3)); >>Resultado: 6
+        </code>
+    </pre>
+
+    <h2>This:</h2>
+    <p>Em JavaScript, a palavra-chave this se refere a um objeto.</p>
+    <pre>
+        <code>
+            EX: const myObject = {
+                    Nome:"João",
+                    Sobrenome: "Gomes",
+                    nomeCompleto: function () {
+                        return this.Nome + " " + this.Sobrenome;
+                    }
+                }
+                console.log(myObject.nomeCompleto()); >>Resultado: João Gomes
+        </code>
+    </pre>
+
+    <h2>Sequência de funções:</h2>
+    <p>As funções JavaScript são executadas na sequência em que são chamadas. Não na sequência em que são definidos.</p>
+    <pre>
+        <code>
+            EX: function myFirst() {
+                    console.log("Hello");
+                }
+              
+                function mySecond() {
+                    console.log("Goodbye");
+                }
+                myFirst();
+                mySecond(); 
+                >>Resultado:    Hello
+                                Goodbye
+
+            EX: function myFirst() {
+                    console.log("Hello");
+                }
+          
+                function mySecond() {
+                    console.log("Goodbye");
+                }
+                mySecond(); 
+                myFirst();
+                >>Resultado:    Goodbye
+                                Hello
+        </code>
+    </pre>
+
+    <h2>Callbacks</h2>
+    <p>Uma Callback é uma função passada como um argumento para outra função.</p>
+    <p>Onde os callbacks realmente brilham são em funções assíncronas, onde uma função tem que esperar por outra função (como esperar o carregamento de um arquivo).</p>
+    <pre>
+        <code>
+            EX: function meuDisplay(algum) {
+                    console.log(algum)
+                }
+                function minhaCalculadora(num1, num2, myCallback) {
+                    let soma = num1 + num2;
+                    myCallback(soma);
+                }
+                minhaCalculadora(5, 5, meuDisplay); >>Resultado: 10
+        </code>
+    </pre>
+    
+    <script src="script.js"></script>
+</body>
+</html>

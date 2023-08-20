@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 4</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../3- Tipos_De_Dados/index.html">Voltar Para Tipos de Dados</a>
+    <a id="linkpos" href="../5- Loop_E_Condições/index.html">Ir Para Estrutura de Repetição </a>
+
+    <h1>Operadores:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>Operadores Aritméticos:</h2>
+    <p>+ (adição), - (Subtração), *	(Multiplicação), **	(Exponenciação), / (Divisão), %	Módulo (Resto da divisão), ++ (Incremento) e -- (Decremento)</p>
+    <pre>
+    <code>
+    var x= 10;
+    var y = 2;
+
+        1- Adição (+): 
+        x + y >>Resultado: 12
+        
+        2- Subtração (-):
+        x - y >>Resultado: 8
+
+        3- Multiplicação (*):
+        x * y >>Resultado: 20
+
+        4- Divisão (/):
+        x / y >>Resultado: 5
+
+        5-  Exponenciação (**):
+        x ** y >>Resultado: 100
+
+        6- Módulo (%): -> Resto da divisão
+        x % y >>Resultado: 0
+
+        7- Incremento (++):
+        ++y  >>Resultado: 3
+
+        8- Decremento (--):
+        --x   >>Resultado: 9
+    </code>
+    </pre>
+
+    <h2>Operadores de atribuição:</h2>
+    <p>=, +=, -=, *=, /=, %= e **=</p>
+    <pre>
+    <code>
+        1- Atribuição simples (=):
+        let Op3 = 10; >>Resultado: 10
+        
+        2- Atribuição de Adição(+=):
+        Op3 += 5; >>Resultado: 15
+
+        3- Atribuição de Subtração(-=):
+        Op3 -= 5; >>Resultado: 10
+
+        4- Atribuição de Multiplicação(*=):
+        Op3 *= 5; >>Resultado: 50
+
+        5- Atribuição de Divisão(/=):
+        Op3 /= 5; >>Resultado: 10
+
+        6- Atribuição de Exponenciação(**=):
+        Op3 **= 2; >>Resultado: 100
+
+        7- Atribuição de Resto(%=):
+        Op3 %= 3; >>Resultado: 1
+    </code>
+    </pre>
+    
+    <h2>Operadores de Comparação:</h2>
+    <p>== (igual a), === (valor igual e tipo igual), != (diferente), !==	(valor diferente ou tipo diferente), > (maior que), < (menor que), >= (maior ou igual a), <= (menor ou igual a) e ? (operador ternário)</p>
+    <pre>
+    <code>
+        1- Igual a (==):
+        (5 == 5); >>Resultado: true
+        ("5" == 5); >>Resultado: true
+
+        2- Valor Igual e tipo igual (===):
+        (5 === 5); >>Resultado: true
+        ("5" === 5); >>Resultado: false
+
+        3- Diferente de (!=):
+        (5 != 5); >>Resultado: false
+
+        4- Valor diferente ou tipo diferente (!==):
+        (5 !== 5); >>Resultado: false
+        ("5" !== 5); >>Resultado: true
+
+        5- Maior que (>):
+        (5 > 6); >>Resultado: false
+
+        6- Menor que (<):
+        (5 < 6); >>Resultado: true
+    
+        7- Maior ou igual a (>=):
+        (5 >= 6); >>Resultado: false
+
+        8- Menor ou igual a (<=):
+        (5 <= 6); >>Resultado: true
+
+        9- Operador Ternário -> (expressão ?verdade :falso):
+        (5 == 6 ?"Igual" :"Diferente"); >>Resultado: Diferente
+        (5 == 5 ? "Igual" : "Diferente"); >>Resultado: Igual
+    </code>
+    </pre>
+
+    <h2>Operadores Lógicos:</h2>
+    <p>&& (E), || (OU) e ! (não)</p>
+    <pre>
+    <code>
+        1- AND (&&)(e):
+        (10 > 5 && 20 > 5); >>Resultado: true
+        (10 > 5 && 20 < 5); >>Resultado: false
+        (10 < 5 && 20 < 5); >>Resultado: false
+
+        2- OR (||) (ou):
+        (10 > 5 || 20 > 5); >>Resultado: true
+        (10 > 5 || 20 < 5); >>Resultado: true
+        (10 < 5 || 20 < 5); >>Resultado: false
+
+        3- NOT (!) (não):
+        (!(10 > 5 || 20 > 5)); >>Resultado: false
+        (!(10 > 5 || 20 < 5)); >>Resultado: false
+        (!(10 < 5 || 20 < 5)); >>Resultado: true
+    </code>
+    </pre>
+
+    <h2>Operadores bit a bit:</h2>
+    <p>& (AND), | (OR), ~ (NOT), ^ (XOR), << (left shift), >> (right shift) e >>> (unsigned right shift)</p>
+
+    <h2>Precedência:</h2>
+    <p>A precedência do operador descreve a ordem na qual as operações são executadas em uma expressão aritmética. A multiplicação (*) e a divisão (/) têm maior precedência do que a adição (+) e a subtração (-).</p>
+
+    <h3>Valores de precedência do operador:</h3>
+    <p>As expressões entre parênteses são calculadas antes do restante da expressão. A função é executada antes do resultado ser usado no restante da expressão</p>
+
+    <h3>Operadores aritméticos:</h3>
+    <p>As exponenciações são executadas antes das multiplicações. As multiplicações e divisões são executadas antes das adições e subtrações.</p>
+
+    <h3>Resumo:</h3>
+    <p>1- (), 2-[], 3- **, 4- *, 5- /, 6- %, 7- +, 8- -</p> 
+  
+    <script src="script.js"></script>
+</body>
+</html>

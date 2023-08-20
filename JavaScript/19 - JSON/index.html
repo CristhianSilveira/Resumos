@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 19</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../18- Browser_BOM/index.html">Voltar Para Browser BOM</a>
+    <a id="linkpos" href="../20 - AJAX/index.html">Ir Para AJAX</a>
+
+    <h1>JSON:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>JSON:</h2>
+    <p>JSON significa Java Script Object Notation</p>
+    <p>JSON é um formato de texto para armazenar e transportar dados    </p>
+    <p>Como o formato é apenas texto, os dados JSON podem ser facilmente enviados entre computadores e usados por qualquer linguagem de programação.</p>
+
+    <h2>Sintaxe JSON:</h2>
+    <p>A sintaxe JSON é derivada da sintaxe de notação de objeto JavaScript: Os dados estão em pares nome/valor; Os dados são separados por vírgulas; Chaves seguram objetos; Os colchetes contêm matrizes</p>
+    <p>Da mesma forma que os objetos JavaScript podem ser escritos como JSON, os arrays JavaScript também podem ser escritos como JSON.</p>
+    <p>O tipo de arquivo para arquivos JSON é ".json"</p>
+
+    <h2>Tipos de dados válidos:</h2>
+    <h3>Strings:</h3>
+    <p>Strings em JSON devem ser escritas entre aspas duplas.</p>
+    <pre>
+        <code>
+            EX: {"name":"John"}
+        </code>
+    </pre>
+
+    <h3>Number:</h3>
+    <p>Os números em JSON devem ser um número inteiro ou um ponto flutuante.</p>
+    <pre>
+        <code>
+            EX: {"age":30}
+        </code>
+    </pre>
+
+    <h3>Objetos:</h3>
+    <p>Valores em JSON podem ser objetos.</p>
+    <pre>
+        <code>
+            EX: {
+                "Funcionario":{"nome":"João", "idade":30, "cidade":"São Paulo"}
+                }
+        </code>
+    </pre>
+
+    <h3>Matrizes:</h3>
+    <p>Os valores em JSON podem ser matrizes.</p>
+    <pre>
+        <code>
+            EX: {
+                "Funcionarios":["João", "Ana", "Peter"]
+                }
+        </code>
+    </pre>
+
+    <h3>Booleanos:</h3>
+    <p>Os valores em JSON podem ser true/false.</p>
+    <pre>
+        <code>
+            EX: {"oferta":true}
+        </code>
+    </pre>
+
+    <h3>Null:</h3>
+    <p>Os valores em JSON podem ser nulos.</p>
+    <pre>
+        <code>
+            EX: {"nomeMeio":null}
+        </code>
+    </pre>
+
+    <h2>Métodos JSON:</h2>
+    <h3>parse():</h3>
+    <p>Analise os dados com JSON.parse(), e os dados se tornarão um objeto JavaScript.</p>
+    <p>Ou seja, de JSON para JavaScript:</p>
+    <pre>
+        <code>
+            EX: const txt = '{"nome":"João", "idade":30, "cidade":"São Paulo"}'
+                const obj = JSON.parse('{"nome":"João", "idade":30, "cidade":"São Paulo"}');
+                console.log(obj); >>Resultado: {nome: 'João', idade: 30, cidade: 'São Paulo'}
+
+        </code>
+    </pre>
+
+    <h3>stringify():</h3>
+    <p>Converte um objeto JavaScript em uma string com JSON.stringify(). </p>
+    <p>Ou seja, de JavaScript para JSON:</p>
+    <pre>
+        <code>
+            EX: const obj2 = { nome: "Carlos", idade: 25, cidade: "Bahia" };
+                const myJSON = JSON.stringify(obj2);
+                console.log(myJSON); >>Resultado: {"nome":"Carlos","idade":25,"cidade":"Bahia"}
+        </code>
+    </pre>
+
+    <h2>Literais do Objeto:</h2>
+    <h3>Acessando Valores de Objeto:</h3>
+    <p>Você pode acessar valores de objeto usando a notação de ponto (.):</p>
+    <pre>
+        <code>
+            EX: const myJSON3 = '{"nome":"Marcos", "idade":20, "carro":null}';
+                const myObj = JSON.parse(myJSON3);
+                console.log(myObj.nome); >>Resultado: Marcos
+        </code>
+    </pre>
+
+    <h3>Fazendo um loop nas propriedades:</h3>
+    <p>Você pode percorrer as propriedades do objeto com um loop for-in:</p>
+    <pre>
+        <code>
+            EX: const myJSON3 = '{"nome":"Marcos", "idade":20, "carro":null}';
+                const myObj = JSON.parse(myJSON3);
+                let texto = "";
+                for (const x in myObj) {
+                    texto += x + ", ";
+                }
+                console.log(texto); >>Resultado: nome, idade, carro, 
+        </code>
+    </pre>
+
+    <h3>Fazendo um loop nos valores:</h3>
+    <p>Em um loop for-in, use a notação de colchetes para acessar os valores de propriedade:</p>
+    <pre>
+        <code>
+            EX: const myJSON3 = '{"nome":"Marcos", "idade":20, "carro":null}';
+                const myObj = JSON.parse(myJSON3);
+                let texto2 = "";
+                for (const x in myObj) {
+                    texto2 += myObj[x] + ", ";
+                }
+                console.log(texto2); >>Resultado: Marcos, 20, null, 
+        </code>
+    </pre>
+
+    <h2>Literais de Arrays:</h2>
+    <h3>Acessando Valores de Matriz:</h3>
+    <p>Você acessa os valores da matriz por índice:</p>
+    <pre>
+        <code>
+            EX: const myJSON4 = '["Ford", "BMW", "Fiat"]';
+                const myArray = JSON.parse(myJSON4);
+                console.log(myArray[1]); >>Resultado: BMW
+        </code>
+    </pre>
+
+    <h3>Percorrendo um Array:</h3>
+    <p>Você pode acessar os valores da matriz usando um loop for in.</p>
+    <pre>
+        <code>
+            EX: const myJSON4 = '["Ford", "BMW", "Fiat"]';
+                const myArray = JSON.parse(myJSON4);
+                let texto3 = "";
+                for (let i in myArray) {
+                    texto3 += myArray[i] + ", ";
+                }
+                console.log(texto3); >>Resultado: Ford, BMW, Fiat,
+        </code>
+    </pre>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 6</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../5- Loop_E_Condições/index.html">Voltar Para Loop e condições</a>
+    <a id="linkpos" href="../7- Metodos_String/index.html">Ir Para Metodos String </a>
+
+    <h1>Metódos Númericos:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>Adicionando números e strings:</h2>
+    <p>JavaScript usa o operador + para adição e concatenação. Os números fazem adição. Strings são concatenadas.</p>
+    <pre>
+        <code>
+            EX: let x = 10; let y = 20; let z = x + y;  >>Resultado: 30   
+            EX2: let x = "10"; let y = "20"; let z = x + y;  >>Resultado: 1020
+        </code>
+    </pre>
+
+    <h2>NaN (Não é um Número):</h2>
+    <p>NaN é uma palavra reservada do JavaScript que indica que um número não é um número válido. Tentar fazer aritmética com uma string não numérica resultará em NaN(não é um número).</p>
+    <pre>
+        <code>
+            EX: let x = 100 / "Apple";   >>Resultado: NaN
+        </code>
+    </pre>
+
+    <h2>toString():</h2>
+    <p>Retorna um número como uma string.</p>
+    <pre>
+        <code>
+            EX: let x = 123;
+                let retornaString = x.toString(); 
+                console.log(retornaString); >>Resultado: 123
+                console.log(typeof retornaString) >>Resultado: string
+        </code>
+    </pre>
+
+    <h2>toExponential():</h2>
+    <p>Retorna um número escrito em notação exponencial.</p>
+    <pre>
+        <code>
+            EX: let x = 9.656; x.toExponential(2); >>Resultado: 9.66e+0
+        </code>
+    </pre>
+
+    <h2>toFixed():</h2>
+    <p>Retorna um número escrito com um número de casas decimais.</p>
+    <pre>
+        <code>
+            EX: let x = 9.656; x.toFixed(2);  >>Resultado: 9,66
+        </code>
+    </pre>
+
+    <h2>toPrecision():</h2>
+    <p>Retorna um número escrito com um comprimento especificado.</p>
+    <pre>
+        <code>
+            EX: let x = 9.656; x.toPrecision(2);  >>Resultado: 9,7
+        </code>
+    </pre>
+      
+    
+    <h2>valueOf():</h2>
+    <p>Retorna um número como um número.</p>
+    <pre>
+        <code>
+            EX: let x = 123; x.valueOf();  >>Resultado: 123
+        </code>
+    </pre>
+
+    <h2>Convertendo Variáveis em Números:</h2>
+    <h3>Number():</h3>
+    <p>Retorna um número convertido de seu argumento.</p>
+    <pre>
+        <code>
+            EX: Number(true);  >>Resultado: 1
+        </code>
+    </pre>
+    
+    <h3>parseFloat():</h3>
+    <p>Analisa seu argumento e retorna um número de ponto flutuante.</p>
+    <pre>
+        <code>
+            EX:  parseFloat("10 anos")  >>Resultado: 10
+        </code>
+    </pre>
+    
+    <h3>parseInt():</h3>
+    <p>Analisa seu argumento e retorna um número inteiro.</p>
+    <pre>
+        <code>
+            EX: parseInt("10 anos")  >>Resultado: 10
+        </code>
+    </pre>
+
+    <h2>Math:</h2>
+    <p>O objeto Math permite que você execute tarefas matemáticas em números.</p>
+    
+    <h3>Math.round():</h3>
+    <p>Math.round(x) retorna o inteiro mais próximo.</p>
+    <pre>
+        <code>
+            EX: Math.round(4.6);  >>Resultado: 5
+        </code>
+    </pre>
+
+    <h3>Math.ceil():</h3>
+    <p>Math.ceil(x) retorna o valor de x arredondado para cima o número inteiro mais próximo.</p>
+    <pre>
+        <code>
+            EX:  Math.ceil(4.1); >>Resultado: 5
+        </code>
+    </pre>
+
+    <h3>Math.floor():</h3>
+    <p>Math.floor(x) retorna o valor de x arredondado para baixo o número inteiro mais próximo.</p>
+    <pre>
+        <code>
+            EX: Math.floor(4.7);  >>Resultado: 4
+        </code>
+    </pre>
+
+    <h3>Math.trunc():</h3>
+    <p>Math.trunc(x) retorna a parte inteira de x.</p>
+    <pre>
+        <code>
+            EX: Math.trunc(4.7);  >>Resultado: 4
+        </code>
+    </pre>
+
+    <h3>Math.sign():</h3>
+    <p>Math.sign(x) retorna se x for negativo(-1), nulo(0) ou positivo(1).</p>
+    <pre>
+        <code>
+            EX: Math.sign(4);  >>Resultado: 1
+        </code>
+    </pre>
+
+    <h3>Math.pow():</h3>
+    <p>Math.pow(x, y) retorna o valor de x elevado a y.</p>
+    <pre>
+        <code>
+            EX: Math.pow(8,2); >>Resultado: 64
+        </code>
+    </pre>
+
+    <h3>Math.sqrt():</h3>
+    <p>Math.sqrt(x) retorna a raiz quadrada de x.</p>
+    <pre>
+        <code>
+            EX: Math.sqrt(64);  >>Resultado: 8
+        </code>
+    </pre>
+
+    <h3>Math.abs():</h3>
+    <p>Math.abs(x) retorna o valor positivo de x.</p>
+    <pre>
+        <code>
+            EX: Math.abs(-4.7);  >>Resultado: 4.7
+        </code>
+    </pre>
+
+    <h3>Math.sin():</h3>
+    <p>Math.sin(x) retorna o seno (um valor entre -1 e 1) do ângulo x (dado em radianos).</p>
+    <pre>
+        <code>
+            EX: Math.sin(90);  >>Resultado: 0.8939966636005579
+        </code>
+    </pre>
+
+    <h3>Math.cos():</h3>
+    <p>Math.cos(x) retorna o cosseno (um valor entre -1 e 1) do ângulo x (dado em radianos).</p>
+    <pre>
+        <code>
+            EX: Math.cos(90);  >>Resultado: -0.4480736161291701
+        </code>
+    </pre>
+    
+    <h3>Math.min():</h3>
+    <p>Math.min() pode ser usado para encontrar o valor mais baixo em uma lista de argumentos.</p>
+    <pre>
+        <code>
+            EX: Math.min(0, 150, 30, 20, -8, -200);  >>Resultado: -200
+        </code>
+    </pre>
+
+    <h3>Math.max():</h3>
+    <p>Math.max() pode ser usado para encontrar o valor mais alto em uma lista de argumentos.</p>
+    <pre>
+        <code>
+            EX: Math.max(0, 150, 30, 20, -8, -200);  >>Resultado: 150
+        </code>
+    </pre>
+
+    <h3>Math.random():</h3>
+    <p>Math.random() retorna um número aleatório entre 0 (inclusivo) e 1 (exclusivo).</p>
+    <pre>
+        <code>
+            EX: Math.random();
+        </code>
+    </pre>
+
+    <h3>Math.log():</h3>
+    <p>Math.log(x) retorna o logaritmo natural de x. O logaritmo natural retorna o tempo necessário para atingir um determinado nível de crescimento.</p>
+    <pre>
+        <code>
+            EX: Math.log2(8);  >>Resultado: 3
+        </code>
+    </pre>       
+
+    <script src="script.js"></script>
+</body>
+</html>

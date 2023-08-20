@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 13</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../12- DOM/index.html">Voltar Para DOM</a>
+    <a id="linkpos" href="../14- Classes/index.html">Ir Para Classe</a>
+
+    <h1>Eventos:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+    <p>Eventos HTML são "coisas" que acontecem com elementos HTML.</p>
+
+    <h2>Eventos de Clique:</h2>
+    <h3>click:</h3>
+    <p>Ocorre quando o elemento é clicado com o botão esquerdo do mouse.</p>
+    <button id="btn">Clique aqui</button>
+    <pre>
+        <code>
+            EX: var button = document.querySelector("#btn")
+                button.addEventListener("click", function () {
+                    alert("Clicou no botão")
+                });
+        </code>
+    </pre>
+
+    <h3>mousedown:</h3>
+    <p>Ocorre quando um botão do mouse é pressionado sobre o elemento</p>
+    <button id="teste">Pressione aqui</button>
+    <pre>
+        <code>
+            EX: var teste = document.querySelector("#teste");
+                teste.addEventListener("mousedown", function () {
+                    alert("Pressionou o botão")
+                });
+        </code>
+    </pre>
+
+    <h3>dblclick:</h3>
+    <p>Ocorre quando o elemento é clicado duas vezes rapidamente.</p>
+    <button id="teste2">Aperte 2x aqui</button>
+    <pre>
+        <code>
+          EX:   var teste2 = document.querySelector("#teste2");
+                teste2.addEventListener("dblclick", function () {
+                    alert("Apertou 2x o botão")
+                });
+        </code>
+    </pre>
+
+    <h3>mouseup:</h3>
+    <p>Ocorre quando um botão do mouse é liberado após ser pressionado.</p>
+    <button id="teste3">Pressione e solte o botão</button>
+    <pre>
+        <code>
+            EX: var teste3 = document.querySelector("#teste3");
+                teste3.addEventListener("mouseup", function () {
+                    alert("Click liberado")
+                });
+        </code>
+    </pre>
+
+    <h3>mousemove:</h3>
+    <p>Ocorre quando o mouse se move sobre o elemento.</p>
+    <button id="teste4">Passe o mouse aqui</button>
+    <pre>
+        <code>
+            EX: var teste4 = document.querySelector("#teste4");
+                teste4.addEventListener("mousemove", function () {
+                    alert("Passou o mouse aqui")
+                });
+        </code>
+    </pre>
+
+    <h3>mouseover:</h3>
+    <p>Ocorre quando o mouse entra no espaço ocupado pelo elemento.</p>
+    <button id="teste5">Entre aqui</button>
+    <pre>
+        <code>
+            EX: var teste5 = document.querySelector("#teste5");
+                teste5.addEventListener("mouseover", function () {
+                    alert("Entrou com o mouse aqui")
+                });
+        </code>
+    </pre>
+
+    <h3>mouseout:</h3>
+    <p>Ocorre quando o mouse sai do espaço ocupado pelo elemento.</p>
+    <button id="teste6">Entre e saia daqui</button>
+    <pre>
+        <code>
+            EX: var teste6 = document.querySelector("#teste6");
+                teste6.addEventListener("mouseout", function () {
+                    alert("Saiu com o mouse")
+                });
+        </code>
+    </pre>
+
+    <h2>Eventos de Teclado:</h2>
+    <h3>keydown:</h3>
+    <p> Ocorre quando uma tecla é pressionada. É acionado continuamente enquanto a tecla estiver pressionada.</p>
+    <input type="text" name="" id="tecla1">
+    <pre>
+        <code>
+            EX: var tecla1 = document.querySelector("#tecla1");
+                tecla1.addEventListener("keydown", function (event) {
+                    alert(`Tecla pressionada: ${event.key}`)
+                });
+        </code>
+    </pre>
+
+    <h3>keyup:</h3>
+    <p>Ocorre quando uma tecla é liberada após ser pressionada.</p>
+    <input type="text" name="" id="tecla2">
+    <pre>
+        <code>
+            EX: var tecla2 = document.querySelector("#tecla2");
+                tecla2.addEventListener("keyup", function (event) {
+                    alert(`Tecla solta: ${event.key}`)
+                });
+        </code>
+    </pre>
+
+    <h3>keypress:</h3>
+    <p>Ocorre quando uma tecla que produz um caractere é pressionada (não inclui teclas como Shift, Ctrl ou Alt).</p>
+    <input type="text" name="" id="tecla3">
+    <pre>
+        <code>
+            EX: var tecla3 = document.querySelector("#tecla3");
+                tecla3.addEventListener("keypress", function (event) {
+                    alert(`Tecla selecionada: ${event.key}`)
+                });
+        </code>
+    </pre>
+
+    <h3>focus:</h3>
+    <p>Ocorre quando um elemento recebe o foco, geralmente quando ele é selecionado para entrada de teclado.</p>
+    <input type="text" name="" id="tecla4">
+    <pre>
+        <code>
+            EX: var tecla4 = document.querySelector("#tecla4");
+                tecla4.addEventListener("focus", function () {
+                    alert(`Recebeu foco`)
+                });
+        </code>
+    </pre>
+
+    <h3>blur:</h3>
+    <p>Ocorre quando um elemento perde o foco.</p>
+    <input type="text" name="" id="tecla5">
+    <pre>
+        <code>
+            EX: var tecla5 = document.querySelector("#tecla5");
+                tecla5.addEventListener("blur", function () {
+                    alert(`Perdeu o foco`)
+                });
+        </code>
+    </pre>
+
+    <h3>change:</h3>
+    <p>Ocorre quando o valor de um elemento é alterado e o elemento perde o foco (geralmente usado com elementos de formulário).</p>
+    <input type="text" name="" id="tecla6">
+    <pre>
+        <code>
+
+        </code>
+    </pre>
+
+    <h2>Eventos de Janela:</h2>
+    <h3>DOMContentLoaded:</h3>
+    <p>Ocorre quando o documento HTML é completamente carregado e analisado, sem esperar por imagens, folhas de estilo ou frames externos serem carregados.</p>
+    <pre>
+        <code>
+            EX: document.addEventListener('DOMContentLoaded', function() {
+                    alert('O documento HTML foi completamente carregado e analisado.');
+                });
+        </code>
+    </pre>
+
+    <h3>load:</h3>
+    <p>Ocorre quando todo o conteúdo da página, incluindo imagens, folhas de estilo e frames externos, é carregado.</p>
+    <pre>
+        <code>
+            EX: window.addEventListener('load', function() {
+                    alert('Todo o conteúdo da página, incluindo imagens e folhas de estilo, foi carregado.');
+                });
+        </code>
+    </pre>
+
+    <h3>unload:</h3>
+    <p>Ocorre quando o usuário sai da página ou fecha a guia. Pode ser usado para realizar tarefas de limpeza.</p>
+    <pre>
+        <code>
+            EX: window.addEventListener('unload', function() {
+                    alert('Testando unload Todo o conteúdo da página, incluindo imagens e folhas de estilo, foi carregado.');
+                });
+        </code>
+    </pre>
+
+    <h3>resize:</h3>
+    <p>Ocorre quando a janela do navegador é redimensionada.</p>
+    <pre>
+        <code>
+            EX: window.addEventListener('resize', function() {
+                    alert('Redimensionou a janela');
+                });
+        </code>
+    </pre>
+
+    <h3>scroll:</h3>
+    <p>Ocorre quando o usuário rola a página.</p>
+    <pre>
+        <code>
+            EX: window.addEventListener('scroll', function() {
+                    alert('Rolou a tela');
+                });
+        </code>
+    </pre>
+
+    <script src="script.js"></script>
+</body>
+</html>

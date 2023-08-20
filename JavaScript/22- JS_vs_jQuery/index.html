@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 22</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../21- WEB_APIs/index.html">Voltar Para Web APIs</a>
+
+    <a id="linkpos" href="https://my-learning.w3schools.com/tutorial/js">TUDO SOBRE JAVASCRIPT</a>
+
+    <h1>JS vs JQuery:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>Encontrando Elemento HTML por Id:</h2>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: myElement = $("#id01");
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: myElement = document.getElementById("id01");
+        </code>
+    </pre>
+
+    <h2>Encontrando elementos HTML por nome de tag:</h2>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: myElements = $("p");
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: myElements = document.getElementsByTagName("p");
+        </code>
+    </pre>
+
+    <h2>Encontrando Elementos HTML por Nome de Classe:</h2>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: myElements = $(".intro");
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: myElements = document.getElementsByClassName("intro");
+        </code>
+    </pre>
+
+    <h2>Encontrando Elementos HTML por Seletores CSS:</h2>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: myElements = $("p.intro");
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: myElements = document.querySelectorAll("p.intro");
+        </code>
+    </pre>
+
+    <h2>Definir conteúdo de texto:</h2>
+    <p>Defina o texto interno de um elemento HTML</p>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: $(document).ready(function() {
+                var myElement = $("#01");
+                myElement.text("Hello Sweden!");
+              });
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: const myElement = document.getElementById("01");
+        </code>
+    </pre>
+
+    <h2>Obter conteúdo de texto:</h2>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: $(document).ready(function() {
+                var myText = $("#02").text();
+                $("#demo").text(myText); 
+              });
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: const myText = document.getElementById("02").textContent;
+        </code>
+    </pre>
+
+    <h2>Definir conteúdo HTML:</h2>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: $(document).ready(function() {
+                $("#02").html(" p>Hello World! /p>");
+              });
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: document.getElementById("02").innerHTML = " p>Hello World! /p>";
+        </code>
+    </pre>
+
+    <h2>Obter conteúdo HTML:</h2>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: $(document).ready(function() {
+                var content = $("#02").html();
+                $("#01").html(content);
+              });
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: const content = document.getElementById("02").innerHTML;
+        </code>
+    </pre>
+
+    <h2>Esconder Elementos HTML:</h2>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: $(document).ready(function() {
+                $("#02").hide();
+              });
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: document.getElementById("02").style.display = "none";
+        </code>
+    </pre>
+
+    <h2>Mostrando Elementos HTML:</h2>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: $(document).ready(function() {
+                $("#02").show();
+              });
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: document.getElementById("02").style.display = "";
+        </code>
+    </pre>
+
+    <h2>Estilizando Elementos HTML:</h2>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: $(document).ready(function() {
+                $("#demo").css("font-size","35px");
+              });
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: document.getElementById("demo").style.fontSize = "35px";
+        </code>
+    </pre>
+
+    <h2>Removendo Elementos HTML:</h2>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: $(document).ready(function() {
+                $("#id02").remove();
+              });
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: document.getElementById("id02").remove();
+        </code>
+    </pre>
+
+    <h2>Obter elemento pai:</h2>
+    <h3>JQuery:</h3>
+    <pre>
+        <code>
+            EX: $(document).ready(function() {
+                $("#demo").text($("#02").parent().prop("nodeName")); 
+              });
+        </code>
+    </pre>
+    <h3>JavaScript:</h3>
+    <pre>
+        <code>
+            EX: document.getElementById("02").parentNode.nodeName;
+        </code>
+    </pre>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

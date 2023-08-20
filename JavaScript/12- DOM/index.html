@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 12</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../11- Funções/index.html">Voltar Para Funções</a>
+    <a id="linkpos" href="../13- Eventos/index.html">Ir Para Eventos</a>
+
+    <h1>DOM:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>DOM(Modelo de objeto de documento):</h2>
+    <p>Com o HTML DOM, o JavaScript pode acessar e alterar todos os elementos de um documento HTML.</p>
+
+    <h2>Métodos DOM:</h2>
+    <p>Os métodos HTML DOM são ações que você pode executar (em elementos HTML).</p>
+
+    <h3>O método getElementById:</h3>
+    <p>A maneira mais comum de acessar um elemento HTML é usar o iddo elemento.</p>
+
+    <h3>A propriedade innerHTML:</h3>
+    <p>A maneira mais fácil de obter o conteúdo de um elemento é usando a propriedade innerHTML.</p>
+
+    <h2 id="encontra" class="encontrado">Encontrando Elementos HTML:</h2>
+    <h3>Por ID:</h3>
+    <p>A maneira mais fácil de encontrar um elemento HTML no DOM é usando o id do elemento.</p>
+    <pre>
+        <code>
+            EX: var porId = document.getElementById("encontra");
+                console.log(porId); >>Resultado: retorna o html do id
+        </code>
+    </pre>
+
+    <h3>Por Tag:</h3>
+    <pre>
+        <code>
+            EX: var porTag = document.getElementsByTagName("h2[2]");
+                console.log(porTag); >>Resultado: retorna o html da tag
+        </code>
+    </pre>
+
+    <h3>Por Classe:</h3>
+    <p>Se você deseja localizar todos os elementos HTML com o mesmo nome de classe, use getElementsByClassName().</p>
+    <pre>
+        <code>
+            EX: var porClasse = document.getElementsByClassName("encontrado");
+                console.log(porClasse); >>Resultado: retorna o html da classe
+        </code>
+    </pre>
+
+    <h3>Por query Selector:</h3>
+    <pre>
+        <code>
+            EX: var porSeletor = document.querySelector("#encontra");
+                console.log(porSeletor); >>Retorna o html do seletor selecionado
+        </code>
+    </pre>
+
+    <h3>Por query Selector All:</h3>
+    <p>Se você quiser encontrar todos os elementos HTML que correspondem a um seletor CSS especificado (id, nomes de classes, tipos, atributos, valores de atributos, etc.), use o método querySelectorAll().</p>
+    <pre>
+        <code>
+            EX: var porSeletorAll = document.querySelectorAll("#encontra");
+                console.log(porSeletorAll); >>Retorna todos os html do seletor selecionado
+        </code>
+    </pre>
+
+    <h2>Alterando Elementos HTML:</h2>
+    <h3>innerHTML:</h3>
+    <p>A maneira mais fácil de modificar o conteúdo de um elemento HTML é usando a propriedade innerHTML.</p>
+    <pre>
+        <p id="teste">Vou mudar o texto</p>
+        <code>
+            EX: var teste = document.getElementById("teste").innerHTML = "Mudei o texto com innerHTML";
+                console.log(teste); >>Resultado: Muda o texto de teste para "Mudei o texto com innerHTML"
+        </code>
+    </pre>
+
+    <h3>attribute:</h3>
+    <p>Para alterar o valor de um atributo HTML, use esta sintaxe: document.getElementById(id).attribute = new value</p>
+    <pre>
+        <img src="" id="myImage" alt="Vou mudar o atributo da imagem">
+        <code>
+            EX: var imagem = document.getElementById("myImage").src = "landscape.jpg";
+                console.log(imagem); >>Resultado: Muda o atributo src para "landscape.jpg"
+        </code>
+    </pre>
+
+    <h3>document.write():</h3>
+    <p>Em JavaScript, document.write() pode ser usado para gravar diretamente no fluxo de saída HTML:</p>
+    <pre>
+        <code>
+            
+        </code>
+    </pre>
+
+    <h3>textContent:</h3>
+    <p>Outra maneira de modificar o conteúdo de um elemento HTML é usando a propriedade textContent.</p>
+    <pre>
+        <p id="texto">Eu sou um texto</p>
+        <code>
+            EX: var texto = document.getElementById("texto");
+                texto.textContent = "Mudei o texto com textContent";
+                console.log(texto.textContent); >>Resultado: Muda o texto de texto para "Mudei o texto com textContent"
+        </code>
+    </pre>
+    style
+    setAttribute
+
+    <h2>Validação de Formulário:</h2>
+    <p>A validação do formulário HTML pode ser feita por JavaScript.</p>
+    <h3>Campo Vazio:</h3>
+    <pre>
+        <code>
+            EX: <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+                Name: <input type="text" name="nome">
+                <input type="submit" value="Enviar">
+                </form>
+        </code>
+    </pre>
+
+    <h3>Entrada numérica:</h3>
+    <pre>
+        <code>
+            Insira um número entre 1 e 10:<input id="num">
+            <button type="button" onclick="myFunction()">Enviar</button>
+        </code>
+    </pre>
+
+    <h2>Alterando CSS:</h2>
+    <h3>style:</h3>
+    <p>Para alterar o estilo de um elemento HTML, use esta sintaxe: document.getElementById(id).style.property = new style </p>
+    <pre>
+        <code>
+            <p id="mudaCor">Fundo azul</p>
+            EX: var css = document.getElementById("mudaCor");
+                css.style.backgroundColor = 'blue'; >>Resultado: Fundo fica azul.
+        </code>
+    </pre>
+
+   <h2>O método addEventListener():</h2>
+   <p>O método addEventListener() anexa um manipulador de eventos ao elemento especificado.</p>
+   <pre>
+    <code>
+        <p id="elemento">Aperte Aqui</p>
+        EX: var elemento = document.getElementById("elemento");
+            elemento.addEventListener("click", function(){ alert("Hello World!"); });
+    </code>
+   </pre>
+
+   <h2>Navegação DOM:</h2>
+   <h3>Nós DOM:</h3>
+   <p>De acordo com o padrão W3C HTML DOM, tudo em um documento HTML é um nó.</p>
+   <p>Os nós na árvore de nós têm um relacionamento hierárquico entre si.</p>
+   <p>Em uma árvore de nós: o nó superior é chamado de raiz (ou nó raiz); Cada nó tem exatamente um pai, exceto a raiz (que não tem pai); Um nó pode ter vários filhos; Irmãos (irmãos ou irmãs) são nós com o mesmo pai</p>
+   <pre>
+    <code>
+        EX: html>
+
+            head>
+                title> DOM Tutorial /title>
+            /head>
+      
+            body>
+                h1>DOM Lesson one /h1>
+                p>Hello world! /p>
+            /body>
+      
+            /html>
+
+        >>Resumindo: 
+            html> É o nó raiz
+            html> Não tem pai
+            html> É o pai de head> e body>
+            head> É o primeiro filho de html>
+            body> É o último filho de html>
+            
+            head> Tem um filho: title>
+            title> Tem um filho (um nó de texto): "DOM Tutorial"
+            body> Tem dois filhos: h1> e p>
+            h1> Tem um filho: "DOM Lesson one"
+            p> Tem um filho: "Olá, mundo!"
+            h1> e p> são irmãos
+    </code>
+   </pre>
+
+   <h3>parentNode:</h3>
+   <p>Retorna o pai do elemento selecionado</p>
+   <pre>
+    <code>
+        EX: const paragrafo = document.getElementById("p");
+            console.log(paragrafo.parentNode); >>Resultado:  Retorna o elemento pai do elemento "paragrafo" que está em uma div
+    </code>
+   </pre>
+
+   <h3>childNodes[posição]</h3>
+   <p>Retorna o filho da posição especificada</p>
+   <pre>
+    <code>
+        EX: const div = document.getElementById("div1");
+            console.log(div.childNodes[1]); >>Resultado:  Retorna o segundo filho da div
+    </code>
+   </pre>
+
+   <h3>firstChild:</h3>
+   <p>Retorna o primeiro filho do elemento selecionado</p>
+   <pre>
+    <code>
+        EX: const div = document.getElementById("div1");
+            console.log(div.firstChild); >>Resultado:  Retorna o primeiro filho da div
+    </code>
+   </pre>
+
+   <h3>lastChild:</h3>
+   <p>Retorna o último filho do elemento selecionado</p>
+   <pre>
+    <code>
+        EX: const div = document.getElementById("div1");
+            console.log(div.lastChild); >>Resultado:  Retorna o último filho da div
+    </code>
+   </pre>
+
+   <h3>nextSibling:</h3>
+   <p>Retorna o próximo irmão do elemento selecionado</p>
+   <pre>
+    <code>
+        EX: const paragrafo = document.getElementById("p1");
+            console.log(paragrafo.nextSibling); >>Resultado:  Retorna o próximo irmão de "p1"
+    </code>
+   </pre>
+   
+   <h3>previousSibling:</h3>
+   <p>Retorna o irmão anterior do elemento selecionado</p>
+   <pre>
+    <code>
+        EX: const paragrafo = document.getElementById("p1");
+            console.log(paragrafo.previousSibling); >>Resultado:  Retorna o irmão anterior de "p1"
+    </code>
+   </pre>
+
+    <h2>Adicionando elementos:</h2>
+    <p>Para adicionar um novo elemento ao HTML DOM, primeiro você deve criar o elemento (nó do elemento) e, em seguida, anexá-lo a um elemento existente.</p>
+    <h3>createElement:</h3>
+    <pre>
+        <div id="div1">
+            <p id="p1">Eu sou o primeiro filho</p>
+            <p id="apagado">Eu vou ser Apagado</p>
+            <p id="apagar">Me removeram com removeChild</p>
+            <p id="subs">Meu texto vai mudar</p>
+        </div>
+        <code>
+            EX: const paragrafo = document.createElement("p"); //Cria um elemento HTML p>
+                const texto2 = document.createTextNode("Isso é um texto novo!"); //Cria o texto de p>
+                paragrafo.appendChild(texto2); //O texto vira filho de p
+            
+                const elemento2 = document.getElementById("div1"); //Selecionando o elemento div existente no HTML
+                elemento2.appendChild(paragrafo); //O p vira filho da div
+        </code>
+    </pre>
+
+    <h3>appendChild:</h3>
+    <p>O método appendChild() anexa um novo elemento como o último filho do pai.</p>
+    <pre>
+        <code>
+            EX: const paragrafo = document.createElement("p");
+                const texto2 = document.createTextNode("Isso é um texto novo!");
+                paragrafo.appendChild(texto2); >>Resultado: o texto2 agora é filho do paragrafo
+        </code>
+    </pre>
+
+    <h3>insertBefore:</h3>
+    <p>O método insertBefore anexa um novo elemento na posição desejada como filho do pai.</p>
+    <pre>
+        <code>
+            EX: const elemento2 = document.getElementById("div1");
+
+                const paragrafo = document.createElement("p");
+                const texto2 = document.createTextNode("Agora eu sou o primeiro filho!");
+                paragrafo.appendChild(texto2);
+
+                const child = document.getElementById("p1");
+                elemento2.insertBefore(paragrafo, child); >>Resultado: paragrafo assume o lugar de 1 filho, deixando child como 2
+        </code>
+    </pre>
+
+    <h2>Remover elemento HTML:</h2>
+    <h3>remove():</h3>
+    <p>Para remover um elemento HTML, use o método remove():</p>
+    <pre>
+        <code>
+            EX: const apagar = document.getElementById("apagado");
+                apagar.remove(); >>Resultado: o elemento com id de "apagado" foi removido do HTML
+        </code>
+    </pre>
+
+    <h3>removeChild:</h3>
+    <p></p>
+    <pre>
+        <code>
+            EX: const pai = document.getElementById("div1");
+                const filho = document.getElementById("apagar");
+                pai.removeChild(filho); >>Resultado: o filho("apagar") do pai("div1") foi apagado
+        </code>
+    </pre>
+
+    <h2>Substituir Elemento HTML:</h2>
+    <p>Para substituir um elemento no HTML DOM, use o método replaceChild():</p>
+    <pre>
+        <code>
+            EX: const div = document.getElementById("div1");
+                const substituir = document.getElementById("subs");
+            
+                const para = document.createElement("p");
+                const node = document.createTextNode("Meu texto substituído");
+                para.appendChild(node);
+            
+                div.replaceChild(para, substituir); >>Resultado: o conteúdo de "subs" foi substituído pelo conteúdo de "para"
+        </code>
+    </pre>
+
+    <h2>Manipular Classe:</h2>
+    <h3>classList.add():</h3>
+    <p>O método classList.add adiciona uma classe a um elemento HTML</p>
+    <div id="colocaClasse">Testando classe</div>
+    <pre>
+        <code>
+            EX: const comClasse = document.querySelector("#colocaClasse");
+                comClasse.classList.add("novaClasse");
+                console.log(comClasse); >>Resultado: O elemento "colocaClasse" recebe a classe("novaClasse")
+        </code>
+    </pre>
+
+    <h3>classList.remove():</h3>
+    <p>O método classList.remove remove uma classe a um elemento HTML</p>
+    <div class="comClasse">Testando classe 2</div>
+    <pre>
+        <code>
+            EX: const comClasse = document.querySelector("#colocaClasse");
+                comClasse.classList.add("novaClasse");
+                console.log(comClasse); >>Resultado: O elemento "colocaClasse" recebe a classe("novaClasse")
+        </code>
+    </pre>
+
+    <h3>toggle:</h3>
+    <p>O método toggle verifica se existe uma classe, se existir ele remove, caso nao exista ele adiciona.</p>
+    <pre>
+        <code>
+            EX: const comClasse = document.querySelector("#colocaClasse");
+                comClasse.classList.toggle("novaClasse");
+                console.log(comClasse); >>Resultado: O elemento "colocaClasse" se tiver a classe "novaClasse" será removida, senão será colocada
+        </code>
+    </pre>
+    
+    <script src="script.js"></script>
+</body>
+</html>

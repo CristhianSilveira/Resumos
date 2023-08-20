@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 3</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../2- Variaveis/index.html">Voltar Para Variáveis</a>
+    <a id="linkpos" href="../4- Operadores/index.html">Ir Para Operadores</a>
+
+    <h1>Tipos De Dados:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+
+    <h2>Strings:</h2>
+    <p> Strings são escritas com aspas. Você pode usar aspas simples ou duplas.</p>
+    <code>EX: let cor = "Amarelo";   EX2: var cor = 'Amarelo';</code>
+
+    <h2>Números:</h2>
+    <p>JavaScript tem apenas um tipo de número. Os números podem ser escritos com ou sem casas decimais.</p>
+    <code>EX: let numero = 10;  EX2: let numero2 = 5.5</code>
+
+    <h2>Booleano:</h2>
+    <p>Booleanos podem ter apenas dois valores: true ou false.</p>
+    <code>EX: var Booleano = (10 > 9); >>Resultado: true</code>
+    
+    <h2>Object:</h2>
+    <p>Objetos JavaScript são escritos com chaves {}. As propriedades do objeto são escritas como pares nome:valor, separados por vírgulas.</p>
+    <pre>
+    <code>
+    EX: const pessoa = {PrimeiroNome:"João", Sobrenome:"Silva", idade:50, CorOlho:"Azul"};
+    
+        OU
+    
+    EX: const pessoa = {
+            PrimeiroNome:"João", 
+            Sobrenome:"Silva", 
+            idade:50, 
+            CorOlho:"Azul"
+        };
+    </code>
+    </pre>
+
+    <h2>Arrays (Matrizes): </h2>
+    <p>Um array é uma variável especial, que pode conter mais de um valor.</p>
+    <code> EX: const carros = ["Saab", "Volvo", "BMW"];</code>
+
+    <h2>Undefined:</h2>
+    <p>Em JavaScript, uma variável sem valor tem o valor undefined. O tipo também é undefined.</p>
+    <code>EX: let car;</code>
+
+    <h2>Null:</h2>
+    <p>Uma string vazia tem um valor legal e um tipo.</p>
+    <code>EX: let car = ""; (O valor é "", e o tipo é "string")</code>
+
+    <h2>Typeof:</h2>
+    <p>O operador typeof retorna o tipo de uma variável ou expressão:</p>
+    <code>EX: typeof "João" >>Resultado: string; typeof 10 >>Resultado: number</code> 
+
+    <h2>Conversão de Tipo:</h2>
+    <h3>String em número:</h3>
+    <p>O método global Number() converte uma variável (ou um valor) em um número.</p>
+    <code>EX: Number("3.14") >>Resultado: 3.14; Number(Math.PI) >>Resultado: 3.14159; Number(" ") >>Resultado: 0</code>
+
+    <h3>Número em string:</h3>
+    <p>O método global String()pode converter números em strings.</p>
+    <code>EX: String(123) >>Resultado: 123; String( 100 + 25) >>Resultado: 125;</code>
+
+    <h3>Boolean em número:</h3>
+    <p>O método global Number() também pode converter booleanos em números.</p>
+    <code>EX: Number(false) >>Resultado 0; Number(true) >>Resultado 1</code>
+
+    <h3>Boolean em string:</h3>
+    <p>O método global String() também pode converter booleanos em strings.</p>
+    <code>EX: String(false) >>Resultado false; String(true) >>Resultado true</code>
+ 
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo JavaScript 14</title>
+    <style>
+        h2{
+            background-color: yellow;
+        }
+        p{
+            font-size: 18px;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../13- Eventos/index.html">Voltar Para Eventos</a>
+    <a id="linkpos" href="../15- Maps_e_Sets/index.html">Ir Para Maps e Sets</a>
+
+    <h1>Classes:</h1>
+    <h2>Abre o inspecionar para ver os exemplos:</h2>
+    <p>Classes JavaScript são modelos para Objetos JavaScript.</p>
+
+    <h2>Sintaxe de classe JavaScript:</h2>
+    <p>Use a palavra-chave classpara criar uma classe. Sempre adicione um método chamado constructor()</p>
+    <p>Sintaxe: class ClassName { constructor() { ... } }</p>
+    <pre>
+        <code>
+            EX: class Carro {
+                    constructor(nome, ano) {
+                        this.nome = nome;
+                        this.ano = ano;
+                    }
+                };
+        </code>
+    </pre>
+
+    <h2>Usando uma classe:</h2>
+    <p>Quando você tem uma classe, você pode usar a classe para criar objetos:</p>
+    <pre>
+        <code>
+            EX: class Carro {
+                    constructor(nome, ano) {
+                        this.nome = nome;
+                        this.ano = ano;
+                    }
+                };
+                const myCar1 = new Carro("Ford", 2014);
+                const myCar2 = new Carro("Audi", 2019);
+                console.log(myCar1); >>Resultado: {nome: 'Ford', ano: 2014}
+                console.log(myCar2); >>Resultado: {nome: 'Audi', ano: 2019}
+        </code>
+    </pre>
+
+    <h2>Herança de classe:</h2>
+    <p>Para criar uma herança de classe, use a palavra-chave extends. Uma classe criada com uma herança de classe herda todos os métodos de outra classe:</p>
+    <p>Ao chamar o método super() no método construtor, chamamos o método construtor do pai e obtemos acesso às propriedades e métodos do pai.</p>
+    <pre>
+        <code>
+            EX: class Carro {
+                    constructor(nome, ano) {
+                        this.nome = nome;
+                        this.ano = ano;
+                    }
+                };
+
+                class Modelo extends Carro{
+                    constructor(nome, ano, modelo) {
+                        super(nome, ano);
+                        this.modelo = modelo;
+                    }
+                };
+                const myCar3 = new Modelo("Fiat", 2010, "Uno");
+                console.log(myCar3); >>Resultado: {nome: 'Fiat', ano: 2010, modelo: 'Uno'}
+        </code>
+    </pre>
+
+    <h2>Hoisting:</h2>
+    <p>Isso significa que você deve declarar uma classe antes de poder usá-la.</p>
+    <pre>
+        <code>
+            EX: 
+                // Não pode:
+                const myCar1 = new Carro("Ford", 2014);
+                class Carro {
+                    constructor(nome, ano) {
+                        this.nome = nome;
+                        this.ano = ano;
+                    }
+                };
+                // Pode:
+                const myCar1 = new Carro("Ford", 2014);
+        </code>
+    </pre>
+    
+    <script src="script.js"></script>
+</body>
+</html>

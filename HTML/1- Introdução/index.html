@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo HTML 1</title>
+    <style>
+        h2 {
+            background-color: yellow;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a id="linkpos" href="../2- Formatação_e_Estilos/index.html">Ir para Formatação e Estilos</a>
+
+    <h1>Introdução:</h1>
+    
+    <h2>O que é HTML?</h2>
+    <p>HTML significa Hyper Text Markup Language </p>
+    <p>HTML é a linguagem de marcação padrão para páginas da Web.</p>
+
+    <pre>
+        <code>
+            < !DOCTYPE html>
+            < html lang="pt-br">
+            < head>
+            < title>Título da página< /title>
+            < /head>
+            < body>
+
+            < h1>Meu primeiro título /h1>
+            < p>Meu primeiro parágrafo.< /p>
+
+            < /body>
+            < /html>
+        </code>
+    </pre>
+
+    <h3>Exemplo explicado:</h3>
+    <p>A declaração < !DOCTYPE html> define que este documento é um documento HTML5</p>
+    <p>O elemento < html> é o elemento raiz de uma página HTML</p>
+    <p>O elemento < head> contém metainformações sobre a página HTML</p>
+    <p>O elemento < title> especifica um título para a página HTML (que é mostrado na barra de título do navegador ou na guia da página) </p>
+    <p>O elemento < body> define o corpo do documento e é um recipiente para todos os conteúdos visíveis, como cabeçalhos, parágrafos, imagens, hiperlinks, tabelas, listas, etc.</p>
+
+    <h2>O que é um elemento HTML?</h2>
+    <p>Um elemento HTML é definido por uma tag inicial, algum conteúdo e uma tag final</p>
+    <pre>
+        <code>
+            EX: < tagname> O conteúdo vai aqui... < /tagname>
+        </code>
+    </pre>
+
+    <h2>A Declaração < !DOCTYPE>:</h2>
+    <p>A declaração < !DOCTYPE> representa o tipo de documento e ajuda os navegadores a exibir páginas da Web corretamente.</p>
+
+    <h2>Como visualizar o código-fonte HTML:</h2>
+    <p>Clique com o botão direito do mouse em uma página HTML e selecione "Exibir fonte da página" (no Chrome) ou "Exibir fonte" (no Edge) ou similar em outros navegadores. Isso abrirá uma janela contendo o código-fonte HTML da página.</p>
+
+    <h2>Elementos HTML Vazios:</h2>
+    <p>Elementos HTML sem conteúdo são chamados de elementos vazios.</p>
+    <p>A tag < br> define uma quebra de linha e é um elemento vazio sem uma tag de fechamento</p>
+    <pre>
+        <code>
+            EX: < p>Este é um<br> parágrafo com line break.< /p>
+        </code>
+    </pre>
+
+    <h2>Atributos HTML:</h2>
+    <p>Todos os elementos HTML podem ter atributos</p>
+    <p>Os atributos fornecem informações adicionais sobre os elementos</p>
+    <p>Os atributos são sempre especificados na tag de início</p>
+    <p>Os atributos geralmente vêm em pares de nome/valor como: name="value"</p>
+    <h3>O atributo href:</h3>
+    <p>A tag < a> define um hiperlink. O atributo href especifica a URL da página para a qual o link vai:</p>
+    <pre>
+        <code>
+            EX:  < a href="https://www.w3schools.com">Visite W3Schools< /a>
+        </code>
+    </pre>
+    <h3>O Atributo src:</h3>
+    <p>A tag < img> é usada para incorporar uma imagem em uma página HTML. O srcatributo especifica o caminho para a imagem a ser exibida</p>
+    <p>Há duas maneiras de especificar a URL no atributo src:</p>
+    <p> 1- URL absoluta - Links para uma imagem externa que está hospedada em outro site. Exemplo: src=" https://www.w3schools.com/images/img_girl.jpg" .</p>
+    <p>2. URL relativo - Links para uma imagem hospedada no site. Aqui, a URL não inclui o nome de domínio. Se a URL começar sem uma barra, ela será relativa à página atual. Exemplo: src="img_girl.jpg". Se a URL começar com uma barra, ela será relativa ao domínio. Exemplo: src="/images/img_girl.jpg".</p>
+    <p>Dica: quase sempre é melhor usar URLs relativos. Eles não vão quebrar se você mudar de domínio.</p>
+    <pre>
+        <code>
+            EX: < img src="img_girl.jpg">
+        </code>
+    </pre>
+
+    <h3>Os atributos de largura e altura:</h3>
+    <p>A tag < img> também deve conter os atributos width e height, que especificam a largura e a altura da imagem (em pixels)</p>
+    <pre>
+        <code>
+            EX: < img src="img_girl.jpg" width="500" height="600">
+        </code>
+    </pre>
+
+    <h3>O Atributo Alt:</h3>
+    <p>O atributo obrigatório alt para a tag < img>  especifica um texto alternativo para uma imagem, se a imagem por algum motivo não puder ser exibida. Isso pode ocorrer devido a uma conexão lenta ou a um erro no atributo src ou se o usuário usar um leitor de tela.</p>
+    <pre>
+        <code>
+            EX: < img src="img_girl.jpg" alt="Garota com uma jaqueta">
+        </code>
+    </pre>
+
+    <h3>O atributo de estilo:</h3>
+    <p>O atributo style é usado para adicionar estilos a um elemento, como cor, fonte, tamanho e muito mais.</p>
+    <pre>
+        <code>
+            EX: < p style="color:red;">Este é um parágrafo vermelho.< /p>
+        </code>
+    </pre>
+
+    <h3>O atributo lang:</h3>
+    <p>Você deve sempre incluir o atributo lang dentro da tag < html>, para declarar o idioma da página da Web. Isso se destina a ajudar os motores de busca e navegadores.</p>
+    <pre>
+        <code>
+            EX: < html lang="pt-br">
+        </code>
+    </pre>
+
+    <h3>O atributo do tittle:</h3>
+    <p>O atributo title define algumas informações extras sobre um elemento.</p>
+    <pre>
+        <code>
+            EX: < p title="Eu sou um titulo">Este é um parágrafo</p>
+
+        </code>
+    </pre>
+
+    <h2>Comentários:</h2>
+    <p>Os comentários HTML não são exibidos no navegador, mas podem ajudar a documentar seu código-fonte HTML.</p>
+    <p>Sintaxe: < !-- Escreva um comentário aqui --> </p>
+    <pre>
+        <code>
+            EX: < !-- Isso é um comentário -->
+
+            < p>Isto é um parágrafo.</p>
+            
+            < !-- Adicione mais informações aqui -->
+        </code>
+    </pre>
+    
+</body>
+</html>
