@@ -266,6 +266,180 @@
             Resultado: <bdo dir="rtl">Esta linha será escrita da direita para a esquerda</bdo>
         </code>
     </pre>
+
+    <h2>Usando CSS:</h2>
+    <p>CSS pode ser adicionado a documentos HTML de 3 maneiras: Inline- usando o atributo style dentro dos elementos HTML; Interno- usando um elemento  style> na seção  head>; Externo- usando um elemento < link> para vincular a um arquivo CSS externo</p>
+    <p>A maneira mais comum de adicionar CSS é manter os estilos em arquivos CSS externos.</p>
+    <h3>CSS embutido:</h3>
+    <p>Um CSS embutido é usado para aplicar um estilo único a um único elemento HTML. Um CSS embutido usa o atributo style de um elemento HTML.</p>
+    <pre>
+        <code>
+            EX: < h1 style="color:blue;">Um título azul< /h1>
+            Resultado: <h1 style="color:blue;">Um título azul</h1>
+        </code>
+    </pre>
+
+    <h3>CSS interno:</h3>
+    <p>Um CSS interno é definido na seção < head> de uma página HTML, dentro de um elemento  style>. </p>
+    <pre>
+        <code>
+            EX:
+            < !DOCTYPE html>
+            < html>
+            < head>
+             style>
+            body {background-color: powderblue};
+            h1   {color : blue}
+            p    {color: red}
+             /style>
+             /head>
+            < body>
+
+            < h1>This is a heading< /h1>
+            < p>This is a paragraph.< /p>
+
+            < /body>
+            < /html>
+        </code>
+    </pre>
+
+    <h3>CSS externo:</h3>
+    <p>Para usar uma folha de estilo externa, adicione um link para ela na seção < head> de cada página HTML.</p>
+
+    <h2>Favicon:</h2>
+    <p>Um favicon é uma pequena imagem exibida ao lado do título da página na guia do navegador.</p>
+    <p>Em seguida, adicione um elemento < link> ao seu arquivo "index.html", após o elemento < title></p>
+    <p>Você pode usar qualquer imagem que desejar como seu favicon. Você também pode criar seu próprio favicon em sites como <a href="https://www.favicon.cc/" target="_blank" >https://www.favicon.cc.</a></p>
     
+    <h2>Título da página:</h2>
+    <p>O elemento < title> adiciona um título à sua página.</p>
+    <pre>
+        <code>
+            EX:
+            < !DOCTYPE html>
+            < html>
+            < head>
+                < title>HTML Tutorial</title>
+            < /head>
+            < body>
+
+            O conteúdo do documento......
+
+            <   /body>
+            < /html>
+        </code>
+    </pre>
+
+    <h2>Block vs Inline:</h2>
+    <p>Cada elemento HTML tem um valor de exibição padrão, dependendo do tipo de elemento. Existem dois valores de exibição: bloco e embutido.</p>
+
+    <h3>Elementos de nível de bloco:</h3>
+    <p>Um elemento de nível de bloco sempre começa em uma nova linha e os navegadores adicionam automaticamente algum espaço (uma margem) antes e depois do elemento. Dois elementos de bloco comumente usados são: < p> e < div>.</p>
+    <pre>
+        <code>
+            Outros elementos de bloco:
+            < address> < article> < aside> < blockquote> < canvas> < dd> < div> < dl> < dt>
+            < fieldset> < figcaption> < figure> < footer> < form> < h1>-< h6> < header> < hr> < li> 
+            < main> < nav> < noscript> < ol> < p> < pre> < section> < table> < tfoot> < ul> < video>
+        </code>
+    </pre>
+
+    <h3>Elementos embutidos/inline:</h3>
+    <p>Um elemento inline não começa em uma nova linha e ocupa apenas a largura necessária.</p>
+    <pre>
+        <code>
+            Alguns elementos inline:
+             a>  abbr> acronym>  b>  bdo>  big>  br>  button>  cite>  code>  dfn>  em>  i>  img> 
+             input>  kbd>  label>  map>  object>  output>  q>  samp>  script> < select> 
+            < small> < span> < strong> < sub> < sup> < textarea> < time> < tt> < var>
+        </code>
+    </pre>
+
+    <h3>O elemento < div>:</h3>
+    <p>É usado como um contêiner para outros elementos HTML. O elemento < div>  não tem atributos obrigatórios, mas style, class e id são comuns.</p>
+    <pre>
+        <code>
+            EX: 
+            < div style="background-color:black;color:white;padding:20px;">
+                < h2>London< /h2>
+                < p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.< /p>
+              < /div>
+            Resultado: 
+            <div style="background-color:blue;color:red;padding:20px;">
+                <h2>London</h2>
+                <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+              </div>
+        </code>
+    </pre>
+
+    <h3>O elemento < span>:</h3>
+    <p>É um contêiner embutido usado para marcar uma parte de um texto ou uma parte de um documento. O elemento < span> não tem atributos obrigatórios, mas style, class e id são comuns.</p>
+    <pre>
+        <code>
+            EX: 
+            < p>Minha mãe tem olhos < span style="color:blue;font-weight:bold;">azuis< /span> e meu pai tem  olhos < span style="color:darkolivegreen;font-weight:bold;">verdes escuros.< /span>< /p>
+            Resultado:
+            <p>Minha mãe tem olhos <span style="color:blue;font-weight:bold;">azuis</span> e meu pai tem  olhos <span style="color:darkolivegreen;font-weight:bold;">verdes escuros.</span></p>
+        </code>
+    </pre>
+
+    <h2>Classe:</h2>
+    <p>O atributo HTML class é usado para especificar uma classe para um elemento HTML.</p>
+    <p>O atributo class geralmente é usado para apontar para um nome de classe em uma folha de estilo. Também pode ser usado por um JavaScript para acessar e manipular elementos com o nome de classe específico.</p>
+    <pre>
+        <code>
+            EX: 
+            < div class="city">
+                < h3>Londres< /h3>
+                < p>Londres é a capital da inglaterra.< /p>
+            < /div>
+            Resultado:
+            <div class="city">
+                <h3>Londres</h3>
+                <p>Londres é a capital da inglaterra..</p>
+              </div>
+        </code>
+    </pre>
+
+    <h2>ID:</h2>
+    <p>O atributo HTML id é usado para especificar um id exclusivo para um elemento HTML.</p>
+    <p>O atributo id é usado para apontar para uma declaração de estilo específica em uma folha de estilo. Também é usado pelo JavaScript para acessar e manipular o elemento com o id específico.</p>
+
+    <h2>Caminho de arquivos:</h2>
+    <p>Um caminho de arquivo descreve a localização de um arquivo na estrutura de pastas de um site.</p>
+
+    <h3>Caminhos de Arquivo Absolutos:</h3>
+    <p>Um caminho de arquivo absoluto é o URL completo para um arquivo.</p>
+    <pre>
+        <code>
+            EX: < img src="https://www.w3schools.com/images/picture.jpg" alt="Mountain">
+            Resultado: O arquivo "picture.jpg" está localizado na mesma pasta da página atual 
+            <img src="https://www.w3schools.com/images/picture.jpg" alt="Mountain">
+        </code>
+    </pre>
+
+    <h3>Caminhos de Arquivo Relativos:</h3>
+    <p>Um caminho de arquivo relativo aponta para um arquivo relativo à página atual. É uma prática recomendada usar caminhos de arquivo relativos (se possível).</p>
+    <pre>
+        <code>
+            EX: < img src="/images/picture.jpg" alt="Mountain">
+            Resultado: O arquivo "picture.jpg" está localizado na pasta de imagens na pasta atual
+            <img src="/images/picture.jpg" alt="Mountain">
+        </code>
+    </pre>
+
+    <h3>Resumo:</h3>
+    <pre>
+        <code>
+            < img src="picture.jpg">	O arquivo "picture.jpg" está localizado na mesma pasta da página atual
+            < img src="images/picture.jpg">	O arquivo "picture.jpg" está localizado na pasta de imagens na pasta atual
+            < img src="/images/picture.jpg">	O arquivo "picture.jpg" está localizado na pasta de imagens na raiz da web atual
+            < img src="../picture.jpg">	O arquivo "picture.jpg" está localizado na pasta um nível acima da pasta atual
+        </code>
+    </pre>
+
+    <h2>Head:</h2>
+    <p>O elemento  head>  é um contêiner para os seguintes elementos:  title>,  style>,  meta>,  link>,  script> e  base>    </p>
+
 </body>
 </html>
