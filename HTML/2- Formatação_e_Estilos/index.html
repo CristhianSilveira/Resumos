@@ -310,25 +310,6 @@
     <p>Um favicon é uma pequena imagem exibida ao lado do título da página na guia do navegador.</p>
     <p>Em seguida, adicione um elemento < link> ao seu arquivo "index.html", após o elemento < title></p>
     <p>Você pode usar qualquer imagem que desejar como seu favicon. Você também pode criar seu próprio favicon em sites como <a href="https://www.favicon.cc/" target="_blank" >https://www.favicon.cc.</a></p>
-    
-    <h2>Título da página:</h2>
-    <p>O elemento < title> adiciona um título à sua página.</p>
-    <pre>
-        <code>
-            EX:
-            < !DOCTYPE html>
-            < html>
-            < head>
-                < title>HTML Tutorial</title>
-            < /head>
-            < body>
-
-            O conteúdo do documento......
-
-            <   /body>
-            < /html>
-        </code>
-    </pre>
 
     <h2>Block vs Inline:</h2>
     <p>Cada elemento HTML tem um valor de exibição padrão, dependendo do tipo de elemento. Existem dois valores de exibição: bloco e embutido.</p>
@@ -422,9 +403,9 @@
     <p>Um caminho de arquivo relativo aponta para um arquivo relativo à página atual. É uma prática recomendada usar caminhos de arquivo relativos (se possível).</p>
     <pre>
         <code>
-            EX: < img src="/images/picture.jpg" alt="Mountain">
+            EX: < img src="images/picture.jpg" alt="Mountain">
             Resultado: O arquivo "picture.jpg" está localizado na pasta de imagens na pasta atual
-            <img src="/images/picture.jpg" alt="Mountain">
+            <img src="imagens/picture.jpg" alt="Mountain">
         </code>
     </pre>
 
@@ -432,14 +413,255 @@
     <pre>
         <code>
             < img src="picture.jpg">	O arquivo "picture.jpg" está localizado na mesma pasta da página atual
+            
             < img src="images/picture.jpg">	O arquivo "picture.jpg" está localizado na pasta de imagens na pasta atual
+            
             < img src="/images/picture.jpg">	O arquivo "picture.jpg" está localizado na pasta de imagens na raiz da web atual
+            
             < img src="../picture.jpg">	O arquivo "picture.jpg" está localizado na pasta um nível acima da pasta atual
         </code>
     </pre>
 
     <h2>Head:</h2>
-    <p>O elemento  head>  é um contêiner para os seguintes elementos:  title>,  style>,  meta>,  link>,  script> e  base>    </p>
+    <p>O elemento  head>  é um contêiner para os seguintes elementos:  title>,  style>,  meta>,  link>,  script> e  base></p>
+
+    <h3>O elemento < title>:</h3>
+    <p>O elemento < title> define o título do documento. O título deve ser somente texto e é mostrado na barra de título do navegador ou na aba da página.</p>
+    <pre>
+        <code>
+            EX:
+            < !DOCTYPE html>
+            < html>
+            < head>
+                < title>HTML Tutorial</title>
+            < /head>
+            < body>
+
+            O conteúdo do documento......
+
+            <   /body>
+            < /html>
+        </code>
+    </pre>
+
+    <h3>O elemento < meta>:</h3>
+    <p>O elemento < meta> normalmente é usado para especificar o conjunto de caracteres, a descrição da página, as palavras-chave, o autor do documento e as configurações da janela de visualização.</p>
+    <pre>
+        <code>
+            EX:  
+            < meta charset="UTF-8"> >>Explicando: Define o conjunto de caracteres usado
+            
+            < meta name="keywords" content="HTML, CSS, JavaScript"> >>Explicando: Define palavras-chave para motores de busca
+            
+            < meta name="description" content="Free Web tutorials"> >>Explicando: Define uma descrição da sua página da web
+            
+            < meta name="author" content="John Doe"> >>Explicando: Define o autor de uma página
+            
+            < meta http-equiv="refresh" content="30"> >>Explicando: Atualiza o documento a cada 30 segundos
+            
+            < meta name="viewport" content="width=device-width, initial-scale=1.0"> >>Explicando: Configura a janela de visualização para que seu site tenha uma boa aparência em todos os dispositivos
+        </code>
+    </pre>
+
+    <h2>Responsividade:</h2>
+    <p>Web design responsivo é criar páginas da Web com boa aparência em todos os dispositivos. Um web design responsivo se ajustará automaticamente para diferentes tamanhos de tela e viewports.</p>
+
+    <h3>Imagens responsivas:</h3>
+    <p>Imagens responsivas são imagens que se adaptam bem a qualquer tamanho de navegador. </p>
+    <p>Se a propriedade width estiver definida como 100%, a imagem será responsiva e dimensionada para cima e para baixo.</p>
+    <p>Se a propriedade max-width estiver definida como 100%, a imagem será reduzida se necessário, mas nunca será ampliada para ficar maior que o tamanho original.</p>
+    <p>O elemento < picture> permite definir diferentes imagens para diferentes tamanhos de janela do navegador.</p>
+    <pre>
+        <code>
+            EX:  
+            < picture>
+                < source srcset="img_smallflower.jpg" media="(max-width: 600px)">
+                < source srcset="img_flowers.jpg" media="(max-width: 1500px)">
+                < source srcset="flowers.jpg">
+                < img src="img_smallflower.jpg" alt="Flowers">
+              < /picture>
+        </code>
+    </pre>
+
+    <h3>Textos responsvisos:</h3>
+    <p>O tamanho do texto pode ser definido com uma unidade "vw", que significa a "largura da janela de visualização".</p>
+    <pre>
+        <code>
+            EX: < h1 style="font-size:10vw">Hello World</h1>
+        </code>
+    </pre>
+
+    <h2>Semantica HTML:</h2>
+    <p>Um elemento semântico descreve claramente seu significado tanto para o navegador quanto para o desenvolvedor.</p>
+    <img src="semantica-html.gif" alt="HTMl semantico">
+
+    <h3>Elemento < section>:</h3>
+    <p>Define uma seção em um documento, geralmente com um tema ou propósito específico.</p>
+    <p>Exemplos de onde um elemento < section> pode ser usado: Capítulos, Introdução, Novos itens e Informações de contato</p>
+
+    <h3>Elemento < article>:</h3>
+    <p>Define um conteúdo independente  e autossuficiente do restante do documento.</p>
+    <p>Exemplos de onde o elemento < article> pode ser usado: postagens de fórum, postagens no blog, comentários do usuário, cartões de produtos e Artigos de jornal   </p>
+
+    <h3>Elemento < header>:</h3>
+    <p>Define um cabeçalho para um documento ou uma seção, que geralmente inclui informações como logotipo, menus de navegação e outros elementos que aparecem no topo da página.</p>
+    <p>Um elemento < header> normalmente contém: um ou mais elementos de cabeçalho (< h1> - < h6>), logotipo ou ícone e informações de autoria</p>
+
+    <h3>Elemento < footer>:</h3>
+    <p>Define um rodapé para um documento ou uma seção, que geralmente inclui informações como direitos autorais, links para contatos, mapa do site, voltar aos links principais e outros elementos que aparecem na parte inferior da página.</p>
+
+    <h3>Elemento < nav>:</h3>
+    <p>Define uma seção de navegação do documento, que geralmente inclui links para outras páginas do site.</p>
+
+    <h3>Elemento < aside>:</h3>
+    <p>Define uma seção lateral do documento, que geralmente inclui informações complementares ou de suporte ao conteúdo principal.</p>
+
+    <h3>Elementos < figure> e < figcaption>:</h3>
+    <p>A tag < figure> especifica o conteúdo independente, como ilustrações, diagramas, fotos, listagens de código, etc. A tag < figcaption> define uma legenda para um elemento < figure>. O elemento < figcaption> pode ser colocado como o primeiro ou como o último filho de um elemento < figure>.</p>
+    <pre>
+        <code>
+            EX: 
+            < figure>
+                < img src="pic_trulli.jpg" alt="Trulli">
+                < figcaption>Fig1. - Trulli, Puglia, Italy.< /figcaption>
+            < /figure>
+            Resultado: 
+            <figure>
+                <img src="pic_trulli.jpg" alt="Trulli" width="250px">
+                <figcaption>Fig1. - Trulli, Puglia, Italy.</figcaption>
+            </figure>
+        </code>
+    </pre>
+
+    <h3>Outros elementos:</h3>
+    <p>< details>- Define detalhes adicionais que o usuário pode abrir e fechar sob demanda e < summary>- Define um título para o  elemento < details></p>
+
+    <h2>Guia de estilo:</h2>
+    <p>Sempre declare o tipo de documento, Use nomes de elementos em minúsculas, Fechar todos os elementos HTML, Use nomes de atributos em minúsculas, Sempre usar aspas para citar valores de atributo (EX: < table class="striped">), Sempre especifique alt,largura e altura para imagens (EX: < img src="html5.gif" alt="HTML5" style="width:128px; height:128px">)</p>
+    <p>Evite linhas de código longas, Para facilitar a leitura, adicione 2 espaços de recuo em branco para separar blocos de código grandes ou lógicos, O elemento < title> é obrigatório em HTML, Adicione o atributo lang, Use Nomes de Arquivos em Minúsculas</p>
+
+    <h2>Símbolos:</h2>
+    <p>Para adicionar esses símbolos a uma página HTML, você pode usar o nome da entidade ou o número da entidade (uma referência decimal ou hexadecimal) para o símbolo.</p>
+
+    <h3>Símbolos matemáticos:</h3>
+    <pre>
+        <code>
+        EX:
+            ∀ (Todos) = & forall;
+            ∂ (Diferencial Parcial) = & part;
+            ∃ (Existe) = & exist;
+            ∅ (Vazio) = & empty;
+            ∇ (Nabla) = & nab
+            ∈ (Pertence) = & isin;
+            ∉ (Não Pertence) & notin;
+            ∋ (Contém) = & ni;		
+            ∑ (Soma) = & sum;
+        Resultado:
+            ∀ (Todos) = &forall;
+            ∂ (Diferencial Parcial) = &part;
+            ∃ (Existe) = &exist;
+            ∅ (Vazio) = &empty;
+            ∇ (Nabla) = &nab
+            ∈ (Pertence) = &isin;
+            ∉ (Não Pertence) &notin;
+            ∋ (Contém) = &ni;		
+            ∑ (Soma) = &sum;
+        </code>
+    </pre>
+
+    <h3>Letras gregas:</h3>
+    <pre>
+        <code>
+            EX:
+                Α (Alpha) = & Alpha;		
+                Β (Beta) = & Beta;		
+                Γ (Gama) = & Gamma;		
+                Δ (Delta) = & Delta;		
+                Ε (Epsilon) = & Epsilon;	
+                Ζ (Zeta) = & Zeta;
+            Resultado:
+                Α (Alpha) = &Alpha;		
+                Β (Beta) = &Beta;		
+                Γ (Gama) = &Gamma;		
+                Δ (Delta) = &Delta;		
+                Ε (Epsilon) = &Epsilon;	
+                Ζ (Zeta) = &Zeta;
+        </code>
+    </pre>
+
+    <h3>Outros símbolos:</h3>
+    <pre>
+        <code>
+        EX:
+            (espaço em branco) = & nbsp;	
+            < (Menor que) =	& lt;
+            > (Maior que) =	& gt;
+            & (E-comercial)	= & amp;
+            " (Aspas duplas) = & quot;
+            ' (Aspas simples) = & apos;
+            ¢ (centavo) = & cent;
+            £ (Libra) = & pound;
+            ¥ (Yene) = & yen;
+            € (Euro) = & euro;
+            © (Copyright) = & copy;
+            ® (Marca Registrada) = & reg;
+            ™ (Marca Registrada) = & trade;	
+            ← (Seta P/ Esquerda) = & larr;	
+            ↑ (Seta P/ Cima) = & uarr;	
+            → (Seta P/ Direita) = & rarr;	
+            ↓ (Seta P/ Baixo) = & darr;	
+            ♠ (Espada Preto) = & spades;	
+            ♣ (Naipe Preto) = & clubs;	
+            ♥ (Coração Preto) = & hearts;	
+            ♦ (Losango Preto) = & diams;
+        Resultado:
+            (espaço em branco) = &nbsp;	
+            < (Menor que) =	&lt;
+            > (Maior que) =	&gt;
+            & (E-comercial)	= &amp;
+            " (Aspas duplas) = &quot;
+            ' (Aspas simples) = &apos;
+            ¢ (centavo) = &cent;
+            £ (Libra) = &pound;
+            ¥ (Yene) = &yen;
+            € (Euro) = &euro;
+            © (Copyright) = &copy;
+            ® (Marca Registrada) = &reg;
+            ™ (Marca Registrada) = &trade;	
+            ← (Seta P/ Esquerda) = &larr;	
+            ↑ (Seta P/ Cima) = &uarr;	
+            → (Seta P/ Direita) = &rarr;	
+            ↓ (Seta P/ Baixo) = &darr;	
+            ♠ (Espada Preto) = &spades;	
+            ♣ (Naipe Preto) = &clubs;	
+            ♥ (Coração Preto) = &hearts;	
+            ♦ (Losango Preto) = &diams;
+        </code>
+    </pre>
+
+    <h2>URL encode:</h2>
+    <h3>Como identificar a URL da página:</h3>
+    <pre>
+        <code>
+            EX: Protocolo://Subdomínio.domínio.extensão:porta/path/filename 
+            EX: https://www.hostinger.com.br/tutoriais/url
+
+            Protocolo = Define o tipo de serviço de Internet (o mais comum é http ou https )
+            
+            Subdomínio = Define um prefixo de domínio (o padrão para http é www )
+            
+            Domínio = Define o nome de domínio da Internet (EX: w3schools.com)
+            
+            Extensão = É a parte que segue um nome de domínio,(EX:.com , .org. e .com.br)
+            
+            port - define o número da porta no host (o padrão para http é 80 )
+            
+            path - define um caminho no servidor (Se omitido: o diretório raiz do site)
+            
+            filename - define o nome de um documento ou recurso
+            OBS: HTTP(Hypertext Transfer Protocol) = Páginas web comuns, não criptografado e HTTPS(Hypertext Transfer Protocol Secure) = Páginas da web seguras, criptografado.
+        </code>
+    </pre>
 
 </body>
 </html>
