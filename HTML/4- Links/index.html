@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo HTML 4</title>
+    <style>
+        h2 {
+            background-color: yellow;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../3- Cores/index.html">Voltar para Cores</a>
+    <a id="linkpos" href="../5- Imagens/index.html">Ir para Imagens</a>
+
+    <h1>Links:</h1>
+    
+    <h2 id="topo">Introdução:</h2>
+    <p>Links são encontrados em quase todas as páginas da web. Os links permitem que os usuários cliquem de uma página para outra.  </p>
+    <p>A tag < a> define um hiperlink. Possui a seguinte sintaxe: < a href="url">link text< /a></p>
+    <p>O atributo mais importante do elemento < a> é o atributo href, que indica o destino do link</p>
+
+    <p>Por padrão, os links aparecerão da seguinte maneira em todos os navegadores: Um link não visitado é sublinhado em azul; Um link visitado é sublinhado em roxo e Um link ativo é sublinhado em vermelho</p>
+    <pre>
+        <code>
+            EX:  < a href="https://www.w3schools.com/">Visit W3Schools.com!< /a>
+            Resultado: <a href="https://www.w3schools.com/">Visit W3Schools.com!</a>
+        </code>
+    </pre>
+
+    <h3>O atributo de destino:</h3>
+    <p>Por padrão, a página vinculada será exibida na janela atual do navegador. Para alterar isso, você deve especificar outro destino para o link.</p>
+    <p>O atributo target pode ter um dos seguintes valores: </p>
+    <p>_self- Padrão. Abre o documento na mesma janela/guia em que foi clicado </p>
+    <p> _blank- Abre o documento em uma nova janela ou guia</p>
+    <p>_parent- Abre o documento no quadro pai</p>
+    <p>_top- Abre o documento em todo o corpo da janela</p>
+    <pre>
+        <code>
+            EX: < a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!< /a>
+            Resultado: <a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
+        </code>
+    </pre>
+
+    <h2>Usando uma imagem como um link:</h2>
+    <p>Para usar uma imagem como link, basta colocar a tag < img> dentro da tag < a>.</p>
+    <pre>
+        <code>
+            EX: 
+            < a href="https://www.w3schools.com/html/html_links.asp">
+                < img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+            < /a>
+            Resultado:
+            <a href="https://www.w3schools.com/html/html_links.asp"><img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;"></a>
+        </code>
+    </pre>
+
+    <h2>Link para um endereço de e-mail:</h2>
+    <p>Use mailto: dentro do atributo href para criar um link que abra o programa de e-mail do usuário (para permitir que ele envie um novo e-mail)</p>
+    <pre>
+        <code>
+            EX: < a href="mailto:someone@example.com">Enviar email< /a>
+            Resultado: <a href="mailto:someone@example.com">Enviar email</a>
+        </code>
+    </pre>
+
+    <h2>Títulos de links:</h2>
+    <p>O atributo title especifica informações extras sobre um elemento. As informações geralmente são mostradas como um texto de dica de ferramenta quando o mouse passa sobre o elemento.</p>
+    <pre>
+        <code>
+            EX: <a href="https://www.w3schools.com/html/" title="Va para a seção HTML do W3Schools">Visite nosso tutorial de  HTML</a>
+            Resultado: <a href="https://www.w3schools.com/html/" title="Va para a seção HTML do W3Schools">Visite nosso tutorial de  HTML</a>>
+        </code>
+    </pre>
+
+    <h2>Criando marcadores:</h2>
+    <p>Os links HTML podem ser usados para criar marcadores, para que os leitores possam pular para partes específicas de uma página da web.</p>
+    <pre>
+        <code>
+            EX: < h2 id="topo">Introdução< /h2>
+                < a href="#topo">Ir para Introdução</a>
+
+            Resultado: 
+            <a href="#topo">Ir para Introdução</a>
+        </code>
+    </pre>
+    
+</body>
+</html>
