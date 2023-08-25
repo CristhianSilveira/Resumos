@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo HTML 6</title>
+    <style>
+        h2 {
+            background-color: yellow;
+        }
+        #linkpos{
+            float: right;
+        }
+        .zebrada table{
+          border-collapse: collapse;
+          border: 1px solid black;
+          width: 50%;
+        }
+        .zebrada td {
+          text-align: left;
+          border: 1px solid black;
+          padding: 8px;
+        }
+        .zebrada th{
+          text-align: left;
+          border: 1px solid black;
+          padding: 8px;
+        }
+        .zebrada tr:nth-child(even){
+          background-color: #D6EEEE;
+        }
+    </style>
+</head>
+<body>
+    <a href="../5- Imagens/index.html">Voltar para Imagens</a>
+    <a id="linkpos" href="../7- Listas/index.html">Ir para Listas</a>
+
+    <h1>Tabelas:</h1>
+    
+    <h2>Introdução:</h2>
+    <p>As tabelas HTML permitem que os desenvolvedores da web organizem os dados em linhas e colunas.</p>
+
+    <h2>Definir uma tabela HTML:</h2>
+    <p>Uma tabela em HTML consiste em células de tabela dentro de linhas e colunas.</p>
+
+    <h3>Células de tabela:</h3>
+    <p>Cada célula da tabela é definida por um < td> e uma tag < /td>.</p>
+    <p>td significa dados da tabela. Tudo entre < td> e < /td> é o conteúdo da célula da tabela.</p>
+    <pre>
+        <code>
+            EX:
+            < table>
+                < tr>
+                  < td>Emil< /td>
+                  < td>Tobias< /td>
+                  < td>Linus< /td>
+                < /tr>
+              < /table>
+            Resultado:
+            <table>
+                <tr>
+                  <td>Emil</td>
+                  <td>Tobias</td>
+                  <td>Linus</td>
+                </tr>
+              </table>
+        </code>
+    </pre>
+
+    <h3>Linhas da tabela:</h3>
+    <p>Cada linha da tabela começa com um < tr> e termina com uma tag< /tr>.</p>
+    <p>tr significa linha da tabela.</p>
+    <pre>
+        <code>
+            EX:
+            < table>
+                < tr>
+                  < td>Emil< /td>
+                  < td>Tobias< /td>
+                  < td>Linus< /td>
+                < /tr>
+                < tr>
+                  < td>16< /td>
+                  < td>14< /td>
+                  < td>10< /td>
+                < /tr>
+              < /table>
+            Resultado:
+            <table>
+                <tr>
+                  <td>Emil</td>
+                  <td>Tobias</td>
+                  <td>Linus</td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>14</td>
+                  <td>10</td>
+                </tr>
+              </table>
+        </code>
+    </pre>
+
+    <h3>Cabeçalhos de tabela:</h3>
+    <p>Às vezes você deseja que suas células sejam células de cabeçalho de tabela. Nesses casos, use a tag < th> em vez da tag < td></p>
+    <pre>
+        <code>
+            EX:
+            < table>
+                < tr>
+                  < th>Person 1< /th>
+                  < th>Person 2< /th>
+                  < th>Person 3< /th>
+                < /tr>
+                < tr>
+                  < td>Emil< /td>
+                  < td>Tobias< /td>
+                  < td>Linus< /td>
+                < /tr>
+                < tr>
+                  < td>16< /td>
+                  < td>14< /td>
+                  < td>10< /td>
+                < /tr>
+            < /table>
+            Resultado:
+            <table>
+                <tr>
+                  <th>Person 1</th>
+                  <th>Person 2</th>
+                  <th>Person 3</th>
+                </tr>
+                <tr>
+                  <td>Emil</td>
+                  <td>Tobias</td>
+                  <td>Linus</td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>14</td>
+                  <td>10</td>
+                </tr>
+              </table>
+        </code>
+    </pre>
+
+    <h2>Bordas da Tabela:</h2>
+    <h3>Como adicionar uma borda:</h3>
+    <p>Para adicionar uma borda, use a propriedade CSS border nos elementos table, th e td</p>
+    <pre>
+      <code>
+          EX:>
+            < table  style="border: 1px solid black;">
+                < tr>
+                  < th  style="border: 1px solid black;">Person 1< /th>
+                  < th  style="border: 1px solid black;">Person 2< /th>
+                  < th  style="border: 1px solid black;">Person 3< /th>
+                < /tr>
+                < tr>
+                  < td  style="border: 1px solid black;">Emil< /td>
+                  < td  style="border: 1px solid black;">Tobias< /td>
+                  < td  style="border: 1px solid black;">Linus< /td>
+                < /tr>
+                < tr>
+                  < td  style="border: 1px solid black;">16< /td>
+                  < td  style="border: 1px solid black;">14< /td>
+                  < td  style="border: 1px solid black;">10< /td>
+                < /tr>
+            < /table>
+          Resultado:
+            <table style="border: 1px solid black;">
+                <tr>
+                  <th  style="border: 1px solid black;">Person 1</th>
+                  <th  style="border: 1px solid black;">Person 2</th>
+                  <th  style="border: 1px solid black;">Person 3</th>
+                </tr>
+                <tr>
+                  <td  style="border: 1px solid black;">Emil</td>
+                  <td  style="border: 1px solid black;">Tobias</td>
+                  <td  style="border: 1px solid black;">Linus</td>
+                </tr>
+                <tr>
+                  <td  style="border: 1px solid black;">16</td>
+                  <td  style="border: 1px solid black;">14</td>
+                  <td  style="border: 1px solid black;">10</td>
+                </tr>
+              </table>
+        </code>
+    </pre>
+
+  <h3>Sem bordas duplas:</h3>
+  <p>Para evitar bordas duplas como no exemplo acima, defina a propriedade CSS border-collapse como collapse.</p>
+  <pre>
+    <code>
+        EX:>
+          < table  style="border: 1px solid black; border-collapse: collapse">
+              < tr>
+                < th  style="border: 1px solid black;">Person 1< /th>
+                < th  style="border: 1px solid black;">Person 2< /th>
+                < th  style="border: 1px solid black;">Person 3< /th>
+              < /tr>
+              < tr>
+                < td  style="border: 1px solid black;">Emil< /td>
+                < td  style="border: 1px solid black;">Tobias< /td>
+                < td  style="border: 1px solid black;">Linus< /td>
+              < /tr>
+              < tr>
+                < td  style="border: 1px solid black;">16< /td>
+                < td  style="border: 1px solid black;">14< /td>
+                < td  style="border: 1px solid black;">10< /td>
+              < /tr>
+          < /table>
+        Resultado:
+          <table style="border: 1px solid black; border-collapse: collapse">
+              <tr>
+                <th  style="border: 1px solid black; ;">Person 1</th>
+                <th  style="border: 1px solid black;">Person 2</th>
+                <th  style="border: 1px solid black;">Person 3</th>
+              </tr>
+              <tr>
+                <td  style="border: 1px solid black;">Emil</td>
+                <td  style="border: 1px solid black;">Tobias</td>
+                <td  style="border: 1px solid black;">Linus</td>
+              </tr>
+              <tr>
+                <td  style="border: 1px solid black;">16</td>
+                <td  style="border: 1px solid black;">14</td>
+                <td  style="border: 1px solid black;">10</td>
+              </tr>
+            </table>
+    </code>
+  </pre>
+  <h3>Bordas Redonda na Tabela:</h3>
+  <p>Com a propriedade border-radius, as bordas ganham cantos arredondados</p>
+  <pre>
+    <code>
+        EX:>
+          < table  style="border: 1px solid black; border-collapse: collapse">
+              < tr>
+                < th  style="border: 1px solid black;">Person 1< /th>
+                < th  style="border: 1px solid black;">Person 2< /th>
+                < th  style="border: 1px solid black;">Person 3< /th>
+              < /tr>
+              < tr>
+                < td  style="border: 1px solid black;">Emil< /td>
+                < td  style="border: 1px solid black;">Tobias< /td>
+                < td  style="border: 1px solid black;">Linus< /td>
+              < /tr>
+              < tr>
+                < td  style="border: 1px solid black;">16< /td>
+                < td  style="border: 1px solid black;">14< /td>
+                < td  style="border: 1px solid black;">10< /td>
+              < /tr>
+          < /table>
+        Resultado:
+          <table style="border: 1px solid black; border-radius: 10px;">
+              <tr>
+                <th  style="border: 1px solid black; border-radius: 10px;">Person 1</th>
+                <th  style="border: 1px solid black; border-radius: 10px;">Person 2</th>
+                <th  style="border: 1px solid black; border-radius: 10px;">Person 3</th>
+              </tr>
+              <tr>
+                <td  style="border: 1px solid black; border-radius: 10px;">Emil</td>
+                <td  style="border: 1px solid black; border-radius: 10px;">Tobias</td>
+                <td  style="border: 1px solid black; border-radius: 10px;">Linus</td>
+              </tr>
+              <tr>
+                <td  style="border: 1px solid black; border-radius: 10px;">16</td>
+                <td  style="border: 1px solid black; border-radius: 10px;">14</td>
+                <td  style="border: 1px solid black; border-radius: 10px;">10</td>
+              </tr>
+            </table>
+    </code>
+  </pre>
+
+  <h3>Tipos de Borda:</h3>
+  <p>Com a propriedade border-style, você pode definir a aparência da borda.</p>
+  <p>Os seguintes valores são permitidos:</p>
+  <p>dotted(Borda pontilhada), dashed(Borda pontilhada em negrito), solid(Borda tracejada), double(Borda dupla), groove(Borda cinza), ridge(Borda Branca)</p>
+  <p> inset(Borda branca com cinza em cima), outset(Borda branca com cinza em baixo), none(Sem Borda), hidden(Borda oculta)</p>
+
+  <h3>Cor da borda:</h3>
+  <p>Com a propriedade border-color, você pode definir a cor da borda.</p>
+
+  <h2>Tamanhos da tabela:</h2>
+  <p>Use o atributo style com as propriedades width ou height para especificar o tamanho de uma tabela, linha ou coluna.</p>
+
+  <h2>Preenchimento e espaçamento de tabela</h2>
+  <h3>Preenchimento de Célula:</h3>
+  <p>O preenchimento da célula é o espaço entre as bordas da célula e o conteúdo da célula. Por padrão, o preenchimento é definido como 0.</p>
+  <p>Para adicionar preenchimento nas células da tabela, use a propriedade CSS padding</p>
+
+  <h3>Espaçamento entre células:</h3>
+  <p>O espaçamento entre células é o espaço entre cada célula. Por padrão, o espaço é definido como 2 pixels.</p>
+  <p>Para alterar o espaço entre as células da tabela, use a propriedade CSS border-spacing do elemento table</p>
+
+  <h2>Colspan e Rowspan:</h2>
+  <h3>Colspan:</h3>
+  <p>Para fazer uma célula abranger várias colunas, use o atributo colspan</p>
+  <pre>
+    <code>
+      EX:
+      < table style="border: 1px solid black; border-collapse: collapse;width: 50%;">
+        < tr>
+          < th colspan="2" style="border: 1px solid black;">Name< /th>
+          < th style="border: 1px solid black;">Age< /th>
+        < /tr>
+        < tr>
+          < td style="border: 1px solid black;">Jill< /td>
+          < td style="border: 1px solid black;">Smith< /td>
+          < td style="border: 1px solid black;">43< /td>
+        < /tr>
+        < tr>
+          < td style="border: 1px solid black;">Eve< /td>
+          < td style="border: 1px solid black;">Jackson< /td>
+          < td style="border: 1px solid black;">57< /td>
+        < /tr>
+      < /table>
+
+      Resultado:
+      <table style="border: 1px solid black; border-collapse: collapse;width: 50%;">
+        <tr>
+          <th colspan="2" style="border: 1px solid black;">Name</th>
+          <th style="border: 1px solid black;">Age</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black;">Jill</td>
+          <td style="border: 1px solid black;">Smith</td>
+          <td style="border: 1px solid black;">43</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black;">Eve</td>
+          <td style="border: 1px solid black;">Jackson</td>
+          <td style="border: 1px solid black;">57</td>
+        </tr>
+      </table>
+    </code>
+  </pre>
+
+  <h3>Rowspan:</h3>
+  <p>Para fazer uma célula abranger várias linhas, use o atributo rowspan</p>
+  <pre>
+    <code>
+      EX: 
+      < table style="width: 50%; border: 1px solid black;border-collapse: collapse;">
+        < tr>
+          < th style="border: 1px solid black;">Name< /th>
+          < td style="border: 1px solid black;">Jill< /td>
+        < /tr>
+        < tr>
+          < th rowspan="2" style="border: 1px solid black;">Phone< /th>
+          < td style="border: 1px solid black;">555-1234< /td>
+        < /tr>
+        < tr>
+          < td style="border: 1px solid black;">555-8745< /td>
+      < /tr>
+      < /table>
+
+      Resultado:
+      <table style="width: 50%; border: 1px solid black;border-collapse: collapse;">
+        <tr>
+          <th style="border: 1px solid black;">Name</th>
+          <td style="border: 1px solid black;">Jill</td>
+        </tr>
+        <tr>
+          <th rowspan="2" style="border: 1px solid black;">Phone</th>
+          <td style="border: 1px solid black;">555-1234</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black;">555-8745</td>
+      </tr>
+      </table>
+    </code>
+  </pre>
+
+  <h2>Tabela Zebrada:</h2>
+  <p>Usar a propriedade CSS :nth-child(even/odd) [even= linhas Pares, odd= linhas impares].</p>
+  <pre>
+    <code>
+      EX:
+      < div class="zebrada">
+        < table >
+          < tr>
+            < th>First Name< /th>
+            < th>Last Name< /th>
+            < th>Points< /th>
+          < /tr>
+          < tr>
+            < td>Peter< /td>
+            < td>Griffin< /td>
+            < td>$100< /td>
+          < /tr>
+          < tr>
+            < td>Lois< /td>
+            < td>Griffin< /td>
+            < td>$150< /td>
+          < /tr>
+          < tr>
+            < td>Joe< /td>
+            < td>Swanson< /td>
+            < td>$300< /td>
+          < /tr>
+          < tr>
+            < td>Cleveland< /td>
+            < td>Brown< /td>
+            < td>$250< /td>
+          < /tr>
+        </table>
+      </div>
+
+      Resultado:
+      <div class="zebrada">
+        <table >
+          <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Points</th>
+          </tr>
+          <tr>
+          <td>Peter</td>
+          <td>Griffin</td>
+          <td>$100</td>
+          </tr>
+          <tr>
+          <td>Lois</td>
+          <td>Griffin</td>
+          <td>$150</td>
+          </tr>
+          <tr>
+          <td>Joe</td>
+          <td>Swanson</td>
+          <td>$300</td>
+          </tr>
+          <tr>
+          <td>Cleveland</td>
+          <td>Brown</td>
+          <td>$250</td>
+          </tr>
+        </table>
+      </div>
+    </code>
+  </pre>
+
+  <h2>Colgroup:</h2>
+  <p>O elemento < colgroup> é usado para estilizar colunas específicas de uma tabela.  </p>
+  <p>Cada grupo é especificado com um elemento < col>. O atributo span especifica quantas colunas recebem o estilo. O atributo style especifica o estilo a ser dado às colunas.</p>
+  <pre>
+    <code>
+      EX:
+      < table style="width:70%;">
+        < colgroup>
+          < col span="2" style="background-color: #D6EEEE">
+        < /colgroup>
+        < tr>
+          < th>Domingo< /th>
+          < th>Segunda< /th>
+          < th>Terça< /th>
+          < th>Quarta< /th>
+          < th>Quinta< /th>
+          < th>Sexta< /th>
+          < th>Sábado< /th>
+        < /tr>
+        < tr>
+          < td>1< /td>
+          < td>2< /td>
+          < td>3< /td>
+          < td>4< /td>
+          < td>5< /td>
+          < td>6< /td>
+          < td>7< /td>
+        < /tr>
+        < tr>
+          < td>8< /td>
+          < td>9< /td>
+          < td>10< /td>
+          < td>11< /td>
+          < td>12< /td>
+          < td>13< /td>
+          < td>14< /td>
+        < /tr>
+        < tr>
+          < td>15< /td>
+          < td>16< /td>
+          < td>17< /td>
+          < td>18< /td>
+          < td>19< /td>
+          < td>20< /td>
+          < td>21< /td>
+        < /tr>
+        < tr>
+          < td>22< /td>
+          < td>23< /td>
+          < td>24< /td>
+          < td>25< /td>
+          < td>26< /td>
+          < td>27< /td>
+          < td>28< /td>
+        < /tr>
+        < /table>
+
+      Resultado:
+      <table style="width:70%;">
+        <colgroup>
+          <col span="2" style="background-color: #D6EEEE">
+        </colgroup>
+        <tr>
+          <th>Domingo</th>
+          <th>Segunda</th>
+          <th>Terça</th>
+          <th>Quarta</th>
+          <th>Quinta</th>
+          <th>Sexta</th>
+          <th>Sábado</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+          <td>13</td>
+          <td>14</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>16</td>
+          <td>17</td>
+          <td>18</td>
+          <td>19</td>
+          <td>20</td>
+          <td>21</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+          <td>26</td>
+          <td>27</td>
+          <td>28</td>
+        </tr>
+        </table>
+    </code>
+  </pre>
+  
+    
+</body>
+</html>
