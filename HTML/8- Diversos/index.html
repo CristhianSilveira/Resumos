@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo HTML 8</title>
+    <style>
+        h2 {
+            background-color: yellow;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../7- Listas/index.html">Voltar para Listas</a>
+    <a id="linkpos" href="../9- Formulários/index.html">Ir para Formulário</a>
+
+    <h1>Diversos:</h1>
+    
+    <h2>Iframes:</h2>
+    <p>Um iframe HTML é usado para exibir uma página da web dentro de uma página da web.</p>
+    <p>A tag HTML < iframe> especifica um quadro embutido.</p>
+    <p>Sintaxe: < iframe src="url" title="description">< /iframe></p>
+    <pre>
+        <code>
+            EX:
+            < iframe src="https://www.cursoemvideo.com" title="Iframe Curso em video">< /iframe>
+            Resultado:
+            <iframe src="https://www.cursoemvideo.com" title="Iframe Curso em video"></iframe>
+        </code>
+    </pre>
+
+    <h3>Definir Altura e Largura do iframe:</h3>
+    <p>Use os atributos height e width para especificar o tamanho do iframe.</p>
+    <pre>
+        <code>
+            EX:
+            < iframe src="https://www.cursoemvideo.com" height="200" width="300" title="Iframe curso em video">< /iframe>
+            Resultado:
+            <iframe src="https://www.cursoemvideo.com" height="300" width="400" title="Iframe curso em video"></iframe>
+        </code>
+    </pre>
+
+    <h3>Remover a borda:</h3>
+    <p>Para remover a borda, adicione o atributo style e use a propriedade CSS border</p>
+    <pre>
+        <code>
+            EX:
+            < iframe src="https://www.cursoemvideo.com" height="200" width="300" title="Iframe curso em video" style="border:none">< /iframe>
+            Resultado:
+            <iframe src="https://www.cursoemvideo.com" height="300" width="400" title="Iframe curso em video" style="border: none;"></iframe>
+        </code>
+    </pre>
+
+    <h3>Usando link para iframe:</h3>
+    <p>Um iframe pode ser usado como quadro de destino para um link. O atributo target do link deve referir-se ao atributo name do iframe</p>
+    <pre>
+        <code>
+            EX:
+            < iframe src="" name="iframe_link" title="Iframe Example">< /iframe>
+
+            < p>< a href="https://gyncursos.com.br" target="iframe_link">Acessar GynCursos< /a>< /p>
+
+            Resultado:
+            <iframe src="" name="iframe_link" title="Iframe Example"></iframe>
+
+            <p><a href="https://gyncursos.com.br" target="iframe_link">Acessar GynCursos</a></p>
+        </code>
+    </pre>
+
+    <h2>Código de programação:</h2>
+    <p>O elemento HTML < code> é usado para definir um pedaço de código de computador. O conteúdo interno é exibido na fonte monoespaçada padrão do navegador.</p>
+    <pre>
+        <code>
+            EX:
+            < code>
+                x = 5;
+                y = 6;
+                z = x + y;
+            < /code>
+            Resultado:
+            <code>
+                x = 5;
+                y = 6;
+                z = x + y;
+            </code>
+        </code>
+    </pre>
+
+    <h2>Emojis:</h2>
+    <p>Emojis são caracteres do conjunto de caracteres UTF-8: 😄 😍 💗  </p>
+    <p>Os Emojis são caracteres, eles podem ser copiados, exibidos e dimensionados como qualquer outro caractere em HTML.</p>
+    <pre>
+        <code>
+            EX: &# 128512; &# 128516; &# 128525; &# 128151;
+            Resultado: &#128512; &#128516; &#128525; &#128151;
+        </code>
+    </pre>
+    
+</body>
+</html>
