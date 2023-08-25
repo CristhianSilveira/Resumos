@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo HTML 5</title>
+    <style>
+        h2 {
+            background-color: yellow;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../4- Links/index.html">Voltar para Links</a>
+    <a id="linkpos" href="../6- Tabelas/index.html">Ir para Tabelas</a>
+
+    <h1>Imagens:</h1>
+    
+    <h2>Introdução:</h2>
+    <p>A tag < img> é usada para incorporar uma imagem em uma página da web e tem dois atributos obrigatórios: src= Especifica o caminho para a imagem e alt= Especifica um texto alternativo para a imagem.</p>
+    <pre>
+        <code>
+            EX: < img src="img_chania.jpg" alt="Flowers in Chania">
+            Resultado: <img src="img_chania.jpg" alt="Flowers in Chania">
+        </code>
+    </pre>
+
+    <h2>Tamanho da imagem:</h2>
+    <p>Usar o atributo style para especificar a largura e a altura de uma imagem. Os atributos width e height sempre definem a largura e a altura da imagem em pixels.</p>
+    <pre>
+        <code>
+            EX: < img src="img_chania.jpg" alt="Flowers in Chania">
+            Resultado: <img src="img_chania.jpg" alt="Flowers in Chania" width="300px" height="300px">
+        </code>
+    </pre>
+
+    <h2>Formato de imagens comuns:</h2>
+    <pre>
+        <code>
+            APNG = .apng
+            GIF = .gif
+            ICO = .ico, .cur
+            JPEG = .jpg, .jpeg, .jfif, .pjpeg, .pjp
+            PNG = .png
+            SVG = .svg
+        </code>
+    </pre>
+
+    <h2>Mapas de imagem:</h2>
+    <p>Com mapas de imagens HTML, você pode criar áreas clicáveis em uma imagem.</p>
+    <p>A tag < map> define um mapa de imagem. Um mapa de imagem é uma imagem com áreas clicáveis. As áreas são definidas com uma ou mais tags < area>.</p>
+    <pre>
+        <code>
+            EX: 
+            < img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+            < map name="workmap">
+                < area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+                < area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+                < area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+            < /map>
+            Resultaado:
+            <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+            <map name="workmap">
+                <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+                <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+                <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+            </map>
+        </code>
+    </pre>
+
+    <h3>Inserir imagem:</h3>
+    <p>A imagem é inserida usando a tag < img>. A única diferença de outras imagens é que você deve adicionar um atributo usemap.</p>
+    <pre>
+        <code>
+            EX: < img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+        </code>
+    </pre>
+
+    <h3>Criando um mapa de imagem:</h3>
+    <p>O elemento < map> é usado para criar um mapa de imagem e é vinculado à imagem usando o atributo  obrigatório name</p>
+    <pre>
+        <code>
+            EX: < map name="workmap">
+        </code>
+    </pre>
+
+    <h3>Adicionando as áreas:</h3>
+    <p>Você deve definir a forma da área clicável e pode escolher um destes valores: rect- define uma região retangular; circle- define uma região circular; poly- define uma região poligonal; default- define toda a região</p>
+    <p>As coordenadas shape="rect" vêm em pares, uma para o eixo x e outra para o eixo y.</p>
+    <p>Para adicionar uma área de círculo, primeiro localize as coordenadas do centro do círculo, Em seguida, especifique o raio do círculo</p>
+    <p>Com shape="poly" contém vários pontos coordenados, o que cria uma forma formada por linhas retas (um polígono).</p>
+    <pre>
+        <code>
+            EX: 
+            < area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+            < area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+            < area shape="poly" coords="140,121,181,116,204,160,204,222,191,270,140,329,85,355,58,352,37,322,40,259,103,161,128,147" href="croissant.htm">
+        </code>
+    </pre>
+
+    <h2>Imagens de fundo:</h2>
+    <p>Para adicionar uma imagem de fundo em um elemento HTML, use o atributo style e a propriedade CSS background-image</p>
+    <pre>
+        <code>
+            EX:
+            < p style="background-image: url('img_girl.png'); height: 300px;" >Algum texto por cima
+            Resultado:
+            <p style="background-image: url('img_girl.png'); height: 300px;" >Algum texto por cima
+            
+        </code>
+    </pre>
+
+    <h3>Background-Repeat:</h3>
+    <p>Se a imagem de fundo for menor que o elemento, a imagem se repetirá, horizontal e verticalmente, até chegar ao final do elemento</p>
+    <p>Para evitar que a imagem de fundo se repita, defina a  propriedade background-repeat como no-repeat.</p>
+    <pre>
+        <code>
+            EX:
+            < p style="background-image: url('img_girl.png'); height: 300px; background-repeat: no-repeat" >Algum texto por cima
+            Resultado:
+            <p style="background-image: url('img_girl.png'); height: 300px; background-repeat: no-repeat;" >Algum texto por cima
+            
+        </code>
+    </pre>
+
+    <h3>Background-Cover:</h3>
+    <p>Se quiser que a imagem de fundo cubra todo o elemento, você pode definir a propriedade background-size como cover.</p>
+    <p>Além disso, para garantir que todo o elemento esteja sempre coberto, defina a propriedade background-attachment como fixed</p>
+    <pre>
+        <code>
+            EX:
+            < p style="background-image: url('img_girl.png'); height: 300px; background-repeat: no-repeat; background-size: cover; background-attachment: fixed" >Algum texto por cima
+            Resultado:
+            <p style="background-image: url('img_girl.png'); height: 300px; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;" >Algum texto por cima
+            
+        </code>
+    </pre>
+
+    <h3>Background Stretch:</h3>
+    <p>Se quiser que a imagem de fundo se estique para caber em todo o elemento, você pode definir a propriedade background-size como 100%</p>
+    <pre>
+        <code>
+            EX:
+            < p style="background-image: url('img_girl.png'); height: 300px; background-repeat: no-repeat; background-size: 100%; background-attachment: fixed" >Algum texto por cima
+            Resultado:
+            <p style="background-image: url('img_girl.png'); height: 300px; background-repeat: no-repeat; background-size: 100%; background-attachment: fixed;" >Algum texto por cima
+            
+        </code>
+    </pre>
+
+    <h2>Picture:</h2>
+    <p>O elemento HTML < picture> permite exibir imagens diferentes para diferentes dispositivos ou tamanhos de tela.</p>
+    <p>O elemento < picture> contém um ou mais elementos < source>, cada um referindo-se a imagens diferentes através do atributo srcset. Desta forma o navegador pode escolher a imagem que melhor se adapta à visualização e/ou dispositivo atual.</p>
+    <pre>
+        <code>
+            EX:
+            < picture>
+                < source media="(min-width: 650px)" srcset="img_chania.jpg">
+                < source media="(min-width: 465px)" srcset="img_car.jpg">
+                < img src="img_girl.png">
+              < /picture>
+            Resultado:
+            <picture>
+                <source media="(min-width: 650px)" srcset="img_chania.jpg">
+                <source media="(min-width: 465px)" srcset="img_car.jpg">
+                <img src="img_girl.png">
+            </picture>
+        </code>
+    </pre>
+    
+</body>
+</html>
