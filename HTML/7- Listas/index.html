@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo HTML 7</title>
+    <style>
+        h2 {
+            background-color: yellow;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../6- Tabelas/index.html">Voltar para Tabelas</a>
+    <a id="linkpos" href="../8- Diversos/index.html">Ir para Diversos</a>
+
+    <h1>Listas:</h1>
+    
+    <h2>Introdução:</h2>
+    <p>As listas HTML permitem que os desenvolvedores da web agrupem um conjunto de itens relacionados em listas.</p>
+
+    <h2>Lista não ordenada:</h2>
+    <p>Uma lista não ordenada começa com a tag < ul>. Cada item da lista começa com a tag < li>.</p>
+    <p>Os itens da lista serão marcados com marcadores (pequenos círculos pretos) por padrão</p>
+    <pre>
+        <code>
+            EX:
+            < ul>   
+                < li>Café</li>   
+                < li>Chá</li>   
+                < li>Leite</li>   
+            < /ul>
+        </code>
+    </pre>
+            Resultado:
+            <ul>   
+                <li>Café</li>   
+                <li>Chá</li>   
+                <li>Leite</li>   
+            </ul>
+    <h3>Escolher o marcador:</h3>
+    <p>A propriedade CSS list-style-type é usada para definir o estilo do marcador de item da lista. Pode ter um dos seguintes valores:</p>
+    <p>disc (círculo preto padrão), circle(círculo com preenchimento branco), square(Quadrado Preto), none(Nenhum)</p>
+    <pre>
+        <code>
+            EX:
+            < ul style="list-style-type: circle ">   
+                < li>Café</li>   
+                < li>Chá</li>   
+                < li>Leite</li>   
+            < /ul>
+        </code>
+    </pre>
+            Resultado:
+            <ul style="list-style-type: circle;">   
+                <li>Café</li>   
+                <li>Chá</li>   
+                <li>Leite</li>   
+            </ul>
+
+    <h2>Lista Ordenada:</h2>
+    <p>Uma lista ordenada começa com a tag < ol>. Cada item da lista começa com a tag < li>.</p>
+    <p>Os itens da lista serão marcados com números por padrão</p>
+    <pre>
+        <code>
+            EX:
+            < ol>   
+                < li>Café</li>   
+                < li>Chá</li>   
+                < li>Leite</li>   
+            < /ol>
+        </code>
+    </pre>
+            Resultado:
+            <ol>   
+                <li>Café</li>   
+                <li>Chá</li>   
+                <li>Leite</li>   
+            </ol>
+
+    <h3>Escolher Marcador:</h3>
+    <p>Usar o atributo type da tag < ol>, para definir o tipo de marcador do item da lista.</p>
+    <p>Valores: type="1"(Lista numerada), type="A"(Lista Alfabética Maiúscula), type="a"(Lista Alfabética Minuscula), type="I"(Lista em Número Romanos)</p>
+    <pre>
+        <code>
+            EX:
+            < ol type="I">   
+                < li>Café</li>   
+                < li>Chá</li>   
+                < li>Leite</li>   
+            < /ol>
+        </code>
+    </pre>
+            Resultado:
+            <ol type="I">   
+                <li>Café</li>   
+                <li>Chá</li>   
+                <li>Leite</li>   
+            </ol>
+
+    <h2>Lista de Descrição:</h2>
+    <p>Uma lista de descrição é uma lista de termos, com uma descrição de cada termo.</p>
+    <p>A tag < dl> define a lista de descrição, a tag < dt> define o termo (nome) e a tag < dd> descreve cada termo</p>
+    <pre>
+        <code>
+            EX:
+            < dl>
+                < dt>Café< /dt>
+                < dd>- Bebida quente preta< /dd>
+                < dt>Leite< /dt>
+                < dd>- Bebida gelada branca< /dd>
+              < /dl>
+        </code>
+    </pre>
+         Resultado:
+            <dl>
+                <dt>Café</dt>
+                <dd>- Bebida quente preta</dd>
+                <dt>Leite</dt>
+                <dd>-Bebida gelada branca</dd>
+            </dl>
+    
+
+</body>
+</html>
