@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo HTML 9</title>
+    <style>
+        h2 {
+            background-color: yellow;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../8- Diversos/index.html">Voltar para Diversos</a>
+    <a id="linkpos" href="../10- Multimídia/index.html">Ir para Multimídia</a>
+
+    <h1>Formulário:</h1>
+    
+    <h2>Introdução:</h2>
+    <p>Um formulário HTML é usado para coletar a entrada do usuário. A entrada do usuário é geralmente enviada a um servidor para processamento.</p>
+    <p>O elemento HTML < form> é usado para criar um formulário HTML para entrada do usuário</p>
+
+    <h2>Atributos do formulário:</h2>
+
+    <h3>Action:</h3>
+    <p>O atributo action define a ação a ser executada quando o formulário é enviado. Normalmente, os dados do formulário são enviados para um arquivo no servidor quando o usuário clica no botão enviar.</p>
+    <pre>
+        <code>
+            EX:
+            < form action="/action_page.php">
+                < label for="fname">Nome:< /label>< br>
+                < input type="text" id="fname" name="fname">< br>
+                < label for="lname">Sobrenome:< /label>< br>
+                < input type="text" id="lname" name="lname">< br>< br>
+                < input type="submit" value="Enviar">
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form action="/action_page.php">
+                <label for="fname">Nome:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Sobrenome:</label><br>
+                <input type="text" id="lname" name="lname"><br><br>
+                <input type="submit" value="Enviar">
+              </form>
+    
+    <h3>Target:</h3>
+    <p>O atributo target especifica onde exibir a resposta recebida após o envio do formulário. O atributo target pode ter um dos seguintes valores:</p>
+    <p>_blank (A resposta é exibida em uma nova janela ou guia), _self (A resposta é exibida na janela atual), _parent (A resposta é exibida no quadro pai), _top (A resposta é exibida no quadro pai), framename (A resposta é exibida em um iframe nomeado).</p>
+    <pre>
+        <code>
+            EX: < form action="/action_page.php" target="_blank">
+        </code>
+    </pre>
+
+    <h3>Method:</h3>
+    <p>O atributo method especifica o método HTTP a ser usado ao enviar os dados do formulário. Os dados do formulário podem ser enviados como variáveis de URL (com method="get") ou como pós-transação HTTP (com method="post").</p>
+    <p>OBS: Sempre use POST se os dados do formulário contiverem informações confidenciais ou pessoais!</p>
+    <pre>
+        <code>
+            EX: < form action="/action_page.php" method="post">
+        </code>
+    </pre>
+
+    <h3>AutoComplete:</h3>
+    <p>O atributo autocomplete especifica se um formulário deve ter o preenchimento automático ativado ou desativado.</p>
+    <p>Quando o preenchimento automático está ativado, o navegador preenche automaticamente os valores com base nos valores que o usuário inseriu anteriormente.</p>
+    <pre>
+        <code>
+            EX: < form action="/action_page.php" autocomplete="off">
+        </code>
+    </pre>
+
+    <h2>Elementos do Formulário:</h2>
+    <h3>Label:</h3>
+    <p>O elemento < label> é útil para usuários de leitores de tela, porque o leitor de tela lerá o rótulo em voz alta quando o usuário focar no elemento de entrada.    </p>
+    <p>O elemento < label> também ajuda usuários que têm dificuldade em clicar em regiões muito pequenas (como botões de opção ou caixas de seleção) - porque quando o usuário clica no texto dentro do elemento < label>, ele alterna o botão de opção/caixa de seleção.</p>
+    <p>O atributo for da tag < label> deve ser igual ao atributo id do elemento < input> para uni-los.    </p>
+    <pre>
+        <code>
+            EX:
+            < input type="radio" id="html" name="fav_language" value="HTML">
+            < label for="html">HTML< /label>
+
+            Resultado:
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">HTML</label>
+        </code>
+    </pre>
+
+    <h3>Select:</h3>
+    <p>O elemento < select> define uma lista suspensa. Os elementos < option> definem uma opção que pode ser selecionada.</p>
+    <p>Por padrão, o primeiro item na lista suspensa é selecionado. Para definir uma opção pré-selecionada, adicione o atributo selected à opção:</p>
+    <pre>
+        <code>
+            EX:
+            < label for="cars">Escolha um carro:< /label>
+            < select id="cars" name="cars">
+                < option value="volvo">Volvo< /option>
+                < option value="saab">Saab< /option>
+                < option value="fiat" selected>Fiat< /option>
+                < option value="audi">Audi< /option>
+            < /select>
+        </code>
+    </pre>
+            Resultado:
+            <label for="cars">Escolha um carro:</label>
+            <select id="cars" name="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat" selected>Fiat</option>
+                <option value="audi">Audi</option>
+            </select>
+
+    <h3>Textarea:</h3>
+    <p>O elemento < textarea> define um campo de entrada de várias linhas (uma área de texto)</p>
+    <p>O atributo rows especifica o número visível de linhas em uma área de texto. O atributo cols especifica a largura visível de uma área de texto.</p>
+    <pre>
+        <code>
+            EX:
+            < form action="/action_page.php">   
+                < textarea name="mensagem" rows="10" cols="30">Seu Texto aqui...< /textarea>< br>< br>   
+                < input type="submit">   
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form action="/action_page.php">   
+                <textarea name="mensagem" rows="10" cols="30">Seu Texto aqui...</textarea><br><br>   
+                <input type="submit">   
+            </form>
+
+    <h3>Button:</h3>
+    <p>O elemento < button> define um botão clicável.</p>
+    <pre>
+        <code>
+            EX: < button type="button" onclick="alert('Hello World!')">Clique aqui< /button>
+            Resultado: <button type="button" onclick="alert('Hello World!')">Clique aqui</button>
+        </code>
+    </pre>
+
+    <h3>Fieldset e Legend:</h3>
+    <p>O elemento < fieldset> é usado para agrupar dados relacionados em um formulário.</p>
+    <p>O elemento < legend> define uma legenda para o elemento < fieldset></p>
+    <pre>
+        <code>
+            EX:
+            < form action="/action_page.php">   
+                < fieldset>   
+                    < legend>Personalidade:< /legend>   
+                    < label for="fname">Primeiro Nome:< /label>< br>   
+                    < input type="text" id="fname" name="fname" value="Carlos">< br>   
+                    < label for="lname">Sobrenome:< /label>< br>   
+                    < input type="text" id="lname" name="lname" value="Eduardo">< br>< br>   
+                    < input type="submit" value="Enviiar">   
+                < /fieldset>   
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form action="/action_page.php">   
+                <fieldset>   
+                    <legend>Personalidade:</legend>   
+                    <label for="fname">Primeiro Nome:</label><br>   
+                    <input type="text" id="fname" name="fname" value="Carlos"><br>   
+                    <label for="lname">Sobrenome:</label><br>   
+                    <input type="text" id="lname" name="lname" value="Eduardo"><br><br>   
+                    <input type="submit" value="Enviiar">   
+                </fieldset>   
+            </form>
+
+    <h3>DataList:</h3>
+    <p>O elemento < datalist> especifica uma lista de opções predefinidas para um elemento < input>.</p>
+    <p>Os usuários verão uma lista suspensa das opções predefinidas à medida que inserem os dados. O atributo list do elemento < input> deve referir-se ao atributo id do elemento < datalist>.</p>
+    <pre>
+        <code>
+            EX:
+            < form action="/action_page.php">
+                < input list="browsers">
+                < datalist id="browsers">
+                  < option value="Internet Explorer">
+                  < option value="Firefox">
+                  < option value="Chrome">
+                  < option value="Opera">
+                  < option value="Safari">
+                < /datalist>
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form action="/action_page.php">
+                <input list="browsers">
+                <datalist id="browsers">
+                  <option value="Internet Explorer">
+                  <option value="Firefox">
+                  <option value="Chrome">
+                  <option value="Opera">
+                  <option value="Safari">
+                </datalist>
+              </form>
+
+    <h3>Output:</h3>
+    <p>O elemento < output> representa o resultado de um cálculo (como aquele realizado por um script).</p>
+    <pre>
+        <code>
+            EX:
+            < form action="/action_page.php"
+                oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                0
+                < input type="range"  id="a" name="a">
+                100 +
+                < input type="number" id="b" name="b">
+                =
+                < output name="x" for="a b">< /output>
+                < br>< br>
+                < input type="submit">
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form action="/action_page.php"
+                oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                0
+                <input type="range"  id="a" name="a">
+                100 +
+                <input type="number" id="b" name="b">
+                =
+                <output name="x" for="a b"></output>
+                <br><br>
+                <input type="submit">
+            </form>
+
+    <h3>Input:</h3>
+    <p>Um elemento < input> pode ser exibido de várias maneiras, dependendo do atributo type.</p>
+    
+    <h2>Tipos de Entrada Input:</h2>
+    <h3>Input de Texto:</h3>
+    <p>< input type="text"> Define um campo de entrada de linha única para entrada de texto.</p>
+    <pre>
+        <code>
+            EX:
+            < form>
+                < label for="fname">Nome:< /label>< br>
+                < input type="text" id="fname" name="fname">< br>
+                < label for="lname">Sobrenome:< /label>< br>
+                < input type="text" id="lname" name="lname">
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>
+                <label for="fname">Nome:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Sobrenome:</label><br>
+                <input type="text" id="lname" name="lname">
+              </form>
+    
+    <h3>Input de Senha:</h3>
+    <p>< input type="password"> define um campo de senha</p>
+    <pre>
+        <code>
+            EX:
+            < form>
+                < label for="pwd">Senha:< /label>< br>
+                < input type="password" id="pwd" name="pwd">
+              < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>
+                <label for="pwd">Senha:</label><br>
+                <input type="password" id="pwd" name="pwd">
+              </form>
+
+    <h3>Input de Enviar:</h3>
+    <p>< input type="submit"> define um botão para enviar dados de formulário para um manipulador de formulário.</p>
+    <pre>
+        <code>
+            EX: < input type="submit" value="Enviar">
+        </code>
+    </pre>
+            Resultado:
+            <input type="submit" value="Enviar">
+
+    <h3>Input de Resetar:</h3>
+    <p>< input type="reset"> define um botão de redefinição que redefinirá todos os valores do formulário para seus valores padrão</p>
+    <pre>
+        <code>
+            EX:  < input type="reset">
+        </code>
+    </pre>
+            Resultado:
+            <input type="reset">
+
+    <h3>Input Rádio:</h3>
+    <p>O < input type="radio" >define um botão de opção. Os botões de opção permitem que um usuário selecione UMA dentre um número limitado de opções.</p>
+    <pre>
+        <code>
+            EX:
+            < form>
+                < input type="radio" id="html" name="fav_language" value="HTML">
+                < label for="html">HTML< /label>< br>
+                < input type="radio" id="css" name="fav_language" value="CSS">
+                < label for="css">CSS< /label>< br>
+                < input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                < label for="javascript">JavaScript< /label>
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html">HTML</label><br>
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css">CSS</label><br>
+                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+              </form>
+
+    <h3>Input Checkbox:</h3>
+    <p> < input type="checkbox"> define uma caixa de seleção. As caixas de seleção permitem que um usuário selecione ZERO ou MAIS opções de um número limitado de opções.</p>
+    <pre>
+        <code>
+            EX:
+            < form>
+                < input type="checkbox" id="vehicle1" name="vehicle1" value="Bicicleta">
+                < label for="vehicle1"> Eu tenho uma bicicleta< /label>< br>
+                < input type="checkbox" id="vehicle2" name="vehicle2" value="Carro">
+                < label for="vehicle2"> Eu tenho um carro< /label>< br>
+                < input type="checkbox" id="vehicle3" name="vehicle3" value="Barco">
+                < label for="vehicle3"> Eu tenho um barco< /label>
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bicicleta">
+                <label for="vehicle1"> Eu tenho uma bicicleta</label><br>
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="Carro">
+                <label for="vehicle2"> Eu tenho um carro</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Barco">
+                <label for="vehicle3"> Eu tenho um barco</label>
+              </form>
+
+    <h3>Input de Botão:</h3>
+    <p>< input type="button">define um botão</p>
+    <pre>
+        <code>
+            EX:
+            < input type="button" onclick="alert('Hello World!')" value="Clique em mim!">
+        </code>
+    </pre>
+            Resultado:
+            <input type="button" onclick="alert('Hello World!')" value="Clique em mim!">
+
+    <h3>Input de Cor:</h3>
+    <p> O < input type="color"> é usado para campos de entrada que devem conter uma cor. Dependendo do suporte do navegador, um seletor de cores pode aparecer no campo de entrada.</p>
+    <pre>
+        <code>
+            EX:
+            < form>   
+                < label for="favcolor">Selecione sua cor favorita:< /label>   
+                < input type="color" id="favcolor" name="favcolor">   
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>   
+                <label for="favcolor">Selecione sua cor favorita:</label>   
+                <input type="color" id="favcolor" name="favcolor">   
+            </form>
+
+    <h3>Input de Data:</h3>
+    <p>O < input type="date"> é usado para campos de entrada que devem conter uma data. Dependendo do suporte do navegador, um seletor de data pode aparecer no campo de entrada.</p>
+    <p>Você também pode usar os atributos min e max para adicionar restrições às datas.</p>
+    <pre>
+        <code>
+            EX:
+            < form>   
+                < label for="aniversário">Aniversário:< /label>   
+                < input type="date" id="aniversário" name="birthday">   
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>   
+                <label for="aniversário">Aniversário:</label>   
+                <input type="date" id="aniversário" name="birthday" max="2005-12-12">   
+            </form>
+
+    <h3>Input de Email:</h3>
+    <p> < input type="email"> é usado para campos de entrada que devem conter um endereço de e-mail.</p>
+    <pre>
+        <code>
+            EX:
+            < form>
+                < label for="email">Digite seu e-mail:< /label>
+                < input type="email" id="email" name="email">
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>
+                <label for="email">Digite seu e-mail:</label>
+                <input type="email" id="email" name="email">
+              </form>
+
+    <h3>Input de imagem:</h3>
+    <p>O < input type="image"> define uma imagem como um botão de envio.</p>
+    <pre>
+        <code>
+            EX: < input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+        </code>
+    </pre>
+            Resultado:
+            <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+
+    <h3>Input de Arquivo:</h3>
+    <p>O < input type="file"> define um campo de seleção de arquivo e um botão "Escolher arquivo" para uploads de arquivos.</p>
+    <pre>
+        <code>
+            EX:
+            < form>
+                < label for="myfile">Selecione um arquivo:< /label>
+                < input type="file" id="myfile" name="myfile">
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>
+                <label for="myfile">Selecione um arquivo:</label>
+                <input type="file" id="myfile" name="myfile">
+              </form>
+
+    <h3>Input de Número:</h3>
+    <p>O < input type="number"> define um campo de entrada numérica . Você também pode definir restrições sobre quais números são aceitos.</p>
+    <pre>
+        <code>
+            EX:
+            < form>   
+                < label for="quantity">Quantidade (entre 1 e 5):</l abel>   
+                < input type="number" id="quantidade" name="quantidade" min="1" max="5">   
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>   
+                <label for="quantity">Quantidade (entre 1 e 5):</label>   
+                <input type="number" id="quantidade" name="quantidade" min="1" max="5">   
+            </form>
+
+    <h3>Input Range:</h3>
+    <p>O < input type="range"> define um controle para inserir um número cujo valor exato não é importante (como um controle deslizante).</p>
+    <p>O intervalo padrão é de 0 a 100. No entanto, você pode definir restrições sobre quais números são aceitos com os atributos min, max e step.</p>
+    <pre>
+        <code>
+            EX:
+            < form>   
+                < label for="vol">Volume (entre 0 e 50):< /label>   
+                < input type="range" id="vol" name="vol" min="0" max="50">   
+            < /form
+        </code>
+    </pre>
+            Resultado:
+            <form>   
+                <label for="vol">Volume (entre 0 e 50):</label>   
+                <input type="range" id="vol" name="vol" min="0" max="50">   
+            </form>
+
+    <h3>Input de Pesquisa:</h3>
+    <p>O < input type="search"> é usado para campos de pesquisa (um campo de pesquisa se comporta como um campo de texto normal).</p>
+    <pre>
+        <code>
+            EX:
+            < form>
+                < label for="gsearch">Search Google:< /label>
+                < input type="search" id="gsearch" name="gsearch">
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>
+                <label for="gsearch">Search Google:</label>
+                <input type="search" id="gsearch" name="gsearch">
+              </form>
+
+    <h3>Input de Telefone:</h3>
+    <p> O < input type="tel"> é usado para campos de entrada que devem conter um número de telefone.</p>
+    <pre>
+        <code>
+            EX:
+            < form>   
+                < label for="telefone">Insira um número de telefone:< /label>   
+                < input type="tel" id="telefone" name="telefone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">   
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>   
+                <label for="telefone">Insira um número de telefone:</label>   
+                <input type="tel" id="telefone" name="telefone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">   
+            </form>
+
+    <h3>Input de Hora:</h3>
+    <p>O < input type="time"> permite ao usuário selecionar um horário (sem fuso horário).</p>
+    <pre>
+        <code>
+            EX:
+            < form>
+                < label for="appt">Selecione uma hora:< /label>
+                < input type="time" id="appt" name="appt">
+              < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>
+                <label for="appt">Selecione uma hora:</label>
+                <input type="time" id="appt" name="appt">
+              </form>
+
+    <h3>Input URL:</h3>
+    <p>O < input type="url">é usado para campos de entrada que devem conter um endereço URL.</p>
+    <pre>
+        <code>
+            EX:
+            < form>
+                < label for="homepage">Adicione sua homepage:< /label>
+                < input type="url" id="homepage" name="homepage">
+              < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>
+                <label for="homepage">Adicione sua homepage:</label>
+                <input type="url" id="homepage" name="homepage">
+              </form>
+
+    <h2>Atributos de Entrada:</h2>
+    <h3>Valor:</h3>
+    <p>O atributo de entrada value especifica um valor inicial(padrões) para um campo de entrada.</p>
+    <pre>
+        <code>
+            EX:   < input type="text" id="fname" name="fname" value="John"><br>
+        </code>
+    </pre>
+            Resultado:
+            <input type="text" id="fname" name="fname" value="John"><br>
+
+    <h3>Somente leitura:</h3>
+    <p>O atributo readonly de entrada especifica que um campo de entrada é somente leitura. Um campo de entrada somente leitura não pode ser modificado (no entanto, um usuário pode tabular até ele, destacá-lo e copiar o texto dele).</p>
+    <pre>
+        <code>
+            EX:
+            < input type="text" id="fname" name="fname" value="Carlos" readonly>
+
+        </code>
+    </pre>
+            Resultado:
+            <input type="text" id="fname" name="fname" value="Carlos" readonly>
+
+    <h3>Desabilitado:</h3>
+    <p>O atributo disabled de entrada especifica que um campo de entrada deve ser desabilitado. Um campo de entrada desabilitado é inutilizável e não clicável.</p>
+    <pre>
+        <code>
+            EX:
+            < input type="text" id="fname" name="fname" value="Marcos" disabled>
+        </code>
+    </pre>
+            Resultado:
+            <input type="text" id="fname" name="fname" value="Marcos" disabled>
+
+    <h3>Tamanho:</h3>
+    <p>O atributo size de entrada especifica a largura visível, em caracteres, de um campo de entrada. O valor padrão para size é 20.</p>
+    <p>OBS: o atributo size funciona com os seguintes tipos de entrada: texto, pesquisa, tel, url, email e senha.</p>
+    <pre>
+        <code>
+            EX:
+            < input type="text" id="pin" name="pin" size="4">
+        </code>
+    </pre>
+            Resultado:
+            <input type="text" id="pin" name="pin" size="4">
+
+    <h3>Máximo de caracteres:</h3>
+    <p> O atributo maxlength de entrada especifica o número máximo de caracteres permitidos em um campo de entrada.</p>
+    <pre>
+        <code>
+            EX:
+            < input type="text" id="pin" name="pin" maxlength="4" size="4">
+        </code>
+    </pre>
+            Resultado:
+            <input type="text" id="pin" name="pin" maxlength="4" size="4">
+
+    <h3>Mínimo e Máximo:</h3>
+    <p>A entrada min e max especificam os valores mínimo e máximo para um campo de entrada. Os atributos min e max funcionam com os seguintes tipos de entrada:</p>
+    <p>número, intervalo, data, data-hora-local, mês, hora e semana.</p>
+    <pre>
+        <code>
+            EX:
+            < input type="number" id="quantity" name="quantity" min="1" max="5">
+        </code>
+    </pre>
+            Resultado:
+            <input type="number" id="quantity" name="quantity" min="1" max="5">
+
+    <h3>Múltiplo:</h3>
+    <p>O atributo multiple de entrada especifica que o usuário pode inserir mais de um valor em um campo de entrada.</p>
+    <p>O atributo multiple funciona com os seguintes tipos de entrada: email e arquivo.</p>
+    <pre>
+        <code>
+            EX:
+            < input type="file" id="files" name="files" multiple>
+        </code>
+    </pre>
+            Resultado:
+            <input type="file" id="files" name="files" multiple>
+
+    <h3>Verifica Padrão:</h3>
+    <p>O atributo pattern de entrada especifica uma expressão regular com a qual o valor do campo de entrada é verificado quando o formulário é enviado.</p>
+    <p> atributo pattern funciona com os seguintes tipos de entrada: texto, data, pesquisa, url, tel, e-mail e senha.</p>
+    <p> Use o atributo global title para descrever o padrão para ajudar o usuário.</p>
+    <pre>
+        <code>
+            EX:
+            < form>
+                < label for="country_code">CEP:</label>
+                < input type="text" id="country_code" name="country_code"
+                pattern="[0-9]{8}" title="Insira seu CEP" placeholder="12345678">
+                < input type="submit" value="Enviar">
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>
+                <label for="country_code">CEP:</label>
+                <input type="text" id="country_code" name="country_code"
+                pattern="[0-9]{8}" title="Insira seu CEP" placeholder="12345678">
+                <input type="submit" value="Enviar">
+              </form>
+
+    <h3>Dica Curta:</h3>
+    <p>O atributo placeholder de entrada especifica uma dica curta que descreve o valor esperado de um campo de entrada (um valor de amostra ou uma breve descrição do formato esperado).</p>
+    <p>A dica curta é exibida no campo de entrada antes que o usuário insira um valor. O atributo placeholder funciona com os seguintes tipos de entrada: texto, pesquisa, url, tel, email e senha.</p>
+    <pre>
+        <code>
+            EX:
+            < input type="tel" id="phone" name="phone" placeholder="(xx) xxxxx-xxxx">
+        </code>
+    </pre>
+            Resultado:
+            <input type="tel" id="phone" name="phone" placeholder="(xx) xxxxx-xxxx">
+
+    <h3>Obrigátorio:</h3>
+    <p>O atributo required de entrada especifica que um campo de entrada deve ser preenchido (obrigatório) antes de enviar o formulário.</p>
+    <p>O atributo required funciona com os seguintes tipos de entrada: texto, pesquisa, url, tel, e-mail, senha, selecionadores de data, número, caixa de seleção, rádio e arquivo.</p>
+    <pre>
+        <code>
+            EX:
+            < form>
+                < input type="text" id="username" name="username" required>
+                < input type="submit" value="Enviar">
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>
+                <input type="text" id="username" name="username" required>
+                <input type="submit" value="Enviar">
+            </form>
+
+    <h3>Intervalo:</h3>
+    <p>O atributo step de entrada especifica os intervalos de número legais para um campo de entrada. Exemplo: se step="3", os números legais podem ser -3, 0, 3, 6, etc.</p>
+    <p>Dica: Este atributo pode ser usado junto com os atributos max e min para criar um intervalo de valores legais. O atributo step funciona com os seguintes tipos de entrada: número, intervalo, data, data-hora-local, mês, hora e semana.</p>
+    <pre>
+        <code>
+            EX:
+            < input type="number" id="points" name="points" step="3">
+        </code>
+    </pre>
+            Resultado:
+            <input type="number" id="points" name="points" step="3">
+
+    <h3>Foco:</h3>
+    <p>O atributo autofocus de entrada especifica que um campo de entrada deve obter foco automaticamente quando a página for carregada.</p>
+    <pre>
+        <code>
+            EX:
+            < input type="text" id="fname" name="fname" autofocus>
+        </code>
+    </pre>
+            Resultado:
+            <input type="text" id="fname" name="fname" autofocus>
+
+    <h3>Lista:</h3>
+    <p>Refere-se a um elemento < datalist> que contém opções predefinidas para um elemento < input>.</p>
+    <pre>
+        <code>
+            EX:
+            < form>
+                < input list="browsers">
+                < datalist id="browsers">
+                    < option value="Internet Explorer">
+                    < option value="Firefox">
+                    < option value="Chrome">
+                    < option value="Opera">
+                    < option value="Safari">
+                < /datalist>
+            < /form>
+        </code>
+    </pre>
+            Resultado:
+            <form>
+                <input list="browsers">
+                <datalist id="browsers">
+                    <option value="Internet Explorer">
+                    <option value="Firefox">
+                    <option value="Chrome">
+                    <option value="Opera">
+                    <option value="Safari">
+                </datalist>
+            </form>
+
+    <h3>Preenchimento Automático:</h3>
+    <p> O atributo autocomplete de entrada especifica se um formulário ou um campo de entrada deve ter o preenchimento automático ativado ou desativado. O preenchimento automático permite que o navegador preveja o valor.</p>
+    <p>Quando um usuário começa a digitar em um campo, o navegador deve exibir opções para preencher o campo, com base nos valores digitados anteriormente. O atributo autocomplete funciona com os seguintes tipos: text, search, url, tel, email, password, datepickers, range e color.</p>
+    <pre>
+        <code>
+            EX:
+            < input type="email" id="email" name="email" autocomplete="off">
+        </code>
+    </pre>
+            Resultado:
+            <input type="email" id="email" name="email" autocomplete="off">
+
+</body>
+</html>
