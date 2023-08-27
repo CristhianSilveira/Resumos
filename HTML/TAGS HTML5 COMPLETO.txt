@@ -1,0 +1,625 @@
+                        ------ TAGS HTML5 ------
+
+
+        Olá, criei esse arquivo com as principais Tags HTML explicadas e com exemplos, no final do arquivo contem o resumo das tags.
+
+                OBS: os exemplos não estão formatados para não ocupar muitas linhas do arquivo.
+
+
+1- Noções básicas:
+
+        1.1- O que é HTML?
+                HTML significa Hyper Text Markup Language
+                HTML é a linguagem de marcação padrão para criar páginas da Web
+
+        1.2- CORPO DO HTML: 
+                <!DOCTYPE html>
+                <html>
+                <head>
+                <title>Título da página </title>
+                </head>
+                <body>
+                </body>
+                </html
+                
+                <!DOCTYPE html  Define que este documento é um documento HTML5.
+                <html> = É o elemento raiz de uma página HTML, define o início e o fim do documento HTML.
+                <head> = É um contêiner para os seguintes elementos: <title>, <style>, <meta>, <link>, <script> e <base>, é colocado entre a tag <html> e a tag <body>
+                <title> = Elemento que especifica um título para a página HTML (que é mostrado na barra de título do navegador ou na guia da página)
+                <body >= Elemento que define o corpo do documento e é um recipiente para todos os conteúdos visíveis, como cabeçalhos, parágrafos, imagens, hiperlinks, tabelas, listas, etc.
+    
+        1.3- Comentários: 
+                Usar */ comentário */ ou <!-- comentário --> Os comentários HTML não são exibidos no navegador, mas podem ajudar a documentar seu código-fonte HTML.
+
+2- Formatação e Estilo:
+        2.1- Títulos: 
+                Usar <h1> ate <h6>;  <h1> define o título mais importante. <h6> define o título menos importante.
+
+        2.2- Parágrafos: 
+                Usar <p> para definir um parágrafo; Um parágrafo sempre começa em uma nova linha.
+                <hr> é usado para separar o conteúdo (coloca uma linha separando os conteúdos).
+                Use <br> se quiser uma quebra de linha (uma nova linha) sem iniciar um novo parágrafo.
+                <pre> define o texto pré-formatado e preserva espaços e quebras de linha do editor.
+
+        2.3- Estilos: Usar  style="propriedade:valor;"
+                2.3.1- background-color:
+                        Define a cor de fundo. EX: <h1 style="background-color:blue;">Isso é um título</h1>
+                2.3.2- color:
+                        Define a cor do texto. EX: <p style="color:red;">Isso é um parágrafo.</p>
+                2.3.3- font-family:
+                        Define a fonte a ser usada. EX: <p style="font-family:courier;">Isso é um parágrafo.</p>
+                2.3.4- font-size:
+                        Define o tamanho do texto. EX: <p style="font-size:50px;">Isso é um parágrafo.</p>
+                2.3.5- text-align:
+                        Define o alinhamento horizontal do texto. EX: <p style="text-align:center;">Paragrafo centralizado.</p>
+                2.3.6- border:
+                        Define uma borda ao redor de um elemento HTML. EX: border: 2px solid blue;
+                2.3.7- padding:
+                        Define um padding (espaço interno) entre o texto e a borda. EX: padding: 30px;
+                2.3.8- margin: 
+                        Define uma margem (espaço) fora da borda. EX: margin:40px;
+    
+        2.4- Formatação:
+                <b> = Texto em negrito
+                <strong> = Texto importante
+                <i> = Texto em itálico
+                <em> = Texto enfatizado
+                <mark> = Texto marcado (marca texto)
+                <small> = Texto menor
+                <del> = Texto deletado (riscado)
+                <ins> = Texto inserido (sublinhado)
+                <sub> = texto subscrito (texto abaixo da linha)
+                <sup> = Texto sobrescrito (texto acima da linha)
+    
+        2.5- Citações:
+                2.5.1- <blockquote>: 
+                        Define uma seção que é citada de outra fonte. EX: <blockquote cite="http://www.worldwildlife.org/who/index.html"> For 60 years, WWF has worked to help people and nature thrive. </blockquote>
+                2.5.2- <q>:
+                        Define uma citação, Os navegadores normalmente inserem aspas ao redor da citação.. EX: <p> O objetivo do WWF é: <q>Construir um futuro onde as pessoas vivam em harmonia com a natureza.</q></p>
+                2.5.3- <abbr>:
+                        Define uma abreviação, Use o atributo de título global(title) para mostrar a descrição da abreviação ao passar o mouse sobre o elemento  EX: <p>A <abbr title="Organização Mundial de Saúde">OMS</abbr> foi fundada em 1948.</p>
+                2.5.4- <address>:
+                        Define as informações de contato do autor/proprietário de um documento ou artigo.
+                2.5.5- <cite>:
+                        Tag HTML define o título de uma obra criativa (por exemplo, um livro, um poema, uma música, um filme, uma pintura, uma escultura, etc.).
+                2.5.6- <bdo>:
+                        É usado para substituir a direção do texto atual. EX: <bdo dir="rtl">Esta linha será escrita da direita para a esquerda </bdo>
+    
+        2.6- CSS:
+                2.6.1- Inline/embutido:
+                        Usando o style atributo dentro dos elementos HTML. EX: <p style="color:red;">Um parágrafo vermelho.</p>
+                2.6.2- Interno: 
+                        Um CSS interno é definido na <head> seção de uma página HTML, dentro de um <style> elemento.
+                2.6.3- Externo:
+                        Usando um <link> elemento para vincular a um arquivo CSS externo. EX: <link rel="stylesheet" href="styles.css">
+        
+        2.7- FAVICON:
+                É uma pequena imagem exibida ao lado do título da página na guia do navegador.
+                Usar:  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    
+        2.8- Block e Inline:
+                2.8.1- Block:
+                        Um elemento de nível de bloco sempre começa em uma nova linha e os navegadores adicionam automaticamente algum espaço (uma margem) antes e depois do elemento. Dois elementos de bloco comumente usados ​​são: <p> e <div>.
+                2.8.2- Inline:
+                        Um elemento inline não começa em uma nova linha e ocupa apenas a largura necessária.
+                2.8.3- <div>:
+                        É usado como um contêiner para outros elementos HTML. O <div> elemento não tem atributos obrigatórios, mas style, class e id são comuns.
+                2.8.4- <span>: 
+                        É um contêiner embutido usado para marcar uma parte de um texto ou uma parte de um documento. O <span> elemento não tem atributos obrigatórios, mas style, class e id são comuns.
+        
+        2.9- Class: 
+                É usado para apontar para um nome de classe em uma folha de estilo. Para criar uma classe: escreva um caractere de ponto (.), seguido de um nome de classe. Em seguida, defina as propriedades CSS entre chaves {}: EX: .estilo
+    
+        2.10- Identificação:
+                ID = É usado para especificar um id exclusivo para um elemento HTML. Não pode ter mais de um elemento com o mesmo id em um documento HTML. A sintaxe para id é: escreva um caractere hash (#), seguido por um nome de id. Em seguida, defina as propriedades CSS entre chaves {}. EX: #estilo
+        
+        2.11- Caminho de Arquivos: 
+                <img src="picture.jpg">	O arquivo "picture.jpg" está localizado na mesma pasta da página atual
+                <img src="images/picture.jpg">	O arquivo "picture.jpg" está localizado na pasta de imagens na pasta atual
+                <img src="/images/picture.jpg">	O arquivo "picture.jpg" está localizado na pasta de imagens na raiz da web atual
+                <img src="../picture.jpg">	O arquivo "picture.jpg" está localizado na pasta um nível acima da pasta atual
+        
+        2.12- Layout:
+                <header>- Define um cabeçalho para um documento ou uma seção, que geralmente inclui informações como logotipo, menus de navegação e outros elementos que aparecem no topo da página.
+                <nav>- Define uma seção de navegação do documento, que geralmente inclui links para outras páginas do site.
+                <section>- Define uma seção em um documento, geralmente com um tema ou propósito específico.
+                <article>- Define um conteúdo independente  e autossuficiente do restante do documento.
+                <aside>- Define uma seção lateral do documento, que geralmente inclui informações complementares ou de suporte ao conteúdo principal.
+                <footer>- Define um rodapé para um documento ou uma seção, que geralmente inclui informações como direitos autorais, links para contatos e outros elementos que aparecem na parte inferior da página.
+                <details>- Define detalhes adicionais que o usuário pode abrir e fechar sob demanda
+                <summary>- Define um título para o <details> elemento
+        
+        2.13- Responsividade: 
+                2.13.1- Web design responsivo:
+                        É criar páginas da Web com boa aparência em todos os dispositivos e se ajustará automaticamente para diferentes tamanhos de tela e viewports. Usar <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                
+                2.13.2- Imagens responsivas:
+                        São imagens que se adaptam bem a qualquer tamanho de navegador. Se a propriedade CSS width estiver definida como 100%, a imagem será responsiva e dimensionada para cima e para baixo OU Usar a propriedade max-width quando estiver definida como 100%, a imagem será reduzida se necessário, mas nunca será ampliada para ficar maior que o tamanho original, <picture> permite definir diferentes imagens para diferentes tamanhos de janela do navegador. EX: <picture>   <source srcset="img_smallflower.jpg" media="(max-width: 600px)">   <source srcset="img_flowers.jpg" media="(max-width: 1500px)">   <source srcset="flowers.jpg">   <img src="img_smallflower.jpg" alt="Flowers">   </picture>
+                
+                2.13.3- Tamanho de texto responsivo:
+                        O tamanho do texto pode ser definido com uma unidade "vw", que significa a "largura da janela de visualização". EX: <h1 style="font-size:10vw">Hello World</h1>
+        
+        2.14- Semântica: 
+                Um elemento semântico descreve claramente seu significado tanto para o navegador quanto para o desenvolvedor. Exemplos de elementos não semânticos : <div>e <span> - Não diz nada sobre seu conteúdo. Exemplos de elementos semânticos : <form>, <table>, e <article> - Define claramente seu conteúdo.
+                2.14.1- <figure>:
+                        Tag que especifica o conteúdo independente, como ilustrações, diagramas, fotos, listagens de código, etc.
+                2.14.2- <figcaption>:
+                        Tag que define uma legenda para um <figure>. O <figcaption>  pode ser colocado como o primeiro ou como o último filho de um <figure>.
+                2.14.3- <img>:
+                        Elemento define a imagem/ilustração real.
+                        EX: <figure>   <img src="pic_trulli.jpg" alt="Trulli" style="width:100%">   <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>   </figure>
+
+        2.15 - Guia de Estilo HTML:
+                2.15.1- Dicas:
+                        Sempre declare o tipo de documento,   Use nomes de elementos em minúsculas,   Fechar todos os elementos HTML,   Use nomes de atributos em minúsculas,   Sempre usar aspas para citar valores de atributo (EX: <table class="striped">),   Sempre especifique alt,largura e altura para imagens (EX: <img src="html5.gif" alt="HTML5" style="width:128px; height:128px">),   Evite linhas de código longas, Para facilitar a leitura, adicione 2 espaços de recuo em branco para separar blocos de código grandes ou lógicos,   O elemento <title> é obrigatório em HTML,   Adicione o atributo lang,   Use Nomes de Arquivos em Minúsculas
+
+        2.16- Símbolos: 
+                2.16.1- Símbolos Matemáticos:   
+                        ∀ (Todos) = &forall;
+                        ∂ (Diferencial Parcial) = &part;
+                        ∃ (Existe) = &exist;
+                        ∅ (Vazio) = &empty;
+                        ∇ (Nabla) = &nab
+                        ∈ (Pertence) = &isin;
+                        ∉ (Não Pertence) &notin;
+                        ∋ (Contém) = &ni;		
+                        ∑ (Soma) = &sum;
+                
+                2.16.2- Letra Gregas:   
+                        Α (Alpha) = &Alpha;		
+                        Β (Beta) = &Beta;		
+                        Γ (Gama) = &Gamma;		
+                        Δ (Delta) = &Delta;		
+                        Ε (Epsilon) = &Epsilon;	
+                        Ζ (Zeta) = &Zeta;
+                
+                2.16.3- Outros Símbolos:  
+                        (espaço em branco) = &nbsp;	
+                        < (Menor que) =	&lt;
+                        > (Maior que) =	&gt;
+                        & (E-comercial)	= &amp;
+                        " (Aspas duplas) = &quot;
+                        ' (Aspas simples) = &apos;
+                        ¢ (centavo) = &cent;
+                        £ (Libra) = &pound;
+                        ¥ (Yene) = &yen;
+                        € (Euro) = &euro;
+                        © (Copyright) = &copy;
+                        ® (Marca Registrada) = &reg;
+                        ™ (Marca Registrada) = &trade;	
+                        ← (Seta P/ Esquerda) = &larr;	
+                        ↑ (Seta P/ Cima) = &uarr;	
+                        → (Seta P/ Direita) = &rarr;	
+                        ↓ (Seta P/ Baixo) = &darr;	
+                        ♠ (Espada Preto) = &spades;	
+                        ♣ (Naipe Preto) = &clubs;	
+                        ♥ (Coração Preto) = &hearts;	
+                        ♦ (Losango Preto) = &diams;
+                                        
+        2.17- URL Encode: 
+                2.17.1- Como identificar a URL da página:  
+                        Protocolo://Subdomínio.domínio.extensão:porta/path/filename EX: https://www.hostinger.com.br/tutoriais/url
+                        
+                        Protocolo = Define o tipo de serviço de Internet (o mais comum é http ou https )
+                        Subdomínio = Define um prefixo de domínio (o padrão para http é www )
+                        Domínio = Define o nome de domínio da Internet (EX: w3schools.com)
+                        Extensão = É a parte que segue um nome de domínio,(EX:.com , .org. e .com.br)
+                        port - define o número da porta no host (o padrão para http é 80 )
+                        path - define um caminho no servidor (Se omitido: o diretório raiz do site)
+                        filename - define o nome de um documento ou recurso
+                        OBS: HTTP(Hypertext Transfer Protocol) = Páginas web comuns, não criptografado e HTTPS(Hypertext Transfer Protocol Secure) = Páginas da web seguras, criptografado.
+
+3- Cores: As cores HTML são especificadas com nomes de cores predefinidos ou com valores RGB, HEX, HSL, RGBA ou HSLA.
+
+        3.1- Nomes de cores: 
+                Em HTML, uma cor pode ser especificada usando um nome de cor: EX: red,Orange,Blue,Green,Yellow,Violet,LightGray, etc.
+        
+        3.2- Cores RGB e RGBA: 
+                Um valor de cor RGB representa as fontes de luz VERMELHA, VERDE e AZUL. Um valor de cor RGBA é uma extensão de RGB com um canal Alfa (opacidade).
+                3.2.1- Rgb(red, green, blue):
+                        Cada parâmetro (vermelho, verde e azul) define a intensidade da cor com um valor entre 0 e 255. Isso significa que existem 256 x 256 x 256 = 16777216 cores possíveis.   EX: rgb(255, 0, 0) é exibido como vermelho, porque o vermelho é definido como seu valor mais alto (255).   EX2: rgb(0, 255, 0) é exibido como verde, porque o verde é definido como seu valor mais alto (255).   OBS: Para exibir preto, defina todos os parâmetros de cor como 0, assim: rgb(0, 0, 0).   Para exibir branco, defina todos os parâmetros de cor para 255, assim: rgb(255, 255, 255).   Os tons de cinza geralmente são definidos usando valores iguais para todos os três parâmetros
+                
+                3.2.2- RGBA(vermelho, verde, azul, alfa): 
+                        Os valores de cores RGBA são uma extensão dos valores de cores RGB com um canal Alfa - que especifica a opacidade de uma cor. O parâmetro alfa é um número entre 0,0 (totalmente transparente) e 1,0 (nada transparente): EX: rgba(255, 180, 95, 0.5)
+
+        3.3- Cores Hexadecimais: 
+                Uma cor hexadecimal é especificada com: #RRGGBB, onde os inteiros hexadecimais RR(vermelho), GG(verde) e BB(azul) especificam os componentes da cor. Os valores hexadecimais estão entre 00 e ff (o mesmo que decimal 0-255).   EX: #ff0000 é exibido em vermelho, porque o vermelho está definido para seu valor mais alto (ff) e os outros dois (verde e azul) estão definidos para 00.   EX2: #00ff00 é exibido como verde, porque o verde está definido com seu valor mais alto (ff) e os outros dois (vermelho e azul) estão definidos como 00.   OBS: Para exibir preto, defina todos os parâmetros de cor como 00, assim: #000000.   Para exibir o branco, defina todos os parâmetros de cor como ff, assim: #ffffff.   Os tons de cinza geralmente são definidos usando valores iguais para todos os três parâmetros.
+
+        3.4- Cores HSL e HSLA: 
+                HSL significa matiz, saturação e leveza. Os valores de cores HSLA são uma extensão do HSL com um canal Alfa (opacidade).
+                3.4.1- HSL:
+                        Em HTML, uma cor pode ser especificada usando matiz, saturação e luminosidade (HSL) na forma: hsl( matiz , saturação , luminosidade)   OBS: Matiz é um grau na roda de cores de 0 a 360, 0 é vermelho, 120 é verde e 240 é azul.   A saturação é um valor percentual, 0% significa um tom de cinza e 100% é a cor total.   A leveza também é um valor percentual, 0% é preto e 100% é branco.   Os tons de cinza geralmente são definidos definindo o matiz e a saturação como 0 e ajustando a luminosidade de 0% a 100% .
+                
+                3.4.2- HSLA:
+                        Os valores de cores HSLA são uma extensão dos valores de cores HSL, com um canal Alfa - que especifica a opacidade de uma cor. hsla(matiz, saturação, luminosidade, alfa), O parâmetro alfa é um número entre 0,0 (totalmente transparente) e 1,0 (nada transparente):
+
+4- Links: Links são encontrados em quase todas as páginas da web. Os links permitem que os usuários cliquem de uma página para outra. A tag <a> define um hiperlink e possui a seguinte sintaxe: <a href="(url)">Clique aqui</a>   OBS: href= é o atributo, que indica o destino do link. Um link não visitado é sublinhado em azul, Um link visitado é sublinhado em roxo, Um link ativo é sublinhado em vermelho(para mudar a cor usar CSS)
+
+        4.1- Target:
+                Por padrão, a página vinculada será exibida na janela atual do navegador. Para alterar isso, você deve especificar outro destino para o link. O target atributo especifica onde abrir o documento vinculado. O target atributo pode ter um dos seguintes valores:
+                4.1.1- _self = Padrão. Abre o documento na mesma janela/guia em que foi clicado
+                4.1.2- _blank = Abre o documento em uma nova janela ou guia
+                4.1.3- _parent = Abre o documento no quadro pai
+                4.1.4- _top = Abre o documento em todo o corpo da janela
+        
+        4.2- imagem como um link: 
+                Para usar uma imagem como link, basta colocar a tag <img> dentro da tag <a>:   EX: <a href="default.asp">  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">  </a>
+
+        4.3- Link para um e-mail: 
+                Use mailto:dentro do href atributo para criar um link que abra o programa de e-mail do usuário (para permitir que ele envie um novo e-mail):   EX: <a href="mailto:tombrady@example.com">Enviar email</a>
+
+        4.4- Botão como um link:
+                Para usar um botão HTML como um link, você precisa adicionar algum código JavaScript. O JavaScript permite que você especifique o que acontece em determinados eventos, como o clique de um botão:   EX: <button onclick="document.location='default.asp'">Tutorial de HTML</button>
+
+        4.5- Title: 
+                O atributo title especifica informações extras sobre um elemento. As informações geralmente são mostradas como um texto de dica de ferramenta quando o mouse passa sobre o elemento.  EX: <a href="https://www.w3schools.com/html/" title="Va para a seção HTML do W3Schools">Visite nosso tutorial de  HTML</a>
+
+5- Imagens: A tag <img> é usada para incorporar uma imagem em uma página da web e tem dois atributos obrigatórios: src= Especifica o caminho para a imagem e alt= Especifica um texto alternativo para a imagem. EX: <img src="url" alt="Texto Alternativo">   OBS: Use a propriedade CSS float para deixar a imagem flutuar à direita ou à esquerda de um texto.
+
+        5.1- Tamanho da Imagem: 
+                Usar o atributo style para especificar a largura e a altura de uma imagem. EX: <img src="img_girl.jpg" alt="Garota com uma jaqueta" style="width:500px; height:600px;">
+
+        5.2- Formatos de imagem comuns: 
+                APNG = .apng
+                GIF = .gif
+                ICO = .ico, .cur
+                JPEG = .jpg, .jpeg, .jfif, .pjpeg, .pjp
+                PNG = .png
+                SVG = .svg
+        
+        5.3- Imagem de plano de fundo: 
+                Use o atributo style HTML e a background-image propriedade CSS.   EX: <p style="background-image: url('img_girl.jpg'); background-repeat: no-repeat;">   OBS: Se você deseja que a imagem de plano de fundo cubra todo o elemento, pode definir a background-size como cover, Além disso, para garantir que todo o elemento esteja sempre coberto, defina a background-attachment como fixed: Desta forma, a imagem de fundo cobrirá todo o elemento, sem esticar (a imagem manterá suas proporções originais):
+
+        5.4- Picture: 
+                O <picture> oferece aos desenvolvedores da Web mais flexibilidade na especificação de recursos de imagem. O <picture> contém um ou mais <source>, cada um referindo-se a diferentes imagens por meio do srcset. Desta forma, o navegador pode escolher a imagem que melhor se adapta à visualização e/ou dispositivo atual. Cada <source> possui um media que define quando a imagem é a mais adequada.    EX: <picture>   <source media="(min-width: 650px)" srcset="img_food.jpg">   <source media="(min-width: 465px)" srcset="img_car.jpg">   <img src="img_girl.jpg">   </picture>
+
+6- Tabelas: As tabelas permitem que os desenvolvedores da Web organizem os dados em linhas e colunas. A tag <thead> é usada para agrupar o conteúdo do cabeçalho em uma tabela HTML. O elemento <thead> é usado em conjunto com os elementos <tbody> e <tfoot> para especificar cada parte de uma tabela (cabeçalho, corpo, rodapé).
+        
+        6.1- Dados da tabela: 
+                Cada célula da tabela é definida por um <td> e uma </td>. td significa dados da tabela. Tudo entre <td> e </td> são o conteúdo da célula da tabela. EX: <td>Um</td>
+        
+        6.2- Linhas da tabela: 
+                Cada linha da tabela começa com um <tr> e termina com uma </tr>. tr significa linha da tabela.
+        
+        6.3- Cabeçalho da tabela: 
+                Às vezes, você deseja que suas células sejam células de cabeçalho de tabela. Nesses casos, use a tag <th>. th significa cabeçalho da tabela.   OBS: Para usar a primeira coluna como cabeçalhos de tabela, defina a primeira célula em cada linha como um elemento <th>.   OBS: Para adicionar uma legenda/título a uma tabela, use a tag <caption>.   EX: <th>Nomes</th>.   EX2: <caption>Tabela de Cadastro</caption>
+
+        6.4- Colocar borda: 
+                Para adicionar uma borda, use a propriedade border do CSS nos elementos: table, th e td. Para evitar bordas duplas, defina a propriedade border-collapse do CSS como collapse. Com a propriedade border-color, você pode definir a cor da borda.
+                6.4.1- Tipos de Bordas: Com a propriedade border-style, você pode definir a aparência da borda. Valores: dotted(Borda pontilhada), dashed(Borda pontilhada em negrito), solid(Borda tracejada), double(Borda dupla), groove(Borda cinza), ridge(Borda Branca), inset(Borda branca com cinza em cima), outset(Borda branca com cinza em baixo), none(Sem Borda), hidden(Borda oculta)
+
+        6.5- Colspan e Rowspan:
+                6.5.1- Colspan = Para fazer uma célula expandir várias colunas, use o atributo colspan:   EX: <th colspan="2">Marca</th> (ocupa 2 colunas)
+                6.5.2- Rowspan = Para fazer uma célula expandir várias linhas, use o atributo rowspan:   EX: <th rowspan="2">Telefone</th> (ocupa 2 linhas)
+
+        6.6- Tabela Zebrada: 
+                Usar a propriedade CSS :nth-child(even/odd) [even= linhas Pares, odd= linhas impares].   EX: tr:nth-child(even) {   background-color: #D6EEEE;   }
+
+        6.7- Colgroup: 
+                O elemento <colgroup> deve ser usado como um contêiner para as especificações da coluna. Cada grupo é especificado com um elemento <col>.O atributo span especifica quantas colunas recebem o estilo. O atributo style especifica o estilo a ser dado às colunas.   EX: <colgroup>   <col span="2" style="background-color: blue">   </colgroup> (as 2 primeiras colunas ficaram azuis).   OBS: Se você deseja estilizar colunas no meio de uma tabela, insira um elemento "vazio" <col> (sem estilos) para as colunas antes:   EX: <colgroup>   <col span="3">   <col span="2" style="background-color: pink">   </colgroup>
+
+        6.8- Tabela Completa:   
+                <table style="width:50%;">
+                <caption>Idade de Pessoas</caption>
+                <colgroup>
+                <col span="1" style="background-color: blue">
+                </colgroup>
+                <thead>
+                <tr>
+                <th colspan="2">Nome</th>
+                <th>Idade</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <td>Gilberto</td>
+                <td>Sandro</td>
+                <td>43</td>
+                </tr>
+                <tr>
+                <td>Evelyn</td>
+                <td>Jaqueline</td>
+                <td>57</td>
+                </tr>
+                </tbody>
+                </table>
+
+7- Listas: As listas HTML permitem que os desenvolvedores da Web agrupem um conjunto de itens relacionados em listas.
+
+        7.1- Listas Não Ordenada: 
+                Uma lista não ordenada começa com a tag <ul>. Cada item da lista começa com a tag <li>. Os itens da lista serão marcados com marcadores (pequenos círculos pretos) por padrão:   EX: <ul>   <li>Café</li>   <li>Chá</li>   <li>Leite</li>   </ul>
+                7.1.1- Escolher Marcadores: 
+                        A propriedade CSS list-style-type é usada para definir o estilo do marcador de item da lista. Pode ter um dos seguintes valores: disc (círculo preto padrão), circle(círculo com preenchimento branco), square(Quadrado Preto), none(Nenhum)
+
+        7.2- Listas Ordenadas: 
+                Uma lista ordenada começa com a tag <ol>. Cada item da lista começa com a tag <li>. Os itens da lista serão marcados com números por padrão:   EX: <ol>   <li>Café</li>   <li>Chá</li>   <li>Leite</li>   </ol>
+                7.1.1- Alterar Marcador: 
+                        Usar o atributo type da tag <ol>, para definir o tipo de marcador do item da lista. Valores: type="1"(Lista numerada), type="A"(Lista Alfabética Maiúscula), type="a"(Lista Alfabética Minuscula), type="I"(Lista em Número Romanos)
+
+        7.3- Lista de Descrição: 
+                Uma lista de descrição é uma lista de termos, com uma descrição de cada termo. A tag <dl> define a lista de descrição, a tag <dt> define o termo (nome) e a tag <dd> descreve cada termo:   EX: <dl>   <dt>Café</dt>   <dd>- Bebida quente preta</dd>   <dt>Leite</dt>   <dd>- Bebida gelada branca</dd>   </dl>
+
+8- Outros Elementos:
+        
+        8.1- Iframes: 
+                Um iframe HTML é usado para exibir uma página da web dentro de uma outra página da web. Use os atributos height e width para especificar o tamanho do iframe. Para remover a borda, adicione o atributo style e use a propriedade border do CSS.   EX: <iframe src="teste.html" style="height:200px; width:300px;border:none;" title="Iframe Example"></iframe>
+
+        8.2- ComputerCode: 
+                O elemento HTML <code> é usado para definir um pedaço de código de computador. O conteúdo interno é exibido na fonte monoespaçada padrão do navegador. EX: <code>   x = 5;   y = 6;   z = x + y;   </code>
+
+        8.3- Emojis: 
+                Como os emojis são caracteres, eles podem ser copiados, exibidos e dimensionados como qualquer outro caractere em HTML. EX: &#128512;(carinha feliz)
+
+9- JavaScript: 
+        O JavaScript torna as páginas HTML mais dinâmicas e interativas. O elemento <script> contém instruções de script ou aponta para um arquivo de script externo por meio do atributo src. Usos comuns para JavaScript são manipulação de imagem, validação de formulário e alterações dinâmicas de conteúdo. Para selecionar um elemento HTML, o JavaScript geralmente usa o método document.getElementById(). A tag HTML <noscript> define um conteúdo alternativo a ser exibido para usuários que desativaram scripts em seus navegadores ou possuem um navegador que não suporta scripts.   EX: <script>   document.getElementById("demo").innerHTML = "Hello JavaScript!";   </script>   <noscript>Desculpe, seu navegador não suporta JavaScript!</noscript>
+
+10- Formulários: Um formulário HTML é usado para coletar a entrada do usuário. A entrada do usuário geralmente é enviada a um servidor para processamento. O elemento HTML <form> é usado para criar um formulário HTML para entrada do usuário:
+        
+        10.1- Atributos do Formulário HTML:
+                10.1.1- Action: 
+                        O atributo action define a ação a ser executada quando o formulário é enviado. Normalmente, os dados do formulário são enviados para um arquivo no servidor quando o usuário clica no botão enviar.   EX:   <form action="/action_page.php">   <label for="fname">First name:</label><br>   <input type="text" id="fname" name="fname" value="John"><br>   <label for="lname">Last name:</label><br>   <input type="text" id="lname" name="lname" value="Doe"><br><br>   <input type="submit" value="Submit">   </form> (No exemplo, os dados do formulário são enviados para um arquivo chamado "action_page.php". Este arquivo contém um script do lado do servidor que manipula os dados do formulário)
+                
+                10.1.2- Target: 
+                        O atributo target especifica onde exibir a resposta recebida após o envio do formulário. O atributo target pode ter um dos seguintes valores: _blank (A resposta é exibida em uma nova janela ou guia), _self (A resposta é exibida na janela atual), _parent (A resposta é exibida no quadro pai), _top (A resposta é exibida no quadro pai), framename (A resposta é exibida em um iframe nomeado).   EX: <form action="/action_page.php" target="_blank">
+
+                10.1.3- Method: 
+                        O atributo method especifica o método HTTP a ser usado ao enviar os dados do formulário. Os dados do formulário podem ser enviados como variáveis ​​de URL (com method="get") ou como pós-transação HTTP (com method="post"). OBS: Sempre use POST se os dados do formulário contiverem informações confidenciais ou pessoais!   EX: <form action="/action_page.php" method="post">
+
+                10.1.4- AutoComplete: 
+                        O atributo autocomplete especifica se um formulário deve ter o preenchimento automático ativado ou desativado. Quando o preenchimento automático está ativado, o navegador preenche automaticamente os valores com base nos valores que o usuário inseriu anteriormente.   EX: <form action="/action_page.php" autocomplete="on">
+
+        10.2- Elementos do Formulário: 
+                10.2.1- Input: 
+                        Um dos elementos de formulário mais usados ​​é o elemento <input>. O elemento <input> pode ser exibido de várias maneiras, dependendo do type atributo. Todos os diferentes valores do type atributo são abordados no próximo capítulo: Tipos de entrada HTML.
+
+                10.2.2- Label: 
+                        O elemento <label> define um rótulo para vários elementos de formulário. O elemento <label> é útil para usuários de leitores de tela, porque o leitor de tela lerá o rótulo em voz alta quando o usuário focar no elemento de entrada. O elemento <label> também ajuda os usuários que têm dificuldade em clicar em regiões muito pequenas (como botões de opção ou caixas de seleção) - porque quando o usuário clica no texto dentro do elemento <label>, ele alterna o botão de opção/caixa de seleção. O atributo for da tag <label> deve ser igual ao atributo id do <input> elemento para uni-los.
+
+                10.2.3- Select: 
+                        O elemento <select> define uma lista suspensa. Os elementos <option> definem uma opção que pode ser selecionada. Por padrão, o primeiro item na lista suspensa é selecionado. Para definir uma opção pré-selecionada, adicione o atributo selected à opção:   EX: <form action="/action_page.php">   <label for="cars">Escolha um carro:</label>   <select id="cars" name="cars">   <option value="volvo">Volvo</option>   <option value="saab">Saab</option>   <option value="fiat" selected>Fiat</option>   <option value="audi">Audi</option>   </select>   <input type="submit">   </form>
+
+                10.2.4- Textarea: 
+                        O elemento <textarea> define um campo de entrada de várias linhas (uma área de texto): O atributo rows especifica o número visível de linhas em uma área de texto. O atributo cols especifica a largura visível de uma área de texto.   EX:   <form action="/action_page.php">   <textarea name="mensagem" rows="10" cols="30">Seu Texto aqui...</textarea>   <br><br>   <input type="submit">   </form>
+
+                10.2.5- Button:  
+                        O elemento <button> define um botão clicável.   EX: <button type="button" onclick="alert('Olá,Mundo!')">Clique Aqui!</button>
+
+                10.2.6- Fieldset e legend: 
+                        O elemento <fieldset> é usado para agrupar dados relacionados em um formulário. O elemento <legend> define uma legenda para o elemento <fieldset>. EX: <form action="/action_page.php">   <fieldset>   <legend>Personalidade:</legend>   <label for="fname">Primeiro Nome:</label><br>   <input type="text" id="fname" name="fname" value="Carlos"><br>   <label for="lname">Sobrenome:</label><br>   <input type="text" id="lname" name="lname" value="Eduardo"><br><br>   <input type="submit" value="Submit">   </fieldset>   </form>
+
+                10.2.7- Datalist: 
+                        O elemento <datalist> especifica uma lista de opções predefinidas para um elemento <input>. Os usuários verão uma lista suspensa das opções predefinidas à medida que inserem os dados. O atributo list do elemento <input> deve referir-se ao atributo id do elemento <datalist>. EX:   <form action="/action_page.php">   <input list="browsers">   <datalist id="browsers">   <option value="Internet Explorer">   <option value="Firefox">   <option value="Chrome">   <option value="Opera">   <option value="Safari">   </datalist>   </form>
+
+        10.3- Tipos de entradas: Este capítulo descreve os diferentes tipos para o elemento <input>.
+                10.3.1- Texto: 
+                        <input type="text"> define um campo de entrada de texto de linha única:   EX:   <form>   <label for="fname">Primeiro Nome:</label><br>   <input type="text" id="fname" name="fname"><br>   <label for="lname">Sobrenome:</label><br>   <input type="text" id="lname" name="lname">   </form
+                
+                10.3.2- Senha: 
+                        <input type="password"> define um campo de senha:   EX:   <form>   <label for="username">Username:</label><br>   <input type="text" id="username" name="username"><br>   <label for="pwd">Password:</label><br>   <input type="password" id="pwd" name="pwd">   </form>
+
+                10.3.3- Enviar: 
+                        <input type="submit"> define um botão para enviar dados de formulário para um manipulador de formulário. EX:   <input type="submit" value="Enviar">
+
+                10.3.4- Reset: 
+                        <input type="reset"> define um botão de redefinição que redefinirá todos os valores do formulário para seus valores padrão: EX: <input type="reset">
+                
+                10.3.5- Rádio: 
+                        <input type="radio"> define um botão de opção. Os botões de opção permitem que um usuário selecione APENAS UMA dentre um número limitado de opções: EX:   <form>   <input type="radio" id="html" name="fav_language" value="HTML">   <label for="html">HTML</label><br>   <input type="radio" id="css" name="fav_language" value="CSS">   <label for="css">CSS</label><br>   <input type="radio" id="javascript" name="fav_language" value="JavaScript">   <label for="javascript">JavaScript</label>   </form>
+
+                10.3.6- Checkbox: 
+                        <input type="checkbox"> define uma caixa de seleção. As caixas de seleção permitem que um usuário selecione ZERO ou MAIS opções de um número limitado de opções.   EX:   <form>   <input type="checkbox" id="vehicle1" name="vehicle1" value="Bicicleta">   <label for="vehicle1">Eu tenho uma Bicicleta</label><br>   <input type="checkbox" id="vehicle2" name="vehicle2" value="Carro">   <label for="vehicle2">Eu tenho um carro</label><br>   <input type="checkbox" id="vehicle3" name="vehicle3" value="canoa">   <label for="vehicle3">Eu tenho um barco</label>   </form>
+
+                10.3.7- Color: 
+                        O <input type="color"> é usado para campos de entrada que devem conter uma cor. Dependendo do suporte do navegador, um seletor de cores pode aparecer no campo de entrada. EX: <form>   <label for="favcolor">Selecione sua cor favorita:</label>   <input type="color" id="favcolor" name="favcolor">   </form>
+
+                10.3.8- Data: 
+                        O <input type="date"> é usado para campos de entrada que devem conter uma data. Dependendo do suporte do navegador, um seletor de data pode aparecer no campo de entrada. Você também pode usar os atributos min e max para adicionar restrições às datas. EX: <form>   <label for="aniversário">Aniversário:</label>   <input type="date" id="birthday" name="birthday">   </form>
+
+                10.3.9- Email: 
+                        O <input type="email"> é usado para campos de entrada que devem conter um endereço de e-mail. EX: <form>   <label for="email">Enter your email:</label>   <input type="email" id="email" name="email">   </form>
+
+                10.3.10- Image: 
+                        O <input type="image"> define uma imagem como um botão de envio.
+
+                10.3.11- File: 
+                        O <input type="file"> define um campo de seleção de arquivo e um botão "Escolher arquivo" para uploads de arquivos.
+
+                10.3.12- Number: 
+                        O <input type="number"> define um campo de entrada numérica . Você também pode definir restrições sobre quais números são aceitos. EX: <form>   <label for="quantity">Quantidade (entre 1 e 5):</label>   <input type="number" id="quantidade" name="quantidade" min="1" max="5">   (</form> O exemplo exibe um campo de entrada numérica, onde você pode inserir um valor de 1 a 5)
+
+                10.3.13- Range: 
+                        O <input type="range"> define um controle para inserir um número cujo valor exato não é importante (como um controle deslizante). O intervalo padrão é de 0 a 100. No entanto, você pode definir restrições sobre quais números são aceitos com os atributos min, max e step. EX: <form>   <label for="vol">Volume (entre 0 e 50):</label>   <input type="range" id="vol" name="vol" min="0" max="50">   </form
+
+                10.3.14- Search: 
+                        O <input type="search"> é usado para campos de pesquisa (um campo de pesquisa se comporta como um campo de texto normal).
+
+                10.3.15- Telefone: 
+                        O <input type="tel"> é usado para campos de entrada que devem conter um número de telefone. EX: <form>   <label for="telefone">Insira um número de telefone:</label>   <input type="tel" id="telefone" name="telefone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">   </form>
+
+                10.3.16- Hora: 
+                        O <input type="time"> permite ao usuário selecionar um horário (sem fuso horário).
+
+        10.4- Atributos de entrada:
+                10.4.1- Value: 
+                        O atributo value de entrada especifica um valor inicial(padrões) para um campo de entrada.
+                
+                10.4.2- Readonly: 
+                        O atributo readonly de entrada especifica que um campo de entrada é somente leitura. Um campo de entrada somente leitura não pode ser modificado (no entanto, um usuário pode tabular até ele, destacá-lo e copiar o texto dele).
+
+                10.4.3- Disabled: 
+                        O atributo disabled de entrada especifica que um campo de entrada deve ser desabilitado. Um campo de entrada desabilitado é inutilizável e não clicável.
+
+                10.4.4- Size: 
+                        O atributo size de entrada especifica a largura visível, em caracteres, de um campo de entrada. O valor padrão para size é 20. OBS: o atributo size funciona com os seguintes tipos de entrada: texto, pesquisa, tel, url, email e senha.
+                
+                10.4.5- Maxlength: 
+                        O atributo maxlength de entrada especifica o número máximo de caracteres permitidos em um campo de entrada.
+
+                10.4.6- Min e Max: 
+                        A entrada min e max especificam os valores mínimo e máximo para um campo de entrada. Os atributos min e max funcionam com os seguintes tipos de entrada: número, intervalo, data, data-hora-local, mês, hora e semana.
+                
+                10.4.7- Multiple: 
+                        O atributo multiple de entrada especifica que o usuário pode inserir mais de um valor em um campo de entrada. O atributo multiple funciona com os seguintes tipos de entrada: email e arquivo.
+                
+                10.4.8- Pattern: 
+                        O atributo pattern de entrada especifica uma expressão regular com a qual o valor do campo de entrada é verificado quando o formulário é enviado. O atributo pattern funciona com os seguintes tipos de entrada: texto, data, pesquisa, url, tel, e-mail e senha. Dica: Use o atributo de título global para descrever o padrão para ajudar o usuário. EX: <form>   <label for="codigo_pais">Código do país:</label>   <input type="text" id="codigo_pais" name="codigo_pais" pattern="[A-Za-z]{3}" title="Código de três letras do país">   </form>
+
+                10.4.9- Placeholder: 
+                        O atributo placeholder de entrada especifica uma dica curta que descreve o valor esperado de um campo de entrada (um valor de amostra ou uma breve descrição do formato esperado). A dica curta é exibida no campo de entrada antes que o usuário insira um valor. O atributo placeholder funciona com os seguintes tipos de entrada: texto, pesquisa, url, tel, email e senha.
+                
+                10.4.10- Required: 
+                        O atributo required de entrada especifica que um campo de entrada deve ser preenchido (obrigatório) antes de enviar o formulário. O atributo required funciona com os seguintes tipos de entrada: texto, pesquisa, url, tel, e-mail, senha, selecionadores de data, número, caixa de seleção, rádio e arquivo.
+
+                10.4.11- Step: 
+                        O atributo step de entrada especifica os intervalos de número legais para um campo de entrada. Exemplo: se step="3", os números legais podem ser -3, 0, 3, 6, etc. Dica: Este atributo pode ser usado junto com os atributos max e min para criar um intervalo de valores legais. O atributo step funciona com os seguintes tipos de entrada: número, intervalo, data, data-hora-local, mês, hora e semana.
+                
+                10.4.12- Autofocus: 
+                        O atributo autofocus de entrada especifica que um campo de entrada deve obter foco automaticamente quando a página for carregada.
+                
+                10.4.13- List: 
+                        Refere-se a um elemento <datalist> que contém opções predefinidas para um elemento <input>.   EX: <form>   <input list="navegadores">   <datalist id="navegadores">   <option value="Internet Explorer">   <option value="Firefox">   <option value="Chrome">   </datalist>   </form>
+
+                10.4.14- Autocomplete: 
+                        O atributo autocomplete de entrada especifica se um formulário ou um campo de entrada deve ter o preenchimento automático ativado ou desativado. O preenchimento automático permite que o navegador preveja o valor. Quando um usuário começa a digitar em um campo, o navegador deve exibir opções para preencher o campo, com base nos valores digitados anteriormente. O atributo autocomplete funciona com os seguintes tipos: text, search, url, tel, email, password, datepickers, range e color.
+
+11- Gráficos:
+        11.1- Canvas: 
+                O elemento HTML <canvas>é usado para desenhar gráficos, em tempo real, via JavaScript. O elemento <canvas> é apenas um contêiner para gráficos. Você deve usar JavaScript para realmente desenhar os gráficos. O Canvas tem vários métodos para desenhar caminhos, caixas, círculos, texto e adicionar imagens.   EX: <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">   </canvas> <script>   var c = document.getElementById("myCanvas");   var ctx = c.getContext("2d");   ctx.beginPath();   ctx.arc(95,50,40,0,2*Math.PI);   ctx.stroke();   </script> (desenha um círculo no canva)
+
+        11.2- SVG: 
+                SVG define gráficos baseados em vetores no formato XML. SVG significa Scalable Vector Graphics. O elemento <svg> é um contêiner para gráficos SVG. O SVG possui vários métodos para desenhar caminhos, caixas, círculos, texto e imagens gráficas.   EX: <svg width="300" height="200">   <polygon points="100,10 40,198 190,78 10,78 160,198"   style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />   Desculpe, seu navegador não suporta SVG.   </svg>
+
+        11.3- Diferença entre Canvas e SVG: 
+                SVG é uma linguagem para descrever gráficos 2D em XML. Canvas desenha gráficos 2D em tempo real (com JavaScript).
+
+12- Multimídia: Multimídia vem em muitos formatos diferentes. Pode ser quase qualquer coisa que você possa ouvir ou ver, como imagens, música, som, vídeos, discos, filmes, animações e muito mais. As páginas da Web geralmente contêm elementos multimídia de diferentes tipos e formatos.
+        12.1- Vídeo: 
+                O elemento HTML <video> é usado para mostrar um vídeo em uma página da web.   EX: <video width="320" height="240" controls autoplay muted>   <source src="movie.mp4" type="video/mp4">   <source src="movie.ogg" type="video/ogg">   Seu navegador não suporta a tag de video.   </video>;    Explicando: O atributo controls adiciona controles de vídeo, como reprodução, pausa e volume. É uma boa ideia sempre incluir width e height. Se a altura e a largura não forem definidas, a página poderá piscar enquanto o vídeo é carregado. O elemento <source> permite que você especifique arquivos de vídeo alternativos que o navegador pode escolher. O navegador usará o primeiro formato reconhecido. O texto entre as tags <video> e </video> só será exibido em navegadores que não suportam o <video>. Adicione muted e depois autoplay para permitir que seu vídeo comece a ser reproduzido automaticamente (mas sem som):
+                12.1.1- Formatos de Vídeo HTML: MP4, WebM e Ogg
+        
+        12.2- Áudio: 
+                O elemento HTML <audio> é usado para reproduzir um arquivo de áudio em uma página da web.   EX:   <audio controls autoplay muted>   <source src="horse.ogg" type="audio/ogg">   <source src="horse.mp3" type="audio/mpeg">   Seu navegador não suporta o elemento de áudio.   </audio>;    Explicando: O atributo controls adiciona controles de áudio, como reprodução, pausa e volume. O elemento <source> permite que você especifique arquivos de áudio alternativos que o navegador pode escolher. O navegador usará o primeiro formato reconhecido. O texto entre as tags <audio> e </audio> só será exibido em navegadores que não suportam o <audio>. Adicione muted e depois autoplay para permitir que seu arquivo de áudio comece a tocar automaticamente (mas sem som):
+                12.1.1- Formatos de Áudio HTML: MP3, OGG e  WAV
+        
+        12.3- Plugins: 
+                Plug-ins são programas de computador que estendem a funcionalidade padrão do navegador.
+                12.3.1- Object: 
+                        O elemento <object> é suportado por todos os navegadores. O elemento <object> define um objeto incorporado em um documento HTML. Ele foi projetado para incorporar plug-ins (como applets Java, leitores de PDF e Flash Players) em páginas da Web, mas também pode ser usado para incluir HTML em HTML.   EX: <object width="100%" height="500px" data="snippet.html"></object>
+                12.3.2- Embed: 
+                        O elemento <embed> é compatível com todos os principais navegadores. O elemento <embed> também define um objeto incorporado em um documento HTML. Os navegadores da Web suportam o elemento <embed> há muito tempo. No entanto, não fazia parte da especificação HTML antes do HTML5.   EX: <embed width="100%" height="500px" src="snippet.html">
+        
+        12.4- Youtube: A maneira mais fácil de reproduzir vídeos em HTML é usar o YouTube.
+                12.4.1- Reproduzindo um vídeo do YouTube em HTML: 
+                        Envie o vídeo para o YouTube (ou pegue um sem direito autoral), Anote o ID do vídeo, Defina um elemento <iframe> em sua página da web, Deixe o atributo src apontar para o URL do vídeo, Use os atributos width e height para especificar a dimensão do player, Adicione quaisquer outros parâmetros ao URL.   EX:   <iframe width="420" height="315"   src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">    </iframe>   OBS: Adicione loop=1 para deixar seu vídeo em loop para sempre. [Valor 0 (padrão): o vídeo será reproduzido apenas uma vez. Valor 1: O vídeo ficará em loop (para sempre).]
+
+13- Resumo:
+        13.1- HTML básico:      <!DOCTYPE> = Define o tipo de documento
+                                <html> = Define um documento HTML
+                                <head> = Contém metadados/informações para o documento
+                                <title> = Define um título para o documento
+                                <body> = Define o corpo do documento
+                                <h1> a <h6> = Define títulos HTML
+                                <p> = Define um parágrafo
+                                <br> = Insere uma única quebra de linha
+                                <hr> = Define uma mudança temática no conteúdo
+                                <!--...--> = Define um comentário
+        
+        13.2- Formatação:       <abbr> = Define uma abreviação ou um acrônimo
+                                <adress> = Define as informações de contato do autor/proprietário de um documento/artigo
+                                <b> = Define o texto em negrito
+                                <em> = Define o texto em negrito.
+                                <strong> = Define o texto importante
+                                <bdi> = Isola uma parte do texto que pode estar formatada em uma direção diferente de outro texto fora dele
+                                <bdo> = Substitui a direção do texto atual
+                                <blockquote> = Define uma seção que é citada de outra fonte
+                                <cite> =  Define o título de uma obra
+                                <code> = Define um pedaço de código de computador
+                                <del> = Define o texto que foi excluído de um documento
+                                <s> = Define o texto que foi excluído de um documento
+                                <dfn> = Especifica um termo que será definido dentro do conteúdo
+                                <i> = Define um texto em italico
+                                <ins> = Define um texto que foi inserido em um documento
+                                <kbd> = Define a entrada do teclado
+                                <mark> = Define o texto marcado/destacado
+                                <meter> = Define uma medição escalar dentro de um intervalo conhecido (um medidor)
+                                <pre> = Define o texto pré-formatado
+                                <progress> = Representa o progresso de uma tarefa
+                                <q> = Define uma citação curta
+                                <rp> = Define o que mostrar em navegadores que não suportam anotações ruby
+                                <rt> = Define uma explicação/pronúncia de caracteres (para tipografia do Leste Asiático)
+                                <ruby> = Define uma anotação rubi (para tipografia do Leste Asiático)
+                                <samp> = Define a saída de amostra de um programa de computador
+                                <small> = Define um texto menor 
+                                <sub> = Define o texto subscrito
+                                <sup> = Define o texto sobrescrito
+                                <template> = Define um contêiner para o conteúdo que deve ser ocultado quando a página é carregada
+                                <time> = Define uma hora específica (ou datetime)
+                                <u> = Define algum texto que não é articulado e tem um estilo diferente do texto normal
+                                <var> = Define uma variável
+                                <wbr> = Define uma possível quebra de linha
+
+        13.3- Formulário:       <form> = Define um formulário HTML para entrada do usuário
+                                <input> = Define um controle de entrada
+                                <textarea> = Define um controle de entrada multilinha (área de texto)
+                                <button> = Define um botão clicável
+                                <select> = Define uma lista suspensa
+                                <optgroup> = Define um grupo de opções relacionadas em uma lista suspensa
+                                <option> = Define uma opção em uma lista suspensa
+                                <label> = Define um rótulo para um elemento <input>
+                                <fieldset> = Agrupa elementos relacionados em um formulário
+                                <legend> = Define uma legenda para um elemento <fieldset>
+                                <datalist> = Especifica uma lista de opções predefinidas para controles de entrada
+                                <output> = Define o resultado de um cálculo
+        
+        13.4- Iframe: 
+                <iframe>	Define um Iframe
+
+        13.5- Imagens:          <img> = Define uma imagem
+                                <map> = Define um mapa de imagem
+                                <area> = Define uma área dentro de um mapa de imagem
+                                <canvas> = Usado para desenhar gráficos, em tempo real, via script (geralmente JavaScript)
+                                <figcaption> = Define uma legenda para um elemento <figure>
+                                <figure> = Especifica o conteúdo independente
+                                <picture> = Define um contêiner para vários recursos de imagem
+                                <svg> = Define um contêiner para gráficos SVG
+
+        13.6- Áudio e Vídeo:    <audio> Define o conteúdo sonoro
+                                <source> = Define vários recursos de mídia para elementos de mídia (<vídeo>, <áudio> e <imagem>)
+                                <track> = Define trilhas de texto para elementos de mídia (<video> e <audio>)
+                                <video> = Define um vídeo ou filme
+
+        13.7- Links:            <a> = Define um hiperlink
+                                <link> = Define o relacionamento entre um documento e um recurso externo (mais usado para vincular a folhas de estilo)
+                                <nav> = Define links de navegação
+
+        13.8- Listas:           <ul> = Define uma lista não ordenada
+                                <ol> = Define uma lista ordenada
+                                <li> = Define um item de lista
+                                <dl> = Define uma lista de descrição
+                                <dt> = Define um termo/nome em uma lista de descrição
+                                <dd> = Define uma descrição de um termo/nome em uma lista de descrição
+
+        13.9- Tabelas:          <table> = Define uma tabela
+                                <caption> = Define uma legenda/título de tabela
+                                <th> = Define uma célula de cabeçalho em uma tabela
+                                <tr> = Define uma linha em uma tabela
+                                <td> = Define uma célula em uma tabela
+                                <thead> = Agrupa o conteúdo do cabeçalho em uma tabela
+                                <tbody> = Agrupa o conteúdo do corpo em uma tabela
+                                <tfoot> = Agrupa o conteúdo do rodapé em uma tabela
+                                <col> = Especifica as propriedades da coluna para cada coluna dentro de um elemento <colgroup>
+                                <colgroup> = Especifica um grupo de uma ou mais colunas em uma tabela para formatação
+
+        13.10- Estilo e Semântica:      <style> = Define informações de estilo para um documento
+                                        <div> = Define uma seção em um documento
+                                        <span> = Define uma seção em um documento
+                                        <header> = Define um cabeçalho para um documento ou seção
+                                        <footer> = Define um rodapé para um documento ou seção
+                                        <main> = Especifica o conteúdo principal de um documento
+                                        <section> = Define uma seção em um documento
+                                        <article> = Define um artigo
+                                        <aside> = Define o conteúdo além do conteúdo da página
+                                        <details> = Define detalhes adicionais que o usuário pode visualizar ou ocultar
+                                        <dialog> = Define uma caixa de diálogo ou janela
+                                        <summary> = Define um cabeçalho visível para um elemento <details>
+                                        <data> = Adiciona uma tradução legível por máquina de um determinado conteúdo
