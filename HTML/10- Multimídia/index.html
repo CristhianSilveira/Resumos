@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo HTML 10</title>
+    <style>
+        h2 {
+            background-color: yellow;
+        }
+        #linkpos{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <a href="../9- Formulários/index.html">Voltar para Formulário</a>
+    <a id="linkpos" href="../../CSS/1- Introdução/index.html">Ir para CSS</a>
+
+    <h1>Multimídia:</h1>
+    
+    <h2>Introdução:</h2>
+    <p>A multimídia vem em muitos formatos diferentes. Pode ser quase tudo que você pode ouvir ou ver, como imagens, músicas, sons, vídeos, discos, filmes, animações e muito mais. As páginas da Web geralmente contêm elementos multimídia de diferentes tipos e formatos.</p>
+
+    <h2>Vídeo:</h2>
+    <p>O elemento HTML < video> é usado para mostrar um vídeo em uma página da web.</p>
+    
+    <p> O atributo controls adiciona controles de vídeo, como reprodução, pausa e volume. É uma boa ideia sempre incluir width e height. Se a altura e a largura não forem definidas, a página poderá piscar enquanto o vídeo é carregado.</p>
+    
+    <p>O elemento < source> permite que você especifique arquivos de vídeo alternativos que o navegador pode escolher. O navegador usará o primeiro formato reconhecido. O texto entre as tags < video> e < /video> só será exibido em navegadores que não suportam o < video>.</p>
+    
+    <p>Para iniciar um vídeo automaticamente, use o atributo autoplay. Adicione muted e depois autoplay para permitir que seu vídeo comece a ser reproduzido automaticamente (mas sem som)</p>
+    
+    <p>Formatos de Vídeo HTML: MP4, WebM e Ogg</p>
+    <pre>
+        <code>
+            EX:
+            < video width="400" controls autoplay>
+                < source src="mov_bbb.mp4" type="video/mp4">
+                < source src="mov_bbb.ogg" type="video/ogg">
+                Seu navegador não suporta video HTML.
+            < /video>
+            Resultado:
+            <video width="400" controls autoplay muted>
+                <source src="mov_bbb.mp4" type="video/mp4">
+                <source src="mov_bbb.ogg" type="video/ogg">
+                Seu navegador não suporta video HTML.
+            </video>
+        </code>
+    </pre>
+
+    <h2>Áudio:</h2>
+    <p> O elemento HTML < audio> é usado para reproduzir um arquivo de áudio em uma página da web.</p>
+
+    <p>O atributo controls adiciona controles de áudio, como reprodução, pausa e volume.</p>
+    
+    <p>O elemento < source> permite que você especifique arquivos de áudio alternativos que o navegador pode escolher. O navegador usará o primeiro formato reconhecido.</p>
+
+    <p> O texto entre as tags < audio> e < /audio> só será exibido em navegadores que não suportam o < audio>.</p>
+
+    <p>Adicione muted e depois autoplay para permitir que seu arquivo de áudio comece a tocar automaticamente (mas sem som)</p>
+
+    <p>Formatos de Áudio HTML: MP3, OGG e  WAV</p>
+    <pre>
+        <code>
+            EX:
+            < audio controls>
+                < source src="horse.ogg" type="audio/ogg">
+                < source src="horse.mp3" type="audio/mpeg">
+                Seu navegador não suporta elemento de áudio
+            < /audio>
+            Resultado:
+            <audio controls autoplay muted>
+                <source src="horse.ogv" type="audio/ogg">
+                <source src="horse.mp3" type="audio/mpeg">
+                Seu navegador não suporta elemento de áudio
+            </audio>
+        </code>
+    </pre>
+
+    <h2>Vídeo do Youtube:</h2>
+    <p>A maneira mais fácil de reproduzir vídeos em HTML é usar o YouTube.</p>
+
+    <h3>Reproduzindo um vídeo do YouTube em HTML:</h3>
+    <p>Envie o vídeo para o YouTube (ou pegue um sem direito autoral), Anote o ID do vídeo, Defina um elemento < iframe> em sua página da web, Deixe o atributo src apontar para o URL do vídeo, Use os atributos width e height para especificar a dimensão do player, Adicione quaisquer outros parâmetros ao URL.</p>
+
+    <p>Adicione mute=1 depois autoplay=1 para permitir que seu vídeo comece a ser reproduzido automaticamente (mas sem som). </p>
+
+    <p> Adicione loop=1 para deixar seu vídeo repetir para sempre. Valor 0 (padrão): O vídeo será reproduzido apenas uma vez. Valor 1: O vídeo ficará em loop (para sempre).</p>
+
+    <p>Adicione controls=0 para não exibir controles no player de vídeo. Valor 0: os controles do player não são exibidos. Valor 1 (padrão): Exibição dos controles do player.</p>
+    <pre>
+        <code>
+            EX:
+            < iframe width="420" height="315"src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1&loop=1&controls=1">
+            < /iframe>
+            Resultado:
+            <iframe width="420" height="315"src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1&loop=1&controls=1">
+            </iframe>
+        </code>
+    </pre> 
+    
+</body>
+</html>
