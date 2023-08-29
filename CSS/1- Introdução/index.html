@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../../HTML/1- Introdução/index.html">Voltar para HTML</a>
+    <a id="linkpos" href="../2- Cores/index.html">Ir para Cores</a>
+
+    <h1>Introdução:</h1>
+    
+    <h2>O que é CSS?</h2>
+    <p>CSS significa Cascading Style Sheets (Folhas de Estilo em Cascata)</p>
+    <p>CSS é a linguagem que usamos para estilizar um documento HTML. CSS descreve como os elementos HTML devem ser exibidos. </p>
+
+    <h3>Sintaxe:</h3>
+    <img src="img_selector.gif" alt="Sintaxe CSS">
+    <p>Uma regra CSS consiste em um seletor e um bloco de declaração. O seletor aponta para o elemento HTML que você deseja estilizar. O bloco de declaração contém uma ou mais declarações separadas por ponto e vírgula.</p>
+    
+    <p>Cada declaração inclui um nome de propriedade CSS e um valor, separados por dois pontos. Várias declarações CSS são separadas por ponto e vírgula e os blocos de declaração são cercados por chaves.</p>
+    <pre>
+        <code>
+            EX: 
+            h3 {
+                color: blue;
+                font-size 12px;
+            }
+            Resultado:
+            <h3 style="color: blue; font-size: 12px;">Teste</h3>
+        </code>
+    </pre>
+
+    <h2>Seletores:</h2>
+    <p>Um seletor CSS seleciona os elementos HTML que você deseja estilizar.</p>
+
+    <h3>Seletor de Elemento:</h3>
+    <p>O seletor de elementos seleciona elementos HTML com base no nome do elemento.</p>
+    <pre>
+        <code>
+            EX:
+            p {   
+                text-align: center;   
+                color: red;   
+            }
+        </code>
+    </pre>
+
+    <h3>Seletor de ID:</h3>
+    <p>O seletor id usa o atributo id de um elemento HTML para selecionar um elemento específico. O id de um elemento é único dentro de uma página. Para selecionar um elemento com um id específico, escreva um caractere hash (#), seguido do id do elemento.</p>
+    <pre>
+        <code>
+            EX:
+            #teste {
+                text-align: center;
+                color: red;
+              }
+        </code>
+    </pre>
+
+    <h3>Seletor de Classe:</h3>
+    <p>O seletor de classe seleciona elementos HTML com um atributo de classe específico. Para selecionar elementos com uma classe específica, escreva um caractere de ponto (.), seguido do nome da classe.</p>
+    <pre>
+        <code>
+            EX:
+            .centro {
+                text-align: center;
+                color: red;
+            }
+        </code>
+    </pre>
+
+    <h3>Seletor de Elemento com Classe:</h3>
+    <p>O seletor de elemento com classe (elemento.classe) seleciona somente o elemento que contém aquela determinada classe.</p>
+    <pre>
+        <code>
+            EX:
+            p.centro {
+                text-align: center;
+                color: red;
+            }
+        </code>
+    </pre>
+
+    <h3>Seletor Universal:</h3>
+    <p> O seletor universal (*) seleciona todos os elementos HTML na página.</p>
+    <pre>
+        <code>
+            EX:
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+        </code>
+    </pre>
+
+    <h3>Seletor de Agrupamento:</h3>
+    <p>O seletor de agrupamento seleciona todos os elementos HTML com as mesmas definições de estilo. Para agrupar seletores, separe cada seletor com uma vírgula.</p>
+    <pre>
+        <code>
+            EX:
+            h1, h2, p {
+                text-align: center;
+                color: red;
+            }
+        </code>
+    </pre>
+
+    <h2>Inserir CSS:</h2>
+    <p>Existem três maneiras de inserir uma folha de estilo: CSS externo, CSS interno e CSS embutido</p>
+
+    <h3>CSS Externo:</h3>
+    <p>Com uma folha de estilo externa, você pode alterar a aparência de um site inteiro alterando apenas um arquivo. Cada página HTML deve incluir uma referência ao arquivo de folha de estilo externo dentro do elemento < link>, dentro da seção head.</p>
+    <pre>
+        <code>
+            EX:
+            < !DOCTYPE html>
+            < html>
+            < head>
+                < link rel="stylesheet" href="mystyle.css">
+            < /head>
+            < body>
+            < /body>
+            < /html>
+        </code>
+    </pre>
+
+    <h3>CSS Interno:</h3>
+    <p>Uma folha de estilo interna pode ser usada se uma única página HTML tiver um estilo único. O estilo interno é definido dentro do elemento  style>, dentro da seção head.</p>
+    <pre>
+        <code>
+            EX:
+            < !DOCTYPE html>
+            < html>
+            < head>
+                style>
+                body {
+                  background-color: linen;
+                }
+                
+                h1 {
+                  color: maroon;
+                  margin-left: 40px;
+                }
+                /style>
+            < /head>
+            < body>
+            < /body>
+            < /html>
+        </code>
+    </pre>
+
+    <h3>CSS inline/embutido:</h3>
+    <p>Um estilo embutido pode ser usado para aplicar um estilo único a um único elemento. Para usar estilos embutidos, adicione o atributo style ao elemento relevante. O atributo style pode conter qualquer propriedade CSS.</p>
+    <pre>
+        <code>
+            EX: < p style="color:red;">Um parágrafo vermelho.< /p>
+        </code>
+    </pre>
+
+    <h3>Ordem dos estilos:</h3>
+    <p>1- Estilo embutido (dentro de um elemento HTML); 2- Folhas de estilo internas (na seção head); 3- Folhas de estilo externas; 4- Padrão do navegador</p>
+
+    <h2>Comentários:</h2>
+    <p> Os comentários CSS não são exibidos no navegador, mas podem ajudar a documentar seu código-fonte CSS.</p>
+    <p>Sintaxe: Usar */ comentário */ </p>
+    <pre>
+        <code>
+            EX:
+            /* Parágrafo de cor vermelha */
+            p {
+                color:red;
+            }
+        </code>
+    </pre>
+
+</body>
+</html>
