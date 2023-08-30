@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../1- Introdução/index.html">Voltar para Introdução</a>
+    <a id="linkpos" href="../3- Backgrounds/index.html">Ir para Background</a>
+
+    <h1>Cores:</h1>
+    
+    <h2>Introdução:</h2>
+    <p>As cores HTML são especificadas com nomes de cores predefinidos ou com valores RGB, HEX, HSL, RGBA ou HSLA.</p>
+
+    <h2>Nomes de cores:</h2>
+    
+    <p>Em HTML, uma cor pode ser especificada usando um nome de cor em inglês.</p>
+    <p>EX: red, Orange, Blue, Green, Yellow, Violet, LightGray, etc.</p>
+
+    <h2>Cores RGB e RGBA:</h2>
+    
+    <h3>Cores RGB(red, green, blue):</h3>
+    <p>Um valor de cor RGB representa fontes de luz VERMELHA, VERDE e AZUL.</p>
+    <p>Cada parâmetro (vermelho, verde e azul) define a intensidade da cor com um valor entre 0 e 255. Isso significa que existem 256 x 256 x 256 = 16777216 cores possíveis.</p>
+    
+    <p>EX: rgb(255, 0, 0) é exibido como vermelho, porque o vermelho é definido como seu valor mais alto (255).</p> 
+    <p>EX2: rgb(0, 255, 0) é exibido como verde, porque o verde é definido como seu valor mais alto (255).</p>
+   
+    <p>OBS: Para exibir preto, defina todos os parâmetros de cor como 0, assim: rgb(0, 0, 0).</p>
+    <p>Para exibir branco, defina todos os parâmetros de cor para 255, assim: rgb(255, 255, 255).</p>
+    <p>Os tons de cinza geralmente são definidos usando valores iguais para todos os três parâmetros</p>
+    <pre>
+        <code>
+            EX: < h1 style="color: rgb(255, 99, 71)">Teste cor< /h1>
+            Resultado: <h1 style="color: rgb(255, 99, 71)">Teste cor</h1>
+        </code>
+    </pre>
+
+    <h3>Cores RGBA(red, green, blue, alpha):</h3>
+    <p>Os valores de cores RGBA são uma extensão dos valores de cores RGB com um canal Alfa - que especifica a opacidade de uma cor.</p>
+    <p>O parâmetro alfa é um número entre 0,0 (totalmente transparente) e 1,0 (nada transparente): EX: rgba(255, 180, 95, 0.5)</p>
+    <pre>
+        <code>
+            EX: < h1 style="color: rgba(255, 99, 71, 0.5)">Teste cor< /h1>
+            Resultado: <h1 style="color: rgba(255, 99, 71, 0.5)">Teste cor</h1>
+        </code>
+    </pre>
+
+    <h2>Cores Hexadecimais:</h2>
+    
+    <p> Uma cor hexadecimal é especificada com: #RRGGBB, onde os inteiros hexadecimais RR(vermelho), GG(verde) e BB(azul) especificam os componentes da cor.</p>
+    <p>Os valores hexadecimais estão entre 00 e ff (o mesmo que decimal 0-255).</p>
+
+    <p>EX: #ff0000 é exibido em vermelho, porque o vermelho está definido para seu valor mais alto (ff) e os outros dois (verde e azul) estão definidos para 00.</p>
+    <p>EX2: #00ff00 é exibido como verde, porque o verde está definido com seu valor mais alto (ff) e os outros dois (vermelho e azul) estão definidos como 00.</p>
+
+    <p>OBS: Para exibir preto, defina todos os parâmetros de cor como 00, assim: #000000.</p>
+    <p>Para exibir o branco, defina todos os parâmetros de cor como ff, assim: #ffffff.</p>
+    <p>Os tons de cinza geralmente são definidos usando valores iguais para todos os três parâmetros.</p>
+    <pre>
+        <code>
+            EX:  < h1 style="color: #3cb371;">Textando Hexa< /h1>
+            Resultado: <h1 style="color: #3cb371;">Textando Hexa</h1>
+        </code>
+    </pre>
+
+    <h2>Cores HSL e HSLA:</h2>
+    
+    <h3>Cores HSL(hue, saturation e lightness):</h3>
+    <p>HSL significa matiz, saturação e luminosidade.</p>
+    <p> OBS: Matiz é um grau na roleta de cores de 0 a 360, 0 é vermelho, 120 é verde e 240 é azul.</p>
+    <p> A saturação é um valor percentual, 0% significa um tom de cinza e 100% é a cor total.</p>
+    <p>A luminosidade também é um valor percentual, 0% é preto e 100% é branco</p>
+    <p> Os tons de cinza geralmente são definidos definindo o matiz e a saturação como 0 e ajustando a luminosidade de 0% a 100% .</p>
+    <pre>
+        <code>
+            EX: < h1 style="color: hsl(300, 76%, 72%);">Testando Cores< /h1>
+            Resultado: <h1 style="color: hsl(300, 76%, 72%);">Testando Cores</h1>
+        </code>
+    </pre>
+
+    <h3>Cores HSLA(hue, saturation, lightness e alpha):</h3>
+    <p> Os valores de cores HSLA são uma extensão dos valores de cores HSL, com um canal Alfa - que especifica a opacidade de uma cor.</p>
+    <p>hsla(matiz, saturação, luminosidade, alfa), O parâmetro alfa é um número entre 0,0 (totalmente transparente) e 1,0 (nada transparente)</p>
+    <pre>
+        <code>
+            EX: < h1 style="color: hsla(300, 76%, 72%, 0.5);">Testando Cores< /h1>
+            Resultado: <h1 style="color: hsl(300, 76%, 72%, 0.5);">Testando Cores</h1>
+        </code>
+    </pre>
+    
+</body>
+</html>
