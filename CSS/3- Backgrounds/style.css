@@ -1,0 +1,42 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+/* BACKGROUND-COLOR*/
+.back-cor{
+    height: 30px;
+    background-color: blueviolet;
+}
+.opaci{
+    opacity: 0.5;
+}
+
+/* BACKGROUND-IMAGE*/
+.back-image{
+    height: 250px;
+    background-image: url(img_tree.png);
+}
+
+/* BACKGROUND-REPEAT*/
+.repeat{
+    background-repeat: no-repeat;
+}
+
+/* BACKGROUND-POSITION */
+.positi{
+    background-position: center;
+}
+
+/* BACKGROUND-ATTACHMENT */
+.attach{
+    background-attachment: fixed;
+}
+
+/* BACKGROUND-SHORT */
+.short{
+    height: 300px;
+    background: red url("img_tree.png") no-repeat scroll right;
+}
