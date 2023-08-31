@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../2- Cores/index.html">Voltar para Cores</a>
+    <a id="linkpos" href="../4- Borders/index.html">Ir para Border</a>
+
+    <h1>Background:</h1>
+    
+    <h2>Background-Color:</h2>
+    <p>A propriedade background-color especifica a cor de fundo de um elemento.</p>
+    <pre>
+        <code>
+            EX:
+            .back-cor{
+                background-color: blueviolet;
+            }
+            < p id="back-cor">Teste Background< /p>
+        </code>
+    </pre>
+    Resultado:
+    <p class="back-cor">Teste Background</p>
+    
+
+    <h3>Opacity:</h3>
+    <p> A propriedade opacity especifica a opacidade/transparência de um elemento. Pode assumir um valor de 0,0 - 1,0. Quanto menor o valor, mais transparente:</p>
+    <pre>
+        <code>
+            EX:
+            .back-cor{
+                background-color: blueviole;
+            }
+            .opaci{
+                opacity: 0.5;
+            }
+            < p id="back-cor">Teste Background< /p>
+        </code>
+    </pre>
+    Resultado:
+    <p class="back-cor opaci">Teste Background</p>
+    
+
+    <h2>Background-Image:</h2>
+    <p> A propriedade background-image especifica uma imagem a ser usada como plano de fundo de um elemento. Por padrão, a imagem é repetida para cobrir todo o elemento.</p>
+    <pre>
+        <code>
+            EX:
+            .back-image{
+                background-image: url(img_tree.png);
+            }
+            < div class="back-image">< /div>
+        </code>
+    </pre>
+    <div class="back-image"></div>
+
+    <h2>Background-Repeat:</h2>
+    <p>Por padrão, a propriedade background-image repete uma imagem horizontal e verticalmente. Algumas imagens devem ser repetidas apenas na horizontal ou na vertical, ou ficarão estranhas.</p>
+    <p>Para repetir uma imagem verticalmente, defina o (background-repeat: repeat-y) e na horizontal ( background-repeat: repeat-x;). Use (background-repeat: no-repeat) para nao ter repetição.</p>
+    <pre>
+        <code>
+            EX:
+            .back-image{
+                background-image: url(img_tree.png);
+            }
+            .repeat{
+                background-repeat: no-repeat;
+            }
+            < div class="back-image repeat">< /div>
+        </code>
+    </pre>
+    <div class="back-image repeat"></div>
+
+    <h2>Background-Position:</h2>
+    <p>A propriedade background-position é usada para especificar a posição da imagem de fundo.</p>
+    <pre>
+        <code>
+            EX:
+            .back-image{
+                background-image: url(img_tree.png);
+            }
+            .repeat{
+                background-repeat: no-repeat;
+            }
+            .positi{
+                background-position: center;
+            }
+            < div class="back-image repeat positi">< /div>
+        </code>
+    </pre>
+    <div class="back-image repeat positi"></div>
+
+    <h2>Background-Attachment:</h2>
+    <p>A propriedade background-attachment especifica se a imagem de fundo deve rolar ou ser fixa (não rolará com o resto da página).</p>
+    <pre>
+        <code>
+            EX:
+            .back-image{
+                background-image: url(img_tree.png);
+            }
+            .repeat{
+                background-repeat: no-repeat;
+            }
+            .positi{
+                background-position: center;
+            }
+            .attach{
+                background-attachment: fixed;
+            }
+            < div class="back-image repeat positi attach">< /div>
+        </code>
+    </pre>
+    <div class="back-image repeat positi attach"></div>
+
+    <h2>Taquigrafia do background:</h2>
+    <p>Para encurtar o código, também é possível especificar todas as propriedades do plano de fundo em uma única propriedade. Você pode usar a propriedade abreviada background. Ao usar a propriedade abreviada, a ordem dos valores da propriedade é:</p>
+    <p>(1) background-color, (2) background-image, (3) background-repeat, (4) background-attachment e (5) background-position.</p>
+    <pre>
+        <code>
+            EX:
+            .short{
+                background: red url("img_tree.png") no-repeat scroll right;
+            }
+        </code>
+    </pre>
+    <div class="short"></div>
+  
+
+</body>
+</html>
