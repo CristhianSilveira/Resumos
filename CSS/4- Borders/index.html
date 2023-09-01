@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../3- Backgrounds/index.html">Voltar para Backgrounds</a>
+    <a id="linkpos" href="../5- Margins/index.html">Ir para Margin</a>
+
+    <h1>Border:</h1>
+    
+    <h2>Introdução:</h2>
+    <p>As propriedades de borda do CSS permitem que você especifique o estilo, a largura e a cor da borda de um elemento.</p>
+
+    <h2>Estilo da Borda:</h2>
+    <p>Com a propriedade border-style, você pode definir a aparência da borda. Valores:</p>
+    <p>dotted(Borda pontilhada), dashed(Borda tracejada em negrito), solid (Borda normal), double(Borda dupla), groove(Borda cinza)</p>
+    <p>ridge(Borda Branca), inset(Borda branca com cinza em cima), outset(Borda branca com cinza em baixo), none(Sem Borda), hidden(Borda oculta).</p>
+    <pre>
+        <code>
+            EX:
+            .borda{
+                border-style: solid;
+            }
+            < p class="borda">< /p>
+        </code>
+    </pre>
+    <p class="dotted">Borda Dotted</p>
+    <p class="dashed">Borda Dashed</p>
+    <p class="solid">Borda Solid</p>
+    <p class="double">Borda Double</p>
+    <p class="groove">Borda Groove</p>
+    <p class="ridge">Borda Ridge</p>
+    <p class="inset">Borda Inset</p>
+    <p class="outset">Borda Outset</p>
+    <p class="none">Sem Borda</p>
+    <p class="hidden">Borda Hidden</p>
+    <p class="mix">Borda Mix</p>
+
+    <h2>Largura da Borda:</h2>
+    <p>A propriedade border-width especifica a largura das quatro bordas.A largura pode ser definida como um tamanho específico (em px, pt, cm, em, etc).</p>
+    <p>A propriedade border-width pode ter de um a quatro valores (para a borda superior, borda direita, borda inferior e borda esquerda).</p>
+    <pre>
+        <code>
+            EX:
+            .solid{
+                border-style: solid;
+            }
+            .largura{
+                border-width: 10px 20px 5px 30px;
+            }
+            < p class="solid largura">Largura< /p>
+        </code>
+    </pre>
+    <p class="solid largura">Largura</p>
+
+    <h2>Cor da Borda:</h2>
+    <p>A propriedade border-color é usada para definir a cor das quatro bordas.</p>
+    <p>A propriedade border-color pode ter de um a quatro valores (para a borda superior, borda direita, borda inferior e borda esquerda).</p>
+    <pre>
+        <code>
+            EX:
+            .solid{
+                border-style: solid;
+            }
+            .largura{
+                border-width: 10px 20px 5px 30px;
+            }
+            .cor{
+                border-color: aqua red blue yellow;
+            }
+            < p class="solid largura cor">Cor< /p>
+        </code>
+    </pre>
+    <p class="solid largura cor">Cor</p>
+
+    <h2>Borda Arredondada:</h2>
+    <p>A propriedade border-radius é usada para adicionar bordas arredondadas a um elemento</p>
+    <pre>
+        <code>
+            EX:
+            .solid{
+                border-style: solid;
+            }
+            .largura{
+                border-width: 10px 20px 5px 30px;
+            }
+            .cor{
+                border-color: aqua red blue yellow;
+            }
+            .arredo{
+                border-radius: 10px;
+            }
+            < p class="solid largura cor arredo">Arredonda< /p>
+        </code>
+    </pre>
+    <p class="solid largura cor arredo">Arredonda</p>
+
+    <h2>Taquigrafia da Border:</h2>
+    <p>A propriedade border é uma propriedade abreviada para as seguintes propriedades de borda individuais:</p>
+    <p>(1) border-width, (2) border-style(obrigatório) e (3) border-color.</p>
+    <pre>
+        <code>
+            EX:
+            .borda{
+                border: 5px solid red;
+            }
+            < p class="borda">Teste< /p>
+        </code>
+    </pre>
+    <p class="borda">Teste</p>
+    
+</body>
+</html>
