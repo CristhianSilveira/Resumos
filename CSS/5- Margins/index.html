@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../4- Borders/index.html">Voltar para Border</a>
+    <a id="linkpos" href="../6- Padding_e_Dimensões/index.html">Ir para Padding e Dimensões</a>
+
+    <h1>Margin:</h1>
+
+    <h2>Abre o inspecionar para ver as margens</h2>
+    
+    <h2>Introdução:</h2>
+    <p>As margens são usadas para criar espaço ao redor dos elementos, fora de qualquer borda definida. Existem propriedades para definir a margem para cada lado de um elemento:</p>
+    <p>margin-top (superior), margin-right (direita), margin-bottom (inferior) e margin-left (esquerda).</p>
+    <p>Todas as propriedades de margem podem ter os seguintes valores: auto (o navegador calcula a margem), Comprimento (especifica uma margem em px, pt, cm, etc.), % (especifica uma margem em % da largura do elemento recipiente)</p>
+    <pre>
+        <code>
+            EX:
+            .margem{
+                margin-top: 100px;
+                margin-bottom: 150px;
+                margin-right: 200px;
+                margin-left: 80px;
+            
+                border: 1px solid black;
+            }
+            < p class="margem">Margem< /p>
+        </code>
+    </pre>
+    Resultado:
+
+    <p class="margem">Margem</p>
+
+    <h2>Taquigrafia das Margens:</h2>
+    <p>A propriedade margin é uma propriedade abreviada para as seguintes propriedades de margem individuais:</p>
+    <p>(1) margin-top, (2) margin-right, (3) margin-bottom e (4) margin-left.</p>
+    <p>4 valores: EX: margin: 25px 50px 75px 100px >>Resultado: margem superior é 25px; margem direita é 50px; margem inferior é 75px; margem esquerda é 100px </p>
+
+    <p>3 valores: EX: margin: 25px 50px 75px >>Resultado: margem superior é 25px; margem direita e esquerda são 50px; margem inferior é 75px;</p>
+
+    <p>2 valores: EX: margin: 25px 50px >>Resultado: margem superior e inferior são 25px; margem direita e esquerda são 50px;</p>
+
+    <p>1 Valor: EX: margin 25px >>Resultado: todas as margens são 25px</p>
+    <pre>
+        <code>
+            EX:
+            .short{
+                margin: 30px 60px 90px 100px;
+            }
+            < p class="short">Margem 2< /p>
+        </code>
+    </pre>
+    Resultado:
+
+    <p class="short">Margem 2</p>
+
+</body>
+</html>
