@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../5- Margins/index.html">Voltar para Margin</a>
+    <a id="linkpos" href="../7- Contorno/index.html">Ir para Outline/Contorno</a>
+
+    <h1>Padding e Dimensões:</h1>
+
+    <h2>Abre o inspecionar para ver o resultado</h2>
+    
+    <h2>Padding:</h2>
+    <p>O padding é usado para criar espaço ao redor do conteúdo de um elemento, dentro de qualquer borda definida. A propriedade padding CSS é usada para gerar espaço ao redor do conteúdo de um elemento, dentro de qualquer borda definida. </p>
+    
+    <p>Existem propriedades para definir o preenchimento de cada lado de um elemento padding-top (superior), padding-right (direita), padding-bottom (inferior) e padding-left (esquerda).</p>
+    
+    <p>Todas as propriedades de preenchimento podem ter os seguintes valores: Comprimento (especifica um padding em px, pt, cm, etc.), % (especifica um padding em % da largura do elemento recipiente) </p>
+    <pre>
+        <code>
+            EX:
+            .padd{
+                padding-top: 50px;
+                padding-right: 30px;
+                padding-bottom: 50px;
+                padding-left: 80px;
+            
+                border: 2px solid black;
+            }
+            < div class="padd">Aqui tem preenchimento< /div>
+        </code>
+    </pre>
+    <div class="padd">Aqui tem preenchimento</div>
+
+    <h3>Taquigrafia do Padding:</h3>
+    <p>A propriedade padding é uma propriedade abreviada para as seguintes propriedades de preenchimento individuais:</p>
+
+    <p>(1) padding-top, (2) padding-right, (3) padding-bottom e (4) padding-left. </p>
+
+    <p>4 Valores: EX: padding: 25px 50px 75px 100px >>Resultado: o preenchimento superior é 25px; o preenchimento direito é 50px; o preenchimento inferior é 75px; o preenchimento esquerdo é 100px</p>
+
+    <p>3 Valores: EX: padding: 25px 50px 75px >>Resultado: o preenchimento superior é 25px; o preenchimento direito e esquerdo são 50px; o preenchimento inferior é 75px</p>
+
+    <p>2 Valores: EX: padding: 25px 50px >>Resultado: o preenchimento superior e inferior são 25px; o preenchimento direito e esquerdo são 50px</p>
+
+    <p>1 Valor: EX: padding: 25px >>Resultado: todos os quatros padding tem 25px</p>
+    <pre>
+        <code>
+            EX:
+            .short{
+                padding: 25px 50px 75px 100px;
+            
+                border: 2px solid black;
+            }
+            < div class="short">Aqui tem preenchimento 2< /div>
+        </code>
+    </pre>
+    <div class="short">Aqui tem preenchimento 2</div>
+    
+    <h2>Altura e Largura:</h2>
+
+    <h3>Height e Width:</h3>
+    <p>As propriedades height e width propriedades são usados para definir a altura e a largura de um elemento.</p>
+
+    <p>As propriedades height e width podem ter os seguintes valores: auto (Este é o padrão. O navegador calcula a altura e a largura), Comprimento (Define a altura/largura em px, cm, etc.), % (Define a altura/largura em porcentagem do bloco que o contém), initial (Define a altura/largura para seu valor padrão) e inherit (A altura/largura será herdada de seu valor pai).</p>
+    <pre>
+        <code>
+            EX:
+            .largura{
+                height: 100px;
+                width: 500px;
+            
+                border: 2px solid black;
+            }
+            < div class="largura">Altura de 100px e largura de 500px< /div>
+        </code>
+    </pre>
+    <div class="largura">Altura de 100px e largura de 500px</div>
+
+    <h3>Altura e Largura Máxima:</h3>
+    <p>A propriedade CSS max-width é usada para definir a largura máxima de um elemento. A propriedade max-height é usada para definir a altura máxima de um elemento.</p>
+    <p>As duas propriedades podem ser especificadas em valores de comprimento , como px, cm, etc., ou em porcentagem (%) do bloco que o contém, ou definido como none (este é o padrão. Significa que não há largura máxima).</p>
+    <pre>
+        <code>
+            EX:
+            .larg-max{
+                max-width: 400px;
+                max-height: 40px;
+            
+                border: 2px solid black;
+            }
+            < div class="larg-max">Largura máxima de 400px e Altura máxima de 40px</ div>
+        </code>
+    </pre>
+
+    <div class="larg-max">Largura máxima de 400px e Altura máxima de 40px</div>
+
+    <h3>Altura e Largura Mínima:</h3>
+    <p>A propriedade CSS min-width é usada para definir a largura mínima de um elemento. A propriedade min-height é usada para definir a altura mínima de um elemento.</p>
+    <p>As duas propriedades podem ser especificadas em valores de comprimento , como px, cm, etc., ou em porcentagem (%) do bloco que o contém, ou definido como none (este é o padrão. Significa que não há largura máxima).</p>
+    <pre>
+        <code>
+            EX:
+            .larg-min{
+                min-width: 600px;
+                min-height: 150px;
+            
+                border: 2px solid black;
+            }
+            < div class="larg-min">Largura mínima de 600px e Altura mínima de 150px< /div>
+        </code>
+    </pre>
+
+    <div class="larg-min">Largura mínima de 600px e Altura mínima de 150px</div>
+
+    <h2>Box-Model:</h2>
+    <p>Em CSS, o termo “modelo de caixa” é usado quando se fala em design e layout.</p>
+    
+    <p>O modelo de caixa CSS é essencialmente uma caixa que envolve cada elemento HTML. Consiste em: margens, bordas, preenchimento e o conteúdo real. A imagem abaixo ilustra o modelo de caixa:</p>
+    <img src="box_block.jpg" alt="box-model" width="600px">
+
+    <p>Largura total do elemento = largura + padding esquerdo + padding direito + borda esquerda + borda direita + margem esquerda + margem direita </p>
+
+    <p>Altura total do elemento = altura + padding superior + padding inferior + borda superior + borda inferior + margem superior + margem inferior</p>
+    <pre>
+        <code>
+            EX:
+            .box {
+                width: 320px;
+                padding: 10px;
+                border: 5px solid gray;
+                margin: 0;
+            }
+            < div class="box">A largura total deste elemento é 350px.< /div>
+        </code>
+    </pre>
+    <div class="box">A largura total deste elemento é 350px.</div>
+    
+    <p>>>Explicando: 320px (width) + 20px (padding esquerdo + direito) + 10px (borda esquerda + direita) + 0px (margem esquerda + direita) = 350px</p>
+
+</body>
+</html>
