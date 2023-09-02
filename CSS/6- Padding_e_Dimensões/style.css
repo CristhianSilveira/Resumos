@@ -1,0 +1,53 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+/* Padding */
+.padd{
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+
+    border: 2px solid black;
+}
+
+/* Shorthand Padding */
+.short{
+    padding: 25px 50px 75px 100px;
+
+    border: 2px solid black;
+}
+
+/* Height e width */
+.largura{
+    height: 100px;
+    width: 500px;
+
+    border: 2px solid black;
+}
+
+.larg-max{
+    max-width: 400px;
+    max-height: 40px;
+
+    border: 2px solid black;
+}
+
+.larg-min{
+    min-width: 600px;
+    min-height: 150px;
+
+    border: 2px solid black;
+}
+
+/* Box Model */
+.box {
+    width: 320px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0;
+}
