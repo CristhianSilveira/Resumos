@@ -1,0 +1,94 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+
+
+/* Color */
+.color{
+    color: blue;
+}
+
+
+
+/* Text align */
+.align-hor{
+    text-align: center;
+}
+
+/* Vertical-Align */
+.vertical{
+    vertical-align: text-bottom;
+}
+
+
+
+/* Text decoration line */
+.deco-line{
+    text-decoration-line: overline underline;
+}
+
+/* Text decoration color */
+.deco-color{
+    text-decoration-color: red;
+}
+
+/* Text decoration style */
+.deco-style{
+    text-decoration-style: wavy;
+}
+
+/* Text decoration thickness */
+.deco-thick{
+    text-decoration-thickness: 4px;
+}
+
+/* Shorthand text decoration */
+.decora{
+    text-decoration: overline green dashed 6px;
+}
+
+
+
+/* Text transform */
+.transf{
+    text-transform: capitalize;
+}
+
+
+
+/* Text indent */
+.indent{
+    text-indent: 50px;
+}
+
+/* letter spacing */
+.spacing{
+    letter-spacing: 7px;
+}
+
+/* line-height */
+.height{
+    line-height: 11px;
+}
+
+/* word spacing */
+.word-spac{
+    word-spacing: 20px;
+}
+
+/* white-space */
+.space{
+    white-space: break-spaces;
+}
+
+
+
+/* Text shadow */
+.shadow{
+    font-size: 30px;
+    text-shadow: 2px 1px 4px red;
+}
