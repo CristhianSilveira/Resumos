@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../6- Padding_e_Dimensões/index.html">Voltar para Padding e Dimensões</a>
+    <a id="linkpos" href="../8- Texto/index.html">Ir para Textos</a>
+
+    <h1>Outline:</h1>
+    
+    <h2>Introdução:</h2>
+    <p> Um contorno é uma linha desenhada ao redor dos elementos, FORA das bordas, para fazer o elemento "se destacar". As propriedades de outline do CSS permitem que você especifique o estilo, a largura e a cor do contorno de um elemento.</p>
+
+    <h2>Estilo do Contorno:</h2>
+    <p>Com a propriedade outline-style, você pode definir a aparência do contorno. Valores:</p>
+    <p>dotted(Contorno pontilhado), dashed(Contorno pontilhado em negrito), solid (Contorno normal), double(Contorno duplo), </p>
+    <p>groove(Contorno ranhurado 3D), ridge(Contorno estriado 3D), inset(Contorno de inserção 3D), outset(Esboço inicial 3D), none(Sem Contorno), hidden(Contorno oculto).</p>
+    <pre>
+        <code>
+            EX:
+            .solid {
+                outline-style: solid;
+            }
+            < p class="solid">Solid outline< /p>
+        </code>
+    </pre>
+    <p class="dotted">Dotted outline</p>
+    <p class="dashed">Dashed outline</p>
+    <p class="solid">Solid outline</p>
+    <p class="double">Double outline</p>
+    <p class="groove">Groove outline</p>
+    <p class="ridge">Ridge outline.</p>
+    <p class="inset">Inset outline</p>
+    <p class="outset">Outset outline</p>
+
+    <h2>Largura do Contorno:</h2>
+    <p>A propriedade outline-width especifica a largura do contorno e pode ter um dos seguintes valores:</p>
+    <p>thin[fino](normalmente 1px), medium [médio](normalmente 3px), thick [espessura](normalmente 5px) e Um tamanho específico (em px, pt, cm, em, etc).</p>
+    <pre>
+        <code>
+            EX:
+            .solid {
+                outline-style: solid;
+            }
+            .width{
+                outline-width: 4px;
+            }
+            < p class="solid width">Solid outline width< /p>
+        </code>
+    </pre>
+    <p class="solid width">Solid outline width</p>
+
+    <h2>Cor do Contorno:</h2>
+    <p> A propriedade outline-color é usada para definir a cor do contorno.</p>
+    <pre>
+        <code>
+            EX:
+            .solid {
+                outline-style: solid;
+            }
+            .width{
+                outline-width: 4px;
+            }
+            .color{
+                outline-color: blue;
+            }
+            < p class="solid width color">Solid outline width color< /p>
+        </code>
+    </pre>
+    <p class="solid width color">Solid outline width color</p>
+
+    <h2>Deslocamento do Contorno:</h2>
+    <p> A propriedade outline-offset adiciona espaço entre um contorno e a borda de um elemento. O espaço entre um elemento e seu contorno é transparente.</p>
+    <pre>
+        <code>
+            EX:
+            .solid {
+                outline-style: solid;
+            }
+            .width{
+                outline-width: 4px;
+            }
+            .color{
+                outline-color: blue;
+            }
+            .off{
+                margin: 30px;
+                outline-offset: 15px;
+            }
+            < p class="solid width color off">Solid outline width color offset< /p>
+        </code>
+    </pre>
+    <p class="solid width color off">Solid outline width color offset</p>
+    
+    <h2>Taquigrafia do Contorno:</h2>
+    <p>A propriedade outline é uma propriedade abreviada para as seguintes propriedades de contorno individuais:</p>
+    <p>(1) outline-width, (2) outline-style(obrigatório) e (3) outline-color. </p>
+    <pre>
+        <code>
+            EX:
+            .out{
+                outline: 6px dotted red;
+            }
+            < p class="out">Shorthand Outline< /p>
+        </code>
+    </pre>
+    <p class="out">Shorthand Outline</p>
+
+</body>
+</html>
