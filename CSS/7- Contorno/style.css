@@ -1,0 +1,53 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+/* Outline style*/
+.dotted {
+    outline-style: dotted;
+}
+.dashed {
+    outline-style: dashed;
+}
+.solid {
+    outline-style: solid;
+}
+.double {
+    outline-style: double;
+}
+.groove {
+    outline-style: groove;
+}
+.ridge {
+    outline-style: ridge;
+}
+.inset {
+    outline-style: inset;
+}
+.outset {
+    outline-style: outset;
+}
+
+/* Outline width */
+.width{
+    outline-width: 4px;
+}
+
+/* Outline Color */
+.color{
+    outline-color: blue;
+}
+
+/* Outline Offset */
+.off{
+    margin: 30px;
+    outline-offset: 15px;
+}
+
+/* Shorthand Outline */
+.out{
+    outline: 6px dotted red;
+}
