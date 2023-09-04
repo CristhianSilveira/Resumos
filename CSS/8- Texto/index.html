@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 8</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../7- Contorno/index.html">Voltar para Contorno</a>
+    <a id="linkpos" href="../9- Fontes/index.html">Ir para Fontes</a>
+
+    <h1>Text:</h1>
+    
+    <h2>Cor do texto:</h2>
+    <p>A propriedade color é usada para definir a cor do texto.</p>
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            < p class="color">Um texto aqui< /p>
+        </code>
+    </pre>
+    <p class="color">Um texto aqui</p>
+
+    <h2>Alinhamento do Texto:</h2>
+
+    <h3>Text-Align:</h3>
+    <p>A propriedade text-align é usada para definir o alinhamento horizontal de um texto. </p>
+    <p>Um texto pode ser alinhado à esquerda ou à direita, centralizado ou justificado.</p>
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .align-hor{
+                text-align: center;
+            }
+            < p class="color align-hor">Um texto aqui< /p>
+        </code>
+    </pre>
+    <p class="color align-hor">Um texto aqui</p>
+
+    <h3>Vertical-Align:</h3>
+    <p>A propriedade vertical-align define o alinhamento vertical de um elemento.</p>
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .align-hor{
+                text-align: center;
+            }
+            .vertical{
+                vertical-align: text-bottom;
+            }
+            < p class="color align-hor vertical">Um texto aqui< /p>
+        </code>
+    </pre>
+    <p class="color align-hor vertical">Um texto aqui</p>
+
+    <h2>Decoração de Texto:</h2>
+
+    <h3>Linha de Decoração:</h3>
+    <p>A propriedade text-decoration-line é usada para adicionar uma linha de decoração ao texto.</p>
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .align-hor{
+                text-align: center;
+            }
+            .vertical{
+                vertical-align: text-bottom;
+            }
+            .deco-line{
+                text-decoration-line: overline underline;
+            }
+            < p class="color align-hor vertical deco-line">Um texto aqui< /p>
+        </code>
+    </pre>
+    <p class="color align-hor vertical deco-line">Um texto aqui</p>
+
+    <h3>Cor da linha:</h3>
+    <p>A propriedade text-decoration-color é usada para definir a cor da linha de decoração.</p>
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .align-hor{
+                text-align: center;
+            }
+            .vertical{
+                vertical-align: text-bottom;
+            }
+            .deco-line{
+                text-decoration-line: overline underline;
+            }
+            .deco-color{
+                text-decoration-color: red;
+            }
+            < p class="color align-hor vertical deco-line deco-color">Um texto aqui< /p>
+        </code>
+    </pre>
+    <p class="color align-hor vertical deco-line deco-color">Um texto aqui</p>
+
+    <h3>Estilo da linha:</h3>
+    <p>A propriedade text-decoration-style é usada para definir o estilo da linha de decoração.</p>
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .align-hor{
+                text-align: center;
+            }
+            .vertical{
+                vertical-align: text-bottom;
+            }
+            .deco-line{
+                text-decoration-line: overline underline;
+            }
+            .deco-color{
+                text-decoration-color: red;
+            }
+            .deco-style{
+                text-decoration-style: wavy;
+            }
+            < p class="color align-hor vertical deco-line deco-color deco-style">Um texto aqui< /p>
+        </code>
+    </pre>
+    <p class="color align-hor vertical deco-line deco-color deco-style">Um texto aqui</p>
+
+    <h3>Espessura da Linha:</h3>
+    <p>A propriedade text-decoration-thickness é usada para definir a espessura da linha de decoração.</p>
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .align-hor{
+                text-align: center;
+            }
+            .vertical{
+                vertical-align: text-bottom;
+            }
+            .deco-line{
+                text-decoration-line: overline underline;
+            }
+            .deco-color{
+                text-decoration-color: red;
+            }
+            .deco-style{
+                text-decoration-style: wavy;
+            }
+            .deco-thick{
+                text-decoration-thickness: 4px;
+            }
+            < p class="color align-hor vertical deco-line deco-color deco-style deco-thick">Um texto aqui< /p>
+        </code>
+    </pre>
+    <p class="color align-hor vertical deco-line deco-color deco-style deco-thick">Um texto aqui</p>
+
+    <h3>Taquigrafia da Decoração:</h3>
+    <p>A propriedade text-decoration é uma propriedade abreviada para as seguintes propriedades de decoração:</p>
+    <p>(1) text-decoration-line(obrigatório), (2) text-decoration-color(opcional), (3) text-decoration-style(opcional), (4) text-decoration-thickness(opcional).</p>
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .align-hor{
+                text-align: center;
+            }
+            .vertical{
+                vertical-align: text-bottom;
+            }
+            .decora{
+                text-decoration: overline green dashed 6px;
+            }
+            < p class="color align-hor vertical decora">Um texto aqui< /p>
+        </code>
+    </pre>
+    <p class="color align-hor vertical decora">Um texto aqui</p>
+
+    <h2>Transformação de Texto:</h2>
+    <p>A propriedade text-transform é usada para especificar letras maiúsculas e minúsculas em um texto.</p>
+    <p> Ele pode ser usado para transformar tudo em letras maiúsculas ou minúsculas, ou colocar em maiúscula a primeira letra de cada palavra:</p>
+    <pre>
+        <code>
+            EX:
+            .transf{
+                text-transform: capitalize;
+            }
+            .color{
+                color: blue;
+            }
+            < p class="color transf">as primeiras letras de cada palavra vai ficar maiúscula< /p>
+        </code>
+    </pre>
+    <p class="color transf">as primeiras letras de cada palavra vai ficar maiúscula</p>
+
+    <h2>Espaçamento de Texto:</h2>
+
+    <h3>Recuo do Texto:</h3>
+    A propriedade text-indent é usada para especificar o recuo da primeira linha de um texto.
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .indent{
+                text-indent: 50px;
+            }
+        </code>
+    </pre>
+    <p class="color indent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat odit deserunt laudantium facilis nesciunt voluptatum. Earum, error iure! Mollitia repellat dolorum saepe asperiores laudantium velit nobis, ipsam optio temporibus in?</p>
+
+    <h3>Espaçamento entre Letras:</h3>
+    <p>A propriedade letter-spacing é usada para especificar o espaço entre os caracteres em um texto.</p><pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .spacing{
+                letter-spacing: 7px;
+            }
+            < p class="color spacing">Um texto espaçado< /p>
+        </code>
+    </pre>
+    <p class="color spacing">Um texto espaçado</p>
+
+    <h3>Altura da linha:</h3>
+    <p>A propriedade line-height é usada para especificar o espaço entre as linhas</p>
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .height{
+                line-height: 11px;
+            }
+            < p class="color height">Um Texto < br> Outro Texto< /p>
+        </code>
+    </pre>
+    <p class="color height">Um Texto <br> Outro Texto</p>
+
+    <h3>Espaçamento entre palavras:</h3>
+    <p>A propriedade word-spacing é usada para especificar o espaço entre as palavras em um texto.</p>
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .word-spac{
+                word-spacing: 20px;
+            }
+            < p class="color word-spac">Aqui está uma frase espaçada< /p>
+        </code>
+    </pre>
+    <p class="color word-spac">Aqui está uma frase espaçada</p>
+
+    <h3>Espaço em branco:</h3>
+    <p>A propriedade white-space especifica como o espaço em branco dentro de um elemento é tratado</p>
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .space{
+                white-space: break-spaces;
+            }
+            < p class="color space">
+                Aqui é um texto.
+                aqui é outro.
+                aqui é mais um.
+            < /p>
+        </code>
+    </pre>
+    <p class="color space">
+        Aqui é um texto.
+        aqui é outro.
+        aqui é mais um.
+    </p>
+
+    <h2>Sombra no texto:</h2>
+    <p>A propriedade text-shadow adiciona sombra ao texto.</p>
+    <p> Em seu uso mais simples, você especifica apenas a sombra horizontal e a sombra vertical. Em seguida, adicione um efeito de desfoque à sombra. Em seguida, adicione uma cor à sombra.</p>
+    <pre>
+        <code>
+            EX:
+            .color{
+                color: blue;
+            }
+            .shadow{
+                font-size: 30px;
+                text-shadow: 2px 1px 4px red;
+            }
+            < p class="color shadow">Texto Com Sombra< /p>
+        </code>
+    </pre>
+    <p class="color shadow">Texto Com Sombra</p>
+
+
+</body>
+</html>
