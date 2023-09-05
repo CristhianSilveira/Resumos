@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 9</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../8- Texto/index.html">Voltar para Texto</a>
+    <a id="linkpos" href="../10- Icones/index.html">Ir para Icones</a>
+
+    <h1>Fontes:</h1>
+    
+    <h2>Introdução:</h2>
+    <p>Escolher a fonte certa tem um grande impacto em como os leitores experimentam um site. A fonte certa pode criar uma identidade forte para sua marca. </p>
+    <p>Usar uma fonte fácil de ler é importante. A fonte agrega valor ao seu texto. Também é importante escolher a cor e o tamanho do texto corretos para a fonte.</p>
+
+    <h2>Família de fontes:</h2>
+    <p>Em CSS existem cinco famílias de fontes genéricas:</p>
+
+    <p>(1) fontes serifadas [têm um pequeno traço nas bordas de cada letra. Eles criam uma sensação de formalidade e elegância.], (2) fontes sem serifa [têm linhas limpas (sem pequenos traços anexados). Eles criam um visual moderno e minimalista.] </p>
+    <p>(3) Fontes monoespaçadas  [aqui todas as letras têm a mesma largura fixa. Eles criam uma aparência mecânica.]  (4) fontes cursivas [imitam a caligrafia humana.] (5)Fontes fantasia [são fontes decorativas/divertidas.].</p>
+    <img src="serif.gif" alt="texto serifa">
+
+    <h3>Fontes Alternativas:</h3>
+    <p>É muito importante sempre usar fontes alternativas. isso significa que você deve adicionar uma lista de "fontes de backup" semelhantes na propriedade font-family.</p>
+    <p>Se a primeira fonte não funcionar, o navegador tentará a próxima, a próxima e assim por diante. Sempre termine a lista com um nome de família de fonte genérico.</p>
+
+    <h3>Fontes mais Usadas:</h3>
+
+    <h4>Fontes Serifadas:</h4>
+    <p>"Times New Roman", Times, serif; Georgia, serif; Garamond, serif;</p>
+    <p>(1) A Times New Roman é uma das fontes mais conhecidas do mundo. Parece profissional e é usado em muitos jornais e sites de "notícias". Também é a fonte principal para dispositivos e aplicativos do Windows.</p>
+    <p>(2) Georgia é uma fonte elegante com serifa. É muito legível em diferentes tamanhos de fonte, por isso é um bom candidato para design responsivo para dispositivos móveis.</p>
+    <p>(3) Garamond é uma fonte clássica usada para muitos livros impressos. Tem uma aparência atemporal e boa legibilidade.</p>
+
+    <h4>Fontes Sans-Serif:</h4>
+    <p>Arial, Helvetica, sans-serif; Tahoma, Verdana, sans-serif; "Trebuchet MS", Helvetica, sans-serif; Geneva, Verdana, sans-serif;</p>
+    <p>(1) Arial é a fonte mais amplamente usada para mídia online e impressa. Arial também é a fonte padrão no Google Docs. Arial é uma das fontes da web mais seguras e está disponível em todos os principais sistemas operacionais.</p>
+    <p>(2) Verdana é uma fonte muito popular. Verdana é facilmente legível, mesmo para tamanhos de fonte pequenos.</p>
+    <p>(3) A fonte Tahoma tem menos espaço entre os caracteres.</p>
+    <p>(4) Trebuchet MS foi desenvolvido pela Microsoft em 1996. Use esta fonte com cuidado. Não suportado por todos os sistemas operacionais móveis.</p>
+
+    <h4>Fontes Monoespaçadas:</h4>
+    <p>"Courier New", Courier, monospace;</p>
+    <p>(1) Courier New é a fonte serif monoespaçada mais usada. Courier New é frequentemente usado com exibições de codificação e muitos provedores de e-mail o usam como fonte padrão. Courier New também é a fonte padrão para roteiros de filmes.</p>
+
+    <h4>Fontes Cursivas:</h4>
+    <p>"Brush Script MT", cursive;</p>
+    <p>(1) A fonte Brush Script MT foi projetada para imitar a caligrafia. É elegante e sofisticado, mas pode ser difícil de ler. Use-o com cuidado.</p>
+
+    <h4>Fontes Fantasia:</h4>
+    <p>Copperplate, Papyrus, fantasy</p>
+
+    <h3>Font-Family:</h3>
+    <p>Em CSS, usamos a propriedade font-family para especificar a fonte de um texto.</p>
+    <pre>
+        <code>
+            EX:
+            .sem-serifa{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            < p class="sem-serifa">Aqui tem uma Fonte</ p>
+        </code>
+    </pre>
+    <p class="sem-serifa grande">Aqui Tem Uma Fonte Sem Serifa</p>
+    <p class="serifa grande">Aqui Tem Uma Fonte Serifada</p>
+    <p class="mono grande">Aqui Tem Uma Fonte Monoespaçada</p>
+    <p class="cursiva grande">Aqui Tem Uma Fonte Cursiva</p>
+    <p class="fantasia grande">Aqui Tem Uma Fonte Fantasia</p>
+
+    <h2>Propriedades para Fonte:</h2>
+
+    <h3>Estilo da Fonte:</h3>
+    <p>A propriedade font-style é usada principalmente para especificar texto em itálico. Esta propriedade tem três valores:</p>
+    <p>normal - [O texto é mostrado normalmente], italic [O texto é mostrado em itálico] e oblique [O texto está "inclinado" (oblique é muito semelhante ao itálico, mas menos suportado)].</p>
+    <pre>
+        <code>
+            EX:
+            .style{
+                font-style: italic;
+            }
+            < p class="style">Testando estilo< /p>
+        </code>
+    </pre>
+    <p class="style">Testando Estilo</p>
+
+    <h3>Espessura da fonte:</h3>
+    <p>A propriedade font-weight especifica o peso de uma fonte</p>
+    <pre>
+        <code>
+            EX:
+            .weight{
+                font-weight: bold;
+            }
+            < p class="weight">Testando Espessura< /p>
+        </code>
+    </pre>
+    <p class="weight">Testando Espessura</p>
+
+    <h3>Variantes de Fonte:</h3>
+    <p>A propriedade font-variant especifica se um texto deve ou não ser exibido em fonte minúscula.</p>
+    <pre>
+        <code>
+            EX:
+            .variant{
+                font-variant: small-caps;
+            }
+            < p class="variant">Texto Variante< /p>
+        </code>
+    </pre>
+    <p class="variant">Texto Variante</p>
+
+    <h3>Tamanho da fonte:</h3>
+    <p>A propriedade font-size define o tamanho do texto.</p>
+    <pre>
+        <code>
+            EX:
+            .size{
+                font-size: 20px;
+            }
+            < p class="size">Eu tenho tamanho de 20px< /p>
+        </code>
+    </pre>
+    <p class="size">Eu tenho tamanho de 20px</p>
+
+    <h2>Fontes do Google:</h2>
+    <h3>Como usar Fontes do Google:</h3>
+    <p>Basta importar o link da fonte na folha de estilo CSS, em seguida, consultar a fonte no google.</p>
+    <pre>
+        <code>
+            EX:
+            @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap'); 
+            p {
+                font-family: "Audiowide", sans-serif;
+            }
+            < p class="google">Testando Fonte Google< /p>
+        </code>
+    </pre>
+    <p class="google">Testando Fonte Google</p>
+
+    <h2>Taquigrafia das Fontes:</h2>
+    <p>A propriedade font é uma propriedade abreviada para:</p>
+    <p>(1)font-style, (2)font-variant, (3)font-weight, (4)font-size e (5)font-family.</p>
+    <pre>
+        <code>
+            EX:
+            .fonte{
+                font: italic small-caps bold 30px 'Courier New';
+            }
+            < p class="fonte">Testando Shorthand< /p>
+        </code>
+    </pre>
+    <p class="fonte">Testando Shorthand</p>
+
+</body>
+</html>
