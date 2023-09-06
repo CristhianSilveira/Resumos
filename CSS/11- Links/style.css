@@ -1,0 +1,59 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+/* Text Decoration */
+.link a:link {
+    text-decoration: none;
+}
+  
+.link a:visited {
+    text-decoration: none;
+}
+  
+.link a:hover {
+    text-decoration: underline;
+}
+  
+.link a:active {
+    text-decoration: underline;
+}
+
+
+
+/* Background Color */
+.link2 a:link {
+    background-color: yellow;
+}
+  
+.link2 a:visited {
+    background-color: cyan;
+}
+  
+.link2 a:hover {
+    background-color: lightgreen;
+}
+  
+.link2 a:active {
+    background-color: hotpink;
+}
+
+
+
+/* Botão de link */
+.link3 a:link, a:visited {
+    color: black;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid green;
+    display: inline-block;
+}
+  
+.link3 a:hover, a:active {
+    background-color: green;
+    color: white;
+}
