@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 11</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../10- Icones/index.html">Voltar para Icones</a>
+    <a id="linkpos" href="../12- Listas/index.html">Ir para Listas</a>
+
+    <h1>Links:</h1>
+    
+    <h2>Introdução:</h2>
+    <p>Com CSS, os links podem ser estilizados de muitas maneiras diferentes.</p>
+    <p>Os links podem ser estilizados com qualquer propriedade CSS (por exemplo color, font-family, background, etc.). Além disso, os links podem ter estilos diferentes, dependendo do estado em que estão. Os quatro estados dos links são:</p>
+    <p>(1) a:link [um link normal não visitado], (2) a:visited [um link que o usuário visitou], (3) a:hover [um link quando o usuário passa o mouse sobre ele] e (4) a:active [um link no momento em que é clicado].</p>
+    <p>OBS: Ao definir o estilo para vários estados de link, existem algumas regras de ordem: a:hover DEVE vir depois de a:link e a:visited e a:active DEVE vir depois de a:hover</p>
+
+    <h2>Decoração de Link:</h2>
+    <p>A propriedade text-decoration é usada principalmente para remover sublinhados de links:</p>
+    <pre>
+        <code>
+            EX:
+            .link a:link {
+                text-decoration: none;
+            }
+              
+            .link a:visited {
+                text-decoration: none;
+            }
+              
+            .link a:hover {
+                text-decoration: underline;
+            }
+              
+            .link a:active {
+                text-decoration: underline;
+            }
+            < div class="link">
+                < a href="http://www.youtube.com">Youtube.com< /a>
+            < /div>
+        </code>
+    </pre>
+    <div class="link">
+        Resultado:
+        <a target="_blank" href="http://www.youtube.com">Youtube.com</a>
+    </div>
+
+    <h2>Cor de Fundo do Link:</h2>
+    <p>A propriedade background-color pode ser usada para especificar uma cor de fundo para links:</p>
+    <pre>
+        <code>
+            EX:
+            .link2 a:link {
+                background-color: yellow;
+            }
+              
+            .link2 a:visited {
+                background-color: cyan;
+            }
+              
+            .link2 a:hover {
+                background-color: lightgreen;
+            }
+              
+            .link2 a:active {
+                background-color: hotpink;
+            }
+            < div class="link2">
+                < a href="http://www.youtube.com">Youtube.com< /a>
+            < /div>
+        </code>
+    </pre>
+    <div class="link2">
+        Resultado:
+        <a target="_blank" href="http://www.youtube.com">Youtube.com</a>
+    </div>
+
+    <h2>Botões de Link:</h2>
+    <p>Este exemplo demonstra um exemplo mais avançado onde combinamos várias propriedades CSS para exibir links como caixas/botões:</p>
+    <pre>
+        <code>
+            EX:
+            .link3 a:link, a:visited {
+                color: black;
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                border: 2px solid green;
+                display: inline-block;
+            }
+              
+            .link3 a:hover, a:active {
+                background-color: green;
+                color: white;
+            }
+            < div class="link3">
+                < a href="http://www.youtube.com">Youtube.com< /a>
+            < /div>
+        </code>
+    </pre>
+    <div class="link3">
+        Resultado:
+        <a target="_blank" href="http://www.youtube.com">Youtube.com</a>
+    </div>
+
+    <h2>Cursores do Mouse:</h2>
+    <p>Este exemplo demonstra os diferentes tipos de cursores (podem ser úteis para links)</p>
+    <pre>
+        <code>
+            EX:
+            < span style="cursor:auto">auto< /span>
+            < span style="cursor:crosshair">crosshair< /span>
+            < span style="cursor:default">default< /span>
+            < span style="cursor:e-resize">e-resize< /span>
+            < span style="cursor:help">help< /span>
+            < span style="cursor:move">move< /span>
+            < span style="cursor:n-resize">n-resize< /span>
+            < span style="cursor:ne-resize">ne-resize< /span>
+            < span style="cursor:nw-resize">nw-resize< /span>
+            < span style="cursor:pointer">pointer< /span>
+            < span style="cursor:progress">progress< /span>
+            < span style="cursor:s-resize">s-resize< /span>
+            < span style="cursor:se-resize">se-resize< /span>
+            < span style="cursor:sw-resize">sw-resize< /span>
+            < span style="cursor:text">text< /span>
+            < span style="cursor:w-resize">w-resize< /span>
+            < span style="cursor:wait">wait< /span>
+        </code>
+    </pre>
+    <span style="cursor:auto">auto</span><br><br>
+    <span style="cursor:crosshair">crosshair</span><br><br>
+    <span style="cursor:default">default</span><br><br>
+    <span style="cursor:e-resize">e-resize</span><br><br>
+    <span style="cursor:help">help</span><br><br>
+    <span style="cursor:move">move</span><br><br>
+    <span style="cursor:n-resize">n-resize</span><br><br>
+    <span style="cursor:ne-resize">ne-resize</span><br><br>
+    <span style="cursor:nw-resize">nw-resize</span><br><br>
+    <span style="cursor:pointer">pointer</span><br><br>
+    <span style="cursor:progress">progress</span><br><br>
+    <span style="cursor:s-resize">s-resize</span><br><br>
+    <span style="cursor:se-resize">se-resize</span><br><br>
+    <span style="cursor:sw-resize">sw-resize</span><br><br>
+    <span style="cursor:text">text</span><br><br>
+    <span style="cursor:w-resize">w-resize</span><br><br>
+    <span style="cursor:wait">wait</span><br>
+
+    
+</body>
+</html>
