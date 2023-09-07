@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 12</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../11- Links/index.html">Voltar para Links</a>
+    <a id="linkpos" href="../13- Tabelas/index.html">Ir para Tabelas</a>
+
+    <h1>Listas:</h1>
+    
+    <h2>Tipo de marcador:</h2>
+    <p>A propriedade list-style-type especifica o tipo de marcador de item de lista.</p>
+    <pre>
+        <code>
+            EX:
+            ul.a {
+                list-style-type: circle;
+            }
+              
+            ul.b {
+                list-style-type: square;
+            }
+              
+            ol.c {
+                list-style-type: upper-roman;
+            }
+
+            ol.d {
+                list-style-type: lower-alpha;
+            }
+
+            ol.e {
+                list-style-type: none;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <ul class="a">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca Cola</li>
+    </ul>
+      
+    <ul class="b">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <ol class="c">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca Cola</li>
+    </ol>
+      
+    <ol class="d">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca Cola</li>
+    </ol>
+
+    <ol class="e">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca Cola</li>
+    </ol>
+
+    <h3>Imagem como marcador:</h3>
+    <p>A propriedade list-style-image especifica uma imagem como o marcador de item da lista:</p>
+    <pre>
+        <code>
+            EX:
+            ul.f{
+                list-style-image: url(sqpurple.gif);
+            }
+        </code>
+    </pre>
+    Resultado:
+    <ul class="f">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <h2>Posição do Marcador:</h2>
+    <p> A propriedade list-style-position especifica a posição dos marcadores de item de lista (marcadores).</p>
+    <pre>
+        <code>
+            EX:
+            ul.g{
+                list-style-position: inside;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <ul class="g">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <h2>Taquigrafia da Lista:</h2>
+    <p>A propriedade list-style é uma propriedade abreviada. É usado para definir todas as propriedades da lista em uma declaração: Ao usar a propriedade abreviada, a ordem dos valores da propriedade é:</p>
+    <p>(1) list-style-type(se uma imagem de estilo de lista for especificada, o valor desta propriedade será exibido se a imagem por algum motivo não puder ser exibida) </p>
+    <p>(2)list-style-position(especifica se os marcadores de itens de lista devem aparecer dentro ou fora do fluxo de conteúdo) e (3) list-style-image(especifica uma imagem como marcador de item da lista).</p>
+    <pre>
+        <code>
+            EX:
+            ul.h {
+                list-style: square inside url("sqpurple.gif");
+            }
+        </code>
+    </pre>
+    Resultado:
+    <ul class="h">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca Cola</li>
+    </ul>
+
+    <h2>Lista com Cores:</h2>
+    <p>Também podemos estilizar listas com cores, para torná-las um pouco mais interessantes.</p>
+    <p>OBS: Qualquer coisa adicionada à tag < ol> ou < ul> afeta a lista inteira, enquanto as propriedades adicionadas à tag < li> afetarão os itens individuais da lista</p>
+    <pre>
+        <code>
+            EX:
+            ol.j {
+                background: pink;
+                padding: 20px;
+            }
+              
+            ul.i {
+                background: #3399ff;
+                padding: 20px;
+            }
+              
+            ol.j li {
+                background: #ffe5e5;
+                color: darkred;
+                padding: 5px;
+                margin-left: 35px;
+            }
+              
+            ul.i li {
+                background: #cce5ff;
+                color: darkblue;
+                margin: 5px;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <ol class="j">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca Cola</li>
+    </ol>
+
+    <ul class="i">
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Coca Cola</li>
+    </ul>
+
+
+</body>
+</html>
