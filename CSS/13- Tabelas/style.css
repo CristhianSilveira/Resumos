@@ -1,0 +1,81 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+
+
+/* border */
+table , th, td{
+    border: 1px solid black;
+}
+
+
+/* width */
+.larg{
+    width: 100%;
+}
+
+
+/* border-collapse */
+.dupla{
+    border-collapse: collapse;
+}
+
+
+/* text align */
+.horizontal td{
+    height: 50px;
+    text-align: center;
+}
+.horizontal th{
+    height: 50px;
+    text-align: left;
+}
+
+
+/* vertical align */
+.vertical td{
+    height: 50px;
+    vertical-align: bottom;
+}
+.vertical th{
+    height: 50px;
+    vertical-align: top;
+}
+
+
+/* padding */
+.padd th,td{
+    padding: 15px;
+}
+
+
+/* hover */
+.hover tr:hover{
+    background-color: coral;
+}
+
+
+/* zebrada */
+.zebrada tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.zebrada tr:nth-child(odd) {
+    background-color: #dedede;
+}
+
+
+/* overflow */
+.overflow{
+    overflow-x: auto;
+}
+
+
+
+
+.responsa{
+    width: 1000px;
+}
