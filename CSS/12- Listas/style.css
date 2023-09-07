@@ -1,0 +1,66 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+/* list style type */
+ul.a {
+    list-style-type: circle;
+}
+  
+ul.b {
+    list-style-type: square;
+}
+  
+ol.c {
+    list-style-type: upper-roman;
+}
+  
+ol.d {
+    list-style-type: lower-alpha;
+}
+
+ol.e {
+    list-style-type: none;
+}
+
+/* list style image */
+ul.f{
+    list-style-image: url(sqpurple.gif);
+}
+
+/* list style position */
+ul.g{
+    list-style-position: inside;
+}
+
+/* shorthand lista */
+ul.h {
+    list-style: square inside url("sqpurple.gif");
+}
+
+/* lista com cores */
+ol.j {
+    background: pink;
+    padding: 20px;
+}
+  
+ul.i {
+    background: #3399ff;
+    padding: 20px;
+}
+  
+ol.j li {
+    background: #ffe5e5;
+    color: darkred;
+    padding: 5px;
+    margin-left: 35px;
+}
+  
+ul.i li {
+    background: #cce5ff;
+    color: darkblue;
+    margin: 5px;
+}
