@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 13</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../12- Listas/index.html">Voltar para Listas</a>
+    <a id="linkpos" href="../14- Visibilidade_e_Layout/index.html">Ir para Visibilidade e Layout</a>
+
+    <h1>Tabelas:</h1>
+    
+    <h2>Bordas da Tabela:</h2>
+    <p>Para especificar as bordas da tabela em CSS, use a propriedade border.</p>
+    <pre>
+        <code>
+            EX:
+            table, th, td{
+                border: 1px solid black;
+            }
+        </code>
+    </pre>
+    <table>
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+        </tr>
+        <tr>
+          <td>Peter</td>
+          <td>Griffin</td>
+        </tr>
+        <tr>
+          <td>Luis</td>
+          <td>Santos</td>
+        </tr>
+    </table>
+
+    <h2>Tabela de largura total:</h2>
+    <p>Se você precisar de uma tabela que ocupe toda a tela (largura total), adicione width: 100% ao elemento < table>:</p>
+    <pre>
+        <code>
+            EX:
+            .larg{
+                width: 100%;
+            }
+        </code>
+    </pre>
+    <table class="larg">
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+        </tr>
+        <tr>
+          <td>Peter</td>
+          <td>Griffin</td>
+        </tr>
+        <tr>
+          <td>Luis</td>
+          <td>Santos</td>
+        </tr>
+    </table>
+
+    <h2>Remover borda duplas:</h2>
+    <p>A propriedade border-collapse define se as bordas da tabela devem ser recolhidas em uma única borda: </p>
+    <pre>
+        <code>
+            EX:
+            .dupla{
+                border-collapse: collapse;
+            }
+        </code>
+    </pre>
+    <table class="larg dupla">
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+        </tr>
+        <tr>
+          <td>Peter</td>
+          <td>Griffin</td>
+        </tr>
+        <tr>
+          <td>Luis</td>
+          <td>Santos</td>
+        </tr>
+    </table>
+
+    <h2>Alinhamento de Tabela:</h2>
+
+    <h3>Alinhamento Horizontal:</h3>
+    <p>A propriedade text-align define o alinhamento horizontal (como esquerda, direita ou centro) do conteúdo em < th> ou < td>.</p>
+    <p>Por padrão, o conteúdo dos elementos < th> é alinhado ao centro e o conteúdo dos elementos < td> é alinhado à esquerda. </p>
+    <pre>
+        <code>
+            EX:
+            .horizontal td{
+                text-align: center;
+            }
+            .horizontal th{
+                text-align: left;
+            }
+        </code>
+    </pre>
+    <table class="larg horizontal">
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+        </tr>
+        <tr>
+          <td>Peter</td>
+          <td>Griffin</td>
+        </tr>
+        <tr>
+          <td>Luis</td>
+          <td>Santos</td>
+        </tr>
+    </table>
+
+    <h3>Alinhamento Vertical:</h3>
+    <p> A propriedade vertical-align define o alinhamento vertical (como superior, inferior ou central) do conteúdo em < th> ou < td>.</p>
+    <p>Por padrão, o alinhamento vertical do conteúdo em uma tabela é o meio (para os elementos < th> e < td>).</p>
+    <pre>
+        <code>
+            EX:
+            .vertical td{
+                vertical-align: bottom;
+            }
+            .vertical th{
+                vertical-align: top;
+            }
+        </code>
+    </pre>
+    <table class="larg vertical">
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+        </tr>
+        <tr>
+          <td>Peter</td>
+          <td>Griffin</td>
+        </tr>
+        <tr>
+          <td>Luis</td>
+          <td>Santos</td>
+        </tr>
+    </table>
+
+    <h2>Estilo da Tabela:</h2>
+
+    <h3>Preenchimento da Tabela:</h3>
+    <p>Para controlar o espaço entre a borda e o conteúdo de uma tabela, use a propriedade padding nos elementos < td> e < th></p>
+    <pre>
+        <code>
+            EX:
+            .padd th,td{
+                padding: 15px;
+            }
+        </code>
+    </pre>
+    <table class="larg padd">
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+        </tr>
+        <tr>
+          <td>Peter</td>
+          <td>Griffin</td>
+        </tr>
+        <tr>
+          <td>Luis</td>
+          <td>Santos</td>
+        </tr>
+    </table>
+
+    <h3>Tabela Pairável:</h3>
+    <p>Use o seletor :hover em < tr> para destacar as linhas da tabela ao passar o mouse</p>
+    <table class="larg dupla hover ">
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+        </tr>
+        <tr>
+          <td>Peter</td>
+          <td>Griffin</td>
+        </tr>
+        <tr>
+          <td>Luis</td>
+          <td>Santos</td>
+        </tr>
+    </table>
+
+    <h3>Tabela Zebrada:</h3>
+    <p>Para tabelas listradas, use o seletor nth-child() e adicione um background-color a todas as linhas pares (ou ímpares) da tabela:</p>
+    <pre>
+        <code>
+            EX:
+            .zebrada tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            .zebrada tr:nth-child(odd) {
+                background-color: #dedede;
+            }
+        </code>
+    </pre>
+    <table class="larg dupla zebrada ">
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+        </tr>
+        <tr>
+          <td>Peter</td>
+          <td>Griffin</td>
+        </tr>
+        <tr>
+          <td>Luis</td>
+          <td>Santos</td>
+        </tr>
+    </table>
+
+    <h2>Tabela Responsiva:</h2>
+    <p>Uma tabela responsiva exibirá uma barra de rolagem horizontal se a tela for muito pequena para exibir o conteúdo completo. Adicione um elemento container (como div) com overflow-x:auto ao redor do elemento table:</p>
+    <pre>
+        <code>
+            EX:
+            .overflow{
+                overflow-x: auto;
+            }
+        </code>
+    </pre>
+
+    <div class="overflow">
+        <table class="dupla zebrada responsa">
+            <tr>
+              <th>Nome</th>
+              <th>Sobrenome</th>
+              <th>Points</th>
+              <th>Points</th>
+              <th>Points</th>
+              <th>Points</th>
+              <th>Points</th>
+              <th>Points</th>
+              <th>Points</th>
+              <th>Points</th>
+              <th>Points</th>
+              <th>Points</th>
+            </tr>
+            <tr>
+              <td>Jean</td>
+              <td>Smith</td>
+              <td>50</td>
+              <td>50</td>
+              <td>50</td>
+              <td>50</td>
+              <td>50</td>
+              <td>50</td>
+              <td>50</td>
+              <td>50</td>
+              <td>50</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td>Everton</td>
+              <td>Janone</td>
+              <td>94</td>
+              <td>94</td>
+              <td>94</td>
+              <td>94</td>
+              <td>94</td>
+              <td>94</td>
+              <td>94</td>
+              <td>94</td>
+              <td>94</td>
+              <td>94</td>
+            </tr>
+            <tr>
+              <td>Amaral</td>
+              <td>Peixoto</td>
+              <td>67</td>
+              <td>67</td>
+              <td>67</td>
+              <td>67</td>
+              <td>67</td>
+              <td>67</td>
+              <td>67</td>
+              <td>67</td>
+              <td>67</td>
+              <td>67</td>
+            </tr>
+          </table>
+    </div>
+    <h3>texto de apoio da tabela acima</h3>
+    <h3>texto de apoio da tabela acima</h3>
+    <h3>texto de apoio da tabela acima</h3>
+    
+</body>
+</html>
