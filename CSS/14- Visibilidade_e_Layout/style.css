@@ -1,0 +1,332 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+
+.borda{
+    border: 3px solid green;
+}
+
+
+
+/* DISPLAY */
+/* alterar valor */
+li {
+    display: inline;
+}
+
+/* display none */
+.hidden{
+    display: none;
+}
+
+/* visibility hidden */
+.visi{
+    visibility: hidden;
+}
+
+
+
+/* Position */
+.static{
+    position: static;
+}
+.relative{
+    position: relative;
+    left: 50px;
+}
+.fixed{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.absolute{
+    position: absolute;
+    top: 60px;
+    left: 80px;
+}
+.sticky{
+    position: sticky;
+}
+
+.borda{
+    border: 2px solid red;
+    width: 50%;
+}
+.grande{
+    height: 150px;
+}
+
+
+
+/* z-index */
+.container{
+    position: relative;
+    border: 2px solid red;
+    width: 80%;
+    height: 100px;
+    background-color: aqua;
+}
+.tamanho{
+    height: 50px;
+    width: 100px;
+}
+.vermelho{
+    position: absolute;
+    top: 45px;
+    left: 130px;
+    background-color: red;
+    z-index: 1;
+    
+}
+.azul{
+    position: absolute;
+    top: 20px;
+    left: 150px;
+    background-color: blue;
+    z-index: 3;
+    
+}
+.amarelo{
+    position: absolute;
+    top: 40px;
+    left: 200px;
+    background-color: yellow;
+    z-index: 2;
+    
+}
+
+.index img{
+    position: absolute;
+    z-index: -1;
+    bottom: 10px;
+}
+
+
+
+/* Overflow */
+.overflow{
+    background-color: coral;
+    width: 200px;
+    height: 65px;
+    border: 1px solid black;
+    overflow: auto;
+}
+
+
+
+/* ALINHAMENTO */
+/* margin auto */
+.auto{
+    margin: auto;
+    border: 3px solid green;
+    width: 60%;
+    padding: 10px;
+}
+
+/* text center */
+.text-center{
+    text-align: center;
+    border: 3px solid green;
+}
+
+/* imagem centro */
+.img img{
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* somente direita ou esquerda */
+.position{
+    position: absolute;
+    right: 0;
+    width: 200px;
+    border: 3px solid green;
+}
+
+.float{
+    width: 200px;
+    border: 3px solid green;
+    float: right;
+}
+
+.padd{
+    border: 3px solid green;
+    padding: 50px 0px;
+    text-align: center;
+}
+
+.transform{
+    border: 3px solid green;
+    position: relative;
+    height: 100px;
+    
+}
+.transform p{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border: 3px solid green;
+}
+
+
+
+/* Opacity */
+.opacity img:hover{
+    opacity: 0.5;
+}
+
+
+
+/* layout */
+.header {
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 20px;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+} 
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}  
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+}
+.column.side {
+    width: 20%;
+}
+.column.middle {
+    width: 50%;
+}  
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}  
+@media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+      width: 100%;
+    }
+}
+
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+/* layout responsivo */
+.body {
+    font-family: Arial;
+    padding: 10px;
+    background: #f1f1f1;
+} 
+  /* Header/Blog Title */
+.header {
+    padding: 30px;
+    text-align: center;
+    background: white;
+}
+.header h1 {
+    font-size: 50px;
+}
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+  /* Style the topnav links */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+/* Change color on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+    float: left;
+    width: 70%;
+}
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+  
+/* Fake image */
+.fakeimg {
+    background-color: #aaa;
+    width: 90%;
+    padding: 20px;
+}
+/* Add a card effect for articles */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+/* Clear floats after the columns */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+}
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .topnav a {
+      float: none;
+      width: 100%;
+    }
+}
