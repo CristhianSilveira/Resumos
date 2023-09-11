@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 14</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../13- Tabelas/index.html">Voltar para Tabelas</a>
+    <a id="linkpos" href="../15- Float/index.html">Ir para Float</a>
+
+    <h1>Visibilidade e Layout:</h1>
+    
+    <h2>Display:</h2>
+
+    <h3>Introdução:</h3>
+    <p>A propriedade display é a propriedade CSS mais importante para controlar o layout.</p>
+    <p>Cada elemento HTML tem um valor de exibição padrão, dependendo do tipo de elemento. O valor de exibição padrão para a maioria dos elementos é block ou inline.</p>
+
+    <h3>Elementos nível de Bloco:</h3>
+    <p> Um elemento de nível de bloco sempre começa em uma nova linha e ocupa toda a largura disponível (estende-se para a esquerda e para a direita o máximo possível).</p>
+    <p>Exemplos de elementos de nível de bloco: < div>, < h1> - < h6>, < p>, < form>, < header>, < li>, < footer> e < section>.</p>
+    <pre>
+        <code>
+            Ex:
+            < div class="borda">Conteúdo aqui< /div>
+            Resultado:
+            <div class="borda">Conteúdo aqui</div>
+        </code>
+    </pre>
+
+    <h3>Elementos embutidos/inline:</h3>
+    <p> Um elemento inline não começa em uma nova linha e ocupa apenas a largura necessária.</p>
+    <p>Exemplos de elementos embutidos: < span>, < a> e < img>. Um exemplo comum é criar elementos < li> embutidos para menus horizontais:</p>
+    <pre>
+        <code>
+            EX:
+            < span class="borda">Conteúdo aqui< /span>
+            Resultado:
+            <span class="borda">Conteúdo aqui</span>
+        </code>
+    </pre>
+
+    <h3>Elemento Oculto:</h3>
+    <p>display: none; é comumente usado com JavaScript para ocultar e mostrar elementos sem excluí-los e recriá-los.</p>
+
+    <h3>Substituir o valor de exibição:</h3>
+    <p>Alterar um elemento inline para um elemento de bloco, ou vice-versa, pode ser útil para fazer a página ter uma aparência específica e ainda seguir os padrões da web.</p>
+    <pre>
+        <code>
+            EX:
+            li {
+                display: inline;
+            }
+        </code>
+    </pre>
+    Resultado:
+            <ul>
+                <li>Chá</li>
+                <li>Café</li>
+                <li>Leite</li>
+            </ul>
+
+    <h3>Ocultar Elemento:</h3>
+    <p>Ocultar um elemento pode ser feito definindo a propriedade display como none. O elemento ficará oculto e a página será exibida como se o elemento não estivesse lá:</p>
+    <p>OBS: visibility:hidden; também esconde um elemento. No entanto, o elemento ainda ocupará o mesmo espaço de antes. O elemento ficará oculto, mas ainda afetará o layout: </p>
+    <pre>
+        <code>
+            EX:
+            h1.hidden {
+                display: none;
+              }
+        </code>
+    </pre>
+    <h1 class="hidden">Teste</h1>
+    <h1 class="visi">Teste 2</h1>
+
+    <h3>Diferença entre Display inline e inline-block:</h3>
+    <p>Em comparação com display: inline, a principal diferença é que display: inline-block permite definir a largura e a altura do elemento.</p>
+    <p>Além disso, com display: inline-block, as margens/preenchimentos superior e inferior são respeitados, mas com display: inline não.</p>
+    <p>Um uso comum para display: inline-block é exibir itens de lista horizontalmente em vez de verticalmente.</p>
+    <p>Comparado com display: block, a principal diferença é que display: inline-block não adiciona uma quebra de linha após o elemento, para que o elemento possa ficar próximo a outros elementos.</p>
+
+    <h2>Position:</h2>
+    <h3>Introdução:</h3>
+    <p> A propriedade position especifica o tipo de método de posicionamento usado para um elemento. Existem cinco valores de posição diferentes: </p>
+    <p> static, relative, fixed, absolute e sticky</p>
+
+    <h3>Position Static:</h3>
+    <p>Os elementos HTML são posicionados estáticos por padrão. Os elementos posicionados estáticos não são afetados pelas propriedades top, bottom, left e right. </p>
+    <p>Um elemento com position: static; não é posicionado de nenhuma maneira especial; está sempre posicionado de acordo com o fluxo normal da página:</p>
+    <pre>
+        <code>
+            EX:
+            .static{
+                position: static;
+            }
+            < div class="borda static">Position Estatic< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="borda static">Position Estatic</div>
+
+    <h3>Position Relative:</h3>
+    <p> Um elemento com position: relative; é posicionado em relação à sua posição normal. Definir as propriedades top, bottom, left e right de um elemento relativamente posicionado fará com que ele seja ajustado para longe de sua posição normal.</p>
+    <p> Outros conteúdos não serão ajustados para caber em qualquer lacuna deixada pelo elemento.</p>
+    <pre>
+        <code>
+            EX:
+            .relative{
+                position: relative;
+                left: 50px;
+            }
+            < div class="borda relative">Position Relative< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="borda relative">Position Relative</div>
+
+    <h3>Position Fixed:</h3>
+    <p>Um elemento com position: fixed; é posicionado em relação à viewport, o que significa que ele sempre permanece no mesmo lugar, mesmo que a página seja rolada. As propriedades top, bottom, left e right são usadas para posicionar o elemento. </p>
+    <p>Um elemento fixo não deixa uma lacuna na página onde normalmente estaria localizado.</p>
+    <pre>
+        <code>
+            EX:
+            .fixed{
+                position: fixed;
+                bottom: 0;
+                right: 0;
+            }
+            < div class="borda fixed">Position Fixed< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="borda fixed">Position Fixed</div>
+
+    <h3>Position Absolute:</h3>
+    <p> Um elemento com position: absolute; é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à viewport, como fixo). </p>
+    <p>No entanto; se um elemento posicionado absoluto não tiver ancestrais posicionados, ele usará o corpo do documento e se moverá junto com a rolagem da página.</p>
+    <pre>
+        <code>
+            EX:
+            .absolute{
+                position: absolute;
+                top: 60px;
+                left: 80px;
+            }
+            < div class="borda grande relative"> Div pai(conteiner)
+                < div class="borda absolute">
+                Position Absolute
+                < /div>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="borda grande relative"> Div pai(conteiner)
+        <div class="borda absolute">
+        Position Absolute
+        </div>
+    </div>
+
+    <h3>Position Sticky:</h3>
+    <p>Um elemento com position: sticky; é posicionado com base na posição de rolagem do usuário. Um elemento fixo alterna entre relative e fixed, dependendo da posição de rolagem. </p>
+    <p> Ele é posicionado relativo até que uma determinada posição de deslocamento seja encontrada na viewport - então ele "gruda" no lugar (como position:fixed).</p>
+    <pre>
+        <code>
+            EX:
+            < div class="borda sticky">Position Sticky< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="borda sticky">Position Sticky</div>
+
+    <h2>Z-Index:</h2>
+    <h3>Introdução:</h3>
+    <p>Quando os elementos são posicionados, eles podem se sobrepor a outros elementos. </p>
+    <p>A propriedade z-index especifica a ordem da pilha de um elemento (qual elemento deve ser colocado na frente ou atrás dos outros). Um elemento pode ter uma ordem de pilha positiva ou negativa:</p>
+    <pre>
+        <code>
+            EX:
+            .tamanho{
+                height: 50px;
+                width: 100px;
+            }
+            .container{
+                position: relative;
+                border: 2px solid red;
+                width: 80%;
+                height: 100px;
+                background-color: aqua;
+            }
+            .vermelho{
+                position: absolute;
+                top: 45px;
+                left: 130px;
+                background-color: red;
+                z-index: 1;
+                
+            }
+            .azul{
+                position: absolute;
+                top: 20px;
+                left: 150px;
+                background-color: blue;
+                z-index: 3;
+                
+            }
+            .amarelo{
+                position: absolute;
+                top: 40px;
+                left: 200px;
+                background-color: yellow;
+                z-index: 2;
+                
+            }
+            < div class="container">
+                < div class="tamanho amarelo">Amarelo(1)< /div>
+                < div class="tamanho azul">Azul(2)< /div>
+                < div class="tamanho vermelho">Vermelho(3)< /div>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="container">
+        <div class="tamanho amarelo">Amarelo(1)</div>
+        <div class="tamanho azul">Azul(2)</div>
+        <div class="tamanho vermelho">Vermelho(3)</div>
+    </div>
+
+    <h2>Overflow:</h2>
+    <p>A propriedade overflow especifica se deve cortar o conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento for muito grande para caber na área especificada. A propriedade overflow tem os seguintes valores:</p>
+    <p>visible [Padrão. O overflow não é cortado. O conteúdo renderiza fora da caixa do elemento], hidden [O overflow é cortado e o restante do conteúdo ficará invisível]</p>
+    <p>scroll [O overflow é cortado e uma barra de rolagem é adicionada para ver o restante do conteúdo] e auto [Semelhante ao scroll, mas adiciona barras de rolagem somente quando necessário].</p>
+    <pre>
+        <code>
+            EX:
+            .overflow{
+                background-color: coral;
+                width: 200px;
+                height: 65px;
+                border: 1px solid black;
+                overflow: auto;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="overflow">Você pode usar a propriedade overflow quando quiser ter melhor controle do layout. A propriedade overflow especifica o que acontece se o conteúdo ultrapassar a caixa de um elemento.</div>
+
+    <h2>Centralizar:</h2>
+
+    <h3>Centralizar Elemento:</h3>
+    <p>Para centralizar horizontalmente um elemento de bloco (como < div>), use margin: auto;</p>
+    <pre>
+        <code>
+            EX:
+            .auto{
+                margin: auto;
+                border: 3px solid green;
+                width: 60%;
+                padding: 10px;
+            }
+            < div class="auto">Hello World!< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="auto">Hello World!</div>
+
+    <h3>Alinhar texto ao centro:</h3>
+    <p>Para apenas centralizar o texto dentro de um elemento, use text-align: center;</p>
+    <pre>
+        <code>
+            EX:
+            .text-center{
+                text-align: center;
+                border: 3px solid green;
+            }
+            < div class="text-center">Este texto está centralizado< /div>
+        </code>
+    </pre>
+    <div class="text-center">Este texto está centralizado</div>
+
+    <h3>Centralizar uma imagem:</h3>
+    <p>Para centralizar uma imagem, defina as margens esquerda e direita como auto e transforme-a em um elemento block:</p>
+    <pre>
+        <code>
+            EX:
+            .img img{
+                height: 200px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+            < div class="img">
+                < img src="paris.jpg" alt="Paris">
+            < /div>
+        </code>
+    </pre>
+    <div class="img">
+        <img src="paris.jpg" alt="Paris">
+    </div>
+
+    <h3>Alinhamento à esquerda ou à direita - usando a posição: </h3>
+    <p>Um método para alinhar elementos é usar position: absolute; e colocando o lado pretendido em 0.</p>
+    <pre>
+        <code>
+            EX:
+            .position{
+                position: absolute;
+                right: 0;
+                width: 200px;
+                border: 3px solid green;
+            }
+            < div class="position">Texto exemplo< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="position">Texto exemplo</div>
+
+    <h3>Alinhamento à esquerda ou à direita - usando float: </h3>
+    <p>Outro método para alinhar elementos é usar a propriedade float</p>
+    <pre>
+        <code>
+            EX:
+            .float{
+                width: 200px;
+                border: 3px solid green;
+                float: right;
+            }
+            < div class="float">Texto exemplo 2< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="float">Texto exemplo 2</div>
+
+    <h3>Centralizar verticalmente - usando padding:</h3>
+    <p>Existem muitas maneiras de centralizar um elemento verticalmente em CSS. Uma solução simples é usar padding e text-align: center:</p>
+    <pre>
+        <code>
+            EX:
+            .padd{
+                border: 3px solid green;
+                padding: 50px 0px;
+                text-align: center;
+            }
+            < div class="padd">Texto exemplo 3< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="padd">Texto exemplo 3</div>
+
+    <h3>Centralizar verticalmente - usando posição e transformação:</h3>
+    <pre>
+        <code>
+            EX:
+            .transform{
+                border: 3px solid green;
+                position: relative;
+                height: 100px;
+                
+            }
+            .transform p{
+                position: absolute;
+                margin: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            < div class="transform">
+                < p>Texto Exemplo 4< /p>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="transform">
+        <p>Texto Exemplo 4</p>
+    </div>
+
+    <h3>Centralizar usando Flexbox:</h3>
+    <pre>
+        <code>
+            EX:
+            .flex {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100px;
+                border: 3px solid green;
+            }
+            < div class="flex">Texto Exemplo 5< /div>
+        </code>
+    </pre>
+    <div class="flex">Texto Exemplo 5</div>
+
+    <h2>Opacidade:</h2>
+    <p>A propriedade opacity especifica a opacidade/transparência de um elemento.</p>
+    <p>A propriedade opacity pode assumir um valor de 0,0 a 1,0. Quanto menor o valor, mais transparente:</p>
+    <pre>
+        <code>
+            EX:
+            .opacity img:hover{
+                opacity: 0.5;
+            }
+            < div class="opacity">
+                < img height="200px" src="img_forest.jpg" alt="Floresta">
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="opacity">
+        <img height="200px" src="img_forest.jpg" alt="Floresta">
+    </div>
+
+    <h2>Layout:</h2>
+    <p>Um site geralmente é dividido em cabeçalhos, menus, conteúdo e rodapé:</p>
+    <img src="layout-do-site-css-3.png" alt="Layout">
+
+    <h3>Header (Cabeçalho):</h3>
+    <p>Um cabeçalho geralmente está localizado na parte superior do site (ou logo abaixo de um menu de navegação superior). Geralmente contém um logotipo ou o nome do site.</p>
+    <pre>
+        <code>
+            EX:
+            .header {
+                background-color: #F1F1F1;
+                text-align: center;
+                padding: 20px;
+            }
+            < div class="header">Header (Cabeçalho)< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="header">Header (Cabeçalho)</div>
+
+    <h3>Navbar (Barra de navegação):</h3>
+    <p>Uma barra de navegação contém uma lista de links para ajudar os visitantes a navegar pelo seu site.</p>
+    <pre>
+        <code>
+            EX:
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+            } 
+            .topnav a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }  
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+            < div class="topnav">
+                < a href="#">Link< /a>
+                < a href="#">Link< /a>
+                < a href="#">Link< /a>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="topnav">
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </div>
+
+    <h3>Content (Conteúdo):</h3>
+    <p>O layout nesta seção geralmente depende dos usuários-alvo. O layout mais comum é um dos seguintes:</p>
+    <p> 1 coluna (geralmente usada para navegadores móveis); 2 colunas (frequentemente usado para tablets e laptops); 3 colunas (usado apenas para desktops)</p>
+    <pre>
+        <code>
+            EX:
+            .column {
+                float: left;
+                padding: 10px;
+            }
+            .column.side {
+                width: 20%;
+            }
+            .column.middle {
+                width: 50%;
+            }  
+            .row::after {
+                content: "";
+                display: table;
+                clear: both;
+            }  
+            @media screen and (max-width: 600px) {
+                .column.side, .column.middle {
+                  width: 100%;
+                }
+            }
+        </code>
+    </pre>
+    Resultado: Redimensione pra ver a diferença
+    <div class="row">
+        <div class="column side">
+          <h4>Side</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+        </div>
+        
+        <div class="column middle">
+          <h4>Main Content</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        </div>
+        
+        <div class="column side">
+          <h4>Side</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+        </div>
+      </div>
+
+      <h3>Footer (Rodapé):</h3>
+      <p>O rodapé é colocado na parte inferior da sua página. Geralmente contém informações como direitos autorais e informações de contato.</p>
+      <pre>
+        <code>
+            EX:
+            .footer {
+                background-color: #f1f1f1;
+                padding: 10px;
+                text-align: center;
+            }
+        </code>
+      </pre>
+      Resultado:
+      <div class="footer">
+        <p>Footer</p>
+      </div>
+
+      <h3>Layout Responsivo:</h3>
+      <pre>
+        <code>
+            EX:
+            .body {
+                font-family: Arial;
+                padding: 10px;
+                background: #f1f1f1;
+            } 
+              /* Header/Blog Title */
+            .header {
+                padding: 30px;
+                text-align: center;
+                background: white;
+            }
+            .header h1 {
+                font-size: 50px;
+            }
+            /* Style the top navigation bar */
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+            }
+              /* Style the topnav links */
+            .topnav a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            /* Change color on hover */
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+            /* Create two unequal columns that floats next to each other */
+            /* Left column */
+            .leftcolumn {   
+                float: left;
+                width: 70%;
+            }
+            /* Right column */
+            .rightcolumn {
+                float: left;
+                width: 25%;
+                background-color: #f1f1f1;
+                padding-left: 20px;
+            }
+              
+            /* Fake image */
+            .fakeimg {
+                background-color: #aaa;
+                width: 90%;
+                padding: 20px;
+            }
+            /* Add a card effect for articles */
+            .card {
+                background-color: white;
+                padding: 20px;
+                margin-top: 20px;
+            }
+            /* Clear floats after the columns */
+            .row::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            /* Footer */
+            .footer {
+                padding: 20px;
+                text-align: center;
+                background: #ddd;
+                margin-top: 20px;
+            }
+            /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+              @media screen and (max-width: 800px) {
+                .leftcolumn, .rightcolumn {   
+                  width: 100%;
+                  padding: 0;
+                }
+            }
+              /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+              @media screen and (max-width: 400px) {
+                .topnav a {
+                  float: none;
+                  width: 100%;
+                }
+            }
+        </code>
+      </pre>
+      Resultado:
+      <div class="body">
+          <div class="header">
+            <h1>My Website</h1>
+            <p>Resize the browser window to see the effect.</p>
+          </div>
+          
+          <div class="topnav">
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#" style="float:right">Link</a>
+          </div>
+          
+          <div class="row">
+            <div class="leftcolumn">
+              <div class="card">
+                <h2>TITLE HEADING</h2>
+                <h5>Title description, Dec 7, 2017</h5>
+                <div class="fakeimg" style="height:200px;">Image</div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+              </div>
+              <div class="card">
+                <h2>TITLE HEADING</h2>
+                <h5>Title description, Sep 2, 2017</h5>
+                <div class="fakeimg" style="height:200px;">Image</div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+              </div>
+            </div>
+            <div class="rightcolumn">
+              <div class="card">
+                <h2>About Me</h2>
+                <div class="fakeimg" style="height:100px;">Image</div>
+                <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+              </div>
+              <div class="card">
+                <h3>Popular Post</h3>
+                <div class="fakeimg"><p>Image</p></div>
+                <div class="fakeimg"><p>Image</p></div>
+                <div class="fakeimg"><p>Image</p></div>
+              </div>
+              <div class="card">
+                <h3>Follow Me</h3>
+                <p>Some text..</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="footer">
+            <h2>Footer</h2>
+          </div>
+      </div>
+
+</body>
+</html>
