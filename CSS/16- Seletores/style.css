@@ -1,0 +1,77 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+
+/* seletor de combinação */
+/* descendente */
+.desc p {
+    background-color: green;
+}
+/* filho (>) */
+.filho > p {
+    background-color: aqua;
+}
+/* adjacente (+) */
+.adja + p {
+    background-color: yellow;
+}
+/* geral de irmaos (~) */
+.geral + p{
+    background-color: blueviolet;
+}
+
+
+
+/* pseudo-classe */
+/* hover */
+.hover p {
+    display: none;
+    background-color: yellow;
+    padding: 20px;
+}
+.hover:hover p {
+    display: block;
+}
+/* first-child */
+.child p:first-child{
+    color: blue;
+}
+
+
+
+/* pseudo-elemento */
+/* first-line */
+.line p::first-line{
+    color: red;
+}
+/* first-letter */
+.letter p::first-letter{
+    color: blue;
+    font-size: xx-large;
+}
+/* before */
+.before p::before{
+    content: url(smiley.gif);
+}
+/* after */
+.after p::after{
+    content: url(smiley.gif);
+}
+/* marker */
+::marker { 
+    color: red;
+}
+/* selection */
+::selection {
+    color: red;
+    background: yellow;
+}
+
+/* seletor attr  */
+.attr a[target]{
+    background-color: aqua;
+}
