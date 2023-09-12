@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 15</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../14- Visibilidade_e_Layout/index.html">Voltar para Visibilidade e Layout</a>
+    <a id="linkpos" href="../16- Seletores/index.html">Ir para Seletores</a>
+
+    <h1>Float:</h1>
+    
+    <h2>Introdução:</h2>
+    <p>A propriedade CSS especifica float como um elemento deve flutuar.</p>
+    <p>A propriedade clear CSS especifica quais elementos podem flutuar ao lado do elemento limpo e em que lado.</p>
+
+    <h2>Float:</h2>
+    <p>A propriedade float é usada para posicionar e formatar o conteúdo, por exemplo, deixar uma imagem flutuar à esquerda do texto em um contêiner. A propriedade float pode ter um dos seguintes valores:</p>
+    <p>left [O elemento flutua à esquerda de seu contêiner], right [O elemento flutua à direita de seu contêiner], none [O elemento não flutua (será exibido apenas onde ocorre no texto). Isso é padrão], inherit [O elemento herda o valor float de seu pai].</p>
+    <pre>
+        <code>
+            EX:
+            img {
+                float: right;
+                height:100px;
+                margin-right:15px;
+            }
+        </code>
+    </pre>
+    <p><img src="pineapple.jpg" alt="Abacaxi">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p>
+
+    <h2>Clear:</h2>
+    <p>A propriedade clear especifica o que deve acontecer com o elemento próximo a um elemento flutuante. A propriedade  clear pode ter um dos seguintes valores:</p>
+    <p>none [O elemento não é colocado abaixo dos elementos flutuantes esquerdo ou direito. Isso é padrão], left [O elemento é empurrado para baixo dos elementos flutuantes à esquerda], right [O elemento é empurrado abaixo dos elementos flutuantes à direita], both [O elemento é empurrado para baixo dos elementos flutuantes esquerdo e direito], inherit [O elemento herda o valor clear de seu pai].</p>
+    <pre>
+        <code>
+            EX:
+            .div1 {
+                float: left;
+                padding: 10px;  
+                border: 3px solid #73AD21;
+            }
+              
+            .div2 {
+                padding: 10px;
+                border: 3px solid red;
+                clear: left;
+            } 
+        </code>
+    </pre>
+    Resultado:
+    <div class="div1">div1</div>
+    <div class="div2">div2 - Aqui, clear: left; move div2 para baixo do div1 flutuante. O valor "left" limpa os elementos flutuados para a esquerda. Você também pode limpar "right" e "both".</div>
+    
+
+
+</body>
+</html>
