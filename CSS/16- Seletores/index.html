@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 16</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../15- Float/index.html">Voltar para Float</a>
+    <a id="linkpos" href="../17- Unidades/index.html">Ir para Unidades</a>
+
+    <h1>Seletores:</h1>
+    
+    <h2>Combinadores:</h2>
+    <p>Um combinador é algo que explica a relação entre os seletores. Existem quatro combinadores diferentes em CSS:</p>
+    <p>seletor descendente (espaço), seletor filho (>), seletor de irmão adjacente (+) e seletor geral de irmãos (~)</p>
+
+    <h3>Seletor Descendente:</h3>
+    <p>O seletor descendente corresponde a todos os elementos que são descendentes de um elemento especificado.</p>
+    <pre>
+        <code>
+            EX:
+            .desc p {
+                background-color: green;
+            }
+            < div class="desc">
+                < p>Teste< /p>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="desc">
+        <p>Teste</p>
+    </div>
+
+    <h3>Seletor filho (>):</h3>
+    <p> O seletor filho seleciona todos os elementos que são filhos de um elemento especificado.</p>
+    <pre>
+        <code>
+            EX:
+            .filho > p {
+                background-color: aqua;
+            }
+            < div class="filho">
+                < p>Teste 2< /p>
+            < /div>
+        </code>
+    </pre>
+    <div class="filho">
+        <p>Teste 2</p>
+    </div>
+
+    <h3>Seletor de irmão adjacente (+):</h3>
+    <p>O seletor irmão adjacente é usado para selecionar um elemento que está diretamente após outro elemento específico. Os elementos irmãos devem ter o mesmo elemento pai e "adjacente" significa "imediatamente seguinte".</p>
+    <pre>
+        <code>
+            EX:
+            .adja + p {
+                background-color: yellow;
+            }
+            < div class="adja">
+                < p>Teste 3< /p>
+            < /div>
+            < p>Teste 3< /p>
+        </code>
+    </pre>
+    Resultado:
+    <div class="adja">
+        <p>Teste 3</p>
+    </div>
+    <p>Teste 3</p>
+
+    <h3> Seletor geral de irmãos (~):</h3>
+    <p>O seletor geral de irmãos seleciona todos os elementos que são os próximos irmãos de um elemento especificado.</p>
+    <pre>
+        <code>
+            EX:
+            .geral ~ p{
+                background-color: blueviolet;
+            }
+            < div class="geral">
+                < p>Teste 4< /p>
+            < /div>
+            < p>Teste 4< /p>
+        </code>
+    </pre>
+    Resultado:
+    <div class="geral">
+        <p>Teste 4</p>
+    </div>
+    <p>Teste 4</p>
+    <p>Teste 4</p>
+    
+    <h2>Pseudo-Classe:</h2>
+    <p>Uma pseudoclasse é usada para definir um estado especial de um elemento. Por exemplo, pode ser usado para: Estilizar um elemento quando um usuário passa o mouse sobre ele, Estilizar links visitados e não visitados de forma diferente e Estilizar um elemento quando ele recebe o foco.</p>
+    <p>Sintaxe: selector:pseudo-class {property: value;}</p>
+
+    <h3>Hover:</h3>
+    <p>Quando o mouse passa sobre o elemento acontece algo</p>
+    <pre>
+        <code>
+            EX:
+            .hover p {
+                display: none;
+                background-color: yellow;
+                padding: 20px;
+            } 
+            .hover:hover p {
+                display: block;
+            }
+            < div class="hover">Passe o mouse sobre este elemento div para mostrar o elemento p
+                < p>Tada! Aqui estou!< /p>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="hover">Passe o mouse sobre este elemento div para mostrar o elemento p
+        <p>Tada! Aqui estou!</p>
+    </div>
+
+    <h3>first-child:</h3>
+    <p>A pseudoclasse :first-child corresponde a um elemento especificado que é o primeiro filho de outro elemento.</p>
+    <pre>
+        <code>
+            EX:
+            .child p:first-child{
+                color: blue;
+            }
+            < div class="child">
+                < p>Teste 1< /p>
+                < p>Teste 1< /p>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="child">
+        <p>Teste 1</p>
+        <p>Teste 1</p>
+    </div>
+
+    <h2>Pseudo-Elemento:</h2>
+    <p> Um pseudo-elemento CSS é usado para estilizar partes específicas de um elemento. Por exemplo, pode ser usado para: Estilizar a primeira letra, ou linha, de um elemento e Inserir conteúdo antes ou depois do conteúdo de um elemento.</p>
+    <p>Sintaxe: selector::pseudo-elemento {property: value;}</p>
+
+    <h3>first-line:</h3>
+    <p>O pseudoelemento ::first-line é usado para adicionar um estilo especial à primeira linha de um texto.</p>
+    <pre>
+        <code>
+            EX:
+            .line p::first-line{
+                color: red;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="line">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati natus ipsa porro, reiciendis sequi excepturi numquam culpa pariatur earum voluptatum delectus quibusdam dolor voluptates voluptatem nesciunt officiis omnis sint repellendus!</p>
+    </div>
+
+    <h3>first-letter:</h3>
+    <p>O pseudoelemento ::first-letter é usado para adicionar um estilo especial à primeira letra de um texto.</p>
+    <pre>
+        <code>
+            EX:
+            .letter p::first-letter{
+                color: blue;
+                font-size: xx-large;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="letter">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati natus ipsa porro, reiciendis sequi excepturi numquam culpa pariatur earum voluptatum delectus quibusdam dolor voluptates voluptatem nesciunt officiis omnis sint repellendus!</p>
+    </div>
+
+    <h3>before:</h3>
+    <p>O pseudoelemento ::before pode ser usado para inserir algum conteúdo antes do conteúdo de um elemento.</p>
+    <pre>
+        <code>
+            EX:
+            .before p::before{
+                content: url(smiley.gif);
+            }
+            < div class="before">
+                < p>Meu texto aqui< /p>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="before">
+        <p>Meu texto aqui</p>
+    </div>
+
+    <h3>after:</h3>
+    <p>O pseudoelemento ::after pode ser usado para inserir algum conteúdo após o conteúdo de um elemento.</p>
+    <pre>
+        <code>
+            EX:
+            .after p::after{
+                content: url(smiley.gif);
+            }
+            < div class="after">
+                < p>Meu texto aqui 2< /p>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="after">
+        <p>Meu texto aqui 2</p>
+    </div>
+
+    <h3>marker:</h3>
+    <p>O pseudoelemento ::marker seleciona os marcadores dos itens da lista.</p>
+    <pre>
+        <code>
+            EX:
+            ::marker { 
+                color: red;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <ul>
+        <li>Café</li>
+        <li>Chá</li>
+        <li>Leite</li>
+    </ul>
+
+    <h3>selection:</h3>
+    <p>O pseudoelemento ::selection corresponde à parte de um elemento selecionado por um usuário.</p>
+    <pre>
+        <code>
+            EX:
+            ::selection {
+                color: red;
+                background: yellow;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="selec">
+        <p>Este é um parágrafo</p>
+    </div>
+
+    <h2>Seletores Attr:</h2>
+    <p>O seletor [attribute] é usado para selecionar elementos com um atributo especificado.</p>
+    <pre>
+        <code>
+            EX:
+            .attr a[target]{
+                background-color: aqua;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="attr">
+        <a href="https://www.w3schools.com">w3schools.com</a>
+        <a href="http://www.disney.com" target="_blank">disney.com</a>
+        <a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+    </div>
+
+    <h2>Especificidade:</h2>
+    <p> Se houver duas ou mais regras CSS que apontam para o mesmo elemento, o seletor com o maior valor de especificidade "vencerá" e sua declaração de estilo será aplicada a esse elemento HTML. Existem quatro categorias que definem o nível de especificidade de um seletor:</p>
+    <p>(1) Estilos embutidos, (2) IDs, (3) Classes, pseudo-classes, seletores de atributo (4) Elementos e pseudo-elementos</p>
+    <p>Há uma exceção a esta regra: se você usar a regra !important, ela substituirá até mesmo os estilos embutidos!</p>
+
+</body>
+</html>
