@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 17</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../16- Seletores/index.html">Voltar para Seletores</a>
+    <a id="linkpos" href="../18- Navbar/index.html">Ir para Navbar</a>
+
+    <h1>Unidades:</h1>
+    
+    <h2>Introdução:</h2>
+    <p>CSS tem várias unidades diferentes para expressar um comprimento. Muitas propriedades CSS aceitam valores de "comprimento", como width, margin, padding, font-size, etc.</p>
+    <p>Comprimento é um número seguido por uma unidade de comprimento, como 10px, 2em, etc. OBS: Um espaço em branco não pode aparecer entre o número e a unidade. No entanto, se o valor for 0, a unidade pode ser omitida. Para algumas propriedades CSS, comprimentos negativos são permitidos.</p>
+    <p>Existem dois tipos de unidades de comprimento: absoluto e relativo.</p>
+
+    <h3>Comprimentos Absolutos:</h3>
+    <p> As unidades de comprimento absoluto são fixas e um comprimento expresso em qualquer um deles aparecerá exatamente com esse tamanho.</p>
+    <p>Unidades de comprimento absoluto não são recomendadas para uso na tela, porque os tamanhos de tela variam muito. No entanto, eles podem ser usados se a mídia de saída for conhecida, como para layout de impressão.</p>
+    
+    <p>(1) cm [centímetros], (2) mm	[milímetros], (3) in [inches (1in = 96px = 2.54cm)], (4) px * [pixels (1px = 1/96th de 1in)]</p>
+    <p>(5) pt [points (1pt = 1/72 de 1in)], (6) pc [picas (1pc = 12 pt)]</p>
+
+    <h3>Comprimentos Relativos:</h3>
+    <p> As unidades de comprimento relativo especificam um comprimento relativo a outra propriedade de comprimento. As unidades de comprimento relativo escalam melhor entre diferentes mídias de renderização.</p>
+
+    <p>(1) em [Relativo ao tamanho da fonte do elemento (2em significa 2 vezes o tamanho da fonte atual)], (2) ex [Relativo à altura x da fonte atual (raramente usado)], (3) ch [Relativo à largura do "0" (zero)]</p>
+    <p>(4) rem [Relativo ao tamanho da fonte do elemento raiz], (5) vw [Relativo a 1% da largura da viewport], (6) vh [Relativo a 1% da altura da viewport] </p>
+    <p>(7) vmin [Relativo a 1% da dimensão menor da viewport], (8) vmax [Relativo a 1% da dimensão maior da viewport], (9) % [relativo ao elemento pai]</p>
+    <p>Dica: As unidades em e rem são práticas para criar layouts perfeitamente escaláveis!</p>
+
+    <h3>Os mais usados:</h3>
+    <p>(1) px (pixels), (2) em (tamanho da fonte atual), (3) vw (largura da janela do navegador), (4) vh (altura da janela do navegador)</p>
+    <p>(5) % (porcentagem), (6) vmin (dimensão menor da janela do navegador ), (7) vmax (dimensão maior da janela do navegador), (8) pt(pontos), (9) cm (centímetros)</p>
+
+    <h2>Funções Matemáticas:</h2>
+    <p>As funções matemáticas CSS permitem que expressões matemáticas sejam usadas como valores de propriedade. Aqui, explicaremos as funções calc(), max() e min().</p>
+
+    <h3>Função calc():</h3>
+    <p>A função calc() executa um cálculo para ser usado como o valor da propriedade.</p>
+    <p>Sintaxe: calc(expressão).</p>
+    <pre>
+        <code>
+            EX:
+            #div1 {
+                position: relative;
+                left: 50px;
+                width: calc(100% - 100px);
+                border: 1px solid black;
+                background-color: yellow;
+                padding: 5px;
+            }
+            < div id="div1">Algum Texto< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="div1">Algum Texto</div>
+
+    <h3>Função max():</h3>
+    <p> A função max() usa o maior valor, de uma lista de valores separados por vírgula, como o valor da propriedade.</p>
+    <p>Sintaxe: max(valor1, valor2, ...).</p>
+    <pre>
+        <code>
+            EX:
+            #div2 {
+                background-color: yellow;
+                height: 100px;
+                width: max(50%, 300px);
+            }
+            < div id="div2">Algum Texto< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="div2">Algum Texto</div>
+
+    <h3>Função min():</h3>
+    <p>A função min() usa o menor valor, de uma lista de valores separados por vírgula, como o valor da propriedade.</p>
+    <p>Sintaxe: min(valor1, valor2, ...).</p>
+    <pre>
+        <code>
+            EX:
+            #div3 {
+                background-color: yellow;
+                height: 100px;
+                width: min(50%, 300px);
+            }
+            < div id="div2">Algum Texto< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="div3">Algum Texto</div>
+    
+</body>
+</html>
