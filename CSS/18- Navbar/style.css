@@ -1,0 +1,148 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* navbar vertical */
+.vert ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: white;
+    border: 1px solid #555;
+}
+  
+.vert li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.vert li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+.vert li:last-child {
+    border-bottom: none;
+}
+
+.vert li a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+  
+.vert li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+/* navbar horizontal */
+.hori ul {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+}
+  
+.hori li {
+    float: left;
+}
+  
+.hori li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+.hori li a:hover:not(.active) {
+    background-color: #111;
+}
+  
+.hori .active {
+    background-color: #04AA6D;
+}
+
+@media screen and (max-width: 600px) {
+    .hori ul li {
+        text-align: center;
+        float: none;
+    }
+}
+
+
+
+/* dropdown */
+.drop ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #38444d;
+}
+  
+.drop li {
+    float: left;
+}
+  
+.drop li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+.drop li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+  
+.drop li.dropdown {
+    display: inline-block;
+}
+  
+.drop .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.drop .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+  
+.drop .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+  
+.drop .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+body{
+    padding-bottom: 500px;
+}
