@@ -1,0 +1,200 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+
+/* border-radius */
+#radius {
+    border-radius: 25px;
+    border: 2px solid green;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;  
+}
+
+
+
+/* border-image */
+#borderimg {
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url(border.png) 30 round;
+}  
+
+
+
+/* background-image */
+#exemplo1 {
+    background-image: url(img_flwr.gif), url(paper.gif);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+}
+/* background-size */
+#exemplo2 {
+    border: 1px solid black;
+    background: url(img_flwr.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 15px;
+    width: 150px;
+}
+/* background-origin */
+#exemplo3 {
+    border: 10px solid black;
+    padding: 35px;
+    background: url(img_flwr.gif);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+}
+/* background-clip */
+#exemplo4 {
+    border: 10px dotted black;
+    padding: 35px;
+    background: yellow;
+    background-clip: content-box;
+}
+
+
+
+/* transparent */
+.ex1 { 
+    background-color: transparent;
+    border: 2px solid black;
+    padding: 15px;   
+}
+#container{
+    background-image: url(paper.gif);
+    height: 100px;
+    width: 100%;
+}
+
+
+
+/* text-overflow */
+.teste2 {
+    white-space: nowrap; 
+    width: 200px; 
+    border: 1px solid #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* word-wrap */
+.teste {
+    width: 11em; 
+    border: 1px solid #000000;
+    word-wrap: break-word;
+}
+/* writing-mode */
+.teste3 {
+    writing-mode: vertical-rl; 
+}
+
+
+
+/* transformações 2D */
+/* translate */
+.translate {
+    width: 300px;
+    height: 100px;
+    background-color: aqua;
+    border: 1px solid black;
+    transform: translate(70px,-30px);
+}
+/* rotate */
+.rotate {
+    width: 300px;
+    height: 50px;
+    background-color: yellow;
+    border: 1px solid black;
+    transform: rotate(-10deg);
+}
+/* scale */
+.scale {
+    margin: 150px;
+    width: 200px;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid black;
+    transform: scale(2,3);
+}
+/* scaleX */
+.scaleX {
+    margin: 150px;
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid black;
+    transform: scaleX(2);
+}
+/* scaleY */
+.scaleY {
+    margin: 150px;
+    width: 200px;
+    height: 60px;
+    background-color: yellow;
+    border: 1px solid black;
+    transform: scaleY(3);
+}
+/* skew */
+.skew {
+    margin: 50px;
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    transform: skew(20deg,10deg);
+}
+/* skewX */
+.skewX {
+    margin: 50px;
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    transform: skewX(20deg);
+}
+/* skewY */
+.skewY {
+    margin: 50px;
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    transform: skewY(20deg);
+}
+/* matrix */
+.matrix {
+    margin: 50px;
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
+}
+
+
+
+/* transformações 3D */
+/* rotateX*/
+.rotateX{
+    margin: 50px;
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    transform: rotateX(150deg);
+}
+/* rotateY */
+.rotateY{
+    margin: 50px;
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    transform: rotateY(150deg);
+}
+/* rotateZ */
+.rotateZ{
+    margin: 50px;
+    width: 200px;
+    height: 100px;
+    background-color: yellow;
+    transform: rotateZ(90deg);
+}
