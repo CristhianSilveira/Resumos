@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 20</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../19- Demostrações/index.html">Voltar para Demostrações</a>
+    <a id="linkpos" href="../21- Avançado_2/index.html">Ir para Avançado 2</a>
+
+    <h1>Avançado:</h1>
+    <h3>Border-Radius, Border-Image, Background, Transparent, Efeitos de Texto, Transformações 2D, Transformações 3D</h3>
+    
+    <h2>Border-Radius:</h2>
+    <p>Com a propriedade border-radius, você pode dar a qualquer elemento "cantos arredondados". Na verdade, A propriedade border-radius é uma propriedade abreviada para as propriedades:</p>
+    <p>border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius.</p>
+    <pre>
+        <code>
+            EX:
+            #radius {
+                border-radius: 25px;
+                border: 2px solid green;
+                padding: 20px; 
+                width: 200px;
+                height: 150px;
+            }
+            < p id="radius">Conteúdo com borda redonda!< /p>
+        </code>
+    </pre>
+    Resultado:
+    <p id="radius">Conteúdo com borda redonda!</p>
+
+    <h2>Border-Image:</h2>
+    <p>Com a propriedade border-image, você pode definir uma imagem para ser usada como borda ao redor de um elemento. A propriedade tem três partes:</p>
+    <p>(1) A imagem a ser usada como borda, (2) Onde cortar a imagem (3) Defina se as seções do meio devem ser repetidas ou alongadas. </p>
+    <pre>
+        <code>
+            EX:
+            #borderimg {
+                border: 10px solid transparent;
+                padding: 15px;
+                border-image: url(border.png) 30 round;
+            } 
+        </code>
+    </pre>
+    Resultado:
+    <p id="borderimg">Uma imagem como borda!</p>
+
+    <h2>Múltiplos Backgrounds:</h2>
+    <p>O CSS permite adicionar várias imagens de plano de fundo para um elemento, por meio da background-image. As diferentes imagens de fundo são separadas por vírgulas e as imagens são empilhadas umas sobre as outras, onde a primeira imagem está mais próxima do visualizador.</p>
+    <pre>
+        <code>
+            EX:
+            #exemplo1 {
+                background-image: url(img_flwr.gif), url(paper.gif);
+                background-position: right bottom, left top;
+                background-repeat: no-repeat, repeat;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div id="exemplo1">
+        <h1>Lorem Ipsum Dolor</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <h3>Tamanho do plano de fundo:</h3>
+    <p>A propriedade background-size permite especificar o tamanho das imagens de fundo. O tamanho pode ser especificado em comprimentos, porcentagens ou usando uma das duas palavras-chave: contain ou cover.</p>
+    <p> A contain dimensiona a imagem de plano de fundo para ser o maior possível (mas tanto a largura quanto a altura devem caber dentro da área de conteúdo). Assim, dependendo das proporções da imagem de fundo e da área de posicionamento do fundo, pode haver algumas áreas do fundo que não são cobertas pela imagem de fundo.</p>
+    <p>A cover dimensiona a imagem de plano de fundo para que a área de conteúdo seja totalmente coberta pela imagem de plano de fundo (sua largura e altura são iguais ou excedem a área de conteúdo). Como tal, algumas partes da imagem de fundo podem não estar visíveis na área de posicionamento de fundo.</p>
+    <pre>
+        <code>
+            EX:
+            #exemplo2 {
+                border: 1px solid black;
+                background: url(img_flwr.gif);
+                background-size: contain;
+                background-repeat: no-repeat;
+                padding: 15px;
+                width: 150px;
+            }
+            < div id="exemplo2">
+                < p>Ut wisi enim ad minim veniam.< /p>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="exemplo2">
+        <p>Ut wisi enim ad minim veniam.</p>
+    </div>
+
+    <h3>Propriedade de origem do plano de fundo:</h3>
+    <p> propriedade background-origin especifica onde a imagem de fundo está posicionada. A propriedade assume três valores diferentes:</p>
+    <p>border-box  [a imagem de fundo começa no canto superior esquerdo da borda], padding-box  [(padrão) a imagem de fundo começa no canto superior esquerdo da borda de preenchimento] e content-box  [a imagem de fundo começa no canto superior esquerdo do conteúdo].</p>
+    <pre>
+        <code>
+            EX:
+            #exemplo3 {
+                border: 10px solid black;
+                padding: 35px;
+                background: url(img_flwr.gif);
+                background-repeat: no-repeat;
+                background-origin: content-box;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div id="exemplo3">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <h3>Propriedade background-clip:</h3>
+    <p>A propriedade CSS background-clip especifica a área de pintura do plano de fundo. A propriedade assume três valores diferentes:</p>
+    <p>border-box [(padrão) o fundo é pintado na borda externa da borda], padding-box [o fundo é pintado na borda externa do preenchimento] e content-box [o fundo é pintado dentro da caixa de conteúdo].</p>
+    <pre>
+        <code>
+            EX:
+            #exemplo4 {
+                border: 10px dotted black;
+                padding: 35px;
+                background: yellow;
+                background-clip: content-box;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div id="exemplo4">
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    </div>
+
+    <h2>Palavras-Chave de Cores:</h2>
+    <h3>Transparent:</h3>
+    <p>A palavra-chave transparent é usada para tornar uma cor transparente. Isso geralmente é usado para criar uma cor de fundo transparente para um elemento.</p>
+    <pre>
+        <code>
+            EX:
+            .ex1 { 
+                background-color: transparent;
+                border: 2px solid black;
+                padding: 15px;   
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div id="container">
+        <div class="ex1">Isso é uma div com background transparente.</div>
+    </div>
+    
+    <h2>Efeitos de Texto:</h2>
+    <h3>Estouro de texto:</h3>
+    <p>A propriedade text-overflow especifica como o conteúdo transbordado que não é exibido deve ser sinalizado para o usuário.</p>
+    <pre>
+        <code>
+            EX:
+            .teste2 {
+                white-space: nowrap; 
+                width: 200px; 
+                border: 1px solid #000000;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            < p class="teste2">Este é um texto longo que não cabe na caixa< /p>
+        </code>
+    </pre>
+    Resultado:
+    <p class="teste2">Este é um texto longo que não cabe na caixa</p>
+
+    <h3>Quebra Automática de palavras:</h3>
+    <p>A propriedade word-wrap permite que palavras longas possam ser quebradas e agrupadas na próxima linha.</p>
+    <pre>
+        <code>
+            EX:
+            .teste {
+                width: 11em; 
+                border: 1px solid #000000;
+                word-wrap: break-word;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <p class="teste">Este parágrafo contém uma palavra muito longa: estaéumapalavramuitomuitomuitomuitolonga. A palavra longa será interrompida e passará para a próxima linha.</p>
+
+    <h3>Modo de escrita CSS:</h3>
+    <p>A propriedade CSS writing-mode especifica se as linhas de texto são dispostas horizontalmente ou verticalmente.</p>
+    <pre>
+        <code>
+            EX:
+            .teste3 {
+                writing-mode: vertical-rl; 
+            }
+            < p class="teste3">Algum texto com modo de escrita: vertical-rl.< /p>
+        </code>
+    </pre>
+    Resultado:
+    <p class="teste3">Algum texto com modo de escrita: vertical-rl.</p>
+
+    <h2>Tranasformações 2D:</h2>
+    <p>As transformações CSS permitem mover, girar, dimensionar e inclinar elementos. Com a propriedade CSS transform você pode usar os seguintes métodos de transformação 2D:</p>
+    <p> translate(), rotate(), scaleX(), scaleY(), scale(), skewX(), skewY(), skew() e matrix().</p>
+    <img src="plano-cartesiano-eixos.webp" alt="Plano Cartesiano">
+    
+    <h3>Método translate():</h3>
+    <p>O método translate() move um elemento de sua posição atual (de acordo com os parâmetros fornecidos para o eixo X e o eixo Y).</p>
+    <pre>
+        <code>
+            EX:
+            .translate {
+                width: 300px;
+                height: 100px;
+                background-color: aqua;
+                border: 1px solid black;
+                transform: translate(70px,-30px);
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="translate">Este elemento div é movido 70 pixels para a direita e 30 pixels para cima de sua posição atual.</div>
+
+    <h3>Método Rotate():</h3>
+    <p>O método rotate() gira um elemento no sentido horário ou anti-horário de acordo com um determinado grau.</p>
+    <p>Usar valores negativos girará o elemento no sentido anti-horário.</p>
+    <img src="sentido-horario.jpeg" alt="Sentido do Relógio">
+    <pre>
+        <code>
+            EX:
+            .rotate {
+                width: 300px;
+                height: 50px;
+                background-color: yellow;
+                border: 1px solid black;
+                transform: rotate(-10deg);
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="rotate">Este elemento div é girado 10 graus no sentido anti-horário</div>
+
+    <h3>Método scale():</h3>
+    <p> O método scale() aumenta ou diminui o tamanho de um elemento (de acordo com os parâmetros fornecidos para largura e altura).</p>
+    <pre>
+        <code>
+            EX:
+            .scale {
+                margin: 150px;
+                width: 200px;
+                height: 100px;
+                background-color: yellow;
+                border: 1px solid black;
+                transform: scale(2,3);
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="scale">Este elemento div tem 2x da sua largura original(200 x 2 = 400px) e 3x da sua altura original( 100 x 3 = 300px).</div>
+
+    <h3>Método scaleX():</h3>
+    <p>O método scaleX() aumenta ou diminui a largura de um elemento.</p>
+    <pre>
+        <code>
+            EX:
+            .scaleX {
+                margin: 150px;
+                width: 300px;
+                height: 100px;
+                background-color: yellow;
+                border: 1px solid black;
+                transform: scaleX(2);
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="scaleX">Este elemento div tem 2x da sua largura original (300 x 2 = 600px).</div>
+
+    <h3>Método scaleY():</h3>
+    <p> O método scaleY() aumenta ou diminui a altura de um elemento.</p>
+    <pre>
+        <code>
+            EX:
+            .scaleY {
+                margin: 150px;
+                width: 200px;
+                height: 60px;
+                background-color: yellow;
+                border: 1px solid black;
+                transform: scaleY(3);
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="scaleY">Este elemento div tem 3x da sua altura original (60 x 3 = 180px).</div>
+
+    <h3>Método skew():</h3>
+    <p>O método skew() inclina um elemento ao longo dos eixos X e Y pelos ângulos fornecidos.</p>
+    <pre>
+        <code>
+            EX:
+            .skew {
+                margin: 50px;
+                width: 300px;
+                height: 100px;
+                background-color: yellow;
+                transform: skew(20deg,10deg);
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="skew">Este elemento div está inclinado 20 graus ao longo do eixo X e 10 graus ao longo do eixo Y.</div>
+
+    <h3>Método skewX:</h3>
+    <p>O método skewX() inclina um elemento ao longo do eixo X pelo ângulo dado.</p>
+    <pre>
+        <code>
+            EX:
+            .skewX {
+                margin: 50px;
+                width: 300px;
+                height: 100px;
+                background-color: yellow;
+                transform: skewX(20deg);
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="skewX">Este elemento div está inclinado 20 graus ao longo do eixo X.</div>
+
+    <h3>Método skewY():</h3>
+    <p>O método skewY() inclina um elemento ao longo do eixo Y pelo ângulo dado.</p>
+    <pre>
+        <code>
+            EX:
+            .skewY {
+                margin: 50px;
+                width: 300px;
+                height: 100px;
+                background-color: yellow;
+                transform: skewY(20deg);
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="skewY">Este elemento div está inclinado 20 graus ao longo do eixo Y.</div>
+
+    <h3>Método matrix():</h3>
+    <p>O método matrix() combina todos os métodos de transformação 2D em um. O método matrix() recebe seis parâmetros, contendo funções matemáticas, que permitem girar, dimensionar, mover e inclinar elementos. Os parâmetros são os seguintes:</p>
+    <p>matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()).</p>
+    <pre>
+        <code>
+            EX:
+            .matrix {
+                margin: 50px;
+                width: 300px;
+                height: 100px;
+                background-color: yellow;
+                transform: matrix(1, -0.3, 0, 1, 0, 0);
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="matrix">Usando o método matriz().</div>
+
+    <h2>Transformações 3D:</h2>
+    <p>Com a propriedade transform você pode usar os seguintes métodos de transformação 3D:</p>
+    <p>rotateX(), rotateY() e rotateZ()</p>
+
+    <h3>Método rotateX():</h3>
+    <p>O método rotateX() gira um elemento em torno de seu eixo X em um determinado grau.</p>
+    <pre>
+        <code>
+            EX:
+            .rotateX{
+                margin: 50px;
+                width: 300px;
+                height: 100px;
+                background-color: yellow;
+                transform: rotateX(150deg);
+            }
+            < div class="rotateX">Este elemento div é girado 150 graus.< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="rotateX">Este elemento div é girado 150 graus.</div>
+
+    <h3>Método rotateY():</h3>
+    <p>O método rotateY() gira um elemento em torno de seu eixo Y em um determinado grau.</p>
+    <pre>
+        <code>
+            EX:
+            .rotateY{
+                margin: 50px;
+                width: 300px;
+                height: 100px;
+                background-color: yellow;
+                transform: rotateY(150deg);
+            }
+            < div class="rotateY">Este elemento div é girado 150 graus< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="rotateY">Este elemento div é girado 150 graus</div>
+
+    <h3>Método rotateZ():</h3>
+    <p>O método rotateZ() gira um elemento em torno de seu eixo Z em um determinado grau.</p>
+    <pre>
+        <code>
+            EX:
+            .rotateZ{
+                margin: 50px;
+                width: 300px;
+                height: 100px;
+                background-color: yellow;
+                transform: rotateZ(90deg);
+            }
+            < div class="rotateZ">Este elemento div é girado 150 graus< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="rotateZ">Este elemento div é girado 90 graus</div>
+
+    
+</body>
+</html>
