@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 21</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../20- Avançado/index.html">Voltar para Avançado 1</a>
+    <a id="linkpos" href="../22- Avançado_3/index.html">Ir para Avançado 3</a>
+
+    <h1>Avançado 2:</h1>
+    <h3>Transições, Animações, Estilizar Imagens, Mascaramento</h3>
+
+    <h2>Transições:</h2>
+    <p>As transições CSS permitem que você altere os valores das propriedades sem problemas, durante um determinado período.</p>
+
+    <h3>Alterar vários valores de propriedade:</h3>
+    <pre>
+        <code>
+            EX:
+            .transi {
+                width: 100px;
+                height: 100px;
+                background: red;
+                transition: width 2s, height 4s;
+            }
+              
+            .transi:hover {
+                width: 300px;
+                height: 300px;
+            }
+            < div class="transi">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="transi"></div>
+
+    <h3>Especifique a curva de velocidade da transição:</h3>
+    <p>A propriedade transition-timing-function especifica a curva de velocidade do efeito de transição. A propriedade de função de tempo de transição pode ter os seguintes valores:</p>
+    <p>ease [especifica um efeito de transição com início lento, rápido e final lento (este é o padrão)], linear [especifica um efeito de transição com a mesma velocidade do início ao fim], ease-in [especifica um efeito de transição com um início lento]</p>
+    <p>ease-out [especifica um efeito de transição com final lento] e ease-in-out [especifica um efeito de transição com início e fim lentos].</p>
+    <pre>
+        <code>
+            EX:
+            .bloco {
+                width: 100px;
+                height: 100px;
+                background: red;
+                transition: width 2s;
+            }
+            #div1 {transition-timing-function: linear;}
+            #div2 {transition-timing-function: ease;}
+            #div3 {transition-timing-function: ease-in;}
+            #div4 {transition-timing-function: ease-out;}
+            #div5 {transition-timing-function: ease-in-out;}
+            .bloco:hover {
+                width: 300px;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="bloco" id="div1">linear</div><br>
+    <div class="bloco" id="div2">ease</div><br>
+    <div class="bloco" id="div3">ease-in</div><br>
+    <div class="bloco" id="div4">ease-out</div><br>
+    <div class="bloco" id="div5">ease-in-out</div><br>
+
+    <h3>Atrasar o efeito de transição:</h3>
+    <p>A propriedade transition-delay especifica um atraso (em segundos) para o efeito de transição.</p>
+    <pre>
+        <code>
+            EX:
+            .bloco {
+                width: 100px;
+                height: 100px;
+                background: red;
+                transition: width 2s;
+            }
+            #delay{
+                transition-delay: 1s;
+            }
+            < div class="bloco" id="delay">< /div>
+        </code>
+    </pre>
+    <div class="bloco" id="delay"></div>
+
+    <h3>Transição com Transform:</h3>
+    <p></p>
+    <pre>
+        <code>
+            EX:
+            .bloco2 {
+                width: 100px;
+                height: 100px;
+                background: red;
+                transition: width 2s, height 2s, transform 2s;
+            }
+            .bloco2:hover{
+                width: 200px;
+                height: 200px;
+                transform: rotate(180deg);
+            }
+            < div class="bloco2">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="bloco2"></div>
+
+    <h3>Taquigrafia de Transição:</h3>
+    <p>A Propriedade abreviada transition especifica a: propriedade, duração, função e delay.</p>
+    <pre>
+        <code>
+            EX:
+            .transition {
+                width: 100px;
+                height: 100px;
+                background: red;
+                transition: width 2s linear 1s;
+            }
+            .transition:hover {
+                width: 300px;
+            }
+            < div class="transition">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="transition"></div>
+
+    <h2>Animações:</h2>
+    <p>CSS permite a animação de elementos HTML sem usar JavaScript ou Flash. Uma animação permite que um elemento mude gradualmente de um estilo para outro.</p>
+
+    <h3>A regra @keyframes:</h3>
+    <p>Quando você especifica estilos CSS dentro da regra @keyframes, a animação mudará gradualmente do estilo atual para o novo estilo em determinados momentos. Para que uma animação funcione, você deve vincular a animação a um elemento.</p>
+    <pre>
+        <code>
+            EX:
+            .exemplo {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                animation-name: example;
+                animation-duration: 4s;
+            }
+            @keyframes example {
+                from {background-color: red;}
+                to {background-color: yellow;}
+            }
+            < div class="example">Teste< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="example">Teste</div>
+    
+    <h3>Atrasar uma Animação:</h3>
+    <p>A propriedade animation-delay especifica um atraso para o início de uma animação.</p>
+    <pre>
+        <code>
+            EX:
+            .example2 {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: relative;
+                animation-name: example;
+                animation-duration: 4s;
+                animation-delay: 2s;
+            }
+              
+            @keyframes example {
+                0%   {background-color:red; left:0px; top:0px;}
+                25%  {background-color:yellow; left:200px; top:0px;}
+                50%  {background-color:blue; left:200px; top:200px;}
+                75%  {background-color:green; left:0px; top:200px;}
+                100% {background-color:red; left:0px; top:0px;}
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="example2">Teste</div>
+
+    <h3>Definir quantas vezes uma animação deve ser executada:</h3>
+    <p>A propriedade animation-iteration-count especifica o número de vezes que uma animação deve ser executada.</p>
+    <pre>
+        <code>
+            EX:
+            .example3 {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: relative;
+                animation-name: example;
+                animation-duration: 4s;
+                animation-iteration-count: 3;
+            }
+              
+            @keyframes example {
+                0%   {background-color:red; left:0px; top:0px;}
+                25%  {background-color:yellow; left:200px; top:0px;}
+                50%  {background-color:blue; left:200px; top:200px;}
+                75%  {background-color:green; left:0px; top:200px;}
+                100% {background-color:red; left:0px; top:0px;}
+            }
+            < div class="example3">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="example3"></div>
+
+    <h3>Executar animação na direção reversa ou ciclos alternativos:</h3>
+    <p>propriedade animation-direction especifica se uma animação deve ser reproduzida para frente, para trás ou em ciclos alternados. A propriedade animation-direction pode ter os seguintes valores:</p>
+    <p>normal [A animação é reproduzida normalmente (para frente). Isso é padrão], reverse [A animação é reproduzida na direção inversa (para trás)], alternate  [A animação é reproduzida primeiro para frente e depois para trás], alternate-reverse [A animação é reproduzida primeiro para trás e depois para a frente]</p>
+    <pre>
+        <code>
+            EX:
+            .example4 {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: relative;
+                animation-name: example;
+                animation-duration: 4s;
+                animation-direction: reverse;  
+            }
+              
+            @keyframes example {
+                0%   {background-color:red; left:0px; top:0px;}
+                25%  {background-color:yellow; left:200px; top:0px;}
+                50%  {background-color:blue; left:200px; top:200px;}
+                75%  {background-color:green; left:0px; top:200px;}
+                100% {background-color:red; left:0px; top:0px;}
+            }
+            < div class="example4">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="example4"></div>
+
+    <h3>Especifique a curva de velocidade da animação:</h3>
+    <p>A propriedade animation-timing-function especifica a curva de velocidade da animação. A propriedade animation-timing-function pode ter os seguintes valores:</p>
+    <p>ease [Especifica uma animação com início lento, rápido e final lento (este é o padrão)], linear [Especifica uma animação com a mesma velocidade do início ao fim], ease-in [Especifica uma animação com início lento], ease-out [Especifica uma animação com final lento], ease-in-out [Especifica uma animação com início e fim lentos]</p>
+    <pre>
+        <code>
+            EX:
+            .example5 {
+                width: 100px;
+                height: 50px;
+                background-color: red;
+                font-weight: bold;
+                position: relative;
+                animation: mymove 5s infinite;
+            }
+              
+            #div01 {animation-timing-function: linear;}
+            #div02 {animation-timing-function: ease;}
+            #div03 {animation-timing-function: ease-in;}
+            #div04 {animation-timing-function: ease-out;}
+            #div05 {animation-timing-function: ease-in-out;}
+              
+            @keyframes mymove {
+                from {left: 0px;}
+                to {left: 300px;}
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="example5" id="div01">linear</div>
+    <div class="example5" id="div02">ease</div>
+    <div class="example5" id="div03">ease-in</div>
+    <div class="example5" id="div04">ease-out</div>
+    <div class="example5" id="div05">ease-in-out</div>
+
+    <h3>Taquigrafia das Animações:</h3>
+    <p>A Propriedade abreviada animation especifica a(o):</p>
+    <p>nome, duração, função, delay, repetições e direção:</p>
+    <pre>
+        <code>
+            EX:
+            .example6 {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: relative;
+                animation: myfirst 5s linear 2s infinite alternate;
+            }
+              
+            @keyframes myfirst {
+                0%   {background-color:red; left:0px; top:0px;}
+                25%  {background-color:yellow; left:200px; top:0px;}
+                50%  {background-color:blue; left:200px; top:200px;}
+                75%  {background-color:green; left:0px; top:200px;}
+                100% {background-color:red; left:0px; top:0px;}
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="example6"></div>
+
+    <h2>Estilizar imagens:</h2>
+    <h3>Imagens arredondadas:</h3>
+    <p> Use a propriedade border-radius para criar imagens arredondadas:</p>
+    <pre>
+        <code>
+            EX:
+            #img {
+                border-radius: 8px;
+            }
+            < img id="img" src="paris.jpg" alt="Paris" height="300px">
+        </code>
+    </pre>
+    Resultado:
+    <img id="img" src="paris.jpg" alt="Paris" height="300px">
+
+    <h3>Miniaturas:</h3>
+    <p>Use a propriedade border para criar imagens em miniatura.</p>
+    <pre>
+        <code>
+            EX:
+            #img2 {
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 5px;
+                width: 150px;
+            }
+            #img2:hover {
+                box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+            }
+        </code>
+    </pre>
+    Resultado:
+    <a href="paris.jpg" target="_blank">
+        <img id="img2" src="paris.jpg" alt="Paris">
+    </a>
+
+    <h3>Imagens responsivas:</h3>
+    <p>As imagens responsivas se ajustarão automaticamente ao tamanho da tela.</p>
+    <pre>
+        <code>
+            EX:
+            #img3 {
+                max-width: 100%;
+                height: auto;
+            }
+            < img id="img3" src="img_5terre_wide.jpg" alt="Cinque Terre" height="300px">
+        </code>
+    </pre>
+    Resultado:
+    <img id="img3" src="img_5terre_wide.jpg" alt="Cinque Terre" height="300px">
+
+    <h3>Centralizar uma imagem:</h3>
+    <p>Para centralizar uma imagem, defina as margens esquerda e direita auto e transforme-a em um elemento block.</p>
+    <pre>
+        <code>
+            EX:
+            #img4 {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <img id="img4" src="paris.jpg" alt="Paris" width="50%">
+
+    <h3>Cartão de Imagem:</h3>
+    <p></p>
+    <pre>
+        <code>
+            EX:
+            .polaroid {
+                width: 80%;
+                background-color: white;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                margin-bottom: 25px;
+            }
+              
+            .container {
+                text-align: center;
+                padding: 10px 20px;
+            }
+            < div class="polaroid">
+                < img src="lights600x400.jpg" alt="Norther Lights" style="width:100%">
+                < div class="container">
+                < p>Northern Lights< /p>
+                < /div>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="polaroid">
+        <img src="lights600x400.jpg" alt="Norther Lights" style="width:100%">
+        <div class="container">
+        <p>Northern Lights</p>
+        </div>
+    </div>
+
+    <h3>Filtros de imagem:</h3>
+    <p> A propriedade CSS filter adiciona efeitos visuais (como desfoque e saturação) a um elemento. A propriedade filter pode ter os seguintes valores:</p>
+    <p>blur [Aplica um efeito de desfoque à imagem], brightness [Ajusta o brilho da imagem], contrast [Ajusta o contraste da imagem], drop-shadow [Aplica um efeito de sombreamento à imagem]</p>
+    <p>grayscale [Imagem preta e branca], hue-rotate [Aplica uma rotação de tonalidade na imagem], invert [Inverte as amostras na imagem], opacity [Define o nível de opacidade da imagem], saturate [Saturação da imagem].</p>
+    <pre>
+        <code>
+            EX:
+            .blur {
+                width: 33%;
+                height: auto;
+                max-width: 235px;
+                filter: blur(4px);
+            }
+            < img class="blur" src="pineapple.jpg" alt="Pineapple" width="300" height="300">
+        </code>
+    </pre>
+    Resultado:
+    <img class="blur" src="pineapple.jpg" alt="Pineapple" width="300" height="300">
+
+    <h3>Virar uma imagem:</h3>
+    <pre>
+        <code>
+            EX:
+            #img5:hover {
+                transform: scaleX(-1);
+            }
+            < img id="img5" src="paris.jpg" alt="Paris" width="400" height="300">        
+        </code>
+    </pre>
+    Resultado:
+    <img id="img5" src="paris.jpg" alt="Paris" width="400" height="300">
+
+    <h3>Refletir Imagens:</h3>
+    <p>A propriedade box-reflect é usada para criar um reflexo de imagem. O valor da propriedade box-reflect pode ser:</p>
+    <p>below, above, left ou right.</p>
+    <pre>
+        <code>
+            EX:
+            #img6 {
+                -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+            }
+            < img id="img6" src="img_tree.png" alt="Corujinha">
+        </code>
+    </pre>
+    Resultado:
+    <img id="img6" src="img_tree.png" alt="Corujinha">
+
+    <h3>Ajuste do Objeto:</h3>
+    <p> A propriedade object-fit é usada para especificar como um < img> ou < video> deve ser redimensionado para caber em seu contêiner. A propriedade object-fit pode assumir um dos seguintes valores:</p>
+    <p>fill [Este é o padrão. A imagem é redimensionada para preencher a dimensão especificada. Se necessário, a imagem será esticada ou comprimida para caber], contain [A imagem mantém sua proporção, mas é redimensionada para caber na dimensão especificada]</p>
+    <p> cover [A imagem mantém sua proporção e preenche a dimensão especificada. A imagem será cortada para caber], none [A imagem não é redimensionada], scale-down [a imagem é reduzida para a menor versão de none ou contain]</p>
+    <pre>
+        <code>
+            EX:
+            #img7 {
+                width: 200px;
+                height: 300px;
+                object-fit: contain;
+            }
+            < img id="img7" src="paris.jpg" alt="Paris" height="300" width="400">
+        </code>
+    </pre>
+    Resultado:
+    <img id="img7" src="paris.jpg" alt="Paris" height="300" width="400">
+
+    <h3>Posição do Objeto:</h3>
+    <p> A propriedade object-position é usada para especificar como um < img> ou < video> deve ser posicionado em seu contêiner [normalmente usada junto com a propriedade object-fit].</p>
+    <pre>
+        <code>
+            EX:
+            #img8 {
+                width: 200px;
+                height: 300px;
+                object-fit: cover;
+                object-position: center top;
+            }
+            < img id="img8" src="paris.jpg" alt="Paris" width="400" height="300">
+        </code>
+    </pre>
+    Resultado:
+    <img id="img8" src="paris.jpg" alt="Paris" width="400" height="300">
+
+    <h2>Mascaramento:</h2>
+    <p>Com o mascaramento CSS você cria uma camada de máscara para colocar sobre um elemento para ocultar parcial ou totalmente partes do elemento. A imagem da camada de máscara pode ser uma imagem PNG, uma imagem SVG, um gradiente CSS ou um elemento SVG < mask>.</p>
+
+    <h3>Imagem como a camada de máscara:</h3>
+    <p>A propriedade mask-image especifica uma imagem de camada de máscara.</p>
+    <p>A imagem da máscara precisa ter uma área transparente ou semitransparente. Preto indica totalmente transparente.</p>
+    <p>A propriedade mask-image especifica a imagem a ser usada como camada de máscara para um elemento.</p>
+    <pre>
+        <code>
+            EX:
+            .mask1 {
+                -webkit-mask-image: url(w3logo.png);
+                mask-image: url(w3logo.png);
+                -webkit-mask-repeat: no-repeat;
+                mask-repeat: no-repeat;    
+            }
+            < div class="mask1">
+                < img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="mask1">
+        <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+    </div>
+
+    <h3>Gradientes como a camada de máscara:</h3>
+    <p>Gradientes lineares e radiais CSS também podem ser usados como imagens de máscara.</p>
+    <pre>
+        <code>
+            EX:
+        </code>
+    </pre>
+    Resultado:
+    <div class="mask2">
+        <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+    </div>
+
+    <h3>Usando SVG como a camada de máscara:</h3>
+    <p>O elemento SVG < mask> pode ser usado dentro de um gráfico SVG para criar efeitos de máscara.</p>
+    <pre>
+        <code>
+            EX:
+            < svg width="600" height="400">
+                < mask id="svgmask2">
+                  < polygon fill="#ffffff" points="100,10 40,198 190,78 10,78 160,198">< /polygon>
+                < /mask>
+                < image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img_5terre.jpg" mask="url(#svgmask2)">< /image>
+            < /svg>
+        </code>
+    </pre>
+    Resultado:
+    <svg width="600" height="400">
+        <mask id="svgmask2">
+          <polygon fill="#ffffff" points="100,10 40,198 190,78 10,78 160,198"></polygon>
+        </mask>
+        <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img_5terre.jpg" mask="url(#svgmask2)"></image>
+    </svg>
+
+</body>
+</html>
