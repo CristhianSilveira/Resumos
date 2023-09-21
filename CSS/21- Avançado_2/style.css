@@ -1,0 +1,249 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+/* transições */
+.transi {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s, height 4s;
+}
+.transi:hover {
+    width: 300px;
+    height: 300px;
+}
+/* transition timing function */
+.bloco {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s;
+}
+#div1 {transition-timing-function: linear;}
+#div2 {transition-timing-function: ease;}
+#div3 {transition-timing-function: ease-in;}
+#div4 {transition-timing-function: ease-out;}
+#div5 {transition-timing-function: ease-in-out;}
+.bloco:hover {
+    width: 300px;
+}
+/* transition delay */
+#delay{
+    transition-delay: 1s;
+}
+/* transition + transform */
+.bloco2 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s, height 2s, transform 2s;
+}
+.bloco2:hover{
+    width: 200px;
+    height: 200px;
+    transform: rotate(180deg);
+}
+/* shorthand transition */
+.transition {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s linear 1s;
+}
+.transition:hover {
+    width: 300px;
+}
+
+
+
+/* animações */
+.example {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+}
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+/* animation delay */
+.example2 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+  
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+/* animation iteration count */
+.example3 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+}
+  
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+/* animation direction */
+.example4 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-direction: reverse;  
+}
+  
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+/* animation timing function */
+.example5 {
+    width: 100px;
+    height: 50px;
+    background-color: red;
+    font-weight: bold;
+    position: relative;
+    animation: mymove 5s infinite;
+}
+  
+#div01 {animation-timing-function: linear;}
+#div02 {animation-timing-function: ease;}
+#div03 {animation-timing-function: ease-in;}
+#div04 {animation-timing-function: ease-out;}
+#div05 {animation-timing-function: ease-in-out;}
+  
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 300px;}
+}
+/* shorthand animation */
+.example6 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation: myfirst 5s linear 2s infinite alternate;
+}
+  
+@keyframes myfirst {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+
+
+/* estilizar imagens */
+/* border-radius */
+#img {
+    border-radius: 8px;
+}
+/* miniatura */
+#img2 {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+#img2:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+/* imagem responsiva */
+#img3 {
+    max-width: 100%;
+    height: auto;
+}
+/* centralizar imagem */
+#img4 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* cards imagem */
+.polaroid {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+}
+  
+.container {
+    text-align: center;
+    padding: 10px 20px;
+}
+/* filtros de imagem */
+.blur {
+    width: 33%;
+    height: auto;
+    max-width: 235px;
+    filter: blur(4px);
+}
+/* virar imagem */
+#img5:hover {
+    transform: scaleX(-1);
+}
+/* refletir imagem */
+#img6 {
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+/* object-fit */
+#img7 {
+    width: 200px;
+    height: 300px;
+    object-fit: contain;
+}
+/* object position */
+#img8 {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+
+
+/* masking */
+/* usando outra imagem */
+.mask1 {
+    -webkit-mask-image: url(w3logo.png);
+    mask-image: url(w3logo.png);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;    
+}
+/* gradiente */
+.mask2 {
+    -webkit-mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%);
+    mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0.5) 50%)
+}
