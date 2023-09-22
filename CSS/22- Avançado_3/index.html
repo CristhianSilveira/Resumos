@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 22</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../21- Avançado_2/index.html">Voltar para Avançado 2</a>
+    <a id="linkpos" href="../22- Gradientes/index.html">Ir para Gradientes</a>
+
+    <h1>Avançado 3:</h1>
+    <h3> Botões, Paginação, Múltiplas Colunas, Interface do usuário, Box-Sizing, Media Query</h3>
+
+    <h2>Botões:</h2>
+    <p>Aprenda como estilizar botões usando CSS.</p>
+
+    <h3>Cores dos botões:</h3>
+    <p>Use a propriedade  background-color para alterar a cor de fundo de um botão.</p>
+    <pre>
+        <code>
+            EX:
+            .button {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            .button1 {
+                background-color: #4CAF50;
+            }
+            < button class="button button1">Red< /button>
+        </code>
+    </pre>
+    Resultado:
+    <button class="button button1">Red</button>
+
+    <h3>Tamanhos de botão:</h3>
+    <p>Use a propriedade font-size para alterar o tamanho da fonte de um botão e use a propriedade padding para alterar o preenchimento de um botão.</p>
+    <pre>
+        <code>
+            EX:
+            .button2 {
+                padding: 32px 16px;
+                font-size: 20px;
+            }
+            < button class="button button2">32px 16px< /button>
+        </code>
+    </pre>
+    Resultado:
+    <button class="button button2">32px 16px</button>
+
+    <h3>Botões arredondados:</h3>
+    <p>Use a propriedade border-radius para adicionar cantos arredondados a um botão.</p>
+    <pre>
+        <code>
+            EX:
+            .button3 {
+                border-radius: 12px;
+            }
+            < button class="button button3">12px< /button>
+        </code>
+    </pre>
+    Resultado:
+    <button class="button button3">12px</button>
+
+    <h3>Bordas Coloridas de Botões:</h3>
+    <p>Use a propriedade border para adicionar uma borda colorida a um botão.</p>
+    <pre>
+        <code>
+            EX:
+            .button4 {
+                background-color: white; 
+                color: black; 
+                border: 2px solid #4CAF50;
+            }
+            < button class="button button4">Green< /button>
+        </code>
+    </pre>
+    Resultado:
+    <button class="button button4">Green</button>
+
+    <h3>Botoões pairáveis:</h3>
+    <p>Use o seletor :hover para alterar o estilo de um botão ao passar o mouse sobre ele.</p>
+    <pre>
+        <code>
+            EX:
+            .button5 {
+                background-color: white; /* Green */
+                border: none;
+                color: black;
+                border: 2px solid #008CBA;
+                padding: 16px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+            .button5:hover {
+                background-color: #008CBA;
+                color: white;
+            }
+            < button class="button5">Blue< /button>
+        </code>
+    </pre>
+    Resultado:
+    <button class="button5">Blue</button>
+
+    <h3>Sombra em Botões:</h3>
+    <p>Use a propriedade box-shadow para adicionar sombras a um botão.</p>
+    <pre>
+        <code>
+            EX:
+            .button6:hover {
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+            < button class="button5">Sombra< /button>
+        </code>
+    </pre>
+    Resultado:
+    <button class="button button6">Sombra</button>
+
+    <h3>Botões Desativados:</h3>
+    <p> Use a propriedade opacity para adicionar transparência a um botão (cria uma aparência "desativada") e adicione a propriedade cursor com um valor de "não permitido", que exibirá um "sinal de estacionamento proibido" quando você passar o mouse sobre o botão.</p>
+    <pre>
+        <code>
+            EX:
+            .disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+            < button class="button disabled">Desativado< /button>
+        </code>
+    </pre>
+    Resultado:
+    <button class="button disabled">Desativado</button>
+
+    <h3>Largura do botão:</h3>
+    <p>Por padrão, o tamanho do botão é determinado por seu conteúdo de texto (tão largo quanto seu conteúdo). Use a propriedade width para alterar a largura de um botão.</p>
+    <pre>
+        <code>
+            EX:
+            .button7 {
+                width: 250px;
+            }            
+            < button class="button button7">250px< /button>
+        </code>
+    </pre>
+    Resultado:
+    <button class="button button7">250px</button>
+
+    <h3>Animação no botão:</h3>
+    <pre>
+        <code>
+            EX:
+            .button8 {
+                display: inline-block;
+                padding: 15px 25px;
+                font-size: 24px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #fff;
+                background-color: #4CAF50;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 9px #999;
+              }
+              
+            .button8:hover {background-color: #3e8e41}
+              
+            .button8:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+            < button class="button">Clique Aqui< /button>
+        </code>
+    </pre>
+    Resultado:
+    <button class="button8">Clique Aqui</button>
+
+    <h2>Paginação:</h2>
+    <p>Se você tiver um site com muitas páginas, poderá adicionar algum tipo de paginação a cada página</p>
+    <pre>
+        <code>
+            EX:
+            .pagination a {
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+                border: 1px solid #ddd;
+            }
+              
+            .pagination a.active {
+                background-color: #4CAF50;
+                color: white;
+                border: 1px solid #4CAF50;
+            }
+              
+            .pagination a:hover:not(.active) {background-color: #ddd;}
+              
+            .pagination a:first-child {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+              
+            .pagination a:last-child {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#">1</a>
+        <a class="active" href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+    </div>
+
+    <br><br>
+    <h2>Múltiplas Colunas:</h2>
+    <p>O layout de várias colunas do CSS permite uma fácil definição de várias colunas de texto - assim como nos jornais:</p>
+
+    <h3>Criar Múltiplas Colunas:</h3>
+    <p>A propriedade column-count especifica o número de colunas em que um elemento deve ser dividido. </p>
+    <pre>
+        <code>
+            EX:
+            .colunas{
+                column-count: 3;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="colunas">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, repellat ducimus, consectetur velit autem porro enim a eveniet nihil ipsum odio, fugiat adipisci optio veniam? Nostrum porro laborum vero et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis reiciendis iusto voluptatem aliquid. Laboriosam ex, recusandae ratione placeat repudiandae sunt adipisci non officia magnam blanditiis. Repudiandae cumque asperiores officia fuga.</div>
+
+    <h3> Especifique o espaço entre as colunas:</h3>
+    <p>A propriedade column-gap especifica o intervalo entre as colunas.</p>
+    <pre>
+        <code>
+            EX:
+            .colunas{
+                column-count: 3;
+            }
+            .gap{
+                column-gap: 40px;
+            }
+        </code>
+    </pre>
+    <div class="colunas gap">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, repellat ducimus, consectetur velit autem porro enim a eveniet nihil ipsum odio, fugiat adipisci optio veniam? Nostrum porro laborum vero et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis reiciendis iusto voluptatem aliquid. Laboriosam ex, recusandae ratione placeat repudiandae sunt adipisci non officia magnam blanditiis. Repudiandae cumque asperiores officia fuga.</div>
+
+    <h3>Regras da Coluna:</h3>
+    <p>A propriedade column-rule-style especifica o estilo da regra entre as colunas,</p>
+    <p>a propriedade column-rule-width especifica a largura da regra entre as colunas</p>
+    <p>e a propriedade column-rule-color especifica a cor da regra entre as colunas:</p>
+    <p>A propriedade column-rule é uma propriedade abreviada para definir todas as propriedades column-rule-* acima.</p>
+    <pre>
+        <code>
+            EX:
+            .colunas{
+                column-count: 3;
+            }
+            .gap{
+                column-gap: 40px;
+            }
+            .rule{
+                column-rule: 1px solid red;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="colunas gap rule">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, repellat ducimus, consectetur velit autem porro enim a eveniet nihil ipsum odio, fugiat adipisci optio veniam? Nostrum porro laborum vero et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis reiciendis iusto voluptatem aliquid. Laboriosam ex, recusandae ratione placeat repudiandae sunt adipisci non officia magnam blanditiis. Repudiandae cumque asperiores officia fuga.</div>
+
+    <h3>Largura das Colunas:</h3>
+    <p>A propriedade column-width especifica uma largura ideal sugerida para as colunas.</p>
+    <pre>
+        <code>
+            EX:
+            .largura{
+                column-width: 100px;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="colunas largura">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, repellat ducimus, consectetur velit autem porro enim a eveniet nihil ipsum odio, fugiat adipisci optio veniam? Nostrum porro laborum vero et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis reiciendis iusto voluptatem aliquid. Laboriosam ex, recusandae ratione placeat repudiandae sunt adipisci non officia magnam blanditiis. Repudiandae cumque asperiores officia fuga.</div>
+
+    <h2>Interface de usuário:</h2>
+    <h3>Redimensionamento CSS:</h3>
+    <p>A propriedade resize especifica se (e como) um elemento deve ser redimensionável pelo usuário.</p>
+    <pre>
+        <code>
+            EX:
+            .resize{
+                border: 2px solid;
+                padding: 20px; 
+                width: 300px;
+                resize: both;
+                overflow: auto;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="resize">
+        <p>Deixe o usuário redimensionar apenas a largura deste elemento div.</p>
+        <p>Para redimensionar: Clique e arraste o canto inferior direito deste elemento div.</p>
+    </div>
+
+    <h3>Deslocamento de contorno CSS:</h3>
+    <p>A propriedade outline-offset adiciona espaço entre um contorno e a borda ou borda de um elemento. </p>
+    <pre>
+        <code>
+            EX:
+            .ex1 {
+                margin: 20px;
+                border: 1px solid black;
+                outline: 4px solid red;
+                outline-offset: 15px;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="ex1">Esta div tem um contorno vermelho sólido de 4 pixels, 15 pixels fora da borda.</div>
+
+    <h2>Box-Sizing:</h2>
+    <p>A propriedade box-sizing nos permite incluir o preenchimento e a borda na largura e altura total de um elemento.</p>
+
+    <h3>Sem box-sizing:</h3>
+    <p>Por padrão, a largura e a altura de um elemento são calculadas assim:</p>
+    <p>largura + preenchimento + borda = largura real de um elemento</p>
+    <p>altura + preenchimento + borda = altura real de um elemento</p>
+    <p>Isso significa: Quando você define a largura/altura de um elemento, o elemento geralmente parece maior do que o definido (porque a borda e o preenchimento do elemento são adicionados à largura/altura especificada do elemento).</p>
+    <pre>
+        <code>
+            EX:
+            .div1 {
+                width: 300px;
+                height: 100px;  
+                padding: 50px;
+                border: 1px solid red;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="div1">Esta div é maior (a largura também é 300px e a altura é 100px).</div>
+
+    <h3>Com box-sizing</h3>
+    <p>A propriedade box-sizing nos permite incluir o preenchimento e a borda na largura e altura total de um elemento.</p>
+    <p>Se você definir um elemento box-sizing: border-box; o preenchimento e a borda serão incluídos na largura e na altura:</p>
+    <pre>
+        <code>
+            EX:
+            .div2 {
+                width: 300px;
+                height: 100px;  
+                padding: 50px;
+                border: 1px solid red;
+                box-sizing: border-box;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="div2">Mesma div de cima</div>
+
+    <h2>Media Queries:</h2>
+    <h3>Media Queries introduzidas:</h3>
+    <p>As media queries podem ser usadas para verificar muitas coisas, como:</p>
+    <p>largura e altura da viewport, largura e altura do dispositivo, orientação (o tablet/telefone está no modo paisagem ou retrato?) e resolução.</p>
+    <p>O uso de media queries é uma técnica popular para fornecer uma folha de estilo personalizada para desktops, laptops, tablets e telefones celulares (como iPhone e telefones Android).</p>
+
+    <h3>Sintaxe de Media Queries:</h3>
+    <p>Uma média queries consiste em um tipo de mídia e pode conter uma ou mais expressões, que são resolvidas como verdadeiras ou falsas.</p>
+    <p>O resultado da consulta é verdadeiro se o tipo de mídia especificado corresponder ao tipo de dispositivo no qual o documento está sendo exibido e todas as expressões na consulta de mídia forem verdadeiras. Quando uma consulta de mídia é verdadeira, a folha de estilo ou as regras de estilo correspondentes são aplicadas, seguindo as regras normais em cascata.</p>
+    <pre>
+        <code>
+            EX:
+            @media not|only mediatype and (expressions) {
+                CSS-Code;
+            }
+        </code>
+    </pre>
+
+    <h3>Tipos de Mídia:</h3>
+    <p>all [Usado para todos os dispositivos de tipo de mídia], print	[Usado para impressoras], screen [Usado para telas de computador, tablets, smartphones etc.] e speech [Usado para leitores de tela que "lê" a página em voz alta]</p>
+
+    <h3>Orientação: Retrato/Paisagem:</h3>
+    <p>As consultas de mídia também podem ser usadas para alterar o layout de uma página, dependendo da orientação do navegador. </p>
+    <pre>
+        <code>
+            EX:
+            @media only screen and (orientation: landscape) {
+                body {
+                    background-color: lightblue;
+                } 
+            }  
+        </code>
+    </pre>
+
+    <h3>Exemplo Completo:</h3>
+    <pre>
+        <code>
+            EX:
+            body {
+                background-color: white;
+            }   
+            @media screen and (min-width: 700px) {
+                body {
+                    background-color: lightgreen;
+                }
+            }  
+        </code>
+    </pre>
+    <p>Explicando: [O exemplo anterior altera a cor de fundo para verde claro se a viewport tiver 480 pixels de largura ou mais (se a viewport tiver menos de 480 pixels, a cor de fundo será rosa)]</p>
+
+</body>
+</html>
