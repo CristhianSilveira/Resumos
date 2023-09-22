@@ -1,0 +1,111 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+
+
+/* gradientes */
+
+
+
+/* gradiente linear (cima p/ baixo) */
+#grad1 {
+    text-align: center;
+    height: 200px;
+    background-image: linear-gradient(red, yellow);
+}
+/* gradiente linear (esq p/ direita) */
+#grad2 {
+    text-align: center;
+    height: 200px;
+    background-image: linear-gradient(to right, red , yellow);
+}
+/* gradiente linear (Diagonal) */
+#grad3 {
+    text-align: center;
+    height: 200px;
+    background-image: linear-gradient(to bottom right, red, yellow);
+
+}
+/* gradiente linear (angulo) */
+#grad4 {
+    text-align: center;
+    height: 100px;
+    background-image: linear-gradient(200deg, red, yellow);
+}
+/* gradiente linear (varias cores) */
+#grad5 {
+    text-align: center;
+    height: 55px;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+/* gradiente linear (repetindo) */
+#grad6{
+    height: 100px;
+    background-image: repeating-linear-gradient(45deg, red 0px, red 10px, red 10px, yellow 10px, yellow 20px);
+}
+
+
+
+/* gradiente radial (espaçamento igual) */
+#gradr1 {
+    height: 150px;
+    width: 200px;
+    background-image: radial-gradient(red, yellow, green);
+}
+/* gradiente radial (espaçamento diferente) */
+#gradr2 {
+    height: 150px;
+    width: 200px;
+    background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+}
+/* gradiente radial (forma) */
+#gradr3 {
+    height: 150px;
+    width: 200px;
+    background-image: radial-gradient(circle, red, yellow, green);
+}
+/* gradiente radial (repetindo) */
+#gradr4 {
+    height: 150px;
+    width: 200px;
+    background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+}
+
+
+
+/* gradiente cônico (3 cores) */
+#gradc1 {
+    height: 200px;
+    width: 200px;
+    background-image: conic-gradient(red, yellow, green);
+}
+/* gradiente cônico (5 cores) */
+#gradc2 {
+    height: 200px;
+    width: 200px;
+    background-image: conic-gradient(red, yellow, green, blue, black);
+}
+/* gradiente cônico (3 cores e graus) */
+#gradc3 {
+    height: 200px;
+    width: 200px;
+    background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+}
+/* gradiente cônico (gráfico pizza) */
+#gradc4 {
+    height: 200px;
+    width: 200px;
+    background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg, green 270deg, blue 270deg);
+    border-radius: 50%;
+}
+/* gradiente cônico (repetindo gradiente) */
+#gradc5 {
+    height: 200px;
+    width: 200px;
+    background-image: repeating-conic-gradient(red 0deg 10deg, yellow 10deg 20deg, blue 20deg 30deg);
+    border-radius: 50%;
+}
