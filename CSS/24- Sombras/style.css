@@ -1,0 +1,54 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+
+
+/* text-shadow */
+#text{
+    font-size: 4em;
+    text-shadow: 2px 2px 5px red;
+}
+/* text-shadow (múltiplas sombras) */
+#text2{
+    font-size: 4em;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue
+}
+
+
+
+/* box-shadow */
+#box {
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    background-color: coral;
+    box-shadow: 10px 10px 5px 2px lightblue inset;
+}
+/* box-shadow (múltiplas sombras) */
+#box2 {
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    background-color: coral;
+    box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+}
+/* box-shadow (cartões) */
+.card {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 40px;
+}
+.container {
+    padding: 10px;
+}
