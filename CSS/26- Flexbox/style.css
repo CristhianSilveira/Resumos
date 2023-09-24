@@ -1,0 +1,132 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+
+
+/* display flex */
+.flex-container {
+    display: flex;
+    background-color: DodgerBlue;
+}
+  
+.flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+
+
+/* flex-direction */
+#column{
+    flex-direction: column;
+}
+#column-reverse{
+    flex-direction: column-reverse;
+}
+#row{
+    flex-direction: row;
+}
+#row-reverse{
+    flex-direction: row-reverse;
+}
+
+
+
+/* flex-wrap */
+.largura{
+    width: 400px;
+}
+#wrap{
+    flex-wrap: wrap;
+}
+#nowrap{
+    flex-wrap: nowrap;
+}
+
+
+
+/* flex-flow */
+#flow{
+    flex-flow: row wrap;
+}
+
+
+
+/* justify-content */
+#center{
+    justify-content: center;
+}
+#start{
+    justify-content: flex-start;
+}
+#end{
+    justify-content: flex-end;
+}
+#around{
+    justify-content: space-around;
+}
+#between{
+    justify-content: space-between;
+}
+
+
+
+/* align-items */
+.altura{
+    height: 200px;
+}
+#items-center{
+    align-items: center;
+}
+#items-start{
+    align-items: flex-start;
+}
+#items-end{
+    align-items: flex-end;
+}
+#stretch{
+    align-items: stretch;
+}
+#baseline{
+    align-items: baseline;
+}
+
+
+
+/* align-content */
+.altura-maior{
+    height: 400px;
+    flex-wrap: wrap;
+}
+#content-between{
+    align-content: space-between;
+}
+#content-around{
+    align-content: space-around;
+}
+#content-stretch{
+    align-content: stretch;
+}
+#content-center{
+    align-content: center;
+}
+#content-start{
+    align-content: flex-start;
+}
+#content-end{
+    align-content: flex-end;
+}
+
+
+
+/* centralização perfeita */
+#perfeita{
+    justify-content: center;
+    align-items: center;
+}
