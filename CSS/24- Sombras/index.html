@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 24</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../22- Gradientes/index.html">Voltar para Gradientes</a>
+    <a id="linkpos" href="../24- Variáveis/index.html">Ir para Variáveis</a>
+
+    <h1>Sombras:</h1>
+
+    <h2>Sombra de Texto CSS:</h2>
+    <p>A propriedade text-shadow adiciona sombra ao texto.</p>
+    <p>Em seu uso mais simples, você especifica apenas a sombra horizontal e a sombra vertical. Em seguida, adicione um efeito de desfoque à sombra. e por último, adicione uma cor à sombra.</p>
+    <p>Sintaxe: text-shadow(Sombra Horizontal, Sombra Vertical, Desfoque e cor)</p>
+    <pre>
+        <code>
+            EX:
+            #text{
+                font-size: 4em;
+                text-shadow: 2px 2px 5px red;
+            }
+            < h3 id="text">Efeito Text-Shadow< /h3>
+        </code>
+    </pre>
+    Resultado:
+    <h3 id="text">Efeito Text-Shadow</h3>
+
+    <h3>Múltiplas Sombras:</h3>
+    <p> Para adicionar mais de uma sombra ao texto, você pode adicionar uma lista de sombras separadas por vírgula.</p>
+    <pre>
+        <code>
+            EX:
+            #text2{
+                font-size: 4em;
+                color: white;
+                text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue
+            }
+            < h3 id="text2">Múltiplas sombras< /h3>
+        </code>
+    </pre>
+    Resultado:
+    <h3 id="text2">Múltiplas sombras</h3>
+
+    <h2>Sombra da Caixa:</h2>
+    <p> A propriedade CSS box-shadow é usada para aplicar uma ou mais sombras a um elemento.</p>
+    <p>Em seu uso mais simples, você especifica a sombra horizontal, a sombra vertical, efeito de desfoque à sombra, adicione o raio de propagação da sombra, adicione uma cor à sombra e por último, defina o parâmetro de inserção.</p>
+    <p>Sintaxe: box-shadow(Sombra Horizontal, Sombra Vertical, Desfoque, raio, cor e inserção)</p>
+    <pre>
+        <code>
+            EX:
+            #box {
+                width: 300px;
+                height: 100px;
+                padding: 15px;
+                background-color: coral;
+                box-shadow: 10px 10px 5px 2px lightblue inset;
+            }
+            < div id="box">Um elemento div com uma sombra de caixa inserida em azul claro desfocada.< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="box">Um elemento div com sombra de 10px horizontal e vertical, desfoque de 5px, raio de propagação de 2px, cor azul claro, e inserida.</div>
+    
+    <h3>Adicionar várias sombras:</h3>
+    <p>Um elemento também pode ter múltiplas sombras:</p>
+    <pre>
+        <code>
+            EX:
+            #box2 {
+                width: 300px;
+                height: 100px;
+                padding: 15px;
+                background-color: coral;
+                box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div id="box2">box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green:</div>
+
+    <h3>Cartões:</h3>
+    <p> Você também pode usar a propriedade box-shadow para criar cartões semelhantes a papel:</p>
+    <pre>
+        <code>
+            EX:
+            .card {
+                width: 250px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                text-align: center;
+            }
+            .header {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px;
+                font-size: 40px;
+            }
+            .container {
+                padding: 10px;
+            }
+            < div class="card">
+                < div class="header">
+                  < h1>1< /h1>
+                < /div>
+              
+                < div class="container">
+                  < p>January 1, 2021< /p>
+                < /div>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="card">
+        <div class="header">
+          <h1>1</h1>
+        </div>
+      
+        <div class="container">
+          <p>January 1, 2021</p>
+        </div>
+    </div>
+
+</body>
+</html>
