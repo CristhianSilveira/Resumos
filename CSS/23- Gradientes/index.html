@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 23</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../22- Avançado_3/index.html">Voltar para Avançado 3</a>
+    <a id="linkpos" href="../23- Sombras/index.html">Ir para Sombras</a>
+
+    <h1>Gradientes:</h1>
+
+    <h2>Introdução:</h2>
+    <p>Os gradientes CSS permitem exibir transições suaves entre duas ou mais cores especificadas.</p>
+    <p>CSS define três tipos de gradientes:</p>
+    <p>Gradientes lineares (desce/cima/esquerda/direita/diagonalmente), Gradientes radiais (definidos pelo seu centro), Gradientes Cônicos (girados em torno de um ponto central)</p>
+
+    <h2>Gradientes Lineares:</h2>
+    <p>Para criar um gradiente linear, você deve definir pelo menos duas paradas de cor. Interrupções de cores são as cores entre as quais você deseja renderizar transições suaves. Você também pode definir um ponto inicial e uma direção (ou um ângulo) junto com o efeito de gradiente.</p>
+    <p>Sintaxe: background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+    </p>
+
+    <h3>Direção - De cima para baixo (este é o padrão):</h3>
+    <p>O exemplo a seguir mostra um gradiente linear que começa no topo. Começa em vermelho, passando para amarelo</p>
+    <pre>
+        <code>
+            EX:
+            #grad1 {
+                text-align: center;
+                height: 200px;
+                background-image: linear-gradient(red, yellow);
+            }
+            < div id="grad1">de cima para baixo (padrão)< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="grad1">de cima para baixo (padrão)</div>
+
+    <h3>Direção - Esquerda para Direita:</h3>
+    <p>O exemplo a seguir mostra um gradiente linear que começa da esquerda. Começa em vermelho, passando para amarelo:</p>
+    <pre>
+        <code>
+            EX:
+            #grad2 {
+                text-align: center;
+                height: 200px;
+                background-image: linear-gradient(to right, red , yellow);
+            }
+            < div id="grad2">da esquerda para a direita< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="grad2">da esquerda para a direita</div>
+
+    <h3>Direção - Diagonal:</h3>
+    <p>O exemplo a seguir mostra um gradiente linear que começa no canto superior esquerdo (e vai para o canto inferior direito). Começa em vermelho, passando para amarelo:</p>
+    <pre>
+        <code>
+            EX:
+            #grad3 {
+                text-align: center;
+                height: 200px;
+                background-image: linear-gradient(to bottom right, red, yellow);
+            }
+            < div id="grad2">superior esquerdo para inferior direito< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="grad3">superior esquerdo para inferior direito</div>
+
+    <h3>Usando Ângulos:</h3>
+    <p>Se quiser mais controle sobre a direção do gradiente, você pode definir um ângulo, em vez das direções predefinidas (para baixo, para cima, para a direita, para a esquerda, para baixo à direita, etc.).</p>
+    <p>Um valor de 0deg é equivalente a "to top". Um valor de 90 graus é equivalente a "para a direita". Um valor de 180 graus é equivalente a "to bottom".</p>
+    <p>Sintaxe: background-image: linear-gradient(angle, color-stop1, color-stop2);</p>
+    <pre>
+        <code>
+            EX:
+            #grad4 {
+                text-align: center;
+                height: 100px;
+                background-image: linear-gradient(200deg, red, yellow);
+            }
+            < div id="grad4">200 graus< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="grad4">200 graus</div>
+    
+    <h3>Usando várias paradas de cores:</h3>
+    <pre>
+        <code>
+            EX:
+            #grad5 {
+                text-align: center;
+                height: 55px;
+                background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            }
+            < div id="grad5">Arco Íris< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="grad5">Arco Íris</div>
+
+    <h3>Repetindo um gradiente linear:</h3>
+    <p>A função repeating-linear-gradient() é usada para repetir gradientes lineares:</p>
+    <pre>
+        <code>
+            EX:
+            #grad6{
+                height: 100px;
+                background-image: repeating-linear-gradient(45deg, red 0px, red 10px, red 10px, yellow 10px, yellow 20px);
+            }
+            < div id="grad6">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="grad6"></div>
+
+    <h2>Gradientes Radiais:</h2>
+    <p>Um gradiente radial é definido por seu centro. Para criar um gradiente radial, você também deve definir pelo menos duas paradas de cor.</p>
+    <p>Sintaxe: background-image: radial-gradient(position, start-color, ..., last-color);
+    </p>
+
+    <h3>Gradiente radial - Paradas de cores com espaçamento uniforme (este é o padrão):</h3>
+    <p>O exemplo a seguir mostra um gradiente radial com limites de cores uniformemente espaçados:</p>
+    <pre>
+        <code>
+            EX:
+            #gradr1 {
+                height: 150px;
+                width: 200px;
+                background-image: radial-gradient(red, yellow, green);
+            }
+            < div id="gradr1">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="gradr1"></div>
+
+    <h3>Gradiente radial - paradas de cores com espaçamento diferente:</h3>
+    <p>O exemplo a seguir mostra um gradiente radial com limites de cores espaçados de forma diferente:</p>
+    <pre>
+        <code>
+            EX:
+            #gradr2 {
+                height: 150px;
+                width: 200px;
+                background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+            }
+            < div id="gradr2">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="gradr2"></div>
+
+    <h3>Definir forma:</h3>
+    <p>O parâmetro shape define a forma. Pode levar o valor círculo ou elipse. O valor padrão é elipse.</p>
+    <pre>
+        <code>
+            EX:
+            #gradr3 {
+                height: 150px;
+                width: 200px;
+                background-image: radial-gradient(circle, red, yellow, green);
+            }
+            < div id="gradr3">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="gradr3"></div>
+
+    <h3>Repetindo um gradiente radial:</h3>
+    <p>A função repeating-radial-gradient() é usada para repetir gradientes radiais: </p>
+    <pre>
+        <code>
+            EX:
+            #gradr4 {
+                height: 150px;
+                width: 200px;
+                background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+            }
+            < div id="gradr4">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="gradr4"></div>
+
+    <h2>Gradientes Cônicos:</h2>
+    <p>Um gradiente cônico é um gradiente com transições de cores giradas em torno de um ponto central. Para criar um gradiente cônico, você deve definir pelo menos duas cores.</p>
+    <p>Sintaxe: background-image: conic-gradient([from angle] [at position,] color [degree], color [degree], ...);</p>
+
+    <h3>Gradiente Cônico: Três Cores:</h3>
+    <p>O exemplo a seguir mostra um gradiente cônico com três cores:</p>
+    <pre>
+        <code>
+            EX:
+            #gradc1 {
+                height: 200px;
+                width: 200px;
+                background-image: conic-gradient(red, yellow, green);
+            }
+            < div id="gradc1">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="gradc1"></div>
+
+    <h3>Gradiente Cônico: Cinco Cores:</h3>
+    <p>O exemplo a seguir mostra um gradiente cônico com cinco cores:</p>
+    <pre>
+        <code>
+            EX:
+            #gradc2 {
+                height: 200px;
+                width: 200px;
+                background-image: conic-gradient(red, yellow, green, blue, black);
+            }
+            < div id="gradc2">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="gradc2"></div>
+
+    <h3>Gradiente Cônico: Três Cores e Graus:</h3>
+    <p>O exemplo a seguir mostra um gradiente cônico com três cores e um grau para cada cor:</p>
+    <pre>
+        <code>
+            EX:
+            #gradc3 {
+                height: 200px;
+                width: 200px;
+                background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+            }
+            < div id="gradc3">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="gradc3"></div>
+
+    <h3>Criar Gráficos de Pizza:</h3>
+    <p>Basta adicionar border-radius: 50% para fazer o gradiente cônico parecer uma torta:</p>
+    <pre>
+        <code>
+            EX:
+            #gradc4 {
+                height: 200px;
+                width: 200px;
+                background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg, green 270deg, blue 270deg);
+                border-radius: 50%;
+            }
+            < div id="gradc4">< /div>
+        </code>
+    </pre>
+    Resultado:
+    <div id="gradc4"></div>
+
+    <h3>Repetindo um gradiente cônico:</h3>
+    <p>A função repeating-conic-gradient() é usada para repetir gradientes cônicos:</p>
+    <pre>
+        <code>
+            EX:
+            #gradc5 {
+                height: 200px;
+                width: 200px;
+                background-image: repeating-conic-gradient(red 0deg 10deg, yellow 10deg 20deg, blue 20deg 30deg);
+                border-radius: 50%;
+            }
+            < div id="gradc5">< /div>
+        </code>
+    </pre>
+    <div id="gradc5"></div>
+    
+</body>
+</html>
