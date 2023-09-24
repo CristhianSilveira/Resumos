@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 25</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../23- Sombras/index.html">Voltar para Sombras</a>
+    <a id="linkpos" href="../25- Flexbox/index.html">Ir para Flexbox</a>
+
+    <h1>Variáveis:</h1>
+
+    <h2>Introdução:</h2>
+    <p>A função var() é usada para inserir o valor de uma variável CSS. As variáveis CSS têm acesso ao DOM, o que significa que você pode criar variáveis com escopo local ou global, alterar as variáveis com JavaScript e alterar as variáveis com base em consultas de mídia.</p>
+    
+    <p>Uma boa maneira de usar variáveis CSS é quando se trata das cores do seu design. Em vez de copiar e colar as mesmas cores repetidamente, você pode colocá-las em variáveis.</p>
+    
+    <p>Sintaxe: var(--name, value)</p>
+
+    <h2>Como var() Funciona:</h2>
+    
+    <p>Primeiro de tudo: as variáveis CSS podem ter um escopo global ou local. As variáveis globais podem ser acessadas/utilizadas em todo o documento, enquanto as variáveis locais podem ser utilizadas apenas dentro do seletor onde é declarada.</p>
+    
+    <p>Para criar uma variável com escopo global, declare-a dentro do seletor :root . O seletor :root corresponde ao elemento raiz do documento. Para criar uma variável com escopo local, declare-a dentro do seletor que vai utilizá-la.</p>
+    
+    <p>As vantagens de usar var() são: torna o código mais fácil de ler (mais compreensível) e torna muito mais fácil alterar os valores das cores.</p>
+    <pre>
+        <code>
+            EX:
+            :root {
+                --blue: #1e90ff;
+                --white: #ffffff; 
+                --black: #000000;
+            }
+            .container h3 {
+                border-bottom: 2px solid var(--blue);
+            }
+              
+            .container {
+                color: var(--blue);
+                background-color: var(--white);
+                padding: 15px;
+                border: 1px solid var(--black);
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="container">
+        <h3>Lorem Ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit.</p>
+    </div>
+    
+</body>
+</html>
