@@ -1,0 +1,25 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+
+
+/* var */
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff; 
+    --black: #000000;
+}
+.container h3 {
+    border-bottom: 2px solid var(--blue);
+}
+  
+.container {
+    color: var(--blue);
+    background-color: var(--white);
+    padding: 15px;
+    border: 1px solid var(--black);
+}
