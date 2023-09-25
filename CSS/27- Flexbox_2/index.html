@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 27</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../25- Flexbox/index.html">Voltar para Flexbox 1</a>
+    <a id="linkpos" href="../27- Responsividade/index.html">Ir para Responsividade:</a>
+
+    <h1>Flexbox 2:</h1>
+
+    <h3>order, flex-grow, flex-shrink, flex-basis, flex, align-self e flex responsivo</h3>
+
+    <h2>itens Flexíveis:</h2>
+    <p>Os elementos filhos diretos de um flex container tornam-se automaticamente itens flexíveis (flex).</p>
+
+    <h2>A propriedade order:</h2>
+    <p>A propriedade order especifica a ordem dos itens flexíveis.</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                align-items: stretch;
+                background-color: blueviolet;
+            }
+              
+            .flex-container>div {
+                background-color: DodgerBlue;
+                color: white;
+                width: 100px;
+                margin: 10px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;
+            }
+            #order1{
+                order: 2;
+            }
+            #order2{
+                order: 3;
+            }
+            #order3{
+                order: 1;
+            }
+            #order4{
+                order: 4;
+            }
+            < div class="flex-container">
+                < div id="order1">1< /div>
+                < div id="order2">2< /div>
+                < div id="order3">3< /div> 
+                < div id="order4">4< /div>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container">
+        <div id="order1">1</div>
+        <div id="order2">2</div>
+        <div id="order3">3</div> 
+        <div id="order4">4</div>
+    </div>
+
+    <h2>A propriedade flex-grow:</h2>
+    <p>A propriedade flex-grow especifica quanto um item flexível crescerá em relação ao restante dos itens flexíveis.</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                align-items: stretch;
+                background-color: blueviolet;
+            }
+              
+            .flex-container>div {
+                background-color: DodgerBlue;
+                color: white;
+                width: 100px;
+                margin: 10px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;
+            }
+            #grow1{
+                flex-grow: 5;
+            }
+            #grow2{
+                flex-grow: 1;
+            }
+            #grow3{
+                flex-grow: 10;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container">
+        <div id="grow1">1</div>
+        <div id="grow2">2</div>
+        <div id="grow3">3</div>
+    </div>
+
+    <h2>A propriedade flex-shrink:</h2>
+    <p>A propriedade flex-shrink especifica quanto um item flexível encolherá em relação ao restante dos itens flexíveis.</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                align-items: stretch;
+                background-color: blueviolet;
+            }
+              
+            .flex-container>div {
+                background-color: DodgerBlue;
+                color: white;
+                width: 100px;
+                margin: 10px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;
+            }
+            #shrink2{
+                flex-shrink: 0;
+            }
+            
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container">
+        <div id="shrink1">1</div>
+        <div id="shrink2">2</div>
+        <div id="shrink3">3</div>
+        <div id="shrink3">4</div>
+        <div id="shrink3">5</div>
+        <div id="shrink3">6</div>
+        <div id="shrink3">7</div>
+        <div id="shrink3">8</div>
+    </div>
+
+    <h2>A propriedade flex-basis:</h2>
+    <p>A propriedade flex-basis especifica o comprimento inicial de um item flexível.</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                align-items: stretch;
+                background-color: blueviolet;
+            }
+              
+            .flex-container>div {
+                background-color: DodgerBlue;
+                color: white;
+                width: 100px;
+                margin: 10px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;
+            }
+            #basis1{
+                flex-basis: 200px;
+            }
+            #basis2{
+                flex-basis: 300px;
+            }
+            #basis3{
+                flex-basis: 100px;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container">
+        <div id="basis1">1</div>
+        <div id="basis2">2</div>
+        <div id="basis3">3</div>
+    </div>
+
+    <h2>A prorpiedade flex:</h2>
+    <p>A propriedade flex é uma propriedade abreviada para as propriedades: flex-grow, flex-shrink e flex-basis.</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                align-items: stretch;
+                background-color: blueviolet;
+            }
+              
+            .flex-container>div {
+                background-color: DodgerBlue;
+                color: white;
+                width: 100px;
+                margin: 10px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;
+            }
+            #flex1{
+                flex: 100 0 0;
+            }
+            #flex2{
+                flex: 0 200 0;
+            }
+            #flex3{
+                flex: 0 0 200px;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container">
+        <div id="flex1">1</div>
+        <div id="flex2">2</div>
+        <div id="flex3">3</div>
+    </div>
+
+    <h2>A propriedade align-self:</h2>
+    <p> A propriedade align-self especifica o alinhamento do item selecionado dentro do contêiner flexível.</p>
+    <p>A propriedade align-self substitui o alinhamento padrão definido pela propriedade align-items do contêiner.</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                align-items: stretch;
+                background-color: blueviolet;
+            }
+              
+            .flex-container>div {
+                background-color: DodgerBlue;
+                color: white;
+                width: 100px;
+                margin: 10px;
+                text-align: center;
+                line-height: 75px;
+                font-size: 30px;
+            }
+            .altura{
+                height: 200px;
+            }
+            #self1{
+                align-self: 0;
+            }
+            #self2{
+                align-self: flex-start;
+            }
+            #self3{
+                align-self: center;
+            }
+            #self4{
+                align-self: flex-end;
+            }
+            #self5{
+                align-self: center;
+            }
+            #self6{
+                align-self: flex-start;
+            }
+            #self7{
+                align-self: 0;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container altura">
+        <div id="self1">1</div>
+        <div id="self2">2</div>
+        <div id="self3">3</div>
+        <div id="self4">4</div>
+        <div id="self5">5</div>
+        <div id="self6">6</div>
+        <div id="self7">7</div>
+    </div>
+
+    <h2>Flex Responsivo:</h2>
+    <p>Por exemplo, se quiser criar um layout de duas colunas para a maioria dos tamanhos de tela e um layout de uma coluna para tamanhos de tela pequenos (como telefones e tablets), você pode alterar de flex-direction row para column em um ponto de interrupção específico (800px no exemplo abaixo):</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container2 {
+                display: flex;
+                flex-direction: row;
+                font-size: 30px;
+                text-align: center;
+            }
+              
+            .flex-item-left {
+                background-color: #f1f1f1;
+                padding: 10px;
+                flex: 50%;
+            }
+              
+            .flex-item-right {
+                background-color: dodgerblue;
+                padding: 10px;
+                flex: 50%;
+            }
+            
+            @media (max-width: 800px) {
+                .flex-container2 {
+                  flex-direction: column;
+                }
+            }
+            < div class="flex-container2">
+                < div class="flex-item-left">1< /div>
+                < div class="flex-item-right">2< /div>
+            < /div>
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container2">
+        <div class="flex-item-left">1</div>
+        <div class="flex-item-right">2</div>
+    </div>
+    
+</body>
+</html>
