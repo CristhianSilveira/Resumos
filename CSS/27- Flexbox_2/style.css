@@ -1,0 +1,143 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+
+
+/* container */
+.flex-container {
+    display: flex;
+    align-items: stretch;
+    background-color: blueviolet;
+}
+  
+.flex-container>div {
+    background-color: DodgerBlue;
+    color: white;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
+
+
+
+/* order */
+#order1{
+    order: 2;
+}
+#order2{
+    order: 3;
+}
+#order3{
+    order: 1;
+}
+#order4{
+    order: 4;
+}
+
+
+
+/* flex-grow */
+#grow1{
+    flex-grow: 5;
+}
+#grow2{
+    flex-grow: 1;
+}
+#grow3{
+    flex-grow: 10;
+}
+
+
+
+/* flex-shrink */
+#shrink2{
+    flex-shrink: 0;
+}
+
+
+
+/* flex-basis */
+#basis1{
+    flex-basis: 200px;
+}
+#basis2{
+    flex-basis: 300px;
+}
+#basis3{
+    flex-basis: 100px;
+}
+
+
+
+/* flex */
+#flex1{
+    flex: 100 0 0;
+}
+#flex2{
+    flex: 0 200 0;
+}
+#flex3{
+    flex: 0 0 200px;
+}
+
+
+
+/* align-self */
+.altura{
+    height: 200px;
+}
+#self1{
+    align-self: 0;
+}
+#self2{
+    align-self: flex-start;
+}
+#self3{
+    align-self: center;
+}
+#self4{
+    align-self: flex-end;
+}
+#self5{
+    align-self: center;
+}
+#self6{
+    align-self: flex-start;
+}
+#self7{
+    align-self: 0;
+}
+
+
+
+/* flex responsivo */
+.flex-container2 {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    text-align: center;
+}
+  
+.flex-item-left {
+    background-color: #f1f1f1;
+    padding: 10px;
+    flex: 50%;
+}
+  
+.flex-item-right {
+    background-color: dodgerblue;
+    padding: 10px;
+    flex: 50%;
+}
+
+@media (max-width: 800px) {
+    .flex-container2 {
+      flex-direction: column;
+    }
+}
