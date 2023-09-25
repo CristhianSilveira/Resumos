@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 26</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../24- Variáveis/index.html">Voltar para Variáveis</a>
+    <a id="linkpos" href="../26- Flexbox_2/index.html">Ir para Flexbox 2</a>
+
+    <h1>Flexbox:</h1>
+
+    <h3>display, flex-direction, flex-wrap, flex-flow, justify-content, align-items, align-content e centralização perfeita</h3>
+
+    <h2>Container Flex:</h2>
+    <p>O container flex torna-se flexível definindo a propriedade display como flex.</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+              
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>  
+    </div>
+
+    <h2>A propriedade flex-direction:</h2>
+    <p>A propriedade flex-direction define em qual direção o contêiner deseja empilhar os itens flexíveis. Valores:</p>
+    <p>column [empilha os itens flexíveis verticalmente (de cima para baixo)], column-reverse [empilha os itens flexíveis verticalmente (mas de baixo para cima)] </p>
+    <p> row [empilha os itens flexíveis horizontalmente (da esquerda para a direita)] e row-reverse [empilha os flex items horizontalmente (mas da direita para a esquerda)].</p>
+
+    <h3>Column:</h3>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            #column{
+                flex-direction: column;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container" id="column">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <h3>Column-Reverse:</h3>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            #column-reverse{
+                flex-direction: column-reverse;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container" id="column-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <h3>Row:</h3>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            #row{
+                flex-direction: row;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container" id="row">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <h3>Row-Reverse:</h3>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            #row-reverse{
+                flex-direction: row-reverse;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container" id="row-reverse">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <h2>A propriedade flex-wrap:</h2>
+    <p>A propriedade flex-wrap especifica se os itens flexíveis devem ser encapsulados ou não.</p>
+    
+    <h3>Wrap:</h3>
+    <p>O valor wrap especifica que os itens flexíveis serão agrupados se necessário</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .largura{
+                width: 400px;
+            }
+            #wrap{
+                flex-wrap: wrap;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container largura" id="wrap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <h3>Nowrap:</h3>
+    <p>O valor nowrap especifica que os itens flexíveis não serão agrupados (este é o padrão):</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .largura{
+                width: 400px;
+            }
+            #nowrap{
+                flex-wrap: nowrap;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container largura" id="nowrap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <h2>A propriedade flex-flow:</h2>
+    <p>A propriedade flex-flow é uma propriedade abreviada para definir as propriedades flex-direction e flex-wrap.</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .largura{
+                width: 400px;
+            }
+            #flow{
+                flex-flow: row wrap;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container largura" id="flow">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <h2>A propriedade justify-content:</h2>
+    <p>A propriedade justify-content é usada para alinhar os itens flexíveis:</p>
+    <p>OBS: alinha os items horizontalmente (eixo x)</p>
+
+    <h3>center:</h3>
+    <p>O valor center alinha os itens flexíveis no centro do contêiner:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            #center{
+                justify-content: center;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container" id="center">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    <h3>flex-start:</h3>
+    <p>O valor flex-start alinha os itens flexíveis no início do contêiner (este é o padrão):</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            #start{
+                justify-content: flex-startr;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container" id="start">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    <h3>flex-end:</h3>
+    <p>O valor flex-end alinha os itens flexíveis no final do contêiner:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            #end{
+                justify-content: flex-end;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container" id="end">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    <h3>space-around:</h3>
+    <p>O valor space-around exibe os itens flexíveis com espaço antes, entre e depois das linhas:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            #around{
+                justify-content: space-around;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container" id="around">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    <h3>space-between:</h3>
+    <p>O valor space-between exibe os itens flexíveis com espaço entre as linhas:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            #between{
+                justify-content: space-between;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container" id="between">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    <h2>A propriedade align-items:</h2>
+    <p>A propriedade align-items é usada para alinhar os itens em uma posição flexível.</p>
+    <p>OBS: alinha os items verticalmente (eixo y)</p>
+    
+    <h3>Center:</h3>
+    <p>O valor center alinha os itens flexíveis no meio do contêiner:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .altura{
+                height: 200px;
+            }
+            #items-center{
+                align-items: center;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container altura" id="items-center">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    <h3>Flex-start:</h3>
+    <p>O valor flex-start alinha os itens flexíveis na parte superior do contêiner:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .altura{
+                height: 200px;
+            }
+            #items-start{
+                align-items: flex-start;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container altura" id="items-start">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    <h3>Flex-end:</h3>
+    <p>O valor flex-end alinha os itens flexíveis na parte inferior do contêiner:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .altura{
+                height: 200px;
+            }
+            #items-end{
+                align-items: flex-end;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container altura" id="items-end">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    <h3>stretch:</h3>
+    <p>O valor stretch estica os itens flexíveis para preencher o contêiner (este é o padrão):</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .altura{
+                height: 200px;
+            }
+            #stretch{
+                align-items: stretch;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container altura" id="stretch">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    <h3>Baseline:</h3>
+    <p>O valor baseline alinha os itens flexíveis, como suas linhas de base alinham:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .altura{
+                height: 200px;
+            }
+            #baseline{
+                align-items: baseline;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container altura" id="baseline">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    <h2>A propriedade align-content:</h2>
+    <p>A propriedade align-content é usada para alinhar as linhas flexíveis.</p>
+
+    <h3>space-between:</h3>
+    <p>O valor space-between exibe as linhas flexíveis com espaço igual entre elas:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .largura{
+                width:400px;
+            }
+            .altura-maior{
+                height: 400px;
+                flex-wrap: wrap;
+            }
+            #content-between{
+                align-content: space-between;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container largura altura-maior" id="content-between">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <h3>space-around</h3>
+    <p>O valor space-around exibe as linhas flexíveis com espaço antes, entre e depois delas:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .largura{
+                width:400px;
+            }
+            .altura-maior{
+                height: 400px;
+                flex-wrap: wrap;
+            }
+            #content-around{
+                align-content: space-around;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container largura altura-maior" id="content-around">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <h3>stretch:</h3>
+    <p>O valor stretch estica as linhas flexíveis para ocupar o espaço restante (este é o padrão):</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .largura{
+                width:400px;
+            }
+            .altura-maior{
+                height: 400px;
+                flex-wrap: wrap;
+            }
+            #content-stretch{
+                align-content: stretch;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container largura altura-maior" id="content-stretch">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <h3>center:</h3>
+    <p>O valor center exibe as linhas flexíveis no meio do contêiner:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .largura{
+                width:400px;
+            }
+            .altura-maior{
+                height: 400px;
+                flex-wrap: wrap;
+            }
+            #content-center{
+                align-content: center;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container largura altura-maior" id="content-center">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <h3>flex-start:</h3>
+    <p>O valor flex-start exibe as linhas flexíveis no início do contêiner:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .largura{
+                width:400px;
+            }
+            .altura-maior{
+                height: 400px;
+                flex-wrap: wrap;
+            }
+            #content-start{
+                align-content: flex-start;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container largura altura-maior" id="content-start">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <h3>flex-end:</h3>
+    <p>O valor flex-end exibe as linhas flexíveis no final do contêiner:</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .largura{
+                width:400px;
+            }
+            .altura-maior{
+                height: 400px;
+                flex-wrap: wrap;
+            }
+            #content-end{
+                align-content: flex-end;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container largura altura-maior" id="content-end">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+
+    <h2>Centralização perfeita:</h2>
+    <p>No exemplo a seguir resolveremos um problema de estilo muito comum: centralização perfeita.</p>
+    <p>Defina as propriedades justify-content e align-items como: center e o item flexível ficará perfeitamente centralizado</p>
+    <pre>
+        <code>
+            EX:
+            .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+            }
+            .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            .altura-maior{
+                height: 400px;
+                flex-wrap: wrap;
+            }
+            #perfeita{
+                justify-content: center;
+                align-items: center;
+            }
+        </code>
+    </pre>
+    Resultado:
+    <div class="flex-container altura-maior" id="perfeita">
+        <div></div>
+    </div>
+    
+</body>
+</html>
