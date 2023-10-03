@@ -1,0 +1,31 @@
+h2 {
+    background-color: yellow;
+}
+#linkpos{
+    float: right;
+}
+
+
+
+/* imagem responsiva */
+#img {
+    width: 100%;
+    height: auto;
+}
+
+#img2 {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* video responsivo */
+#video {
+    width: 100%;
+    height: auto;
+}
+#video2 {
+    max-width: 100%;
+    height: auto;
+}
