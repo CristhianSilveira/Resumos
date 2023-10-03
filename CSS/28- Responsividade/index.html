@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo CSS 28</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../26- Flexbox_2/index.html">Voltar para Flexbox 2</a>
+    <a id="linkpos" href="../28- Grid/index.html">Ir para Grid</a>
+
+    <h1>Responsividade:</h1>
+
+    <h2>Web responsivo:</h2>
+    <p>O web design responsivo faz com que sua página da web tenha uma boa aparência em todos os dispositivos.</p>
+    
+    <p>As páginas da Web podem ser visualizadas em muitos dispositivos diferentes: desktops, tablets e telefones. Sua página da web deve ter uma boa aparência e ser fácil de usar, independentemente do dispositivo.</p>
+    
+    <p>As páginas da Web não devem deixar de fora informações para caber em dispositivos menores, mas sim adaptar seu conteúdo para caber em qualquer dispositivo:</p>
+    
+    <p>É chamado de web design responsivo quando você usa CSS e HTML para redimensionar, ocultar, reduzir, ampliar ou mover o conteúdo para que fique bem em qualquer tela.
+    </p>
+    <img src="rwd_desktop.png" alt="Computador">
+    <img src="rwd_tablet.png" alt="Tablet">
+    <img src="rwd_phone.png" alt="Celular">
+
+    <h2>A viewport:</h2>
+    <p>A janela de visualização é a área visível do usuário em uma página da web.</p>
+
+    <p>A janela de visualização varia de acordo com o dispositivo e será menor em um telefone celular do que na tela de um computador.</p>
+
+    <h2>Visualização em grid:</h2>
+    <p>Muitas páginas da web são baseadas em uma visualização em grid, o que significa que a página é dividida em colunas:</p>
+
+    <p>Usar uma visualização em grade é muito útil ao projetar páginas da web. Torna mais fácil colocar elementos na página.</p>
+
+    <h2>Média Query:</h2>
+    <p>Ele usa a regra @media para incluir um bloco de propriedades CSS somente se uma determinada condição for verdadeira.</p>
+
+    <h3>Mobile first:</h3>
+    <p>Mobile First significa projetar para dispositivos móveis antes de projetar para desktop ou qualquer outro dispositivo (isso tornará a exibição da página mais rápida em dispositivos menores).</p>
+
+    <h3>Pontos de interrupção típicos de dispositivos:</h3>
+    <p>(1) @media only screen and (max-width: 600px) {...}   [Dispositivos extra pequenos (telefones, 600px e abaixo)], (2) @media only screen and (min-width: 600px) {...}  [Dispositivos pequenos (tablets retrato e telefones grandes, 600px e acima)], (3) @media only screen and (min-width: 768px) {...}  [Dispositivos médios (tablets de paisagem, 768px e superior)]</p>
+
+    <p>(4) @media only screen and (min-width: 992px) {...}  [Dispositivos grandes (laptops/desktops, 992px e superior)], (5) @media only screen and (min-width: 1200px) {...}  [Dispositivos extra grandes (laptops e desktops grandes, 1200px e acima)]</p>
+
+    <h2>Imagens Responsivas:</h2>
+    
+    <h3>Usando a propriedade width:</h3>
+    <p>Se a propriedade width estiver definida como uma porcentagem e a propriedade height estiver definida como "auto", a imagem será responsiva e aumentará e diminuirá:</p>
+    <pre>
+        <code>
+            EX:
+            #img {
+                width: 100%;
+                height: auto;
+            }
+            < img id="img" src="img_chania.jpg" alt="Vila">
+        </code>
+    </pre>
+    Resultado:
+    <img id="img" src="img_chania.jpg" alt="Vila">
+
+    <h3>Usando a propriedade max-width:</h3>
+    <p>Se a propriedade max-width estiver definida como 100%, a imagem será reduzida se for necessário, mas nunca será ampliada para ser maior que seu tamanho original:</p>
+    <pre>
+        <code>
+            EX:
+            img2 {
+                max-width: 100%;
+                height: auto;
+            }
+            < img id="img2" src="img_chania.jpg" alt="Vila">
+        </code>
+    </pre>
+    Resultado:
+    <img id="img2" src="img_chania.jpg" alt="Vila">
+
+    <h2>Vídeos Responsivos:</h2>
+    
+    <h3>Usando a propriedade width:</h3>
+    <p>Se a propriedade width estiver definida como 100%, o player de vídeo responderá e aumentará ou diminuirá:</p>
+    <pre>
+        <code>
+            EX:
+            #video {
+                width: 100%;
+                height: auto;
+            }
+            < video id="video" width="400" controls>
+                < source src="mov_bbb.mp4" type="video/mp4">
+                < source src="mov_bbb.ogg" type="video/ogg">
+                Seu navegador não suporta video HTML5.
+            < /video>
+        </code>
+    </pre>
+    Resultado:
+    <video id="video" width="400" controls>
+        <source src="mov_bbb.mp4" type="video/mp4">
+        <source src="mov_bbb.ogg" type="video/ogg">
+        Seu navegador não suporta video HTML5.
+    </video>
+
+    <h3>Usando a propriedade max-width:</h3>
+    <p>Se a propriedade max-width estiver definida como 100%, o player de vídeo diminuirá se for necessário, mas nunca aumentará para ser maior que seu tamanho original:</p>
+    <pre>
+        <code>
+            EX:
+            #video2 {
+                max-width: 100%;
+                height: auto;
+            }
+            < video id="video2" width="400" controls>
+                < source src="mov_bbb.mp4" type="video/mp4">
+                < source src="mov_bbb.ogg" type="video/ogg">
+                Seu navegador não suporta video HTML5.
+            < /video>
+        </code>
+    </pre>
+    Resultado:
+    <video id="video2" width="400" controls>
+        <source src="mov_bbb.mp4" type="video/mp4">
+        <source src="mov_bbb.ogg" type="video/ogg">
+        Seu navegador não suporta video HTML5.
+    </video>
+
+    <h2>Modelos de Sites:</h2>
+    <h3>Modelo de banda:</h3>
+    <img src="img_temp_band.jpg" alt="Site Banda">
+
+    <h3>Modelo de Arte:</h3>
+    <img src="img_temp_art.jpg" alt="Site arte">
+
+    <h3>Modelo de Arquiteto:</h3>
+    <img src="img_temp_architect.jpg" alt="Site Arquiteto">
+
+    <h3>Modelo de Blog:</h3>
+    <img src="img_temp_blog.jpg" alt="Site Blog">
+
+    <h3>Modelo de Blog de Comida:</h3>
+    <img src="img_temp_food_blog.jpg" alt="Site blog comida">
+
+    <h3>Modelo de blog de Moda:</h3>
+    <img src="img_temp_fashion_blog.jpg" alt="Site blog moda">
+
+    <h3>Modelo de currículo:</h3>
+    <img src="img_temp_cv.jpg" alt="Site currículo">
+
+    <h3>Modelo de foto:</h3>
+    <img src="img_temp_photo.jpeg" alt="Site foto">
+
+    <h3>Modelo de portfólio:</h3>
+    <img src="img_temp_dark_icon.jpg" alt="Site portifólio">
+
+    <h3>Modelo de paralax:</h3>
+    <img src="img_temp_parallax.jpg" alt="Site paralax">
+
+    <h3>Modelo de loja de roupas:</h3>
+    <img src="img_temp_clothing_store.jpg" alt="Site loja de roupas">
+
+    <h3>Modelo de pizzaria:</h3>
+    <img src="img_temp_pizza.jpg" alt="Site pizzaria">
+
+    <h3>Modelo mídia social:</h3>
+    <img src="img_temp_social.jpg" alt="Site mídia social">
+
+    <h3>Modelo de análise:</h3>
+    <img src="img_temp_analytics.jpg" alt="Site de análise">
+
+    <h3>Modelo de Hotel:</h3>
+    <img src="img_temp_hotel.jpg" alt="Site de hotel">
+
+    <h3>Modelo de viagens:</h3>
+    <img src="img_temp_travel2.jpg" alt="Site de viagens">
+
+</body>
+</html>
