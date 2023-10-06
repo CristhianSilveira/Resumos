@@ -1,0 +1,959 @@
+                        ------ TAGS CSS ------
+
+
+        Olá, criei esse arquivo com as principais Tags CSS explicadas e com exemplos, no final do arquivo contem o resumo das tags.
+
+                OBS: os exemplos não estão formatados para não ocupar muitas linhas do arquivo.
+
+
+1- Introdução:
+
+        1.1- O que é CSS? CSS é a linguagem que usamos para estilizar um documento HTML. CSS descreve como os elementos HTML devem ser exibidos. CSS significa Cascading Style Sheets
+
+        1.2- Sintaxe: Uma regra CSS consiste em um seletor e um bloco de declaração. O seletor aponta para o elemento HTML que você deseja estilizar. O bloco de declaração contém uma ou mais declarações separadas por ponto e vírgula. Cada declaração inclui um nome de propriedade CSS e um valor, separados por dois pontos. Várias declarações CSS são separadas por ponto e vírgula e os blocos de declaração são cercados por chaves.   EX:   p {
+                                                      color: red;
+                                                      text-align: center;
+                                                    }
+            Explicando: p é um seletor em CSS (aponta para o elemento HTML que você deseja estilizar: <p>). color é uma propriedade e red é o valor da propriedade text-align é uma propriedade e center é o valor da propriedade.
+
+        1.3- Seletores: Os seletores CSS são usados ​​para "encontrar" (ou selecionar) os elementos HTML que você deseja estilizar.
+                1.3.1- Seletor de Elemento: O seletor de elemento seleciona elementos HTML com base no nome do elemento.   EX: p {   text-align: center;   color: red;   }
+
+                1.3.2- Seletor de Id: O seletor id usa o atributo id de um elemento HTML para selecionar um elemento específico. O id de um elemento é único dentro de uma página, então o seletor de id é usado para selecionar um elemento único! Para selecionar um elemento com um id específico, escreva um caractere hash (#), seguido do id do elemento.   EX: #para1 {   text-align: center;   color: red;   }
+
+                1.3.3- Seletor de Classe: O seletor de classe seleciona elementos HTML com um atributo de classe específico. Para selecionar elementos com uma classe específica, escreva um caractere de ponto (.), seguido do nome da classe.   EX: p.center {   text-align: center;   color: red;   }
+
+                1.3.4- Seletor Universal: O seletor universal (*) seleciona todos os elementos HTML na página.   EX:   * {   text-align: center;   color: blue;   }
+
+                1.3.5- Seletor de Agrupamento: O seletor de agrupamento seleciona todos os elementos HTML com as mesmas definições de estilo. Para agrupar seletores, separe cada seletor com uma vírgula.   EX:   h1, h2, p {   text-align: center;   color: red;   }
+
+        1.4- Inserir CSS: Existem três maneiras de inserir uma folha de estilo: CSS externo, CSS interno e CSS embutido
+                1.4.1- CSS Externo: Com uma folha de estilo externa, você pode alterar a aparência de um site inteiro alterando apenas um arquivo. Cada página HTML deve incluir uma referência ao arquivo de folha de estilo externo dentro do elemento <link>, dentro da seção head.   EX: <link rel="stylesheet" href="mystyle.css">
+
+                1.4.2- CSS Interno: Uma folha de estilo interna pode ser usada se uma única página HTML tiver um estilo único. O estilo interno é definido dentro do elemento <style>, dentro da seção head.
+
+                1.4.3- CSS Embutido: Um estilo embutido pode ser usado para aplicar um estilo único a um único elemento. Para usar estilos embutidos, adicione o atributo style ao elemento relevante. O atributo style pode conter qualquer propriedade CSS.   EX: <p style="color:red;">Um parágrafo vermelho.</p>
+
+        1.5- Comentários: Usar */ comentário */ ou <!-- comentário -->
+                Os comentários CSS não são exibidos no navegador, mas podem ajudar a documentar seu código-fonte CSS.
+
+2- Cores: As cores CSS são especificadas com nomes de cores predefinidos ou com valores RGB, HEX, HSL, RGBA ou HSLA.
+        2.1- Nomes de cores: Em CSS, uma cor pode ser especificada usando um nome de cor: EX: red,Orange,Blue,Green,Yellow,Violet,LightGray, etc.
+        
+        2.2- Cores RGB e RGBA: Um valor de cor RGB representa as fontes de luz VERMELHA, VERDE e AZUL. Um valor de cor RGBA é uma extensão de RGB com um canal Alfa (opacidade).
+                2.2.1- Rgb(red, green, blue) = Cada parâmetro (vermelho, verde e azul) define a intensidade da cor com um valor entre 0 e 255. Isso significa que existem 256 x 256 x 256 = 16777216 cores possíveis.   EX: rgb(255, 0, 0) é exibido como vermelho, porque o vermelho é definido como seu valor mais alto (255).   EX2: rgb(0, 255, 0) é exibido como verde, porque o verde é definido como seu valor mais alto (255).   OBS: Para exibir preto, defina todos os parâmetros de cor como 0, assim: rgb(0, 0, 0).   Para exibir branco, defina todos os parâmetros de cor para 255, assim: rgb(255, 255, 255).   Os tons de cinza geralmente são definidos usando valores iguais para todos os três parâmetros
+                
+                2.2.2- RGBA(vermelho, verde, azul, alfa) = Os valores de cores RGBA são uma extensão dos valores de cores RGB com um canal Alfa - que especifica a opacidade de uma cor. O parâmetro alfa é um número entre 0,0 (totalmente transparente) e 1,0 (nada transparente): EX: rgba(255, 180, 95, 0.5)
+
+        2.3- Cores Hexadecimais: Uma cor hexadecimal é especificada com: #RRGGBB, onde os inteiros hexadecimais RR(vermelho), GG(verde) e BB(azul) especificam os componentes da cor. Os valores hexadecimais estão entre 00 e ff (o mesmo que decimal 0-255).   EX: #ff0000 é exibido em vermelho, porque o vermelho está definido para seu valor mais alto (ff) e os outros dois (verde e azul) estão definidos para 00.   EX2: #00ff00 é exibido como verde, porque o verde está definido com seu valor mais alto (ff) e os outros dois (vermelho e azul) estão definidos como 00.   OBS: Para exibir preto, defina todos os parâmetros de cor como 00, assim: #000000.   Para exibir o branco, defina todos os parâmetros de cor como ff, assim: #ffffff.   Os tons de cinza geralmente são definidos usando valores iguais para todos os três parâmetros.
+
+        2.4- Cores HSL e HSLA: HSL significa matiz, saturação e leveza. Os valores de cores HSLA são uma extensão do HSL com um canal Alfa (opacidade).
+                2.4.1- HSL = Em CSS, uma cor pode ser especificada usando matiz, saturação e luminosidade (HSL) na forma: hsl( matiz , saturação , luminosidade)   OBS: Matiz é um grau na roda de cores de 0 a 360, 0 é vermelho, 120 é verde e 240 é azul.   A saturação é um valor percentual, 0% significa um tom de cinza e 100% é a cor total.   A leveza também é um valor percentual, 0% é preto e 100% é branco.   Os tons de cinza geralmente são definidos definindo o matiz e a saturação como 0 e ajustando a luminosidade de 0% a 100% .
+                
+                2.4.2- HSLA = Os valores de cores HSLA são uma extensão dos valores de cores HSL, com um canal Alfa - que especifica a opacidade de uma cor. hsla(matiz, saturação, luminosidade, alfa), O parâmetro alfa é um número entre 0,0 (totalmente transparente) e 1,0 (nada transparente):
+
+3- Fundos: As propriedades de plano de fundo do CSS são usadas para adicionar efeitos de plano de fundo aos elementos.
+        3.1- Cor de fundo: A propriedade background-color especifica a cor de fundo de um elemento.   EX: body {  background-color: lightblue;   }
+            3.1.1- Opacity: A propriedade opacity especifica a opacidade/transparência de um elemento. Pode assumir um valor de 0,0 - 1,0. Quanto menor o valor, mais transparente:
+
+        3.2- Imagem de Fundo: A propriedade background-image especifica uma imagem a ser usada como plano de fundo de um elemento. Por padrão, a imagem é repetida para cobrir todo o elemento.   EX: body {   background-image: url("pato.jpg");   }
+
+        3.3- Repetição no plano de fundo: Por padrão, a propriedade background-image repete uma imagem horizontal e verticalmente. Algumas imagens devem ser repetidas apenas na horizontal ou na vertical, ou ficarão estranhas. Para repetir uma imagem verticalmente, defina o (background-repeat: repeat-y) e na horizontal ( background-repeat: repeat-x;). Use (background-repeat: no-repeat) para nao ter repetição.
+            3.3.1- Posição do plano de fundo: A propriedade background-position é usada para especificar a posição da imagem de fundo.   EX: background-position: right top; (posição = direita e em cima)
+
+        3.4- Fixação de conteúdo: A propriedade background-attachment especifica se a imagem de fundo deve rolar ou ser fixa (não rolará com o resto da página).   EX: background-attachment: fixed; (o conteúdo sempre sera visível)   EX2: background-attachment: scroll; (o conteúdo rolará com o resto da página)
+
+        3.5- Taquigrafia do fundo: Para encurtar o código, também é possível especificar todas as propriedades do plano de fundo em uma única propriedade. Você pode usar a propriedade abreviada background. Ao usar a propriedade abreviada, a ordem dos valores da propriedade é: (1) background-color, (2) background-image, (3) background-repeat, (4) background-attachment e (5) background-position.   EX: body {   background: #ffffff url("porco.png") no-repeat right top;   }
+
+4- Bordas: As propriedades de borda do CSS permitem que você especifique o estilo, a largura e a cor da borda de um elemento.
+        4.1- Estilo da Borda: Com a propriedade border-style, você pode definir a aparência da borda. Valores: dotted(Borda pontilhada), dashed(Borda pontilhada em negrito), solid (Borda normal), double(Borda dupla), groove(Borda cinza), ridge(Borda Branca), inset(Borda branca com cinza em cima), outset(Borda branca com cinza em baixo), none(Sem Borda), hidden(Borda oculta).   EX:  p{border-style: dotted;}
+        
+        4.2- Largura da Borda: A propriedade border-width especifica a largura das quatro bordas.A largura pode ser definida como um tamanho específico (em px, pt, cm, em, etc). A propriedade border-width pode ter de um a quatro valores (para a borda superior, borda direita, borda inferior e borda esquerda).   EX: border-width: 25px 10px 4px 35px;  [25px p/ cima, 10px p/ direita, 4px p/ baixo, 35px p/ esquerda]
+
+        4.3- Cor da Borda: A propriedade border-color é usada para definir a cor das quatro bordas. A propriedade border-color pode ter de um a quatro valores (para a borda superior, borda direita, borda inferior e borda esquerda).   EX: p   {border-color: blue;}
+
+        4.4- Bordas arredondadas: A propriedade border-radius é usada para adicionar bordas arredondadas a um elemento:   EX: border-radius: 5px;
+
+        4.5- Taquigrafia da Borda: A propriedade border é uma propriedade abreviada para as seguintes propriedades de borda individuais: (1) border-width, (2) border-style(obrigatório) e (3) border-color.   EX: border: 5px solid red;
+
+5- Margens: As margens são usadas para criar espaço ao redor dos elementos, fora de qualquer borda definida. Existem propriedades para definir a margem para cada lado de um elemento: margin-top (superior), margin-right (direita), margin-bottom (inferior) e margin-left (esquerda). Todas as propriedades de margem podem ter os seguintes valores: auto (o navegador calcula a margem), Comprimento (especifica uma margem em px, pt, cm, etc.), % (especifica uma margem em % da largura do elemento recipiente)
+    
+    5.1- Taquigrafia das Margens: A propriedade margin é uma propriedade abreviada para as seguintes propriedades de margem individuais: (1) margin-top, (2) margin-right, (3) margin-bottom e (4) margin-left.   EX: margin: 25px 50px 75px 100px; [25px p/ cima, 50px p/ direita, 75px p/ baixo, 100px p/ esquerda].   EX2: margin: 25px; [todas as quatro margens são 25px].
+
+6- Preenchimento e Dimensões: O preenchimento é usado para criar espaço ao redor do conteúdo de um elemento, dentro de qualquer borda definida. A propriedade padding CSS são usadas para gerar espaço ao redor do conteúdo de um elemento, dentro de qualquer borda definida. Com CSS, você tem controle total sobre o preenchimento. Existem propriedades para definir o preenchimento de cada lado de um elemento padding-top (superior), padding-right (direita), padding-bottom (inferior) e padding-left (esquerda). Todas as propriedades de preenchimento podem ter os seguintes valores: Comprimento (especifica um padding em px, pt, cm, etc.), % (especifica um padding em % da largura do elemento recipiente) 
+
+        6.1- Taquigrafia do Padding: A propriedade padding é uma propriedade abreviada para as seguintes propriedades de preenchimento individuais: (1) padding-top, (2) padding-right, (3) padding-bottom e (4) padding-left.   EX: padding: 25px 50px 75px 100px; [25px p/ cima, 50px p/ direita, 75px p/ baixo, 100px p/ esquerda].   EX2: padding: 25px; [todas as quatro margens são 25px].
+
+        6.2- Altura e Largura: As propriedades height e width propriedades são usados ​​para definir a altura e a largura de um elemento. A propriedade CSS max-width é usada para definir a largura máxima de um elemento. As propriedades height e width podem ter os seguintes valores: auto (Este é o padrão. O navegador calcula a altura e a largura), Comprimento (Define a altura/largura em px, cm, etc.), % (Define a altura/largura em porcentagem do bloco que o contém), initial (Define a altura/largura para seu valor padrão) e inherit (A altura/largura será herdada de seu valor pai).   EX: div { height: 200px; width: 50%;}
+        
+                6.2.1- Configurando a Altura e a largura máxima: A propriedade max-width é usada para definir a largura máxima de um elemento . A propriedade max-height é usada para definir a altura máxima de um elemento. As duas propriedades podem ser especificadas em valores de comprimento , como px, cm, etc., ou em porcentagem (%) do bloco que o contém, ou definido como none (este é o padrão. Significa que não há largura máxima).   EX: div { max-width: 500px; max-height: 200px }
+
+                6.2.2- Configurando a Altura e a largura mínimas: A propriedade min-width é usada para definir a largura mínima de um elemento . A propriedade mix-height é usada para definir a altura mínima de um elemento. As duas propriedades podem ser especificadas em valores de comprimento , como px, cm, etc., ou em porcentagem (%) do bloco que o contém, ou definido como none (este é o padrão. Significa que não há largura mínima). EX: div { min-width: 50px; min-height: 20px }
+        
+        6.3- Modelo de Caixa: Todos os elementos HTML podem ser considerados como caixas. O modelo de caixa CSS é essencialmente uma caixa que envolve cada elemento HTML. Consiste em: margens, bordas, preenchimento e o conteúdo real.   EX: div { width: 320px; padding: 10px; border: 5px solid gray; margin: 0; }
+
+7- Contorno: Um contorno é uma linha desenhada ao redor dos elementos, FORA das bordas, para fazer o elemento "se destacar". As propriedades de outline do CSS permitem que você especifique o estilo, a largura e a cor do contorno de um elemento.
+        7.1- Estilo do Contorno: Com a propriedade outline-style, você pode definir a aparência do contorno. Valores: dotted(Contorno pontilhado), dashed(Contorno pontilhado em negrito), solid (Contorno normal), double(Contorno duplo), groove(Contorno ranhurado 3D), ridge(Contorno estriado 3D), inset(Contorno de inserção 3D), outset(Esboço inicial 3D), none(Sem Contorno), hidden(Contorno oculto).   EX:  p {outline-style: dotted;}
+
+        7.2- Largura do Contorno: A propriedade outline-width especifica a largura do contorno e pode ter um dos seguintes valores: thin[fino](normalmente 1px), medium [médio](normalmente 3px), thick [espessura](normalmente 5px) e Um tamanho específico (em px, pt, cm, em, etc).   EX: outline-width: medium;
+
+        7.3- Cor do Contorno: A propriedade outline-color é usada para definir a cor do contorno.   EX: p   {outline-color: red;}
+
+        7.4- Deslocamento do Contorno: A propriedade outline-offset adiciona espaço entre um contorno e a borda de um elemento. O espaço entre um elemento e seu contorno é transparente.   EX: outline-offset: 15px;
+        
+        7.5- Taquigrafia do Contorno: A propriedade outline é uma propriedade abreviada para as seguintes propriedades de contorno individuais: (1) outline-width, (2) outline-style(obrigatório) e (3) outline-color.   EX: p {outline: 5px solid yellow;}
+
+8- Texto:
+        8.1- Cor do texto: A propriedade color é usada para definir a cor do texto.   EX: p  {color: blue;}
+        
+        8.2- Alinhamento de Texto: A propriedade text-align é usada para definir o alinhamento horizontal de um texto. Um texto pode ser alinhado à esquerda ou à direita, centralizado ou justificado.   EX:   text-align: center;
+                8.2.1- Alinhamento vertical: A propriedade vertical-align define o alinhamento vertical de um elemento.   EX: vertical-align: text-bottom;
+
+        8.3- Decoração de texto:
+                8.3.1- Adicionar uma linha de decoração ao texto: A propriedade text-decoration-line é usada para adicionar uma linha de decoração ao texto.   EX: text-decoration-line: overline;
+
+                8.3.2- Especifique uma cor para a linha de decoração: A propriedade text-decoration-color é usada para definir a cor da linha de decoração.   EX:   text-decoration-color: blue;
+
+                8.3.3- Especifique um estilo para a linha de decoração: A propriedade text-decoration-style é usada para definir o estilo da linha de decoração.   EX: text-decoration-style: wavy; (linha ondulada)
+
+                8.3.4- Especifique a espessura para a linha de decoração: A propriedade text-decoration-thickness é usada para definir a espessura da linha de decoração.   EX: text-decoration-thickness: 5px;
+
+                8.3.5- Taquigrafia de Decoração: A propriedade text-decoration é uma propriedade abreviada para as seguintes propriedades de decoração: (1) text-decoration-line(obrigatório), (2) text-decoration-color(opcional), (3) text-decoration-style(opcional), (4) text-decoration-thickness(opcional).   EX: p {text-decoration: underline red double 5px;}
+
+                8.3.6- Dica: Todos os links em HTML são sublinhados por padrão. Às vezes, você vê que os links são estilizados sem sublinhado. O text-decoration: none; é usado para remover o sublinhado dos links.
+
+        8.4- Transformação de Texto: A propriedade text-transform é usada para especificar letras maiúsculas e minúsculas em um texto. Ele pode ser usado para transformar tudo em letras maiúsculas ou minúsculas, ou colocar em maiúscula a primeira letra de cada palavra: EX: text-transform: capitalize;
+
+        8.5- Espaçamento do Texto:
+                8.5.1- Recuo de Texto: A propriedade text-indent é usada para especificar o recuo da primeira linha de um texto.   EX: p {text-indent: 50px;}
+
+                8.5.2- Espaçamento entre Letras: A propriedade letter-spacing é usada para especificar o espaço entre os caracteres em um texto. EX:   letter-spacing: 5px;
+
+                8.5.3- Altura da linha: A propriedade line-height é usada para especificar o espaço entre as linhas:   EX: line-height: 0.8;
+
+                8.5.4- Espaçamento entre palavras: A propriedade word-spacing é usada para especificar o espaço entre as palavras em um texto.   EX:   word-spacing: 10px;
+
+        8.6- Sombra de Texto: A propriedade text-shadow adiciona sombra ao texto. Em seu uso mais simples, você especifica apenas a sombra horizontal e a sombra vertical. Em seguida, adicione um efeito de desfoque à sombra. Em seguida, adicione uma cor à sombra. :   EX:   text-shadow: 2px 2px 5px red;
+
+9- Fontes: Escolher a fonte certa tem um grande impacto em como os leitores experimentam um site. A fonte certa pode criar uma identidade forte para sua marca. Usar uma fonte fácil de ler é importante. A fonte agrega valor ao seu texto. Também é importante escolher a cor e o tamanho do texto corretos para a fonte.
+        9.1- Famílias de Fontes: Em CSS existem cinco famílias de fontes genéricas: (1) fontes serifadas [têm um pequeno traço nas bordas de cada letra. Eles criam uma sensação de formalidade e elegância.], (2) fontes sem serifa [têm linhas limpas (sem pequenos traços anexados). Eles criam um visual moderno e minimalista.], (3)Fontes monoespaçadas  [aqui todas as letras têm a mesma largura fixa. Eles criam uma aparência mecânica.]  (4) fontes cursivas [imitam a caligrafia humana.] (5)Fontes fantasia [são fontes decorativas/divertidas.].   Em CSS, usamos a propriedade font-family para especificar a fonte de um texto.   EX: font-family: "Times New Roman", Times, serif;
+
+        9.2- Fontes Alternativas: É muito importante sempre usar fontes alternativas. isso significa que você deve adicionar uma lista de "fontes de backup" semelhantes na font-family propriedade. Se a primeira fonte não funcionar, o navegador tentará a próxima, a próxima e assim por diante. Sempre termine a lista com um nome de família de fonte genérico.   EX: font-family: Arial, Tahoma, Verdana, sans-serif;
+
+        9.3- Fontes mais usadas:
+                9.3.1- Fontes Serifadas: "Times New Roman", Times, serif; Georgia, serif; Garamond, serif;   (1) A Times New Roman é uma das fontes mais conhecidas do mundo. Parece profissional e é usado em muitos jornais e sites de "notícias". Também é a fonte principal para dispositivos e aplicativos do Windows.   (2) Georgia é uma fonte elegante com serifa. É muito legível em diferentes tamanhos de fonte, por isso é um bom candidato para design responsivo para dispositivos móveis.   (3) Garamond é uma fonte clássica usada para muitos livros impressos. Tem uma aparência atemporal e boa legibilidade.
+                
+                9.3.2- Fontes Sans-Serif: Arial, Helvetica, sans-serif; Tahoma, Verdana, sans-serif; "Trebuchet MS", Helvetica, sans-serif; Geneva, Verdana, sans-serif;   (1) Arial é a fonte mais amplamente usada para mídia online e impressa. Arial também é a fonte padrão no Google Docs. Arial é uma das fontes da web mais seguras e está disponível em todos os principais sistemas operacionais.   (2) Verdana é uma fonte muito popular. Verdana é facilmente legível, mesmo para tamanhos de fonte pequenos.   (3) A fonte Tahoma tem menos espaço entre os caracteres.   (4) Trebuchet MS foi desenvolvido pela Microsoft em 1996. Use esta fonte com cuidado. Não suportado por todos os sistemas operacionais móveis.
+
+                9.3.3- Fontes monoespaçadas: "Courier New", Courier, monospace;   (1) Courier New é a fonte serif monoespaçada mais usada. Courier New é frequentemente usado com exibições de codificação e muitos provedores de e-mail o usam como fonte padrão. Courier New também é a fonte padrão para roteiros de filmes.
+                
+                9.3.4- Fontes cursivas: "Brush Script MT", cursive;   (1) A fonte Brush Script MT foi projetada para imitar a caligrafia. É elegante e sofisticado, mas pode ser difícil de ler. Use-o com cuidado.
+                
+                9.3.5- Fontes Fantasia: Copperplate, Papyrus, fantasy
+
+        9.4- Estilo da Fonte: A propriedade font-style é usada principalmente para especificar texto em itálico. Esta propriedade tem três valores: normal - [O texto é mostrado normalmente], italic [O texto é mostrado em itálico] e oblique [O texto está "inclinado" (oblique é muito semelhante ao itálico, mas menos suportado)].   EX: p { font-style: italic;}
+                9.4.1- Espessura da fonte: A propriedade font-weight especifica o peso de uma fonte:   EX: p {font-weight: bold;}
+        
+        9.5- Tamanho da fonte: A propriedade font-size define o tamanho do texto.
+                9.5.1- Definir tamanho da fonte com pixels:   EX:  p {font-size: 14px;}
+                
+                9.5.2- Definir tamanho da fonte com Em:   EX: p {font-size: 0.875em;} (No exemplo ao lado, o tamanho do texto em EM é o mesmo do exemplo anterior em pixels. Porém, com o tamanho em, é possível ajustar o tamanho do texto em todos os navegadores.)
+                
+                9.5.3- Tamanho da fonte responsiva: O tamanho do texto pode ser definido com uma unidade vw, o que significa a "largura da janela de visualização". Dessa forma, o tamanho do texto seguirá o tamanho da janela do navegador:   EX: p {font-size:10vw} OBS: Viewport é o tamanho da janela do navegador. 1vw = 1% da largura da janela de visualização. Se a janela de visualização tiver 50 cm de largura, 1vw é 0,5 cm.
+
+        9.6- Fontes do Google:
+                9.6.1- Como usar as fontes do Google: Basta adicionar um link de folha de estilo especial na seção <head> e, em seguida, consultar a fonte no CSS.   EX: <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">; p {font-family: "Audiowide", sans-serif;}
+
+        9.7- Taquigrafia das Fontes: A propriedade font é uma propriedade abreviada para: (1)font-style, (2)font-variant, (3)font-weight, (4)font-size e (5)font-family.   EX: font: italic small-caps bold 12px Georgia, serif;
+
+10- Ícones: Os ícones podem ser facilmente adicionados à sua página HTML, usando uma biblioteca de ícones.
+        10.1- Como adicionar ícones: Adicione o nome da classe de ícone especificada a qualquer elemento HTML embutido (como <i> ou <span>). Para usar os ícones do Google, adicione a seguinte linha dentro da seção <head> de sua página HTML:   EX: <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> e no <body> <i class="material-icons">login</i>
+
+11- Links: Com CSS, os links podem ser estilizados de várias maneiras diferentes.
+        11.1- Links de estilo: Os links podem ser estilizados com qualquer propriedade CSS (por exemplo color, font-family, background, etc.). Além disso, os links podem ter estilos diferentes, dependendo do estado em que estão. Os quatro estados dos links são: (1) a:link [um link normal não visitado], (2) a:visited [um link que o usuário visitou], (3) a:hover [um link quando o usuário passa o mouse sobre ele] e (4) a:active [um link no momento em que é clicado].   OBS: Ao definir o estilo para vários estados de link, existem algumas regras de ordem: a:hover DEVE vir depois de a:link e a:visited e a:active DEVE vir depois de a:hover
+
+        11.2- Decoração de texto: A propriedade text-decoration é usada principalmente para remover sublinhados de links:   EX: a:visited {text-decoration: none;}
+
+        11.3- Cor de fundo: A propriedade background-color pode ser usada para especificar uma cor de fundo para links:   EX:   a:hover {background-color: cyan;}
+
+        11.4- Exemplo completo: a:link, a:visited {background-color: white; color: black; border: 2px solid green; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block;}   a:hover, a:active { background-color: green; color: white;}   Explicando: a:link e a:visited (possuí um background branco, cor de texto preto, borda solida verde, texto centralizado e sem underline no link), a:hover e a:active (quando passar o mouse ou clicar no link, ele vai passar a ter um background verde e cor de texto branco)
+
+12- Listas:
+        12.1- Marcadores de itens de lista diferentes: A propriedade list-style-type especifica o tipo de marcador de item de lista.   EX: ul.a {list-style-type: circle;}
+
+        12.2- Uma imagem como marcador de item de lista: A propriedade list-style-image especifica uma imagem como o marcador de item da lista: EX: ol.a {list-style-image: url('sqpurple.gif');}
+
+        12.3- Posicione os Marcadores de Item da Lista: A propriedade list-style-position especifica a posição dos marcadores de item de lista (marcadores).   EX: ul.b {list-style-position: inside;} (marcador dentro da lista)
+
+        12.4- Remover configurações padrão: A propriedade list-style-type:none também pode ser usada para remover os marcadores.   EX: ol.b {list-style-type: none;}
+
+        12.5- Lista de estilos com cores: OBS: Qualquer coisa adicionada à tag <ol> ou <ul> afeta a lista inteira, enquanto as propriedades adicionadas à tag <li> afetarão os itens individuais da lista:   EX: ul {background: blue; padding: 20px;}   ul>li {background: #cce5ff; color: darkblue; margin: 5px;}
+
+        12.6- Taquigrafia das Listas: A propriedade list-style é uma propriedade abreviada. É usado para definir todas as propriedades da lista em uma declaração: Ao usar a propriedade abreviada, a ordem dos valores da propriedade é: (1) list-style-type(se uma imagem de estilo de lista for especificada, o valor desta propriedade será exibido se a imagem por algum motivo não puder ser exibida), (2)list-style-position(especifica se os marcadores de itens de lista devem aparecer dentro ou fora do fluxo de conteúdo) e (3) list-style-image(especifica uma imagem como marcador de item da lista).   EX: ul {list-style: square inside url("sqpurple.gif");}
+
+13- Tabelas:
+        13.1- Bordas da Tabela: Para especificar as bordas da tabela em CSS, use a propriedade border.   EX: table,td,th {border: 1px solid;}
+
+        13.2- Tabela de largura total: Se você precisar de uma tabela que ocupe toda a tela (largura total), adicione width: 100% ao elemento <table>:   EX: table {width: 100%;}
+
+        13.3- Recolher bordas da tabela: A propriedade border-collapse define se as bordas da tabela devem ser recolhidas em uma única borda:   EX: table {border-collapse: collapse;}
+
+        13.4- Alinhamento de Tabela: A propriedade text-align define o alinhamento horizontal (como esquerda, direita ou centro) do conteúdo em <th> ou <td>. Por padrão, o conteúdo dos elementos <th> é alinhado ao centro e o conteúdo dos elementos <td> é alinhado à esquerda.   EX:   td {text-align: center;}
+
+        13.5- Alinhamento vertical: A propriedade vertical-align define o alinhamento vertical (como superior, inferior ou central) do conteúdo em <th> ou <td>. Por padrão, o alinhamento vertical do conteúdo em uma tabela é o meio (para os elementos <th> e <td>).   EX:   td {vertical-align: bottom;}
+
+        13.6- Estilo de Tabela:
+                13.6.1- Preenchimento da tabela: Para controlar o espaço entre a borda e o conteúdo de uma tabela, use a propriedade padding nos elementos <td> e <th>:   EX: th {padding: 15px;}
+
+                13.6.2- Tabela flutuante: Use o seletor :hover em <tr> para destacar as linhas da tabela ao passar o mouse sobre elas:   EX: tr:hover {background-color: coral;}
+
+                13.6.3- Tabelas listradas: Para tabelas listradas, use o seletor nth-child() e adicione um background-color a todas as linhas pares (ou ímpares) da tabela:   EX: tr:nth-child(even) {background-color: green;} (todas as linhas pares serão verdes)
+
+                13.6.4- Cor da Tabela: O exemplo ao lado especifica a cor de fundo e a cor do texto dos elementos <th>:   EX: th {background-color: #04AA6D; color: white;}
+
+        13.7- Tabela responsiva: Uma tabela responsiva exibirá uma barra de rolagem horizontal se a tela for muito pequena para exibir o conteúdo completo. Adicione um elemento container (como div) com overflow-x:auto ao redor do elemento table:   EX: <div style="overflow-x:auto;">   <table> [conteúdo] </table>
+
+14- Visibilidade e Layout:
+        14.1- Exibição: A propriedade display é a propriedade CSS mais importante para controlar o layout. Cada elemento HTML tem um valor de exibição padrão, dependendo do tipo de elemento. O valor de exibição padrão para a maioria dos elementos é block ou inline.
+                14.1.1- Elementos de nível de bloco: Um elemento de nível de bloco sempre começa em uma nova linha e ocupa toda a largura disponível (estende-se para a esquerda e para a direita o máximo possível). Exemplos de elementos de nível de bloco: <div>, <h1> - <h6>, <p>, <form>, <header>, <footer> e <section>.   EX: a {display: block;}
+
+                14.1.2- Elementos embutidos/inline: Um elemento inline não começa em uma nova linha e ocupa apenas a largura necessária.Exemplos de elementos embutidos: <período>, <a> e <img>. Um exemplo comum é criar elementos <li> embutidos para menus horizontais:   EX: li {display: inline;}
+
+                14.1.3- Mostrar nenhum; display: none; é comumente usado com JavaScript para ocultar e mostrar elementos sem excluí-los e recriá-los.   EX:  h1 {display: none;}   OBS: visibility:hidden; também esconde um elemento. No entanto, o elemento ainda ocupará o mesmo espaço de antes. O elemento ficará oculto, mas ainda afetará o layout:   EX: h1 {visibility: hidden;}
+
+        14.2- Posição: A propriedade position especifica o tipo de método de posicionamento usado para um elemento. Existem cinco valores de posição diferentes: static, relative, fixed, absolute e sticky
+                14.2.1- Posição Estática; Os elementos HTML são posicionados estáticos por padrão. Os elementos posicionados estáticos não são afetados pelas propriedades superior, inferior, esquerda e direita. Um elemento com position: static; não é posicionado de nenhuma maneira especial; está sempre posicionado de acordo com o fluxo normal da página:   EX: div {position: static;}
+
+                14.2.2- Posição Relativa: Um elemento com position: relative; é posicionado em relação à sua posição normal. Definir as propriedades superior, direita, inferior e esquerda de um elemento relativamente posicionado fará com que ele seja ajustado para longe de sua posição normal. Outros conteúdos não serão ajustados para caber em qualquer lacuna deixada pelo elemento.   EX: div {position: relative; left: 30px;}
+
+                14.2.3- Posição Fixa: Um elemento com position: fixed; é posicionado em relação à viewport, o que significa que ele sempre permanece no mesmo lugar, mesmo que a página seja rolada. As propriedades superior, direita, inferior e esquerda são usadas para posicionar o elemento. Um elemento fixo não deixa uma lacuna na página onde normalmente estaria localizado.   EX: div{position: fixed; bottom: 0; right: 0; width: 300px;}
+
+                14.2.4- Posição Absoluta: Um elemento com position: absolute; é posicionado em relação ao ancestral posicionado mais próximo (em vez de posicionado em relação à viewport, como fixo). No entanto; se um elemento posicionado absoluto não tiver ancestrais posicionados, ele usará o corpo do documento e se moverá junto com a rolagem da página.   EX: div {position: absolute; top: 80px; right: 0; width: 200px; height: 100px;}
+
+                14.2.5- Posição Grudada: Um elemento com position: sticky; é posicionado com base na posição de rolagem do usuário. Um elemento fixo alterna entre relative e fixed, dependendo da posição de rolagem. Ele é posicionado relativo até que uma determinada posição de deslocamento seja encontrada na viewport - então ele "gruda" no lugar (como position:fixed).   EX: { position: sticky; top: 0; background-color: green; border: 2px solid #4CAF50;}
+
+        14.3- A propriedade z-index: Quando os elementos são posicionados, eles podem se sobrepor a outros elementos. A propriedade z-index especifica a ordem da pilha de um elemento (qual elemento deve ser colocado na frente ou atrás dos outros). Um elemento pode ter uma ordem de pilha positiva ou negativa:   EX: img {position: absolute; z-index: -1;} (imagem ficará atrás de tudo)
+
+        14.4- Overflow: A propriedade overflow especifica se deve cortar o conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento for muito grande para caber na área especificada. A propriedade overflow tem os seguintes valores: visible [Padrão. O overflow não é cortado. O conteúdo renderiza fora da caixa do elemento], hidden [O overflow é cortado e o restante do conteúdo ficará invisível], scroll [O overflow é cortado e uma barra de rolagem é adicionada para ver o restante do conteúdo] e auto [Semelhante ao scroll, mas adiciona barras de rolagem somente quando necessário].   EX: div {overflow: auto;}
+
+        14.5- Bloco embutido: display: inline-block permite definir uma largura e altura no elemento, as margens/preenchimentos superiores e inferiores são respeitados, não adiciona uma quebra de linha após o elemento, para que o elemento possa ficar próximo a outros elementos. Um uso comum para display: inline-block é exibir itens de lista horizontalmente em vez de verticalmente. O exemplo a seguir cria links de navegação horizontal:   EX: nav {background-color: yellow; list-style-type: none; text-align: center;  padding: 0; margin: 0;}   nav.li {display: inline-block; font-size: 20px; padding: 20px;}
+
+        14.6- Alinhar:
+                14.6.1- Elementos de Alinhamento Central: Para centralizar horizontalmente um elemento de bloco (como <div>), use margin: auto;
+                
+                14.6.2- Alinhar texto ao centro: Para apenas centralizar o texto dentro de um elemento, use text-align: center;
+
+                14.6.3- Centralizar uma imagem: Para centralizar uma imagem, defina as margens esquerda e direita auto e transforme-a em um elemento block:   EX: img {display: block; margin-left: auto; margin-right: auto;}
+
+                14.6.4- Alinhamento à esquerda e à direita - usando a posição: Um método para alinhar elementos é usar position: absolute;
+
+                14.6.5- Alinhamento à esquerda e à direita - usando float: Outro método para alinhar elementos é usar a propriedade float:
+
+                14.6.6- Centralizar verticalmente - usando preenchimento: Existem muitas maneiras de centralizar um elemento verticalmente em CSS. Uma solução simples é usar padding e text-align: center:
+
+                14.6.7- Centralizar verticalmente - usando posição e transformação: EX: p {margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+        14.7- Opacidade: A propriedade opacity pode assumir um valor de 0,0 a 1,0. Quanto menor o valor, mais transparente:
+
+        14.8- Layout do site: Um site geralmente é dividido em cabeçalhos, menus, conteúdo e rodapé:
+                14.8.1- Cabeçalho: Um cabeçalho geralmente está localizado na parte superior do site (ou logo abaixo de um menu de navegação superior). Geralmente contém um logotipo ou o nome do site.
+
+                14.8.2- Barra de navegação: Uma barra de navegação contém uma lista de links para ajudar os visitantes a navegar pelo seu site.
+
+                14.8.3- Rodapé: O rodapé é colocado na parte inferior da sua página. Geralmente contém informações como direitos autorais e informações de contato.
+
+15- Flutuação: 
+        15.1- Flutuador: A propriedade float é usada para posicionar e formatar o conteúdo, por exemplo, deixar uma imagem flutuar à esquerda do texto em um contêiner. A propriedade float pode ter um dos seguintes valores: left [O elemento flutua à esquerda de seu contêiner], right [O elemento flutua à direita de seu contêiner], none [O elemento não flutua (será exibido apenas onde ocorre no texto). Isso é padrão], inherit [O elemento herda o valor float de seu pai].   EX:  img {float: right;} (O exemplo ao lado especifica que uma imagem deve flutuar à direita)
+
+        15.2- Clear: A propriedade clear especifica o que deve acontecer com o elemento próximo a um elemento flutuante. A propriedade  clear pode ter um dos seguintes valores: none [O elemento não é colocado abaixo dos elementos flutuantes esquerdo ou direito. Isso é padrão], left [O elemento é empurrado para baixo dos elementos flutuantes à esquerda], right [O elemento é empurrado abaixo dos elementos flutuantes à direita], both [O elemento é empurrado para baixo dos elementos flutuantes esquerdo e direito], inherit [O elemento herda o valor clear de seu pai].   EX:   img2 {clear: left;}
+
+16- Seletores:
+        16.1- Combinadores: Um combinador é algo que explica a relação entre os seletores. Existem quatro combinadores diferentes em CSS: seletor descendente (espaço), seletor filho (>), seletor de irmão adjacente (+) e seletor geral de irmãos (~)
+                16.1.1- Seletor Descendente: O seletor descendente corresponde a todos os elementos que são descendentes de um elemento especificado.   EX: div p {background-color: yellow;} [O exemplo anterior seleciona todos os elementos <p> dentro dos elementos <div>] 
+
+                16.1.2- Seletor filho (>): O seletor filho seleciona todos os elementos que são filhos de um elemento especificado.   EX: div > p {background-color: yellow;} [O exemplo anterior seleciona todos os elementos <p> que são filhos de um elemento <div>]
+
+                16.1.3- Seletor de irmão adjacente (+): O seletor irmão adjacente é usado para selecionar um elemento que está diretamente após outro elemento específico. Os elementos irmãos devem ter o mesmo elemento pai e "adjacente" significa "imediatamente seguinte".   EX: div + p {background-color: yellow;} [O exemplo anterior seleciona o primeiro elemento <p> que é colocado imediatamente após os elementos <div>]
+
+                16.1.4- Seletor geral de irmãos (~): O seletor geral de irmãos seleciona todos os elementos que são os próximos irmãos de um elemento especificado.   EX: div ~ p {background-color: yellow;} [O exemplo anterior seleciona todos os elementos <p> que são os próximos irmãos dos elementos <div>]
+
+        16.2- Pseudo-Classe: Uma pseudoclasse é usada para definir um estado especial de um elemento. Por exemplo, pode ser usado para: Estilizar um elemento quando um usuário passa o mouse sobre ele, Estilizar links visitados e não visitados de forma diferente e Estilizar um elemento quando ele recebe o foco. A sintaxe das pseudoclasses: selector:pseudo-class {property: value;}   EX: a:hover {background: red}
+
+        16.3- Pseudo-elementos: Im pseudo-elemento CSS é usado para estilizar partes específicas de um elemento. Por exemplo, pode ser usado para: Estilizar a primeira letra, ou linha, de um elemento e Inserir conteúdo antes ou depois do conteúdo de um elemento. A sintaxe das pseudo elemento: selector::pseudo-elemento {property: value;}
+                16.3.1- O ::pseudo-elemento de primeira linha: O pseudo-elemento ::first-line é usado para adicionar um estilo especial à primeira linha de um texto.   EX: p::first-line {color: #ff0000; font-variant: small-caps;} [O exemplo anterior formata a primeira linha do texto em todos os elementos <p>]
+
+                16.3.2- O pseudo-elemento ::primeira letra: O pseudo-elemento ::first-letter é usado para adicionar um estilo especial à primeira letra de um texto.   EX: p::first-letter {color: #ff0000; font-variant: small-caps;} [O exemplo a seguir formata a primeira letra do texto em todos os elementos <p>]
+
+                16.3.3- O pseudo-elemento ::before: O pseudo-elemento ::before pode ser usado para inserir algum conteúdo antes do conteúdo de um elemento.   EX: h1::before {content: url(smiley.gif);} [O exemplo anterior insere uma imagem antes do conteúdo de cada elemento <h1>]
+
+                16.3.4- O pseudo-elemento ::after: O pseudo-elemento ::after pode ser usado para inserir algum conteúdo após o conteúdo de um elemento.   EX: h1::after {content: url(smiley.gif);} [O exemplo anterior insere uma imagem após o conteúdo de cada elemento <h1>]
+
+                16.3.5- O pseudo-elemento ::marker: O pseudo-elemento ::marker seleciona os marcadores dos itens da lista.   EX: ::marker { color: red; font-size: 23px;} [O exemplo anterior estiliza os marcadores de itens de lista]
+
+                16.3.6- O pseudo-elemento ::selection: O pseudo-elemento ::selection corresponde à parte de um elemento que é selecionado por um usuário.   EX: ::selection { color: red; background: yellow;} [O exemplo anteior torna o texto selecionado vermelho em um fundo amarelo]
+
+        16.4- Seletores Attr: O seletor [attribute] é usado para selecionar elementos com um atributo especificado.   Ex: a[target] { background-color: yellow;}. [O exemplo anterior seleciona todos os elementos <a> com um atributo de destino(target)]
+
+        16.5- Especificidade: Se houver duas ou mais regras CSS que apontam para o mesmo elemento, o seletor com o maior valor de especificidade "vencerá" e sua declaração de estilo será aplicada a esse elemento HTML. Existem quatro categorias que definem o nível de especificidade de um seletor: (1) Estilos embutidos - EX: <h1 style="color: pink;">, (2) IDs - EX: #navbar, (3) Classes, pseudo-classes, seletores de atributo - EX: .test, :hover, [href] e (4) Elementos e pseudo-elementos - EX: h1, ::before
+
+17- Sprites de Imagem: 
+        17.1 Sprite de Imagem: Um sprite de imagem é uma coleção de imagens colocadas em uma única imagem. Uma página da Web com muitas imagens pode demorar muito para carregar e gerar várias solicitações de servidor. O uso de sprites de imagem reduzirá o número de solicitações do servidor e economizará largura de banda.   EX: #home {width: 46px; height: 44px; background: url(img_navsprites.gif) 0 0;}   Explicando: Em vez de usar três imagens separadas, usamos esta única imagem ("img_navsprites.gif"): <img id="home" src="img_trans.gif"> [Define apenas uma pequena imagem transparente porque o atributo src não pode estar vazio. A imagem exibida será a imagem de fundo que especificamos no CSS]width: 46px; height: 44px; [Define a parte da imagem que queremos usar] background: url(img_navsprites.gif) 0 0; [Define a imagem de fundo e sua posição (0px esquerdo, 0px superior)]
+
+18- Propriedades:
+        18.1- Contadores: Os contadores CSS são "variáveis" mantidas pelo CSS cujos valores podem ser incrementados por regras CSS (para rastrear quantas vezes eles são usados). Os contadores permitem ajustar a aparência do conteúdo com base em seu posicionamento no documento. Para trabalhar com contadores CSS, usaremos as seguintes propriedades: (1) counter-reset [Cria ou zera um contador] (2) counter-increment [Incrementa um valor de contador], (3) content [Insere conteúdo gerado] e (4) counter() ou counters()função [Adiciona o valor de um contador a um elemento]   EX: body {counter-reset: section;}   h2::before { counter-increment: section; content: "Section " counter(section) ": ";}   Explicando:[O exemplo anterior cria um contador para a página (no seletor de corpo), incrementa o valor do contador para cada elemento <h2> e adiciona "Seção < valor do contador >:" ao início de cada elemento <h2>]
+
+        18.2- Unidades: CSS tem várias unidades diferentes para expressar um comprimento. Muitas propriedades CSS aceitam valores de "comprimento", como width, margin, padding, font-size, etc. Comprimento é um número seguido por uma unidade de comprimento, como 10px, 2em, etc. OBS: Um espaço em branco não pode aparecer entre o número e a unidade. No entanto, se o valor for 0, a unidade pode ser omitida. Para algumas propriedades CSS, comprimentos negativos são permitidos. Existem dois tipos de unidades de comprimento: absoluto e relativo.
+                18.2.1- Comprimentos absolutos: As unidades de comprimento absoluto são fixas e um comprimento expresso em qualquer um deles aparecerá exatamente com esse tamanho. Unidades de comprimento absoluto não são recomendadas para uso na tela, porque os tamanhos de tela variam muito. No entanto, eles podem ser usados ​​se a mídia de saída for conhecida, como para layout de impressão. (1) cm [centímetros], (2) mm	[milímetros], (3) in [inches (1in = 96px = 2.54cm)], (4) px * [pixels (1px = 1/96th of 1in)], (5) pt [points (1pt = 1/72 of 1in)], (6) pc [picas (1pc = 12 pt)]
+
+                18.2.2- Comprimentos Relativos: As unidades de comprimento relativo especificam um comprimento relativo a outra propriedade de comprimento. As unidades de comprimento relativo escalam melhor entre diferentes mídias de renderização. (1) em [Relativo ao tamanho da fonte do elemento (2em significa 2 vezes o tamanho da fonte atual)], (2) ex [Relativo à altura x da fonte atual (raramente usado)], (3) ch [Relativo à largura do "0" (zero)], (4) rem [Relativo ao tamanho da fonte do elemento raiz], (5) vw [Relativo a 1% da largura da viewport], (6) vh [Relativo a 1% da altura da viewport], (7) vmin [Relativo a 1% da dimensão menor da viewport], (8) vmax [Relativo a 1% da dimensão maior da viewport], (9) % [relativo ao elemento pai]
+
+                18.2.3- Mais usados: px (pixels), em (tamanho da fonte atual), vw (largura da janela do navegador), vh (altura da janela do navegador), vmin (dimensão menor da janela do navegador ), vmax (dimensão maior da janela do navegador), % (porcentagem), pt(pontos), cm (centímetros)
+
+        18.3- Funções Matemáticas: As funções matemáticas CSS permitem que expressões matemáticas sejam usadas como valores de propriedade. Aqui, explicaremos as funções calc(), max() e min().
+                18.3.1- A função calc(): A função calc() executa um cálculo para ser usado como o valor da propriedade. Sintaxe: calc(expressão).  EX: width: calc(100% - 100px);
+
+                18.3.2- A função max(): A função max() usa o maior valor, de uma lista de valores separados por vírgula, como o valor da propriedade. Sintaxe: max(valor1, valor2, ...).   EX:  width: max(50%, 300px);
+
+                18.3.3- A função min(): A função min() usa o menor valor, de uma lista de valores separados por vírgula, como o valor da propriedade. Sintaxe: min(valor1, valor2, ...).   EX:  width: min(50%, 300px);
+
+19- Barras de Navegações:
+        19.1- Barra de Navegação: Ter uma navegação fácil de usar é importante para qualquer site. Com CSS, você pode transformar menus HTML chatos em barras de navegação atraentes. Uma barra de navegação é basicamente uma lista de links, portanto, usar os elementos <ul> e <li> faz todo o sentido:   EX: ul {list-style-type: none; margin: 0; padding: 0;}
+
+        19.2- Barra de Navegação Vertical: Para construir uma barra de navegação vertical, você pode estilizar os elementos <a> dentro da lista.   EX: ul {list-style-type: none; margin: 0; padding: 0; width: 60px; background-color: #f1f1f1;}   li a { display: block; color: #000; padding: 8px 16px; text-decoration: none; }   li a:hover { background-color: #555; color: white;}   Explicando: [Cria uma barra de navegação vertical básica com fundo cinza e altera a cor de fundo dos links quando o usuário passar o mouse sobre eles]
+
+        19.3- Barra de navegação horizontal: Para construir uma barra de navegação horizontal, você pode estilizar os elementos <a> dentro da lista.   EX: ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333;}   li { float: left;}   li a { display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;}   li a:hover { background-color: #111;} Explicando: [Cria uma barra de navegação horizontal básica a direita com fundo escuro e altera de cor o fundo dos links quando o usuário passar o mouse sobre eles]
+
+20- Demostrações:
+        20.1- Galeria de Imagens:   EX: div.gallery {margin: 5px; border: 1px solid #ccc; float: left; width: 180px;}   div.gallery:hover { border: 1px solid #777;}   div.gallery img {width: 100%; height: auto;}   div.desc {padding: 15px; text-align: center;}   Explicando: [Cria uma galeria de imagens com bordas cinzas e com descrição e quando passa o mouse sobre elas a borda fica preta]
+
+        20.2- Formulários: A aparência de um formulário HTML pode ser muito melhorada com CSS:
+                20.2.1- Estilizando campos de entrada: Use a propriedade width para determinar a largura do campo de entrada:   EX: input {width: 100%;} [O exemplo anterior se aplica a todos os elementos <input>. Se você deseja estilizar apenas um tipo de entrada específico, pode usar seletores de atributos: input[type=text]- selecionará apenas campos de texto, input[type=password]- selecionará apenas os campos de senha, input[type=number]- selecionará apenas campos numéricos etc..]
+
+                20.2.2- Entradas com Bordas: Use a propriedade border para alterar o tamanho e a cor da borda e use a propriedade  border-radius para adicionar cantos arredondados:   EX: input[type=text] {border: 2px solid red; border-radius: 4px;}
+
+                20.2.3- Entradas Coloridas: Use a propriedade background-color para adicionar uma cor de fundo à entrada e a propriedade color para alterar a cor do texto:   EX: input[type=text] {background-color: #3CBC8D; color: white;}
+
+                20.2.4- Entradas Focadas: Por padrão, alguns navegadores adicionam um contorno azul ao redor da entrada quando ela recebe o foco (clicada). Você pode remover esse comportamento adicionando outline: none; à entrada.Use o seletor :focus para fazer algo com o campo de entrada quando ele estiver em foco:   EX: input[type=text]:focus {border: 3px solid #555;}
+
+                20.2.5- Menus de seleção de estilo:   EX: select {width: 100%; padding: 16px 20px; border: none; border-radius: 4px; background-color: #f1f1f1;}
+
+21- Avançado:
+        21.1- Cantos Arredondados: Com a propriedade border-radius, você pode dar a qualquer elemento "cantos arredondados". Na verdade, A propriedade border-radius é uma propriedade abreviada para as propriedades: border-top-left-radius, border-top-right-radius, border-bottom-right-radius, border-bottom-left-radius.   EX: border-radius: {25px; background: #73AD21; padding: 20px; width: 200px; height: 150px;} [o valor se aplica a todos os quatro cantos, que são arredondados igualmente]
+
+        21.2- Imagens de borda: Com a propriedade border-image, você pode definir uma imagem para ser usada como borda ao redor de um elemento. A propriedade tem três partes: (1) A imagem a ser usada como borda, (2) Onde cortar a imagem (3) Defina se as seções do meio devem ser repetidas ou alongadas.   EX: #borderimg { border: 10px solid transparent; padding: 15px; border-image: url(border.png) 30 round;}
+
+        21.3- Fundos Múltiplos: O CSS permite adicionar várias imagens de plano de fundo para um elemento, por meio da background-image. As diferentes imagens de fundo são separadas por vírgulas e as imagens são empilhadas umas sobre as outras, onde a primeira imagem está mais próxima do visualizador.   EX: #example1 { background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;}
+                21.3.1- Tamanho do plano de fundo: A propriedade background-size permite especificar o tamanho das imagens de fundo. O tamanho pode ser especificado em comprimentos, porcentagens ou usando uma das duas palavras-chave: contain ou cover. A contain dimensiona a imagem de plano de fundo para ser o maior possível (mas tanto a largura quanto a altura devem caber dentro da área de conteúdo). Assim, dependendo das proporções da imagem de fundo e da área de posicionamento do fundo, pode haver algumas áreas do fundo que não são cobertas pela imagem de fundo. A cover dimensiona a imagem de plano de fundo para que a área de conteúdo seja totalmente coberta pela imagem de plano de fundo (sua largura e altura são iguais ou excedem a área de conteúdo). Como tal, algumas partes da imagem de fundo podem não estar visíveis na área de posicionamento de fundo.   EX: background-size: cover;
+
+                21.3.2- Propriedade de origem do plano de fundo: A propriedade background-origin especifica onde a imagem de fundo está posicionada. A propriedade assume três valores diferentes: border-box  [a imagem de fundo começa no canto superior esquerdo da borda], padding-box  [(padrão) a imagem de fundo começa no canto superior esquerdo da borda de preenchimento] e content-box  [a imagem de fundo começa no canto superior esquerdo do conteúdo].   Ex: background-origin: content-box;
+
+                21.3.3- Propriedade background-clip: A propriedade CSS background-clip especifica a área de pintura do plano de fundo. A propriedade assume três valores diferentes: border-box [(padrão) o fundo é pintado na borda externa da borda], padding-box [o fundo é pintado na borda externa do preenchimento] e content-box [o fundo é pintado dentro da caixa de conteúdo].
+
+        21.4- Palavras-chave de cor:
+                21.4.1- A palavra-chave transparente: A palavra-chave transparent é usada para tornar uma cor transparente. Isso geralmente é usado para criar uma cor de fundo transparente para um elemento.   EX: background-color: transparent;
+
+                21.4.2- A palavra-chave da cor atual: A palavra-chave currentcolor é como uma variável que contém o valor atual da propriedade de cor de um elemento. Essa palavra-chave pode ser útil se você deseja que uma cor específica seja consistente em um elemento ou página.   EX: div {color: blue; border: 10px solid currentcolor;} Explicando: [A borda e o texto estão com a cor azul]
+
+                21.4.3- A palavra-chave herdada: A palavra-chave inherit especifica que uma propriedade deve herdar seu valor de seu elemento pai.   Ex: div {border: 2px solid red;}   span { border: inherit;} [span vai herdar as propriedades da div]
+
+        21.5- Efeitos de Texto:
+                21.5.1- Estouro de texto: A propriedade text-overflow especifica como o conteúdo transbordado que não é exibido deve ser sinalizado para o usuário.   EX:   text-overflow: ellipsis;
+
+                21.5.2- Quebra de palavras: A propriedade word-wrap permite que palavras longas possam ser quebradas e agrupadas na próxima linha.   EX: p {word-wrap: break-word;}
+
+        21.6- Transformações 2D: As transformações CSS permitem mover, girar, dimensionar e inclinar elementos. Com a propriedade CSS transform você pode usar os seguintes métodos de transformação 2D: translate(), rotate(), scaleX(), scaleY(), scale(), skewX(), skewY(), skew() e matrix().
+                21.6.1- O Método translate(): O método translate() move um elemento de sua posição atual (de acordo com os parâmetros fornecidos para o eixo X e o eixo Y).   EX: div {transform: translate(50px, 100px);}  Explicando: [O exemplo anterior move o elemento <div> 50 pixels para a direita e 100 pixels para baixo de sua posição atual]
+
+                21.6.2- O Método Rotate(): O método rotate() gira um elemento no sentido horário ou anti-horário de acordo com um determinado grau.   EX: div {transform: rotate(20deg);}  Explicando: [O exemplo anterior gira o elemento <div> no sentido horário com 20 graus]
+
+                21.6.3- O Método scale(): O método scale() aumenta ou diminui o tamanho de um elemento (de acordo com os parâmetros fornecidos para largura e altura).   EX: div {transform: scale(2, 3);}  Explicando: [O exemplo anterior aumenta o elemento <div> para duas vezes sua largura original e três vezes sua altura original]
+
+                21.6.4- O Método scaleX(): O método scaleX() aumenta ou diminui a largura de um elemento.   Ex: div {transform: scaleX(2);}  Explicando: [O exemplo anterior aumenta o elemento <div> para duas vezes sua largura original]
+
+                21.6.5- O Método scaleY(): O scaleY()método aumenta ou diminui a altura de um elemento.   EX: div {transform: scaleY(3);}  Explicando: [O exemplo anterior aumenta o elemento <div> para três vezes sua altura original]
+
+                21.6.6- O Método skew(): O método skew() inclina um elemento ao longo dos eixos X e Y pelos ângulos fornecidos.   EX: div {transform: skew(20deg, 10deg);}   Explicando: [O exemplo anterior inclina o elemento <div> 20 graus ao longo do eixo X e 10 graus ao longo do eixo Y]
+
+                21.6.7- O Método skewX(): O método skewX() inclina um elemento ao longo do eixo X pelo ângulo dado.   EX: div {transform: skewX(20deg);}   Explicando: [O exemplo anterior inclina o elemento <div> 20 graus ao longo do eixo X]
+
+                21.6.8- O Método skewY(): O método skewY() inclina um elemento ao longo do eixo Y pelo ângulo dado.   EX: div {transform: skewY(20deg);}   Explicando: [O exemplo anterior inclina o elemento <div> 20 graus ao longo do eixo Y]
+
+                21.6.9- O Método matrix(): O método matrix() combina todos os métodos de transformação 2D em um. O método matrix() recebe seis parâmetros, contendo funções matemáticas, que permitem girar, dimensionar, mover e inclinar elementos. Os parâmetros são os seguintes: matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()).   EX: div {transform: matrix(1, -0.3, 0, 1, 0, 0);}
+
+        21.7- Transformações 3D: Com a propriedade transform você pode usar os seguintes métodos de transformação 3D: rotateX(), rotateY() e rotateZ()
+                21.7.1- O Método rotateX(): O método rotateX() gira um elemento em torno de seu eixo X em um determinado grau.   EX: #myDiv {transform: rotateX(150deg);}
+
+                21.7.2- O Método rotateY(): O método rotateY() gira um elemento em torno de seu eixo Y em um determinado grau:   EX: #myDiv {transform: rotateY(150deg);}
+
+                21.7.3- O Método rotateZ(): O método rotateZ() gira um elemento em torno de seu eixo Z em um determinado grau:   EX: #myDiv {transform: rotateZ(90deg);}
+
+        21.8- Transições: As transições CSS permitem que você altere os valores das propriedades sem problemas, durante um determinado período.
+                21.8.1- Alterar vários valores de propriedade:   EX: div {transition: width 2s, height 4s;} Explicando: [O exemplo anterior adiciona um efeito de transição para a propriedade width e height, com uma duração de 2 segundos para a largura e 4 segundos para a altura]
+
+                21.8.2- Especifique a curva de velocidade da transição: A propriedade transition-timing-function especifica a curva de velocidade do efeito de transição. A propriedade de função de tempo de transição pode ter os seguintes valores: ease [especifica um efeito de transição com início lento, rápido e final lento (este é o padrão)], linear [especifica um efeito de transição com a mesma velocidade do início ao fim], ease-in [especifica um efeito de transição com um início lento], ease-out [especifica um efeito de transição com final lento] e ease-in-out [especifica um efeito de transição com início e fim lentos].   EX: #div1 {transition-timing-function: linear;}
+
+                21.8.3- Atrasar o efeito de transição: A propriedade transition-delay especifica um atraso (em segundos) para o efeito de transição.   EX: div {transition-delay: 1s;}  Explicando: [O exemplo anterior tem um atraso de 1 segundo antes de iniciar]
+
+                21.8.4- Taquigrafia de Transição: A Propriedade abreviada transition especifica a: propriedade, duração, função e delay.   EX: div {transition: width 2s linear 1s;}
+
+        21.9- Animações: CSS permite a animação de elementos HTML sem usar JavaScript ou Flash. Uma animação permite que um elemento mude gradualmente de um estilo para outro.
+                21.9.1- A regra @keyframes: Quando você especifica estilos CSS dentro da regra @keyframes, a animação mudará gradualmente do estilo atual para o novo estilo em determinados momentos. Para que uma animação funcione, você deve vincular a animação a um elemento.   EX: @keyframes exemplo {from {background-color: red;} to {background-color: yellow;}}   div {width: 100px; height: 100px; background-color: red; animation-name: exemplo; animation-duration: 4s;}   Explicando: [O exemplo anterior vincula a animação "exemplo" ao elemento <div>. A animação durará 4 segundos e mudará gradualmente a cor de fundo do elemento <div> de "vermelho" para "amarelo":]
+
+                21.9.2- Atrasar uma Animação: A propriedade animation-delay especifica um atraso para o início de uma animação.   EX: div {animation-name: example; animation-duration: 4s; animation-delay: 2s;}  Explicando: [O exemplo anterior tem um atraso de 2 segundos antes de iniciar a animação]
+
+                21.9.3- Definir quantas vezes uma animação deve ser executada: A propriedade animation-iteration-count especifica o número de vezes que uma animação deve ser executada.   EX:   animation-iteration-count: infinite;  Explicando: [O exemplo anterior usa o valor "infinito" para fazer a animação continuar para sempre]
+
+                21.9.4- Executar animação na direção reversa ou ciclos alternativos: propriedade animation-direction especifica se uma animação deve ser reproduzida para frente, para trás ou em ciclos alternados. A propriedade animation-direction pode ter os seguintes valores: normal [A animação é reproduzida normalmente (para frente). Isso é padrão], reverse [A animação é reproduzida na direção inversa (para trás)], alternate  [A animação é reproduzida primeiro para frente e depois para trás], alternate-reverse [A animação é reproduzida primeiro para trás e depois para a frente]
+
+                21.9.5- Especifique a curva de velocidade da animação: A propriedade animation-timing-function especifica a curva de velocidade da animação. A propriedade animation-timing-function pode ter os seguintes valores: ease [Especifica uma animação com início lento, rápido e final lento (este é o padrão)], linear [Especifica uma animação com a mesma velocidade do início ao fim], ease-in [Especifica uma animação com início lento], ease-out [Especifica uma animação com final lento], ease-in-out [Especifica uma animação com início e fim lentos]   EX: {animation-timing-function: linear;}
+
+                21.9.6- Taquigrafia das Animações: A Propriedade abreviada animation especifica a(o): nome, duração, função, delay, repetições e direção:   EX: div {animation: example 5s linear 2s infinite alternate;}
+
+        21.10- Estilizar imagens:
+                21.10.1- Imagens arredondadas: Use a propriedade border-radius para criar imagens arredondadas:   EX: img {border-radius: 50%;}
+
+                21.10.2- Miniaturas: Use a propriedade border para criar imagens em miniatura.   EX: img {border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 150px;}
+
+                21.10.3- Imagens responsivas: As imagens responsivas se ajustarão automaticamente ao tamanho da tela. img {max-width: 100%; height: auto;}   Explicando: [Esse exemplo faz com que o tamanho da imagem seja reduzida, mas nunca ampliada para ficar maior que o tamanho original]
+
+                21.10.4- Centralizar uma Imagem: Para centralizar uma imagem, defina as margens esquerda e direita auto e transforme-a em um elemento block:   EX: img {display: block; margin-left: auto; margin-right: auto; width: 50%;}
+
+                21.10.5- Filtros de imagem: A propriedade CSS filter adiciona efeitos visuais (como desfoque e saturação) a um elemento. A propriedade filter pode ter os seguintes valores: blur [Aplica um efeito de desfoque à imagem], brightness [Ajusta o brilho da imagem], contrast [Ajusta o contraste da imagem], drop-shadow [Aplica um efeito de sombreamento à imagem], grayscale [Imagem preta e branca], hue-rotate [Aplica uma rotação de tonalidade na imagem], invert [Inverte as amostras na imagem], opacity [Define o nível de opacidade da imagem], saturate [Saturação da imagem].   EX: img {filter: grayscale(100%);}
+
+        21.11- Refletir Imagens: Refletir uma imagem: A propriedade box-reflect é usada para criar um reflexo de imagem. O valor da propriedade box-reflect pode ser: below, above, left ou right.   EX: img {-webkit-box-reflect: below;}
+
+        21.12- Ajuste do Objeto: A propriedade object-fit é usada para especificar como um <img> ou <video> deve ser redimensionado para caber em seu contêiner. A propriedade object-fit pode assumir um dos seguintes valores: fill [Este é o padrão. A imagem é redimensionada para preencher a dimensão especificada. Se necessário, a imagem será esticada ou comprimida para caber], contain [A imagem mantém sua proporção, mas é redimensionada para caber na dimensão especificada], cover [A imagem mantém sua proporção e preenche a dimensão especificada. A imagem será cortada para caber], none [A imagem não é redimensionada], scale-down [a imagem é reduzida para a menor versão de none ou contain]   EX: img {width: 200px; height: 300px; object-fit: contain;}
+
+        21.13- Posição do Objeto: A propriedade object-position é usada para especificar como um <img> ou <video> deve ser posicionado em seu contêiner [normalmente usada junto com a propriedade object-fit].   EX: img {object-position: 80% 100%;}
+
+        21.14- Mascaramento: A propriedade mask-image especifica uma imagem de camada de máscara.
+                21.14.1- Imagem como a camada de máscara:   EX: .mask1 {-webkit-mask-image: url(w3logo.png); mask-image: url(w3logo.png); -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;}
+
+                21.14.2- Gradientes como a camada de máscara:   EX: .mask1 {-webkit-mask-image: linear-gradient(black, transparent); mask-image: linear-gradient(black, transparent);}
+
+        21.15- Botões: Aprenda a estilizar botões usando CSS.
+                21.15.1- Estilo básico de botão:   EX: .button {background-color: green;border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;}
+
+                21.15.2- Cores dos Botões: Use a propriedade  background-color para alterar a cor de fundo de um botão.   EX: .button1 {background-color: red;}
+
+                21.15.3- Tamanhos de botão: Use a propriedade font-size para alterar o tamanho da fonte de um botão e use a propriedade padding para alterar o preenchimento de um botão.   EX: .button1 {font-size: 16px; padding: 14px 40px;}
+
+                21.15.4- Botões arredondados: Use a propriedade border-radius para adicionar cantos arredondados a um botão.   EX: .button1 {border-radius: 8px;}
+
+                21.15.5- Bordas Coloridas de Botões: Use a propriedade border para adicionar uma borda colorida a um botão.   EX: .button1 { background-color: white; color: black; border: 2px solid red;}
+
+                21.15.6- Sombra em Botões: Use a propriedade box-shadow para adicionar sombras a um botão.   EX: .button1:hover {box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}  Explicando: [Ao passar o mouse o botão irá ter sombra]
+
+                21.15.7- Botões desabilitados: Use a propriedade opacity para adicionar transparência a um botão (cria uma aparência "desativada") e adicione a propriedade cursor com um valor de "não permitido", que exibirá um "sinal de estacionamento proibido" quando você passar o mouse sobre o botão.   EX: .disabled {opacity: 0.6; cursor: not-allowed;}
+
+                21.15.8- Largura do botão: Por padrão, o tamanho do botão é determinado por seu conteúdo de texto (tão largo quanto seu conteúdo). Use a propriedade width para alterar a largura de um botão.   EX: .button1 {width: 250px;}
+
+        21.16- Paginação: Se você tiver um site com muitas páginas, poderá adicionar algum tipo de paginação a cada página:   EX: .pagination {display: inline-block;}   .pagination a {color: black; float: left; padding: 8px 16px; text-decoration: none;}
+                21.16.1- Paginação ativa e passável: Destaque a página atual com uma classe .active e use o seletor :hover para alterar a cor de cada link de página ao passar o mouse sobre eles:   EX: .pagination a.active {background-color: #4CAF50; color: white;}   .pagination a:hover:not(.active) {background-color: #ddd;}
+
+                21.16.2- Paginação com Bordas: Use a propriedade border para adicionar bordas à paginação.   EX: .pagination a {border: 1px solid gray;}
+
+                21.16.3- Efeito de Transição Flutuável: Adicione a propriedade transition aos links da página para criar um efeito de transição ao passar o mouse.   EX: .pagination a {transition: background-color 0.3s;}
+
+        21.17- Múltiplas Colunas: O layout de várias colunas do CSS permite uma fácil definição de várias colunas de texto - assim como nos jornais:
+                21.17.1- Criar Múltiplas Colunas: A propriedade column-count especifica o número de colunas em que um elemento deve ser dividido.   EX: div {column-count: 3;}  Explicando: [O exemplo anterior dividirá o texto no elemento <div> em 3 colunas]
+
+                21.17.2- Especifique o espaço entre as colunas: A propriedade column-gap especifica o intervalo entre as colunas.   EX: div {column-gap: 40px;}  Explicando: [O exemplo anterior especifica um intervalo de 40 pixels entre as colunas]
+
+                21.17.3- Regras de coluna: A propriedade column-rule-style especifica o estilo da regra entre as colunas, a propriedade column-rule-width especifica a largura da regra entre as colunas e a propriedade column-rule-color especifica a cor da regra entre as colunas:   EX: div {column-rule-style: solid; column-rule-width: 1px; column-rule-color: lightblue;}
+
+        21.18- Interface de usuário:
+                21.18.1- Redimensionamento: A propriedade resize especifica se (e como) um elemento deve ser redimensionável pelo usuário.   EX: div {resize: both; overflow: auto;}  Explicando: [O exemplo anterior permite que o usuário redimensione a altura e a largura de um elemento <div>]
+
+        21.19- Dimensionamento da Caixa: A propriedade box-sizing nos permite incluir o preenchimento e a borda na largura e altura total de um elemento. Se você definir um elemento box-sizing: border-box;, o preenchimento e a borda serão incluídos na largura e na altura:   EX: * { box-sizing: border-box;}
+
+        21.20- Media Queries:
+                21.20.1- Media Queries introduzidas: As media queries podem ser usadas para verificar muitas coisas, como: largura e altura da viewport, largura e altura do dispositivo, orientação (o tablet/telefone está no modo paisagem ou retrato?) e resolução. O uso de media queries é uma técnica popular para fornecer uma folha de estilo personalizada para desktops, laptops, tablets e telefones celulares (como iPhone e telefones Android).
+
+                21.20.2- Sintaxe de Media Queries: Uma média queries consiste em um tipo de mídia e pode conter uma ou mais expressões, que são resolvidas como verdadeiras ou falsas. O resultado da consulta é verdadeiro se o tipo de mídia especificado corresponder ao tipo de dispositivo no qual o documento está sendo exibido e todas as expressões na consulta de mídia forem verdadeiras. Quando uma consulta de mídia é verdadeira, a folha de estilo ou as regras de estilo correspondentes são aplicadas, seguindo as regras normais em cascata.   <link rel="stylesheet" media="mediatype and (expressions)" href="print.css">
+
+                21.20.3- Tipos de Mídia: all [Usado para todos os dispositivos de tipo de mídia], print	[Usado para impressoras], screen [Usado para telas de computador, tablets, smartphones etc.] e speech [Usado para leitores de tela que "lê" a página em voz alta]
+
+                21.20.4- Orientação: Retrato/Paisagem: As consultas de mídia também podem ser usadas para alterar o layout de uma página, dependendo da orientação do navegador.   EX: @media only screen and (orientation: landscape) {body {background-color: lightblue;} }  Explicando: [A página da web terá um fundo azul claro se a orientação estiver no modo paisagem]
+
+                21.20.5- Exemplo Completo: body {background-color: pink;}   @media screen and (min-width: 480px) {body { background-color: lightgreen;}}  Explicando: [O exemplo anterior altera a cor de fundo para verde claro se a viewport tiver 480 pixels de largura ou mais (se a viewport tiver menos de 480 pixels, a cor de fundo será rosa)]
+
+22- Gradientes: Os gradientes CSS permitem exibir transições suaves entre duas ou mais cores especificadas.
+        22.1- Gradientes Lineares: Para criar um gradiente linear, você deve definir pelo menos duas paradas de cor. Interrupções de cores são as cores entre as quais você deseja renderizar transições suaves. Você também pode definir um ponto inicial e uma direção (ou um ângulo) junto com o efeito de gradiente.
+                22.1.1- Direção - De cima para baixo (este é o padrão):   EX: #grad {background-image: linear-gradient(red, yellow);}  Explicando: [O exemplo anterior mostra um gradiente linear que começa no topo. Começa com vermelho, passando para amarelo]
+
+                22.1.2- Direção - Esquerda para Direita:   EX: #grad {background-image: linear-gradient(to right, red , yellow);}  Explicando: [O exemplo anterior mostra um gradiente linear que começa da esquerda. Começa vermelho, passando para amarelo]
+
+                22.1.3- Usando Ângulos: Se quiser mais controle sobre a direção do gradiente, você pode definir um ângulo, em vez das direções predefinidas (para baixo, para cima, para a direita, para a esquerda, para baixo à direita, etc.). Um valor de 0deg é equivalente a "to top". Um valor de 90 graus é equivalente a "para a direita". Um valor de 180 graus é equivalente a "to bottom".   EX: #grad {background-image: linear-gradient(180deg, red, yellow);}  Explicando: [O exemplo anterior mostra como usar ângulos em gradientes lineares]
+
+                22.1.4- Usando várias paradas de cores:   EX: #grad {background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);}  Explicando: [O exemplo anterior mostra como criar um gradiente linear (da esquerda para a direita) com a cor do arco-íris]
+
+                22.1.5- Repetindo um gradiente linear: A função repeating-linear-gradient() é usada para repetir gradientes lineares:   EX: #grad {background-image: repeating-linear-gradient(red, yellow 10%, green 20%);}
+
+        22.2- Gradientes Radiais: Um gradiente radial é definido por seu centro. Para criar um gradiente radial, você também deve definir pelo menos duas paradas de cor.
+                22.2.1- Radial Gradient - Paradas de cor uniformemente espaçadas (este é o padrão):   EX: #grad {background-image: radial-gradient(red, yellow, green);}  Explicando: [O exemplo anterior mostra um gradiente radial com limites de cores uniformemente espaçados]
+
+                22.2.2- Definir forma: O parâmetro de forma define a forma. Pode levar o valor círculo ou elipse. O valor padrão é elipse.   EX: #grad {background-image: radial-gradient(circle, red, yellow, green);}  Explicando: [O exemplo anterior mostra um gradiente radial com a forma de um círculo]
+
+                22.2.3- Repetindo um gradiente radial: A função repeating-radial-gradient() é usada para repetir gradientes radiais:   EX: #grad {background-image: repeating-radial-gradient(red, yellow 10%, green 15%);}
+
+        22.3- Gradientes Cônicos: Um gradiente cônico é um gradiente com transições de cores giradas em torno de um ponto central. Para criar um gradiente cônico, você deve definir pelo menos duas cores.
+                22.3.1- Gradiente Cônico: Três Cores:   EX: #grad {background-image: conic-gradient(red, yellow, green);}  Explicando: [O exemplo anterior mostra um gradiente cônico com três cores]
+
+                22.3.2- Gradiente Cônico: Cinco Cores: EX: #grad {conic-gradient(red, yellow, green, blue, black);}  Explicando: [O exemplo anterior mostra um gradiente cônico com cinco cores]
+
+                22.3.3- Gradiente Cônico: Três Cores e Graus:   EX: #grad {background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);}  Explicando: [O exemplo anterior mostra um gradiente cônico com três cores e um grau para cada cor]
+
+                22.3.4- Criar Gráficos de Pizza: Basta adicionar border-radius: 50% para fazer o gradiente cônico parecer uma torta:   EX: #grad {conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg, green 270deg, blue 270deg);}
+
+                22.3.5- Repetindo um gradiente cônico: A função repeating-conic-gradient() é usada para repetir gradientes cônicos:   EX: #grad {background-image: repeating-conic-gradient(red 0deg 10deg, yellow 10deg 20deg, blue 20deg 30deg); border-radius: 50%;}
+
+23- Sombras:
+        23.1- Efeitos de Sombra:
+                23.1.1- Sombra de Texto CSS: A propriedade text-shadow adiciona sombra ao texto. Em seu uso mais simples, você especifica apenas a sombra horizontal e a sombra vertical. Em seguida, adicione um efeito de desfoque à sombra. e por último, adicione uma cor à sombra.   EX:   text-shadow: 2px 2px 5px red;  Sintaxe: text-shadow(Sombra Horizontal, Sombra Vertical, Desfoque e cor)
+
+                23.1.2- Múltiplas Sombras: Para adicionar mais de uma sombra ao texto, você pode adicionar uma lista de sombras separadas por vírgula.   EX: h1 {text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;}  Explicando: [O exemplo anterior mostra uma sombra de brilho neon vermelho e azul]
+
+        23.2- Sombra da Caixa: A propriedade CSS box-shadow é usada para aplicar uma ou mais sombras a um elemento. Em seu uso mais simples, você especifica a sombra horizontal, a sombra vertical, efeito de desfoque à sombra, adicione o raio de propagação da sombra, adicione uma cor à sombra e por último, defina o parâmetro de inserção.   EX: div {box-shadow: 10px 10px 5px lightblue inset;}  Sintaxe: text-shadow(Sombra Horizontal, Sombra Vertical, Desfoque, raio, cor e inserção)
+                23.2.1- Adicionar várias sombras: div {box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;}
+
+                23.2.2- Cartões: Você também pode usar a propriedade box-shadow para criar cartões semelhantes a papel:   EX: div.card {width: 250px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center;}
+
+24- Variáveis: A função var() é usada para inserir o valor de uma variável CSS. As variáveis ​​CSS têm acesso ao DOM, o que significa que você pode criar variáveis ​​com escopo local ou global, alterar as variáveis ​​com JavaScript e alterar as variáveis ​​com base em consultas de mídia. Uma boa maneira de usar variáveis ​​CSS é quando se trata das cores do seu design. Em vez de copiar e colar as mesmas cores repetidamente, você pode colocá-las em variáveis.
+        24.1- Como var() Funciona: Primeiro de tudo: as variáveis ​​CSS podem ter um escopo global ou local. As variáveis ​​globais podem ser acessadas/utilizadas em todo o documento, enquanto as variáveis ​​locais podem ser utilizadas apenas dentro do seletor onde é declarada. Para criar uma variável com escopo global, declare-a dentro do seletor :root . O seletor :root corresponde ao elemento raiz do documento. Para criar uma variável com escopo local, declare-a dentro do seletor que vai utilizá-la. As vantagens de usar var() são: torna o código mais fácil de ler (mais compreensível) e torna muito mais fácil alterar os valores das cores.
+        EX: :root {--blue: #1e90ff; --white: #ffffff;}   body { background-color: var(--blue); }  Explicando: [Primeiro, declaramos duas variáveis ​​globais (--blue e --white). Então, usamos a var()função para inserir o valor das variáveis ​​posteriormente na folha de estilo]
+
+25- Flexbox:
+        25.1- Contêiner flexível: O flex container torna-se flexível definindo a propriedade display como flex.   EX: .flex-container {display: flex;} As propriedades do flex container são: flex-direction, flex-wrap, flex-flow, justify-content, align-items e align-content.
+                25.1.1- A propriedade flex-direction: A propriedade flex-direction define em qual direção o contêiner deseja empilhar os itens flexíveis. Valores: column [empilha os itens flexíveis verticalmente (de cima para baixo)], column-reverse [empilha os itens flexíveis verticalmente (mas de baixo para cima)], row [empilha os itens flexíveis horizontalmente (da esquerda para a direita)] e row-reverse [empilha os flex items horizontalmente (mas da direita para a esquerda)].   EX: .flex-container {display: flex; flex-direction: row;}
+
+                25.1.2- A propriedade flex-wrap: A propriedade flex-wrap especifica se os itens flexíveis devem ser encapsulados ou não.   EX: .flex-container {display: flex; flex-wrap: wrap;}
+
+                25.1.3- A propriedade de fluxo flexível: A propriedade flex-flow é uma propriedade abreviada para definir as propriedades flex-direction e flex-wrap.   EX: .flex-container {display: flex; flex-flow: row wrap;}
+
+                25.1.4- A propriedade de conteúdo justificado: A propriedade justify-content é usada para alinhar os itens flexíveis:   EX: .flex-container {display: flex; justify-content: center;}
+
+                25.1.5- A propriedade align-items: A propriedade align-items é usada para alinhar os itens em uma posição flexível.   EX: .flex-container {display: flex; align-items: center;}
+
+                25.1.6- A propriedade align-content: A propriedade align-content é usada para alinhar as linhas flexíveis.   EX: .flex-container {display: flex; flex-wrap: wrap; align-content: flex-start;}
+
+                25.1.7- Centralização Perfeita:   EX: .flex-container {display: flex; height: 300px; justify-content: center; align-items: center;}
+
+        25.2- Itens flexíveis: As propriedades do item flexível são: order, flex-grow, flex-shrink, flex-basis, flex e align-self
+
+                25.2.1- A propriedade order: A propriedade order especifica a ordem dos itens flexíveis.   EX: <div class="flex-container">   <div style="order: 3">1</div>   <div style="order: 2">2</div>   <div style="order: 4">3</div>   <div style="order: 1">4</div>   </div>
+
+                25.2.2- A propriedade de crescimento flexível: A propriedade flex-grow especifica quanto um item flexível crescerá em relação ao restante dos itens flexíveis.   EX: <div class="flex-container">   <div style="flex-grow: 1">1</div>   <div style="flex-grow: 1">2</div>   <div style="flex-grow: 8">3</div>   </div>  Explicando: [o terceiro item flexível cresce oito vezes mais rápido que os outros itens flexíveis]
+
+                25.2.3- A propriedade flex-shrink: A propriedade flex-shrink especifica quanto um item flexível encolherá em relação ao restante dos itens flexíveis.   EX: <div class="flex-container">   <div>1</div>   <div>2</div>   <div style="flex-shrink: 0">3</div>   <div>4</div>   <div>5</div>   </div>
+
+                25.2.4- A propriedade de base flexível: A propriedade flex-basis especifica o comprimento inicial de um item flexível.   EX: <div class="flex-container">   <div>1</div>   <div>2</div>   <div style="flex-basis: 200px">3</div>   <div>4</div>   </div>
+
+                25.2.5- A propriedade align-self: A propriedade align-self especifica o alinhamento do item selecionado dentro do contêiner flexível. A propriedade align-self substitui o alinhamento padrão definido pela propriedade align-items do contêiner.   EX: <div class="flex-container">   <div>1</div>   <div>2</div>   <div style="align-self: center">3</div>   <div>4</div>   </div>
+
+                25.2.6- A propriedade flexível: A propriedade flex é uma propriedade abreviada para as propriedades flex-grow, flex-shrink e flex-basis.   EX: <div class="flex-container">   <div>1</div>   <div>2</div>   <div style="flex: 0 0 200px">3</div>   <div>4</div>   </div>
+
+        25.3- Flex responsivo:
+                25.3.1- Caixa flexível responsiva:   EX: @media (max-width: 800px) {.flex-container {flex-direction: column;}  }  Explicando: [é exibido uma coluna para tamanhos de tela pequenos (como telefones e tablets)]
+
+26- Responsivo: O design da web responsivo faz com que sua página da web tenha uma boa aparência em todos os dispositivos. Web design responsivo usa apenas HTML e CSS. Mobile First significa projetar para dispositivos móveis antes de projetar para desktop ou qualquer outro dispositivo (isso tornará a exibição da página mais rápida em dispositivos menores).
+        26.1- A Janela de Visualização: A viewport é a área visível do usuário de uma página da web. A janela de visualização varia de acordo com o dispositivo e será menor em um telefone celular do que em uma tela de computador.
+
+        26.2- Pontos de interrupção típicos do dispositivo: (1) @media only screen and (max-width: 600px) {...}   [Dispositivos extra pequenos (telefones, 600px e abaixo)], (2) @media only screen and (min-width: 600px) {...}  [Dispositivos pequenos (tablets retrato e telefones grandes, 600px e acima)], (3) @media only screen and (min-width: 768px) {...}  [Dispositivos médios (tablets de paisagem, 768px e superior)], (4) @media only screen and (min-width: 992px) {...}  [Dispositivos grandes (laptops/desktops, 992px e superior)], (5) @media only screen and (min-width: 1200px) {...}  [Dispositivos extra grandes (laptops e desktops grandes, 1200px e acima)]
+
+        26.3- Imagens Responsivas:
+                26.3.1- Usando a propriedade width: Se a propriedade width for definida como uma porcentagem e a propriedade height for definida como "automática", a imagem aumentará e diminuirá a escala.  EX: img {width: 100%; height: auto;}
+
+                26.3.2- Usando a propriedade max-width: Se a propriedade max-width estiver definida como 100%, a imagem será reduzida se necessário, mas nunca será ampliada para ficar maior que o tamanho original.   EX: img {max-width: 100%; height: auto;}
+
+        26.4- Vídeos Responsivos:
+                26.4.1- Usando a propriedade width: Se a propriedade width estiver definida como 100%, o player de vídeo aumentará e diminuirá a escala.   EX: video {width: 100%; height: auto;}
+
+                26.4.2- Usando a propriedade max-width: Se a propriedade max-width estiver definida como 100%, o reprodutor de vídeo será reduzido se necessário, mas nunca aumentará para ficar maior que o tamanho original.   EX: video {max-width: 100%; height: auto;}
+
+27- Referência auditiva: As folhas de estilo auditivo usam uma combinação de síntese de fala e efeitos sonoros para fazer o usuário ouvir as informações, em vez de ler as informações. A apresentação auditiva pode ser usada: por cego, para ajudar os usuários a aprender a ler, para ajudar os usuários que têm problemas de leitura, para entretenimento doméstico, no carro, por comunidades com problemas de impressão.   EX: h1, h2, h3, h4 {voice-family: male; richness: 80; cue-before: url("beep.au")}
+
+28- Resumo por ordem alfabética:
+        28.1-A:
+                accent-color = Especifica uma cor de destaque para os controles da interface do usuário
+                align-content = Especifica o alinhamento entre as linhas dentro de um contêiner flexível quando os itens não usam todo o espaço disponível
+                align-items = Especifica o alinhamento dos itens dentro de um contêiner flexível
+                align-self = Especifica o alinhamento para itens selecionados dentro de um contêiner flexível
+                all = Redefine todas as propriedades (exceto unicode-bidi e direção)
+                animation = Uma propriedade abreviada para todas as propriedades animation
+                animation-delay = Especifica um atraso para o início de uma animação
+                animation-direction = Especifica se uma animação deve ser reproduzida para frente, para trás ou em ciclos alternados
+                animation-duration = Especifica quanto tempo uma animação deve levar para completar um ciclo
+                animation-fill-mode = Especifica um estilo para o elemento quando a animação não está sendo reproduzida (antes de começar, depois de terminar ou ambos)
+                animation-iteration-count = Especifica o número de vezes que uma animação deve ser reproduzida
+                animation-name = Especifica um nome para a animação @keyframes
+                animation-play-state = Especifica se a animação está em execução ou pausada
+                animation-timing-function = Especifica a curva de velocidade de uma animação
+                aspect-ratio = Especifica a proporção de aspecto preferida de um elemento
+
+        B: 
+                backdrop-filter = Define um efeito gráfico para a área atrás de um elemento
+                backface-visibility = Define se a face traseira de um elemento deve ou não ser visível quando voltado para o usuário
+                background = Uma propriedade abreviada para todas as propriedades background
+                background-attachment = Define se uma imagem de fundo rola com o restante da página ou é fixa
+                background-blend-mode = Especifica o modo de mesclagem de cada camada de fundo (cor/imagem)
+                background-clip = Define até que ponto o fundo (cor ou imagem) deve se estender dentro de um elemento
+                background-color = Especifica a cor de fundo de um elemento
+                background-image = Especifica uma ou mais imagens de fundo para um elemento
+                background-origin = Especifica a posição de origem de uma imagem de fundo
+                background-position = Especifica a posição de uma imagem de fundo
+                background-position-x = Especifica a posição de uma imagem de fundo no eixo x
+                background-position-y = Especifica a posição de uma imagem de fundo no eixo y
+                background-repeat = Define como uma imagem de fundo será repetida
+                background-size = Especifica o tamanho das imagens de fundo
+                block-size = Especifica o tamanho de um elemento na direção do bloco
+                border = Uma propriedade abreviada para border-width, border-style e border-color
+                border-block = Uma propriedade abreviada para border-block-width, border-block-style e border-block-color
+                border-block-color = Define a cor das bordas no início e no fim na direção do bloco
+                border-block-end-color = Define a cor da borda no final na direção do bloco
+                border-block-end-style = Define o estilo da borda no final na direção do bloco
+                border-block-end-width = Define a largura da borda no final na direção do bloco
+                border-block-start-color = Define a cor da borda no início na direção do bloco
+                border-block-start-style = Define o estilo da borda no início na direção do bloco
+                border-block-start-width = Define a largura da borda no início na direção do bloco
+                border-block-style = Define o estilo das bordas no início e no fim na direção do bloco
+                border-block-width = Define a largura das bordas no início e no fim na direção do bloco
+                border-bottom = Uma propriedade abreviada para border-bottom-width, border-bottom-style e border-bottom-color
+                border-bottom-color = Define a cor da borda inferior
+                border-bottom-left-radius = Define o raio da borda do canto inferior esquerdo
+                border-bottom-right-radius = Define o raio da borda do canto inferior direito
+                border-bottom-style = Define o estilo da borda inferior
+                border-bottom-width = Define a largura da borda inferior
+                border-collapse	= Define se as bordas da tabela devem ser recolhidas em uma única borda ou separadas
+                border-color = Define a cor das quatro bordas
+                border-image = Uma propriedade abreviada para todas as propriedades border-image
+                border-image-outset = Especifica o quanto a área da imagem da borda se estende além da caixa da borda
+                border-image-repeat = Especifica se a imagem da borda deve ser repetida, arredondada ou esticada
+                border-image-slice = Especifica como fatiar a imagem da borda
+                border-image-source = Especifica o caminho para a imagem a ser usada como borda
+                border-image-width = Especifica a largura da imagem da borda
+                border-inline = Uma propriedade abreviada para border-inline-width, border-inline-style e border-inline-color
+                border-inline-color = Define a cor das bordas no início e no fim na direção inline
+                border-inline-end-color	= Define a cor da borda no final na direção inline
+                border-inline-end-style	=  Define o estilo da borda no final na direção inline
+                border-inline-end-width	= Define a largura da borda no final na direção inline
+                border-inline-start-color = Define a cor da borda no início na direção inline
+                border-inline-start-style = Define o estilo da borda no início na direção inline
+                border-inline-start-width = Define a largura da borda no início na direção inline
+                border-inline-style = Define o estilo das bordas no início e no fim na direção da linha
+                border-inline-width = Define a largura das bordas no início e no fim na direção inline
+                border-left = Uma propriedade abreviada para todas as propriedades border-left
+                border-left-color = Define a cor da borda esquerda
+                border-left-style = Define o estilo da borda esquerda
+                border-left-width = Define a largura da borda esquerda
+                border-radius = Uma propriedade abreviada para as quatro propriedades border
+                border-right =  Uma propriedade abreviada para todas as propriedades border-right
+                border-right-color = Define a cor da borda direita
+                border-right-style = Define o estilo da borda direita
+                border-right-width = Define a largura da borda direita
+                border-spacing = Define a distância entre as bordas das células adjacentes
+                border-style = Define o estilo das quatro bordas
+                border-top = Uma propriedade abreviada para largura da borda superior, estilo da borda superior e cor da borda superior
+                border-top-color = Define a cor da borda superior
+                border-top-left-radius = Define o raio da borda do canto superior esquerdo
+                border-top-right-radius	= Define o raio da borda do canto superior direito
+                border-top-style = Define o estilo da borda superior
+                border-top-width = Define a largura da borda superior
+                border-width =  Define a largura das quatro bordas
+                bottom	= Define a posição dos elementos, a partir da parte inferior de seu elemento pai
+                box-decoration-break = Define o comportamento do plano de fundo e da borda de um elemento na quebra de página ou, para elementos in-line, na quebra de linha.
+                box-reflect = A propriedade box-reflect é usada para criar um reflexo de um elemento.
+                box-shadow = Anexa uma ou mais sombras a um elemento
+                box-sizing = Define como a largura e a altura de um elemento são calculadas: devem incluir preenchimento e bordas ou não
+                break-after = Especifica se uma quebra de página, coluna ou região deve ou não ocorrer após o elemento especificado
+                break-before = Especifica se uma quebra de página, coluna ou região deve ou não ocorrer antes do elemento especificado
+                break-inside = Especifica se uma quebra de página, coluna ou região deve ou não ocorrer dentro do elemento especificado
+
+        C:
+                caption-side = Especifica o posicionamento de uma legenda de tabela
+                caret-color = Especifica a cor do cursor (caret) em entradas, áreas de texto ou qualquer elemento editável
+                @charset = Especifica a codificação de caracteres usada na folha de estilo
+                clear = Especifica o que deve acontecer com o elemento que está ao lado de um elemento flutuante
+                clip = Recorta um elemento absolutamente posicionado
+                color = Define a cor do texto
+                column-count = Especifica o número de colunas em que um elemento deve ser dividido
+                column-fill = Especifica como preencher as colunas, balanceadas ou não
+                column-gap = Especifica o intervalo entre as colunas
+                column-rule = Uma propriedade abreviada para todas as propriedades column-rule
+                column-rule-color = Especifica a cor da regra entre as colunas
+                column-rule-style = Especifica o estilo da regra entre as colunas
+                column-rule-width = Especifica a largura da regra entre as colunas
+                column-span = Especifica quantas colunas um elemento deve abranger
+                column-width = Especifica a largura da coluna
+                columns	= Uma propriedade abreviada para largura e contagem de colunas
+                content	= Usado com os pseudo-elementos :before e :after, para inserir o conteúdo gerado
+                counter-increment = Aumenta ou diminui o valor de um ou mais contadores CSS
+                counter-reset = Cria ou redefine um ou mais contadores CSS
+                cursor = Especifica o cursor do mouse a ser exibido ao apontar sobre um elemento
+
+        D:
+                direction = Especifica a direção do texto/direção da escrita
+                display	= Especifica como um determinado elemento HTML deve ser exibido
+
+        E:
+                empty-cells = Especifica se deve ou não exibir bordas e plano de fundo em células vazias em uma tabela
+
+        F:
+                filter = Define efeitos (por exemplo, desfoque ou mudança de cor) em um elemento antes que o elemento seja exibido
+                flex = Uma propriedade abreviada para as propriedades flex-grow, flex-shrink e flex-basis
+                flex-basis = Especifica o comprimento inicial de um item flexível
+                flex-direction = Especifica a direção dos itens flexíveis
+                flex-flow = Uma propriedade abreviada para as propriedades flex-direction e flex-wrap
+                flex-grow = Especifica quanto o item crescerá em relação ao resto
+                flex-shrink = Especifica como o item encolherá em relação ao resto
+                flex-wrap = Especifica se os itens flexíveis devem ser encapsulados ou não
+                float = Especifica se um elemento deve flutuar para a esquerda, para a direita ou não flutuar
+                font = Uma propriedade abreviada para as propriedades font-style, font-variant, font-weight, font-size/line-height e font-family
+                @font-face = Uma regra que permite que sites baixem e usem fontes diferentes das fontes "seguras para a web"
+                font-family = Especifica a família de fontes para o texto
+                font-feature-settings = Permite o controle sobre recursos tipográficos avançados em fontes OpenType
+                @font-feature-values = Permite que os autores usem um nome comum em font-variant-alternate para o recurso ativado de forma diferente no OpenType
+                font-kerning = Controla o uso das informações de kerning (como as letras são espaçadas)
+                font-language-override = Controla o uso de glifos específicos do idioma em um tipo de letra
+                font-size = Especifica o tamanho da fonte do texto
+                font-size-adjust = Preserva a legibilidade do texto quando ocorre fallback de fonte
+                font-stretch = Seleciona uma face normal, condensada ou expandida de uma família de fontes
+                font-style = Especifica o estilo de fonte do texto
+                font-synthesis = Controla quais tipos de letra ausentes (negrito ou itálico) podem ser sintetizados pelo navegador
+                font-variant = Especifica se um texto deve ou não ser exibido em uma fonte minúscula
+                font-variant-alternates = Controla o uso de glifos alternativos associados a nomes alternativos definidos em @font-feature-values
+                font-variant-caps = Controla o uso de glifos alternativos para letras maiúsculas
+                font-variant-east-asian	= Controla o uso de glifos alternativos para scripts do leste asiático (por exemplo, japonês e chinês)
+                font-variant-ligatures = Controla quais ligaduras e formas contextuais são usadas no conteúdo textual dos elementos aos quais se aplica
+                font-variant-numeric = Controla o uso de glifos alternativos para números, frações e marcadores ordinais
+                font-variant-position = Controla o uso de glifos alternativos de tamanho menor posicionados como sobrescritos ou subscritos em relação à linha de base da fonte
+                font-weight = Especifica o peso de uma fonte
+
+        G:
+                gap = Uma propriedade abreviada para as propriedades de intervalo entre linhas e intervalos entre colunas
+                grid = Uma propriedade abreviada para linhas de modelo de grade, colunas de modelo de grade, áreas de modelo de grade, linhas automáticas de grade, colunas automáticas de grade e propriedades de fluxo automático de grade
+                grid-area = Especifica um nome para o item da grade ou esta propriedade é uma propriedade abreviada para as propriedades grid-row-start, grid-column-start, grid-row-end e grid-column-end
+                grid-auto-columns = Especifica um tamanho de coluna padrão
+                grid-auto-flow = Especifica como os itens colocados automaticamente são inseridos na grade
+                grid-auto-rows = Especifica um tamanho de linha padrão
+                grid-column = Uma propriedade abreviada para as propriedades grid-column-start e grid-column-end
+                grid-column-end	= Especifica onde terminar o item da grade
+                grid-column-gap	= Especifica o tamanho do espaço entre as colunas
+                grid-column-start = Especifica onde iniciar o item da grade
+                grid-gap = Uma propriedade abreviada para as propriedades grid-row-gap e grid-column-gap
+                grid-row = Uma propriedade abreviada para as propriedades grid-row-start e grid-row-end
+                grid-row-end = Especifica onde terminar o item da grade
+                grid-row-gap = Especifica o tamanho do espaço entre as linhas
+                grid-row-start = Especifica onde iniciar o item da grade
+                grid-template = Uma propriedade abreviada para as propriedades grid-template-rows, grid-template-columns e grid-areas
+                grid-template-areas = Especifica como exibir colunas e linhas, usando itens de grade nomeados
+                grid-template-columns = Especifica o tamanho das colunas e quantas colunas em um layout de grade
+                grid-template-rows = Especifica o tamanho das linhas em um layout de grade
+
+        H:
+                hanging-punctuation = Especifica se um caractere de pontuação pode ser colocado fora da caixa de linha
+                height = Define a altura de um elemento
+                hyphens	= Define como dividir palavras para melhorar o layout dos parágrafos
+
+        I:
+                image-rendering	= Especifica o tipo de algoritmo a ser usado para dimensionamento de imagem
+                @import	Allows = Permite importar uma folha de estilo para outra folha de estilo
+                inline-size = Especifica o tamanho de um elemento na direção inline
+                inset = Especifica a distância entre um elemento e o elemento pai
+                inset-block = Especifica a distância entre um elemento e o elemento pai na direção do bloco
+                inset-block-end	= Especifica a distância entre o final de um elemento e o elemento pai na direção do bloco
+                inset-block-start = Especifica a distância entre o início de um elemento e o elemento pai na direção do bloco
+                inset-inline = Especifica a distância entre um elemento e o elemento pai na direção inline
+                inset-inline-end = Especifica a distância entre o final de um elemento e o elemento pai na direção inline
+                inset-inline-start = Especifica a distância entre o início de um elemento e o elemento pai na direção em linha
+                isolation = Define se um elemento deve criar um novo conteúdo de empilhamento
+
+        J:
+                justify-content	= Especifica o alinhamento entre os itens dentro de um contêiner flexível quando os itens não usam todo o espaço disponível
+                justify-items = É definido no contêiner de grade. Especifica o alinhamento dos itens da grade na direção inline
+                justify-self = É definido no item de grade. Especifica o alinhamento do item de grade na direção inline
+
+        K:
+                @keyframes = Especifica o código de animação
+
+        L: 
+                left = Especifica a posição esquerda de um elemento posicionado
+                letter-spacing = Aumenta ou diminui o espaço entre os caracteres em um texto
+                line-break = Especifica como/se quebrar linhas
+                line-height =  Define a altura da linha
+                list-style = Define todas as propriedades de uma lista em uma declaração
+                list-style-image = Especifica uma imagem como marcador de item de lista
+                list-style-position = Especifica a posição dos marcadores de item de lista (marcadores)
+                list-style-type	= Especifica o tipo de marcador de item de lista
+
+        M:
+                margin  = Define todas as propriedades de margem em uma declaração
+                margin-block = Especifica a margem na direção do bloco
+                margin-block-end = Especifica a margem no final na direção do bloco
+                margin-block-start = Especifica a margem no início na direção do bloco
+                margin-bottom = Define a margem inferior de um elemento
+                margin-inline = Especifica a margem na direção inline
+                margin-inline-end = Especifica a margem no final na direção inline
+                margin-inline-start = Especifica a margem no início na direção inline
+                margin-left = Define a margem esquerda de um elemento
+                margin-right = Define a margem direita de um elemento
+                margin-top = Define a margem superior de um elemento
+                mask = Oculta partes de um elemento mascarando ou recortando uma imagem em locais específicos
+                mask-clip = Especifica a área da máscara
+                mask-composite = Representa uma operação de composição usada na camada de máscara atual com as camadas de máscara abaixo dela
+                mask-image = Especifica uma imagem a ser usada como camada de máscara para um elemento
+                mask-mode = Especifica se a imagem da camada de máscara é tratada como uma máscara de luminância ou como uma máscara alfa
+                mask-origin = Especifica a posição de origem (a área de posição da máscara) de uma imagem de camada de máscara
+                mask-position = Define a posição inicial de uma imagem de camada de máscara (em relação à área de posição da máscara)
+                mask-repeat = Especifica como a imagem da camada de máscara é repetida
+                mask-size = Especifica o tamanho de uma imagem de camada de máscara
+                mask-type = Especifica se um elemento SVG <mask> é tratado como uma máscara de luminância ou como uma máscara alfa
+                max-height = Define a altura máxima de um elemento
+                max-width = Define a largura máxima de um elemento
+                @media	= Define as regras de estilo para diferentes tipos/dispositivos/tamanhos de mídia
+                max-block-size	= Define o tamanho máximo de um elemento na direção do bloco
+                max-inline-size	 = Define o tamanho máximo de um elemento na direção inline
+                min-block-size	= Define o tamanho mínimo de um elemento na direção do bloco
+                min-inline-size	= Define o tamanho mínimo de um elemento na direção inline
+                min-height = Define a altura mínima de um elemento
+                min-width = Define a largura mínima de um elemento
+                mix-blend-mode = Especifica como o conteúdo de um elemento deve se misturar com seu plano de fundo pai direto
+
+        O:
+                object-fit = Especifica como o conteúdo de um elemento substituído deve ser ajustado à caixa estabelecida por sua altura e largura usadas
+                object-position	= Especifica o alinhamento do elemento substituído dentro de sua caixa
+                offset	= É uma abreviação e especifica como animar um elemento ao longo de um caminho
+                offset-anchor = Especifica um ponto em um elemento que é fixo ao caminho ao longo do qual é animado
+                offset-distance	= Especifica a posição ao longo de um caminho onde um elemento animado é colocado
+                offset-path = Especifica o caminho ao longo do qual um elemento é animado
+                offset-rotate = Especifica a rotação de um elemento conforme ele é animado ao longo de um caminho
+                opacity	= Define o nível de opacidade de um elemento
+                order = Define a ordem do item flexível, em relação ao restante
+                orphans = Define o número mínimo de linhas que devem ser deixadas no final de uma página ou coluna
+                outline	= Uma propriedade abreviada para as propriedades de largura do contorno, estilo do contorno e cor do contorno
+                outline-color = Define a cor de um contorno
+                outline-offset = Desloca um contorno e o desenha além da borda da borda
+                outline-style = Define o estilo de um contorno
+                outline-width = Define a largura de um contorno
+                overflow = Especifica o que acontece se o conteúdo ultrapassar a caixa de um elemento
+                overflow-anchor = Especifica se o conteúdo na área visível em um contianer rolável deve ou não ser empurrado para baixo quando o novo conteúdo é carregado acima
+                overflow-wrap = Especifica se o navegador pode ou não quebrar linhas com palavras longas, se elas transbordarem do contêiner
+                overflow-x = Especifica se deve ou não cortar as bordas esquerda/direita do conteúdo, se estourar a área de conteúdo do elemento
+                overflow-y =  Especifica se deve ou não cortar as bordas superior/inferior do conteúdo, se estourar a área de conteúdo do elemento
+                overscroll-behavior = Especifica se deve haver encadeamento de rolagem ou recursos de overscroll nas direções x e y
+                overscroll-behavior-block = Especifica se deve haver encadeamento de rolagem ou recursos de overscroll na direção do bloco
+                overscroll-behavior-inline = Especifica se deve haver encadeamento de rolagem ou recursos de overscroll na direção inline
+                overscroll-behavior-x = Especifica se deve haver encadeamento de rolagem ou recursos de overscroll na direção x
+                overscroll-behavior-y = Especifica se deve haver encadeamento de rolagem ou recursos de overscroll nas direções y
+
+        P:
+                padding	= Uma propriedade abreviada para todas as propriedades padding
+                padding-block = Especifica o preenchimento na direção do bloco
+                padding-block-end = Especifica o preenchimento no final na direção do bloco
+                padding-block-start = Especifica o preenchimento no início na direção do bloco
+                padding-bottom = Define o preenchimento inferior de um elemento
+                padding-inline = Especifica o preenchimento na direção inline
+                padding-inline-end = Especifica o preenchimento no final na direção inline
+                padding-inline-start = Especifica o preenchimento no início na direção inline
+                padding-left = Define o preenchimento esquerdo de um elemento
+                padding-right = Define o preenchimento direito de um elemento
+                padding-top = Define o preenchimento superior de um elemento
+                page-break-after = Define o comportamento da quebra de página após um elemento
+                page-break-before = Define o comportamento da quebra de página antes de um elemento
+                page-break-inside = Define o comportamento da quebra de página dentro de um elemento
+                paint-order = Define a ordem de como um elemento SVG ou texto é pintado.
+                perspective = á a um elemento posicionado em 3D alguma perspectiva
+                perspective-origin = Define em qual posição o usuário está olhando para o elemento posicionado em 3D
+                place-content = Especifica valores de propriedade align-content e align-content para layouts flexbox e grid
+                place-items = Especifica valores de propriedade de itens de alinhamento e itens de justificação para layouts de grade
+                place-self = Especifica os valores das propriedades align-self e align-self para layouts de grade
+                pointer-events	= Define se um elemento reage ou não a eventos de ponteiro
+                position = Especifica o tipo de método de posicionamento usado para um elemento (estático, relativo, absoluto ou fixo)
+
+        Q:
+                quotes = Define o tipo de aspas para citações incorporadas
+
+        R:
+                resize = Define se (e como) um elemento é redimensionável pelo usuário
+                right = Especifica a posição correta de um elemento posicionado
+                rotate = Especifica a rotação de um elemento
+                row-gap	= Especifica o intervalo entre as linhas da grade
+
+        S:
+                scale = Especifica o tamanho de um elemento aumentando ou diminuindo
+                scroll-behavior	= Especifica se deve animar suavemente a posição de rolagem em uma caixa rolável, em vez de um salto direto
+                scroll-margin = Especifica a margem entre a posição de encaixe e o contêiner
+                scroll-margin-block = Especifica a margem entre a posição do snap e o contêiner na direção do bloco
+                scroll-margin-block-end	= Especifica a margem final entre a posição do snap e o contêiner na direção do bloco
+                scroll-margin-block-start =  Especifica a margem inicial entre a posição do snap e o contêiner na direção do bloco
+                scroll-margin-bottom = Especifica a margem entre a posição de encaixe no lado inferior e o contêiner
+                scroll-margin-inline = Especifica a margem entre a posição de encaixe e o contêiner na direção inline
+                scroll-margin-inline-end = Especifica a margem final entre a posição do snap e o contêiner na direção inline
+                scroll-margin-inline-start = Especifica a margem inicial entre a posição de encaixe e o contêiner na direção em linha
+                scroll-margin-left = Especifica a margem entre a posição de encaixe no lado esquerdo e o contêiner
+                scroll-margin-right = Especifica a margem entre a posição de encaixe no lado direito e o contêiner
+                scroll-margin-top = Especifica a margem entre a posição de encaixe no lado superior e o contêiner
+                scroll-padding = Especifica a distância do contêiner até a posição de encaixe nos elementos filho
+                scroll-padding-block = Especifica a distância na direção do bloco do contêiner até a posição de encaixe nos elementos filho
+                scroll-padding-block-end = Especifica a distância na direção do bloco desde o final do contêiner até a posição de encaixe nos elementos filho
+                scroll-padding-block-start = Especifica a distância na direção do bloco desde o início do contêiner até a posição de encaixe nos elementos filho
+                scroll-padding-bottom = Especifica a distância da parte inferior do contêiner até a posição de encaixe nos elementos filho
+                scroll-padding-inline = Especifica a distância na direção inline do contêiner até a posição de encaixe nos elementos filho
+                scroll-padding-inline-end = Especifica a distância na direção inline do final do contêiner até a posição de encaixe nos elementos filho
+                scroll-padding-inline-start = Especifica a distância na direção inline desde o início do contêiner até a posição de encaixe nos elementos filho
+                scroll-padding-left = Especifica a distância do lado esquerdo do contêiner até a posição de encaixe nos elementos filho
+                scroll-padding-right = Especifica a distância do lado direito do contêiner até a posição de encaixe nos elementos filho
+                scroll-padding-top = Especifica a distância do topo do contêiner até a posição de encaixe nos elementos filho
+                scroll-snap-align = Especifica onde posicionar os elementos quando o usuário para de rolar
+                scroll-snap-stop = Especifica o comportamento de rolagem após deslizar rapidamente no trackpad ou na tela sensível ao toque
+                scroll-snap-type = Especifica como deve ser o comportamento do snap ao rolar
+
+        T:
+                tab-size = Especifica a largura de um caractere de tabulação
+                table-layout = Define o algoritmo usado para dispor as células, linhas e colunas da tabela
+                text-align = Especifica o alinhamento horizontal do texto
+                text-align-last	= Descreve como a última linha de um bloco ou uma linha logo antes de uma quebra de linha forçada é alinhada quando text-align é "justificado"
+                text-combine-upright = Especifica a combinação de vários caracteres no espaço de um único caractere
+                text-decoration	Specifies = Especifica a decoração adicionada ao texto
+                text-decoration-color = Especifica a cor da decoração do texto
+                text-decoration-line = Especifica o tipo de linha em uma decoração de texto
+                text-decoration-style = Especifica o estilo da linha em uma decoração de texto
+                text-decoration-thickness = Especifica a espessura da linha de decoração
+                text-emphasis = Aplica marcas de ênfase ao texto
+                text-indent = Especifica o recuo da primeira linha em um bloco de texto
+                text-justify = Especifica o método de justificação usado quando text-align é "justificar"
+                text-orientation = Define a orientação dos caracteres em uma linha
+                text-overflow = Especifica o que deve acontecer quando o texto transborda o elemento que o contém
+                text-shadow = Adiciona sombra ao texto
+                text-transform	= Controla a capitalização do texto
+                text-underline-position	= Especifica a posição do sublinhado que é definido usando a propriedade text-decoration
+                top = Especifica a posição superior de um elemento posicionado
+                transform = Aplica uma transformação 2D ou 3D a um elemento
+                transform-origin = Permite alterar a posição dos elementos transformados
+                transform-style	= Especifica como os elementos aninhados são renderizados no espaço 3D
+                transition = Uma propriedade abreviada para todas as propriedades de transição
+                transition-delay = Especifica quando o efeito de transição começará
+                transition-duration = Especifica quantos segundos ou milissegundos um efeito de transição leva para ser concluído
+                transition-property = Especifica o nome da propriedade CSS para a qual o efeito de transição se destina
+                transition-timing-function = Especifica a curva de velocidade do efeito de transição
+                translate = Especifica a posição de um elemento
+
+        U:
+                unicode-bidi = Usado junto com a propriedade de direção para definir ou retornar se o texto deve ser substituído para suportar vários idiomas no mesmo documento
+                user-select = Especifica se o texto de um elemento pode ser selecionado
+
+        V:
+                vertical-align	= Define o alinhamento vertical de um elemento
+                visibility = Especifica se um elemento é ou não visível
+
+        W:
+                white-space = Especifica como o espaço em branco dentro de um elemento é tratado
+                widows = Define o número mínimo de linhas que devem ser deixadas no topo de uma página ou coluna
+                width = Define a largura de um elemento
+                word-break = Especifica como as palavras devem ser quebradas ao atingir o final de uma linha
+                word-spacing = Aumenta ou diminui o espaço entre as palavras em um texto
+                word-wrap = Permite que palavras longas e inquebráveis ​​sejam quebradas na próxima linha
+                writing-mode = Especifica se as linhas de texto são dispostas horizontal ou verticalmente
+
+        Z:
+                z-index = Define a ordem da pilha de um elemento posicionado
