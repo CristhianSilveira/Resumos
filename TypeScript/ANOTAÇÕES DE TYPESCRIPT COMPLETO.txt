@@ -1,0 +1,256 @@
+                      ------ TypeScript Completo ------
+
+
+        Olá, criei esse arquivo com as principais aplicações do TypeScript explicadas e com exemplos.
+
+                OBS: os exemplos não estão formatados para não ocupar muitas linhas do arquivo.
+
+
+1- Introdução:
+    1.1- O que é TypeScript?
+        TypeScript é JavaScript com sintaxe adicionada para tipos. TypeScript é um superconjunto sintático de JavaScript que adiciona tipagem estática. Isso basicamente significa que o TypeScript adiciona sintaxe ao JavaScript, permitindo que os desenvolvedores adicionem tipos. a extensão de aquivo é .ts
+
+    1.2- Por que devo usar o TypeScript?
+        JavaScript é uma linguagem vagamente tipada. Pode ser difícil entender quais tipos de dados estão sendo passados ​​em JavaScript. Em JavaScript, parâmetros e variáveis ​​de função não possuem nenhuma informação! Portanto, os desenvolvedores precisam consultar a documentação ou adivinhar com base na implementação. O TypeScript permite especificar os tipos de dados que estão sendo transmitidos no código e tem a capacidade de relatar erros quando os tipos não correspondem. Por exemplo, o TypeScript relatará um erro ao passar uma string para uma função que espera um número. JavaScript não.
+
+    1.3- Instalando o compilador:
+        (1) Dentro do seu projeto, execute o seguinte comando para instalar o compilador: npm install typescript --save-dev
+        (2) O compilador é instalado no diretório node_modules e pode ser executado com: npx tsc
+        (3) Você pode criar o arquivo de configuração tsconfig.json com as configurações recomendadas com: npx tsc --init
+        (4) Abra o arquivo de configuração, altere e retire o comentário de outDir para: "outDir": "./build"
+        (5) Crie um arquivo de typescript com a extensão .ts
+        (6) Rode o projeto com depuração automática com o seguinte comando: npx tsc -w
+
+2- Tipos simples do TypeScript: 
+    2.1- Introdução:
+        Existem três primitivos principais em JavaScript e TypeScript. (1)Boolean [valores verdadeiros ou falsos], (2)number [números inteiros e valores de ponto flutuante] e (3)string [valores de texto como "TypeScript Rocks"].   EX: let Nome: string = "Danilo";
+
+    2.2- Atribuição de tipo:
+        Ao criar uma variável, existem duas maneiras principais pelas quais o TypeScript atribui um tipo: Explícito ou Implícito
+
+        2.2.1- Tipo Explícito:
+            Você atribui automaticamente o tipo da variável. A atribuição de tipo explícito é mais fácil de ler e mais intencional.
+            EX: let Nome: string = "Dylan";
+
+        2.2.2- Tipo Implícito:
+            O TypeScript irá "adivinhar" o tipo, com base no valor atribuído. A atribuição de tipo implícita é mais curta, mais rápida de digitar e frequentemente usada em desenvolvimento e teste.
+            EX: let Nome = "Dylan";
+
+3- Tipos especiais do TypeScript: 
+    O TypeScript tem tipos especiais que podem não se referir a nenhum tipo específico de dados.
+
+    3.1- Tipo any: (EVITAR USAR)
+        any é um tipo que desabilita a verificação de tipo e efetivamente permite que todos os tipos sejam usados.   
+        EX: let v: any = true;  
+            v = "string";
+
+    3.2- Tipo unknown: 
+        unknown é uma alternativa semelhante, mas mais segura, ao any.   EX: let w: unknown = 1;  w = "string";
+
+4- Arrays em TypeScript: 
+    4.1- Introdução:
+        O TypeScript tem uma sintaxe específica para digitar arrays.   
+        EX: const nomes: string[] = ["Breno"]; 
+            nomes.push("Danilo"); 
+            console.log(nomes) >>Resultado: ['Breno','Danilo']
+
+    4.2- Somente leitura: 
+        A palavra-chave readonly pode impedir que os arrays sejam alterados.   
+        EX: const nomes: readonly string[] = ["Danilo"];   
+            // nomes.push("Jair"); >>Resultado: Dá erro
+
+5- Tuplas TypeScript: 
+    5.1- Introdução:
+        Uma tupla é um array digitada com comprimento e tipos predefinidos para cada índice. As tuplas são ótimas porque permitem que cada elemento no array seja um tipo conhecido de valor. Para definir uma tupla, especifique o tipo de cada elemento no array: OBS: a ordem importa em nossa tupla.   
+        EX: let myTupla: [number, boolean, string];   
+            myTupla = [5, false, 'Estou aprendendo'];
+            // myTupla = [false, 5, 'Estou aprendendo']; >>Resultado: Dá erro
+
+    5.2- Tupla somente leitura: 
+        Uma boa prática é fazer sua tupla readonly.   
+        EX: const myReadonlyTuple: readonly [number, boolean, string] = [5, true, 'Estou aprendendo'];
+            // myReadonlyTuple.push("Adicionando string"); >>Resultado: Dá erro
+
+    5.3- Tuplas nomeadas:
+        Tuplas nomeadas nos permitem fornecer contexto(tipos) para nossos valores em cada índice.
+        EX: const reta: [x: number, y: number] = [55, 41];
+
+6- Objeto em TypeScript: 
+    6.1- Introdução:
+        O TypeScript possui uma sintaxe específica para digitar objetos.   
+        EX: const car: { tipo: string, modelo: string, ano: number } = {  
+            tipo: "Toyota",  modelo: "Corolla",  ano: 2009  
+            };
+
+    6.2- Propriedades Opcionais:
+        Propriedades opcionais são propriedades que não precisam ser definidas na definição do objeto e usam o operador '?'.
+        EX: const carro2: { tipo: string, modelo: string, quilometragem?: number, ano: number } = {  
+                tipo: "Toyota",  modelo: "Corolla",  ano: 2009  
+            };
+
+7- Enums TypeScript: 
+    7.1- Introdução:
+        Um enum é uma "classe" especial que representa um grupo de constantes (variáveis ​​imutáveis). Enums vêm em dois tipos string e numeric.
+
+    7.2- Enums Numéricos(Padrão): 
+        Por padrão, enums inicializarão o primeiro valor 0 e adicionarão 1 a cada valor adicional. Você pode definir o valor do primeiro enum numérico e incrementá-lo automaticamente a partir disso. 
+        EX: enum CardinalDirections {  
+                Norte = 1,  Leste = 2,  Sul = 3,  Leste = 4  
+            ;}  
+            let atualDirection = CardinalDirections.Sul;  
+            console.log(atualDirection);  >>Resultado: 3
+
+    7.3- Enumerações de String: 
+        Enums também podem conter strings. Isso é mais comum do que enumerações numéricas, devido à sua legibilidade e intenção.   
+        EX: enum Direcao {  
+                Norte = 'Norte',  Leste = "Leste",  Sul = "Sul",  Oeste = "Oeste"  
+            };  
+            console.log(Direcao.Oeste);  >>Resultado: Oeste
+
+8- Aliases e interface: 
+    8.1- Introdução:
+        O TypeScript permite que os tipos sejam definidos separadamente das variáveis ​​que os utilizam. Aliases e Interfaces permitem que os tipos sejam facilmente compartilhados entre diferentes variáveis/objetos.
+
+    8.2- Aliases de tipo: 
+        Aliases de tipo permitem definir tipos com um nome personalizado (um Alias). Aliases de tipo podem ser usados ​​para primitivos como string ou tipos mais complexos, como objects e arrays.
+        EX: type CarroAno = number  
+            type CarroTipo = string  
+            type CarroModelo = string  
+            type Carro = {  
+                ano: CarroAno,  
+                tipo: CarroTipo,  
+                modelo: CarroModelo  
+            }  
+            const carroAno: CarroAno = 2001  
+            const carroTipo: CarroTipo = "Toyota"  
+            const carroModelo: CarroModelo = "Corolla"  
+            const carro: Carro = {  
+                ano: carroAno,  
+                tipo: carroTipo,  
+                modelo: carroModelo 
+            };
+
+    8.3 Interfaces: 
+        As interfaces são semelhantes aos aliases de tipo, exceto que se aplicam apenas a tipos objetos. 
+        EX: interface Retangulo {  
+                Altura: number,  
+                Largura: number  
+            }  
+            const retangulo: Retangulo = {  
+                Altura: 20,  
+                Largura: 10  
+            };
+            console.log(retangulo) >> Resultado: {Altura: 20, Largura: 10}
+
+9- Unions Type: 
+    9.1- Introdução:
+        Os tipos de união são usados ​​quando um valor pode ser mais do que um único tipo. Por exemplo, quando uma propriedade seria string ou number.
+        
+    9.2- União |(OU): 
+        Usando o | estamos dizendo que nosso parâmetro é string, boolean ou number:   
+        EX: function StatusCode(codigo: string | number) {  
+            console.log(`Meu código de status é: ${codigo}.`)  
+            }  
+            StatusCode(404); >>Resultado: Meu código de status é: 404.
+            StatusCode('ERRO: 404'); >>Resultado: Meu código de status é: ERRO: 404.
+
+10- Funções TypeScript: 
+    10.1- Introdução:
+        O TypeScript tem uma sintaxe específica para digitar parâmetros de funções e valores de retorno.
+        
+    10.2- Tipo de retorno: 
+        O tipo do valor retornado pela função pode ser explicitamente definido.   
+        EX: function getTime(): number {  
+                return new Date().getTime();  
+            }
+
+    10.3- Tipo de retorno void: 
+        O tipo void pode ser usado para indicar que uma função não retorna nenhum valor.   
+         EX: function printHello(): void {  
+                console.log('Hello!');  
+            }
+
+    10.4- Parâmetros: 
+        Os parâmetros de função são digitados com uma sintaxe semelhante às declarações de variáveis.   
+        EX: function multiplica(a: number, b: number) {  
+                return a * b;  
+            }  
+            console.log(multiplica(2,5))  >>Resultado: 10
+
+    10.5- Type Aliases: 
+        Os tipos de função podem ser especificados separadamente das funções com aliases de tipo. Esses tipos são escritos de forma semelhante às funções de seta.   
+        EX: type Negativo = (valor: number) => number;
+            const negativaFuncao: Negativo = (valor) => valor * -1;
+            console.log(negativaFuncao(10));
+
+11- Casting TypeScript: 
+        
+    11.1- Introdução:
+        Casting é o processo de substituição de um tipo.
+        
+    11.2- Casting com as: 
+        Uma maneira direta de converter uma variável é usando a palavra-chave as, que mudará diretamente o tipo da variável fornecida.   
+        EX: let x: unknown = 'Olá'; 
+        console.log((x as string).length);  >>Resultado: 3
+
+12- Classes TypeScript: 
+    O TypeScript adiciona tipos e modificadores de visibilidade às classes JavaScript.
+        
+    12.1- Membros de Tipo: 
+        Os membros de uma classe (propriedades e métodos) são digitados usando anotações de tipo, semelhantes às variáveis.   OBS: A palavra-chave this em uma classe geralmente se refere à instância da classe.
+        EX: class Pessoa {  
+                nome: string
+                idade: number
+                sexo: string
+
+                constructor(nome: string, idade:number, sexo: string) {
+                    this.nome = nome
+                    this.idade = idade
+                    this.sexo = sexo
+                }
+            }  
+            const pessoa1 = new Pessoa("Jaqueline", 20, "Feminino");
+            console.log(pessoa1); >>Resultado: Pessoa {nome: 'Jaqueline', idade: 20, sexo: 'Feminino'}
+
+    12.2- Herança usando implements:
+        Interfaces podem ser usadas para definir o tipo que uma classe deve seguir por meio da palavra-chave implements.
+        EX: class Retangulo2 implements Forma{
+                width: number
+                height: number
+
+                area(): number {
+                    return this.width * this.height;
+                }
+
+                constructor(width: number, height: number) {
+                    this.width = width
+                    this.height = height
+                }
+            }
+            const meuRetangulo = new Retangulo2(10,20);
+            console.log(meuRetangulo.area());
+
+    12.3- Herança usando extends:
+        As classes podem se estender por meio da palavra-chave extends. Uma classe só pode estender uma outra classe.
+        EX: class Quadrado extends Retangulo2{
+
+                constructor(largura: number) {
+                    super(largura, largura)
+                }
+            }
+            const meuQuadrado = new Quadrado(20);
+            console.log(meuQuadrado.area());
+
+13- Genéricos:
+    13.1- Introdução:
+        Os genéricos permitem a criação de 'variáveis ​​de tipo' que podem ser usadas para criar classes, funções e aliases de tipo que não precisam definir explicitamente os tipos que usam.
+
+    13.2- Genéricos em Funções:
+        Genéricos com funções ajudam a criar métodos mais generalizados que representam com mais precisão os tipos usados ​​e retornados. Normalmente representado pela letra T.
+        EX: function Soma<T>(v1: T): T {
+                return v1;
+            }
+            const soma = Soma<number>(40);
+            const somaString = Soma<string>('40');
+            console.log(soma); >>Resultado: 40
+            console.log(somaString); >>Resultado: '40'
